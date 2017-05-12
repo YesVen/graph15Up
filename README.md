@@ -1,13 +1,13 @@
 # graph15Up
 Repo created for 15Up
 
->> Design Patterns
+Design Patterns
 
->> Design Principles
+Design Principles
 
->> Application Server Tomcat / Weblogic
+Application Server Tomcat / Weblogic
 
->> Html5
+Html5
 	HTML Geolocation
 	HTML Drag and Drop
 	HTML Local Storage
@@ -17,16 +17,16 @@ Repo created for 15Up
 	What is viewPort?
 	html vs htm?
 
->> Advanced javascript
+Advanced javascript
 	Promise
 	Closure
->>JQuery
+JQuery
 
 
->> Node.js
+Node.js
 
 
->> Web Services
+Web Services
 	Diff between SOAP and REST?
 	What is REST?
 	REST vs RESTful Web services?
@@ -35,18 +35,18 @@ Repo created for 15Up
 	Bottoms Up vs Top Down web service?
 	
 
->> AngularJS
+AngularJS
 
->> SQL Queries
+SQL Queries
 
->> Optionally Spring touch base
+Optionally Spring touch base
 
->> Programs in all languages
+Programs in all languages
 
->> Linux Commands
+Linux Commands
 
->> Agile SDLC Touch base
+Agile SDLC Touch base
 
->> Add Enovia Specific Skills - Enovia, TCL, eMatrix, mql, Adobe Illustrator, UWA, Jmeter
+Add Enovia Specific Skills - Enovia, TCL, eMatrix, mql, Adobe Illustrator, UWA, Jmeter
 
 
