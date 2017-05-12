@@ -9,9 +9,7 @@ Design Principles
 
 Application Server Tomcat / Weblogic
 
-Html5
-	HTML Geolocation
-	HTML Drag and Drop
+Html5	HTML Geolocation	HTML Drag and Drop
 	HTML Local Storage
 	HTML Application Cache
 	HTML Web Workers
