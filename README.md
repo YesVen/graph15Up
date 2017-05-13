@@ -2,8 +2,25 @@
 Repo created for 15Up
 
 
-
+Java
+	java8
+		Functional Interface
+		Default Methods
+		Method Reference
+		Type Inference
+		Lambda Expression
+		Stream API
+		forEach loop
+		Javascript in JS
+		Optional
+	java7
+		new Exception handling
+		new DateTime API
+		
 Design Patterns
+	Creational
+	Behavioral
+	
 
 Design Principles
 

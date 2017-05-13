@@ -6,6 +6,8 @@ public class DefultMethodDiamondProblem {
 		ashu.gotoSchool();
 		
 		Headmaster anna = new Headmaster();
+		//Anna will got school and teach because even though anna will be student for lifetime, He has overriden default method gotoSchool() and 
+		// used default method behavior of Teacher class which is teaching
 		anna.gotoSchool();
 	}
 }
