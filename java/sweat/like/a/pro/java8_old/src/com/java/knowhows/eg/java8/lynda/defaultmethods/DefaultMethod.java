@@ -1,4 +1,4 @@
-package com.java.knowhows.eg.java8.lynda.defaultmethods;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.defaultmethods;
 
 interface DefaultMethodInterface
 {
@@ -31,5 +31,12 @@ public class DefaultMethod implements DefaultMethodInterface
 	public static void main(String[] args) {
 		DefaultMethod df = new DefaultMethod();
 		df.sayHi();
+		
+		df.showMe();
+	}
+	
+	public void showMe()
+	{
+		sayHi();
 	}
 }

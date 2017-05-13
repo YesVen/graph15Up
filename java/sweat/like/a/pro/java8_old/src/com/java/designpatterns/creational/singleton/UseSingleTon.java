@@ -1,4 +1,4 @@
-package com.java.designpatterns.creational.singleton;
+package sweat.like.a.pro.java8_old.src.com.java.designpatterns.creational.singleton;
 
 public class UseSingleTon
 {

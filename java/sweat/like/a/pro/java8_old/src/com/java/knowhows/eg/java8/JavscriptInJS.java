@@ -1,4 +1,4 @@
-package com.java.knowhows.eg.java8;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;

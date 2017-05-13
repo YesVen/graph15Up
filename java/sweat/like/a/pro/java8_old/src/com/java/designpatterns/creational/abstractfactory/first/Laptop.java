@@ -1,4 +1,4 @@
-package com.java.designpatterns.creational.abstractfactory.first;
+package sweat.like.a.pro.java8_old.src.com.java.designpatterns.creational.abstractfactory.first;
 
 public class Laptop extends ComputerTypeFactory
 {

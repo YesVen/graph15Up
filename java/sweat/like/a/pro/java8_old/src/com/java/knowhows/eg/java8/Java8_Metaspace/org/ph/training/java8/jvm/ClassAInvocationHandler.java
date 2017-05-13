@@ -1,4 +1,4 @@
-package com.java.knowhows.eg.java8.Java8_Metaspace.org.ph.training.java8.jvm;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.Java8_Metaspace.org.ph.training.java8.jvm;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

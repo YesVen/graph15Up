@@ -1,4 +1,4 @@
-package com.java.knowhows.eg.java8;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8;
 
 //http://stackoverflow.com/questions/18286235/what-is-the-default-implementation-of-method-defined-in-an-interface
 

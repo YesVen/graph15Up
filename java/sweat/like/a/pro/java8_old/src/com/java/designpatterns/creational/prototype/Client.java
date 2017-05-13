@@ -1,4 +1,4 @@
-package com.java.designpatterns.creational.prototype;
+package sweat.like.a.pro.java8_old.src.com.java.designpatterns.creational.prototype;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.java.knowhows.eg.java8.lynda.predicate;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.predicate;
 
 import java.util.ArrayList;
 import java.util.List;
