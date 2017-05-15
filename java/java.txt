@@ -1,0 +1,13 @@
+Questions
+
+new vs newInstace
+
+jdk jre jvm jit
+
+classnotfundException vs NoCLassDefFoundError
+
+instanceof vs isInstance
+
+ways  to execute java program -- 4... java , java -jar demojar	.jat, double clicking, bat file
+
+web server vs App server

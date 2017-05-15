@@ -44,6 +44,7 @@ Java
 	Important Links
 		https://www.youtube.com/user/deegeu/playlists : java deep
 			https://www.youtube.com/watch?v=dz5_lsWlfTU&list=PLZlGOBonMjFWI_JOcZQJURzVZvaSWcA8m&index=1
+		https://www.youtube.com/user/javaboynavin/playlists	
 		https://www.youtube.com/user/durgasoftware
 		https://www.youtube.com/user/caveofprogramming
 		https://www.youtube.com/playlist?list=PLE7E8B7F4856C9B19 : Design Patterns and more
@@ -52,7 +53,8 @@ Java
 Design Patterns
 	Creational
 	Behavioral
-	
+	Important Links
+		https://www.youtube.com/watch?v=vNHpsC5ng_E&list=PLE7E8B7F4856C9B19&index=65
 
 Design Principles
 
