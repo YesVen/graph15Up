@@ -1,4 +1,4 @@
-package sweat.like.a.pro.java8;
+package java.sweat.like.a.pro.java8;
 
 public class DefualtMethod1 {
 	public static void main(String[] args) {

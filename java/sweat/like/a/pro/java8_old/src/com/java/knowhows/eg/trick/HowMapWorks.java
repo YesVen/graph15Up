@@ -1,4 +1,4 @@
-package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.trick;
+package java.sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.trick;
 
 import java.util.HashMap;
 import java.util.Set;

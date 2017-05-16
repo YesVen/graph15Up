@@ -1,4 +1,4 @@
-package sweat.like.a.pro.java8;
+package java.sweat.like.a.pro.java8;
 
 public class DefultMethodDiamondProblem {
 	public static void main(String[] args) {
