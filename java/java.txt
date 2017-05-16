@@ -1,13 +1,24 @@
 Questions
 
-new vs newInstace
+	new vs newInstace
 
-jdk jre jvm jit
+	jdk jre jvm jit
 
-classnotfundException vs NoCLassDefFoundError
+	classnotfundException vs NoCLassDefFoundError
 
-instanceof vs isInstance
+	instanceof vs isInstance
 
-ways  to execute java program -- 4... java , java -jar demojar	.jat, double clicking, bat file
+	ways  to execute java program -- 4... java , java -jar demojar	.jat, double clicking, bat file
 
-web server vs App server
+	web server vs App server
+	
+	final vs finally vs finalize
+	
+	Collection
+			How hashMap works
+			Collection vs Collections : methods in both classes
+			When to use which Collection?
+			Comparable vs Comparator
+			Cursors : Interator, ListInterator, Enumeration
+		
+	
