@@ -127,5 +127,4 @@ class Gav extends Village
 }
 
 
-}
 

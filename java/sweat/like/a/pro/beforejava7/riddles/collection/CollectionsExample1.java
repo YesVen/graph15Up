@@ -9,8 +9,16 @@ public class CollectionsExample1 {
 	public static void main(String[] args) {
 
 		frequency();
+		
+		synchronisedCollection();
 	}
 	
+	private static void synchronisedCollection() {
+		List<Village> villages = getCollection();
+		List<Village> v1 = Collections.synchronizedList(villages);
+		
+	}
+
 	private static void frequency() {
 		List<Village> villages = getCollection();
 		Village v1 = new Village("Bori");

@@ -29,6 +29,11 @@ public class HowToCreateFinalClass {
 		FinalPerson dnyanesh = new FinalPerson(demoage, demoName, demoInfo);
 		
 		System.out.println(dnyanesh);
+		
+		demoInfo.put("dummyKey", "Hacked");
+		
+		//If we have not created deep copy constructor then we would be able to change dnyanesh object by putting a new key inside dnyanesh object 
+		System.out.println(dnyanesh);
 	}
 }
 
@@ -47,9 +52,11 @@ final class FinalPerson
 		
 		//for initialising info object dont use assignment, instead create deep copy
 		Iterator<String> iter = info.keySet().iterator();
+		String key;
 		while(iter.hasNext())
 		{
-			tempMap.put(iter.next(),info.get(iter.next()));
+			key = iter.next();
+			tempMap.put(key,info.get(key));
 		}
 		 
 		this.info = tempMap;
