@@ -49,5 +49,7 @@ public class RemoveAllVsClear {
 		ss.add(new Village("dsds"));
 		ss.add(new RemoveAllVsClear());
 		ss.add(new CollectionsExample());
+		
+		
 	}
 }

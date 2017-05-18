@@ -14,6 +14,10 @@ Questions
 	
 	final vs finally vs finalize
 	
+	Why String Immutable
+	
+	How to create immutable class?
+	
 	Collection
 			How hashMap works
 			Collection vs Collections : methods in both classes
@@ -22,3 +26,4 @@ Questions
 			Cursors : Interator, ListInterator, Enumeration
 			diffrence between Arrays.Aslist and new List --- why Arrays class jas	
 	
+	http://javahungry.blogspot.com/
