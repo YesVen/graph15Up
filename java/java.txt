@@ -24,6 +24,6 @@ Questions
 			When to use which Collection?
 			Comparable vs Comparator
 			Cursors : Interator, ListInterator, Enumeration
-			diffrence between Arrays.Aslist and new List --- why Arrays class jas	
+			diffrence between Arrays.Aslist and new List 
 	
 	http://javahungry.blogspot.com/

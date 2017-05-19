@@ -1,0 +1,15 @@
+Closures
+
+eval method
+
+Promises
+
+Array Methods
+
+Design Patterns
+	https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
+	http://www.dofactory.com/javascript/design-patterns
+	Module
+	Prototype
+	
+	

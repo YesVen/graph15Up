@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<script>
+			window.onload = function()
+			{
+				/*Finds the elements of an array which satisfy a filter function*/
+				
+				
+				var numbers = [2,4,45,6,7,87,78,56,7,45,43,5,6,767,56];
+				
+				var ss = jQuery.grep(numbers, function(element, index){
+					return element % 5===0 ;
+				});
+				
+				$("#content").append(ss);
+				
+				
+				//check if one element is child of other dom element
+				alert(jQuery.contains(document.body, document.getElementById("content")));
+				alert(jQuery.contains($("body"), $("#content")));
+				alert(jQuery.contains(document.documentElement, document.getElementById("content")));
+				
+				
+				//Note: The first argument must be a DOM element, not a jQuery object or plain JavaScript object.
+			}
+
+
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content"> 
+			
+		</div>
+	</body>
+</html>
+

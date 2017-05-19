@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<script>
+			window.onload = function()
+			{
+				//This will return an jquery array object
+				var list = $("list");
+				
+				//but this object is not actual js array object which has reverse, push, pop etc
+				
+				var trueArray = $.makeArray(list);
+				
+				//Now its complete js array object
+				var reversedArray = trueArray.reverse();
+				$(reversedArray).appendTo($("#content"));
+				
+			}
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content"> 
+			<list> One</list>
+			<list> Two</list>
+			<list> Three</list>
+			<list> Four</list>
+			<list> Six</list>
+		</div>
+	</body>
+</html>

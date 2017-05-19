@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<script>
+			window.onload = function()
+			{
+				var ss = jQuery.merge($("input"),$("ul"));
+				
+				console.log(ss);
+				
+				$("#content3").append(ss);
+			}
+
+
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content1"> 
+			<input type="button" name="Submit" value="Click"/>
+			<input type="button" name="Submit" value="Submit"/>
+			<input type="button" name="Submit" value="Link"/>
+		</div>
+		
+		
+		<div id="content1"> 
+			<ul>1</ul>
+			<ul>2</ul>
+			<ul>3</ul>
+			<ul>4</ul>
+		</div>
+		
+		<div id="content3"> </div>
+		
+	</body>
+</html>
