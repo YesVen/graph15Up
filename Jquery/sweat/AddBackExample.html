@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<style>
+			.bold {
+				font-size: 180%;
+				color:red;
+			}
+		</style>
+		<script>
+			window.onload = function()
+			{
+				//Add function just adds more elements to set of matched elements
+				
+				
+				$("#content").add("p").addClass('bold');
+				
+				$("h1").add('h2').css('color','blue');
+				
+				
+				var collection = $( "p" );
+				// Capture the new collection
+				collection = collection.add( document.getElementById( "a" ) );
+				collection.css( "background", "yellow" );
+				
+			}
+
+
+
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content"> 
+			
+		</div>
+		<p>Test text</p>
+		<h1 class="testClass"> h1</h1>
+		<h2>h2</h2>
+		
+		
+		<p>Hello</p>
+		<span id="a">Hello Again</span>
+	</body>
+</html>
+

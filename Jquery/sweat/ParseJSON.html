@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<script>
+		window.onload = function()
+		{
+			var ss = '{"MenuContent":[{"name":"3DEXPERIENCE Sketches\Graphics","href":"#3DEXPERIENCE Sketches\Graphics","id":"Section_ENOVIASketches_Graphics","children":[{"name":"Create Using Template","href":"#Create Using Template","id":"Menu_OnCreateUsingTemplate"},{"name":"Open","href":"#Open","id":"Menu_OnOpen"},{"name":"Search Many","href":"#Search Many","id":"Menu_OnSearch"},{"name":"Save... Update","href":"#Save... Update","id":"Menu_Save"},{"name":"Save As... Create New","href":"#Save As... Create New","id":"Menu_SaveAs"},{"name":"Lock\UnLock","href":"#Lock\UnLock","id":"Menu_OnLockUnlock"},{"name":"Properties","href":"#Properties","id":"Menu_Properties"},{"name":"Where Used","href":"#Where Used","id":"Menu_RelatedProducts"},{"name":"DummyLastChild","href":"#DummyLastChild","id":"Menu_DummyLastChild"}]},{"name":"3DEXPERIENCE PLM","href":"#3DEXPERIENCE PLM","id":"Section_ENOVIAPLM","children":[{"name":"Open Sketch","href":"#Open Sketch","id":"Menu_OnOpenENOVIASketch"},{"name":"Open Product\Family","href":"#Open Product\Family","id":"Menu_OnOpenENOVIAProduct"},{"name":"View Related 3DEXPERIENCE Objects","href":"#View Related 3DEXPERIENCE Objects","id":"Menu_OnViewRelatedENOVIAObjects"},{"name":"Show Sketch Versions","href":"#Show Sketch Versions","id":"Menu_CUSTOMMENU1"},{"name":"Promote To Complete","href":"#Promote To Complete","id":"Menu_CUSTOMMENU2"},{"name":"DummyLastChild2","href":"#DummyLastChild2","id":"Menu_DummyLastChild2"}]}]}';
+			
+			/*
+				ParseJSON id diffrent from JSON.parse
+				It will trim the data and look for any special/suspicious charactrs present in string
+				
+			*/
+			
+			var dd = JSON.parse(ss);
+			var ss = jQuery.parseJSON(ss);
+			
+			console.log(ss.MenuContent);
+		}
+		
+		</script>
+	</head>
+
+	<body class="hostElt">
+	<div id="content"> 
+		
+	</div>
+	</body>
+</html>

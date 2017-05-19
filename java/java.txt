@@ -26,6 +26,7 @@ Questions
 			Cursors : Interator, ListInterator, Enumeration
 			diffrence between Arrays.Aslist and new List --- why Arrays class jas	
 			Which classes implement RandomAccess interface and what is its advantage?
-	http://javahungry.blogspot.com/
-	
+			http://javahungry.blogspot.com/
+			diffrence between Arrays.Aslist and new List 
+
 	
