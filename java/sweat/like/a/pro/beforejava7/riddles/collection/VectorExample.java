@@ -20,7 +20,7 @@ public class VectorExample {
 		v.removeAllElements();//VEctor's own method
 		v.clear();// inherited from List interface
 		
-		//vector rows its capacity by double every time. And its dangerous for memory
+		//vector grows its capacity by double every time. And its dangerous for memory
 		//so it gave us constructor to specify how much should it grow after capacity exahaustion
 		
 		Vector<String> v1 = new Vector<>(20, 1/2);
