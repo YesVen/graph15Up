@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<style>
+			.bold {
+				font-size: 180%;
+				color:red;
+			}
+		</style>
+		<script>
+			window.onload = function()
+			{
+
+				//map is just like each() method but with few diffreneces
+				/*
+					The each method is meant to be an immutable iterator, where as the map method can be used as an iterator, 
+					but is really meant to manipulate the supplied array and return a new array.
+
+					Another important thing to note is that the each function returns the original array while the map 
+					function returns a new array. If you overuse the return value of the map function you can potentially 
+					waste a lot of memory.
+				*/
+				
+				
+				var dd = $('li').map(function(index,element){
+					return $(this).html();
+				}).get().join(',');
+				
+				$(".item-iii").append(dd);
+			}
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<ul id="one" class="level-1">
+			<li class="item-i">I</li>
+			<li id="ii" class="item-ii">II</li>
+			<li class="item-c">C</li>
+			<img/>
+			<string>sadasdas</string>
+			<li class="item">D</li>
+			<li class="item-c">#</li>
+			<li class="item-c">C</li>
+			<li class="item-c">B</li>
+		</ul>
+		<ul class="item-iii">All classes are :  </ul>
+	</body>
+</html>
+
+
+
+
+

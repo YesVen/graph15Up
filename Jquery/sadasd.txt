@@ -1,1 +1,14 @@
 splice method of array
+
+parents vs parentsUntil vs parent
+
+closest vs parents
+
+contents vs children
+
+has vs hasClass vs is
+
+filter vs find
+
+map vs each
+

@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<style>
+			.bold {
+				font-size: 180%;
+				color:red;
+			}
+		</style>
+		<script>
+			window.onload = function()
+			{
+				/*
+					For each element in the set, get the first element that matches the 
+					selector by testing the element itself and traversing up through its ancestors in the DOM tree.
+					
+					Closest() start from itself and stop when first element is found.
+					We can pass in the context element for searching.
+				*/
+				
+				$("li.item-3").closest('ul').css("background-color", "green");
+				
+				//We can pass in the context element within which the search operation will perform
+				var listItemII = document.getElementById( "ii" );
+				
+				
+				$("li.item-3").closest('li', listItemII).css("background-color", "yellow");
+
+			}
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<ul id="one" class="level-1">
+			<li class="item-i">I</li>
+			<li id="ii" class="item-ii">II
+				<ul class="level-2">
+					<li class="item-a">A</li>
+					<li class="item-b">B
+						<ul class="level-3">
+							<li class="item-1">1</li>
+							<li class="item-2">2</li>
+							<li class="item-3">3</li>
+						</ul>
+					</li>
+					<li class="item-c">C</li>
+				</ul>
+			</li>
+			<li class="item-iii">III</li>
+		</ul>
+	</body>
+</html>
+
+
+
+
+
