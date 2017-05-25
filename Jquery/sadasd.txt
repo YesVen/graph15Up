@@ -1,6 +1,6 @@
 splice method of array
 
-parents vs parentsUntil vs parent
+parent vs parents vs parentsUntil vs parent
 
 closest vs parents
 
@@ -8,7 +8,7 @@ contents vs children
 
 has vs hasClass vs is
 
-filter vs find
+filter vs find vs grep
 
 map vs each
 

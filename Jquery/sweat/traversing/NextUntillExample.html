@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<style>
+			.bold {
+				font-size: 180%;
+				color:red;
+			}
+		</style>
+		<script>
+			window.onload = function()
+			{
+				/*
+					Removes elements from set of mathed elements
+				*/
+				$("p").not($("#para1")).css('color', 'red');
+
+				/*
+					We can write a callback function for "not"
+				*/
+				$("p").not(function(){
+					return this.id === "para2"
+				}).css('color', 'red');
+			}
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content"> 
+			<p id="para1">Test text</p>
+			<h1 class="testClass"> h1</h1>
+			<h2>h2</h2>
+		</div>
+
+		<p id="para2">Hello</p>
+		<span id="a">Hello from span</span>
+	</body>
+</html>
+
