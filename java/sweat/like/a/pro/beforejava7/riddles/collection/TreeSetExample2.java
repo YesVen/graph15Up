@@ -29,7 +29,7 @@ import sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.predicate
  *
  */
 
-public class TreeSetExample {
+public class TreeSetExample2 {
 
 	public static void main(String[] args) {
 		TreeSet numbers = new TreeSet<>();

@@ -30,5 +30,6 @@ Questions
 			diffrence between Arrays.Aslist and new List 
 			When to use enumeration vs iterator vs ListIterator
 			How Treeset internally works?
+			Why it does not give compile time error when you dont implement equals method in Comparator interface?
 			
 			
