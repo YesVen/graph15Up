@@ -1,0 +1,102 @@
+<!--
+
+	Sometimes we want list of function to run as a callback of some activity.
+	It makes our job tedious to to one after the other
+
+	Jquery hhas callback object which takes function/array of functions to be exucuted as callback
+-->
+
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+		<style>
+			.font {
+				color: aquamarine;
+			}
+
+			.border {
+				border: 2px solid red;
+			}
+
+			.background {
+				background-color: beige;
+			}
+
+			.corner {
+				border: 1px solid green;
+				border-radius: 10px;
+			}
+
+
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<p>
+				Hello, <span>Person</span> <em>and person</em>.
+			</p>
+
+			<div id="content1" class="corner"> 
+				<input type="button" name="Submit" value="Click" class="font corner"/>
+				<input type="button" name="Submit" value="Submit" class="font"/>
+				<input type="button" name="Submit" value="Link" class="background border"/>
+				<input type="button" name="Submit" value="Set" class="border"/>
+			</div>
+
+			<div id="content2" class="corner"> 
+				<p>
+					TEst
+				</p>
+				<p>
+					Me
+				</p>
+				<p>
+					Now
+				</p>
+
+			</div>
+
+			<button>AddCallback</button>
+		</div>	
+
+		<script>
+			$( "button" ).click(function() {
+				
+				var callbacks = $.Callbacks();
+				
+				var  logFun = function(name)
+				{
+					console.log(name + " Opertion completed");
+				}
+
+				callbacks.add(logFun);
+				
+				
+				callbacks.add(function(){
+					$('input').toggleClass('corner');
+				});
+				
+				callbacks.add(function(){
+					$('input').toggleClass('background');
+				});
+				
+				callbacks.fire("click operation");//with or without arguments
+				
+				// Disable firing of callbacks
+				callbacks.disable();
+				callbacks.fire(); // This will not do anything as we disabled
+				
+				//check if callbcks disabled
+				alert("cannot fire callbacks as callbacks disabled = " + callbacks.disabled());
+				
+				
+			});
+		</script>
+
+	</body>
+</html>

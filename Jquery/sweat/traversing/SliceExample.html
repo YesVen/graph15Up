@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<script>
+			window.onload = function()
+			{
+				/*
+					
+				*/
+				
+				$('ul').slice(2).css('border', '2px solid black');
+				
+				$('input').slice(1,3).css('border', '2px solid red');
+				
+				$('input').slice(-3,-1).css('border', '2px solid blue');
+			}
+
+
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content1"> 
+			<input type="button" name="Submit" value="Click"/>
+			<input type="button" name="Submit" value="Submit"/>
+			<input type="button" name="Submit" value="Link"/>
+			<input type="button" name="Submit" value="Test"/>
+			<input type="button" name="Submit" value="Paint"/>
+			<input type="button" name="Submit" value="Merge"/>
+		</div>
+
+
+		<div id="content1"> 
+			<ul>1</ul>
+			<ul>2</ul>
+			<ul>3</ul>
+			<ul>4</ul>
+		</div>
+
+		<div id="content3"> </div>
+
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+		<style>
+			.font {
+				color: aquamarine;
+			}
+			
+			.border {
+				border: 2px solid red;
+			}
+			
+			.background {
+				background-color: beige;
+			}
+			
+			
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<p>
+				Hello, <span>Person</span> <em>and person</em>.
+			</p>
+
+			<div id="content1"> 
+				<input type="button" name="Submit" value="Click" class="font"/>
+				<input type="button" name="Submit" value="Submit" class="font"/>
+				<input type="button" name="Submit" value="Link" class="background border"/>
+				<input type="button" name="Submit" value="Set" class="border"/>
+			</div>
+
+			<button>toggleClass</button>
+		</div>	
+
+		<script>
+			$( "button" ).click(function() {
+
+				$("input[value='Click']").toggleClass('font'); 
+				
+				$("input[value='Link']").toggleClass('background border', 'false');// space seperated class names
+				
+				$("input[value='Set']").toggleClass(function(){
+					if($(this).hasClass('border'))
+					   return 'background';
+				});
+
+			});
+		</script>
+
+	</body>
+</html>

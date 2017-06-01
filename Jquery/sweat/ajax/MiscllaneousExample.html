@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="/lib/jquery-2.0.2.min.js"></script>
+		<script src="/lib/jquery-ui.js"></script>
+		<script>
+			window.onload = function()
+			{
+				/*
+					get index of this element in jquery array
+				*/
+				alert($("input").index($('input[value=Link]')));
+				
+				
+				/*
+					To convert jquery set into plain array so that we can peform array operations
+				*/
+				
+				var ss = $('input').toArray().reverse();
+				
+				/*
+					This gives up control of $. Jquery removes all of its global variables.
+					It is perticularly required when there are some other js library os diffrent version of jquery lib is present which
+					denotes same name $ for global variable.
+					
+					You might need to use $ in say angular context so,
+					
+					$.noConflict(true);
+					
+					after above line jquery no longer have control over $ and if we have angular and used $ as variable,
+					
+					we are set to se angular with $ variable
+				*/
+				
+				/*
+					Add a collection of DOM elements onto the jQuery stack.
+				*/
+				
+				jQuery([])
+					.pushStack( document.getElementsByTagName( "div" ) )
+					.remove()
+					.end();
+			}
+
+
+
+		</script>
+	</head>
+
+	<body class="hostElt">
+		<div id="content1"> 
+			<input type="button" name="Submit" value="Click"/>
+			<input type="button" name="Submit" value="Submit"/>
+			<input type="button" name="Submit" value="Link"/>
+		</div>
+
+
+		<div id="content1"> 
+			<ul>1</ul>
+			<ul>2</ul>
+			<ul>3</ul>
+			<ul>4</ul>
+		</div>
+
+		<div id="content3"> </div>
+
+	</body>
+</html>

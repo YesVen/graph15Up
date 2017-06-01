@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+		<style>
+			.font {
+				color: aquamarine;
+			}
+
+			.border {
+				border: 2px solid red;
+			}
+
+			.background {
+				background-color: beige;
+			}
+			
+			.corner {
+				border: 1px solid green;
+				border-radius: 10px;
+			}
+
+
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<p>
+				Hello, <span>Person</span> <em>and person</em>.
+			</p>
+
+			<div id="content1" class="corner"> 
+				<input type="button" name="Submit" value="Click" class="font corner"/>
+				<input type="button" name="Submit" value="Submit" class="font"/>
+				<input type="button" name="Submit" value="Link" class="background border"/>
+				<input type="button" name="Submit" value="Set" class="border"/>
+			</div>
+
+			<div id="content2" class="corner"> 
+				<p>
+					TEst
+				</p>
+				<p>
+					Me
+				</p>
+				<p>
+					Now
+				</p>
+				
+			</div>
+			
+			<button>wrap/wrapAll/unwrap</button>
+		</div>	
+
+		<script>
+			$( "button" ).click(function() {
+				
+				//wrap wraps "EACH" element in matched set by element passed.
+				$("input").wrap("<div class='border wrapped'></div>");
+				
+				//wrap wraps "ALL" elements in matched set by element passed.
+				$("div.wrapped").wrapAll("<div class='background'></div>");
+				
+				//Removes immediate parent for set of matched elements
+				//Just like unwrapping a gift
+				$("div.background").unwrap();
+
+				//wrap "inner content" of each element in set of matched element
+				$("p").wrapInner("<div class='corner'></div>");
+				
+			});
+		</script>
+
+	</body>
+</html>

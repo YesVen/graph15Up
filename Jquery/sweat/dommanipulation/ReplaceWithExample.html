@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+		<style>
+
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<p>
+				Hello, <span>Person</span> <em>and person</em>.
+			</p>
+
+			<div id="content1"> 
+				<input type="button" name="Submit" value="Click"/>
+				<input type="button" name="Submit" value="Submit"/>
+				<input type="button" name="Submit" value="Link"/>
+				<input type="button" name="Submit" value="Set"/>
+			</div>
+
+			<button>ReplaceWith()</button>
+		</div>	
+
+		<script>
+			$( "button" ).click(function() {
+				
+				$("input[value='Submit']").replaceWith("<h2>Replacer</h2>");
+				
+				$("input[value='Click']").replaceWith(function(){
+					return "<h2>new Replacer</h2>";
+				});
+				
+				$("input[value='Link']").replaceWith($("input[value='Set']"));
+
+			});
+		</script>
+
+	</body>
+</html>

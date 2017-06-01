@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+		<style>
+
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+			<p>
+				Hello, <span>Person</span> <em>and person</em>.
+			</p>
+
+			<div id="content1"> 
+				<input type="button" name="Submit" value="Click"/>
+				<input type="button" name="Submit" value="Submit"/>
+				<input type="button" name="Submit" value="Link"/>
+			</div>
+
+			<button>ReplaceAll()</button>
+		</div>	
+
+		<script>
+			$( "button" ).click(function() {
+				$("<h2>Replacer</h2>").replaceAll("input[value='Click']");
+				
+				
+				//we can see that the selected element replaces the target by being moved from its old location, not by being cloned.
+				
+				$("input[value='Submit']").replaceAll("input[value='Link']");
+				
+			});
+		</script>
+
+	</body>
+</html>

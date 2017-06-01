@@ -12,3 +12,12 @@ filter vs find vs grep
 
 map vs each
 
+after vs insertAfter
+
+remmove vs Detach
+
+replaceAll vs ReplaceWith
+
+hrml() vs text()
+
+wrap vs unwrap vs wrapAll
