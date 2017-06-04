@@ -31,9 +31,8 @@ Questions
 			When to use enumeration vs iterator vs ListIterator
 			How Treeset internally works?
 			Why it does not give compile time error when you dont implement equals method in Comparator interface?
-			
-			
-			
+			synchrinisedmap vs hashtable vs concurrenthashmap
+						
  Crux :
  	same name to two threads?
  	
