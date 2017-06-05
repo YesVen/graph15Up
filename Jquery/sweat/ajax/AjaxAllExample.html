@@ -1,0 +1,74 @@
+<!--
+
+
+.ajaxSend()  : Will be called just before sending each and all request going to server
+
+.ajaxComplete() : Will be called just after completing each and all request.
+				Will be called after ajaxsuccess
+
+.ajaxError() : Will be called for each and all request only when it fails
+
+.ajaxStop() : Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. 
+			If none are in progress, jQuery triggers the ajaxStart event. 
+			Any and all handlers that have been registered with the .ajaxStart() method are executed at this time.
+
+.ajaxstart() : Whenever an Ajax request completes, jQuery checks whether there are any other outstanding Ajax requests. 
+				If none remain, jQuery triggers the ajaxStop event. 
+			Any and all handlers that have been registered with the .ajaxStop() method are executed at this time. 
+			The ajaxStop event is also triggered if the last outstanding Ajax request is cancelled by returning false within the beforeSend callback function.
+
+.ajaxSuccess() : Will be called for each and all requests which gets succeeded.
+			  It's worth mentioning that ajaxComplete() will get called after .success() gets called
+
+.load() : Load data from the server and place the returned HTML into the matched element.
+			Please take a not that it returns a HTML document to inserted in DOM. So it can be called on any DOM element.
+				e.g $( "dic.content1" ).load( "ajax/test.html" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note : Below methos are called on $ object
+
+
+
+$.ajaxSetup() : Used for changing parmaters of ajax request.
+				It will be called for each and every request
+					Its use is highly discouraged as it sets the parameters for all subsequent requests too.
+				e.g. in ajaxsetup if I am setting type to POST, then all subsequent request will be set to post.
+
+
+$.ajax() : I have benn using since ages
+
+
+$.ajaxPreFilter : add/modify option s in ajax request.
+				   e.g check url and decide if request need to be sent or aborted
+
+$.get()
+
+
+$.post()
+
+$.getJSON() :  Load JSON-encoded data from the server using a GET HTTP request.
+
+
+$.getScript() : Load a JavaScript file from the server using a GET HTTP request, then execute it.
+
+
+$.param() :  Create a serialized representation of an array, a plain object, or a jQuery object suitable for use in a URL query string or Ajax request. 
+			In case a jQuery object is passed, it should contain input elements with name/value properties.
+
+
+
+
+
+
+-->
