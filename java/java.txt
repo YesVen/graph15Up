@@ -33,3 +33,21 @@ Questions
 			Why it does not give compile time error when you dont implement equals method in Comparator interface?
 			
 			
+			
+ Crux :
+ 	same name to two threads?
+ 	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 			
+			
