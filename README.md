@@ -16,6 +16,7 @@ Java
 			Optional
 		Type and Repeating Annotations
 		IO Enhancements
+		StringJoiner Class
 		Concurrency enhancements
 	java7
 		new Exception handling

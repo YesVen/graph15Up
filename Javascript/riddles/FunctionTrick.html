@@ -1,0 +1,47 @@
+<!--
+
+Sometimes we want list of function to run as a callback of some activity.
+It makes our job tedious to to one after the other
+
+Jquery hhas callback object which takes function/array of functions to be exucuted as callback
+-->
+
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+		
+		
+	</head>
+	<body>
+		
+
+		<script>
+			
+			
+			var test = 	function()
+			{
+				alert("Testing 1");
+			}
+			
+			var test = 	function(a, b)
+			{
+				alert("Testing 2");
+			}
+			
+			var test = 	function(a)
+			{
+				alert("Testing 3");
+			}
+			
+			test();
+			test(2);
+			test(3,2);
+			
+		</script>
+
+	</body>
+</html>

@@ -57,11 +57,11 @@ Remaining :
 			
 			
 
- Crux :
- 	same name to two threads?
+ To update in notepad :
  	
  
- 
+ Links :
+	 	https://www.leveluplunch.com/java/examples/#java-stream
  
  
  
