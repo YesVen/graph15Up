@@ -44,14 +44,19 @@ Questions
 			How do you print Array in Java
 			Serializable and Externalizable
 			DOM and SAX parser in Java
+			synchrinisedmap vs hashtable vs concurrenthashmap
+			
+			
 			
 Remaining : 
 			Inner classes
 			Exception Handling
 			Java 5 Thread new Classes
 			Access Modifiers
-						
+
 			
+			
+
  Crux :
  	same name to two threads?
  	
