@@ -2,11 +2,11 @@ package sweat.like.a.pro.beforejava7.riddles.thread.advanced;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LockExample1 {
-	public static void main(String[] args) {
-		Display d = new Display();
-		MyThread t2 = new MyThread(d, "Yuvraj");
-		MyThread t1 = new MyThread(d, "Dhoni");
+public class LockExample2 {
+	public static void main(String[] args) throws InterruptedException {
+		DisplayDemo d = new DisplayDemo();
+		MyThread1 t2 = new MyThread1(d, "Yuvraj");
+		MyThread1 t1 = new MyThread1(d, "Dhoni");
 		
 		t1.start();
 		t2.start();
@@ -14,7 +14,7 @@ public class LockExample1 {
 }
 
 
-class Display {
+class DisplayDemo {
 	ReentrantLock lock = new ReentrantLock();
 	public void wish(String name)
 	{
@@ -24,31 +24,33 @@ class Display {
 		 * Else it will cause permanent starvation of other threads waiting for lock. If This thread dies abruptly
 		 * there is no one to unlock the lock
 		 */
+		
 		lock.lock();
-		try {
-			
 			for (int i = 0; i < 10; i++) {
 				System.out.println("Good Morning " + name);
 				try {
 					Thread.sleep(1000);
+					/*
+					 * Here i am throwing exception from thread 1. 
+					 * Thread 1 has got no chance to release lock. So
+					 * thread 2 will wait forever as there is no one to unlock the lock.
+					 * So recomended to use finally block and release lock
+					 */
+					throw new RuntimeException();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
-		} 
-		finally
-		{
-			lock.unlock();
-		}
+		lock.unlock();
 	}
 }
 
 
-class MyThread extends Thread
+class MyThread1 extends Thread
 {
-	Display d;
+	DisplayDemo d;
 	String name;
-	public MyThread(Display d, String name )
+	public MyThread1(DisplayDemo d, String name )
 	{
 		this.name = name;
 		this.d = d;
