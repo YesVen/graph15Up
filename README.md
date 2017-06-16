@@ -16,6 +16,7 @@ Java
 			Optional
 		Type and Repeating Annotations
 		IO Enhancements
+		StringJoiner Class
 		Concurrency enhancements
 	java7
 		new Exception handling
@@ -49,6 +50,7 @@ Java
 		https://www.youtube.com/user/caveofprogramming
 		https://www.youtube.com/playlist?list=PLE7E8B7F4856C9B19 : Design Patterns and more
 		https://www.youtube.com/watch?v=VKkjAhIh4hw&list=PLv23MTuOu-vi4mRPEPNyarUxD_xFs3oZ1 : Java deep dive
+		http://howtodoinjava.com/java-concurrency-tutorial/ : Very good advanced concurrency link
 		
 Design Patterns
 	Creational
