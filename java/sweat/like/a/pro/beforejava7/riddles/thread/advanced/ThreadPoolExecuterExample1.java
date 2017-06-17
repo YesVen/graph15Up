@@ -47,6 +47,7 @@ public class ThreadPoolExecuterExample1 {
 		executer.shutdown();
 		
 		System.out.println(executer.isShutdown());
+		
 	}
 
 }
