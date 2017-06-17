@@ -3,7 +3,7 @@ package sweat.like.a.pro.beforejava7.riddles.thread.advanced;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LockExample2 {
+public class LockExample3 {
 	public static void main(String[] args) {
 		
 		final Lock lock = new ReentrantLock();
@@ -15,11 +15,9 @@ public class LockExample2 {
 		Thread t2 = new Thread(()-> {
 			run(lock);
 		}, "t2");
-		
 		t1.start();
 		t2.start();
 	}
-
 	private static void run(Lock lock) {
 		do{
 			if(lock.tryLock())
@@ -35,5 +33,6 @@ public class LockExample2 {
 		}while(true);
 	}
 	
-	
 }
+
+
