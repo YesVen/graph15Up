@@ -6,3 +6,9 @@ JAX-RS
 	http://www.java4s.com/web-services/restful-web-services-jax-rs-tutorials/
 	****** http://howtodoinjava.com/restful-web-service/ 				
 
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-server</artifactId>
+    <version>1.17.1</version>
+</dependency>
+
