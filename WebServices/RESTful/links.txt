@@ -4,5 +4,6 @@ REST Architecture
 	
 JAX-RS
 	http://www.java4s.com/web-services/restful-web-services-jax-rs-tutorials/
-	****** http://howtodoinjava.com/restful-web-service/ 				
+	****** http://howtodoinjava.com/restful-web-service/ 
+	https://www.tutorialspoint.com/restful/restful_jax_rs.htm
 
