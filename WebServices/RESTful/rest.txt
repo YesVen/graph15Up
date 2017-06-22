@@ -1,0 +1,41 @@
+ROY Fielding
+Representational State Transfer
+Merely an Architechtural Style
+Services built on the principles of REST are called RESTful web services
+Uses HTTP protocol
+
+Advantages : 
+	Lightweight
+	Stateless
+		Doesnt maintain what client has asked before current request?
+		i.e client cannot say, give me account balance of user in last response. server simply dont remember last response.
+	No specification and tight coupling (like WSDL though it has WADL somewhere)
+	Caching mechanism
+	No language/framework barrier cause it can work with any lang and fw.
+	Can work with any data type(due to HTTP)
+	Layered Architecture
+		We can Put an extra middleware layer between client and server which can have diffrent purpose(redirecting, partial response etc). This is called layered architecture
+	
+REST style has a specification JAX-RS
+SOAP style has a specification JAX-WS
+
+JAX-RS Specification is implementated by few vendors like 
+		Apache CXF
+		JBoss RestEasy
+		Oracle Jersey
+		GlassFish Jersey
+		
+JAX-WS Specification is implementated by few vendors like 
+		Apache Axis
+		
+		
+
+JAX-RS Specification defines some annotations like below
+@GET @PUT @POST @DELETE
+@Path : Class and method level annotation.
+@FormParam @MatrixParam @HeaderParam @PathParam
+@Produces @Consumes
+
+@Path : Class and method level annotation.
+@Produces : Method or field level annotation
+@Consumes : Class and method level annotation

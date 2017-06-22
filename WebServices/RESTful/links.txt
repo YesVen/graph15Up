@@ -1,0 +1,8 @@
+REST Architecture
+	https://www.javatpoint.com/soap-vs-rest-web-services
+	http://www.guru99.com/restful-web-services.html#1
+	
+JAX-RS
+	http://www.java4s.com/web-services/restful-web-services-jax-rs-tutorials/
+	****** http://howtodoinjava.com/restful-web-service/ 				
+
