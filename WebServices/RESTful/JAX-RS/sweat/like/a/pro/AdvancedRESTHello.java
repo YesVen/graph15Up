@@ -16,6 +16,6 @@ public class AdvancedRESTHello {
 	@Produces(MediaType.TEXT_HTML)
 	public Response wishUser(@PathParam("username") @DefaultValue("Unknown User") String username)
 	{
-		return Response.ok("Hi there " + username + ", Howdy?").build();
+		return Response.ok("Hi there " + "<h1 style='color:red'>" +username + "</h1>" + ", Howdy?").build();
 	}
 }
