@@ -50,8 +50,12 @@ Annotations :
 
 Jersey Annotations : 
 	Jersey has added few more annotations for making developers life easy
-	1.	@Provider : 
-	Find out rest of the annotations
+	@Provider : Used for Marshalling purpose.
+	@DefaultValue
+	@Encoded
+	@Context
+	@HttpMethod
+	
 					 
 					 
 REST Security : 
