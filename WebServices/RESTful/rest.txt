@@ -16,26 +16,40 @@ Advantages :
 	Layered Architecture
 		We can Put an extra middleware layer between client and server which can have diffrent purpose(redirecting, partial response etc). This is called layered architecture
 	
-REST style has a specification JAX-RS
+REST style has a specification JAX-RS(1.0,2.0)
 SOAP style has a specification JAX-WS
 
 JAX-RS Specification provided by SUn and is implementated by few vendors like 
-		Apache CXF
-		JBoss RestEasy
-		Oracle Jersey
-		GlassFish Jersey
+		Jersey from Oracle, 
+		Resteasy from Jboss, 
+		CXF from Apache
+		Jersey from GlassFish and blah blah blah
 		
 JAX-WS Specification is implementated by few vendors like 
 		Apache Axis
 		
+Note : Apache CXF provides implementation for SOAP and RESTful services both		
 		
+Annotations : 
+	JAX-RS Specification defines some annotations like below
+	@GET @PUT @POST @DELETE
+	@Path : Class and method level annotation.
+	@FormParam @MatrixParam @HeaderParam @PathParam @CookieParam
+	@Produces @Consumes
 
-JAX-RS Specification defines some annotations like below
-@GET @PUT @POST @DELETE
-@Path : Class and method level annotation.
-@FormParam @MatrixParam @HeaderParam @PathParam
-@Produces @Consumes
+	@Path : Class and method level annotation. url field marked under @path is case sensitive
+	@Produces : Method or field level annotation
+	@Consumes : Class and method level annotation
 
-@Path : Class and method level annotation.
-@Produces : Method or field level annotation
-@Consumes : Class and method level annotation
+
+	@MatrixParam : The important difference is that matrix parameters apply to a particular path element while query parameters apply to the request as a whole. This comes into play when making a complex REST-style query to multiple levels of resources and sub-resources
+		e.g http://example.com/res/categories;name=foo/objects;name=green/?page=1
+		In above example,categories;name=foo --->  name matrixparam is local to category only
+						 objects;name=greeen --->  name matrixparam is local to objects only
+					 
+
+REST Security : 
+	
+		
+					 
+					 

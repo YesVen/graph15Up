@@ -6,7 +6,7 @@ JAX-RS
 	http://www.java4s.com/web-services/restful-web-services-jax-rs-tutorials/
 	****** http://howtodoinjava.com/restful-web-service/ 
 	https://www.tutorialspoint.com/restful/restful_jax_rs.htm
-
+	http://www.dineshonjava.com/search/label/REST
 	
 	<servlet>
   	<servlet-name>MyJerseyServlet</servlet-name>
