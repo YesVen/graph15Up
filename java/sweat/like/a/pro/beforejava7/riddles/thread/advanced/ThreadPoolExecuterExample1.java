@@ -6,6 +6,13 @@ import java.util.concurrent.Executors;
 public class ThreadPoolExecuterExample1 {
 
 	public static void main(String[] args) {
+		/*
+		 * Its not necessary to create poll of 3 threads a we have 3 threads to run
+		 * We can have 100 threads to run but we can still create pool of 10 threads./
+		 * Threads which get free early will be shedules for remaining task
+		 * 
+		 *   Same implementation is used in web containder.
+		 */
 		ExecutorService executer = Executors.newFixedThreadPool(3);
 		
 		Thread taskone = new Thread(() ->{

@@ -19,7 +19,7 @@ Advantages :
 REST style has a specification JAX-RS
 SOAP style has a specification JAX-WS
 
-JAX-RS Specification is implementated by few vendors like 
+JAX-RS Specification provided by SUn and is implementated by few vendors like 
 		Apache CXF
 		JBoss RestEasy
 		Oracle Jersey
