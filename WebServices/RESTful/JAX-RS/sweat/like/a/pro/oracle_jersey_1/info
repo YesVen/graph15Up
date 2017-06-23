@@ -1,0 +1,10 @@
+
+
+Oracle jersey framework is implemented on JAX-RS 1.0 specification.
+It needs web module 2.5 version. 
+
+To run classes in this package
+	Create project having 
+		web module 2.5
+		include oracle jersey dependency in pom.xml
+		configure web.xml to load ServletContainer class from oracle jersey jar
