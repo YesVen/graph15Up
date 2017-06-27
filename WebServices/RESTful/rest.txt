@@ -37,5 +37,15 @@ JAX-RS Specification defines some annotations like below
 @Produces @Consumes
 
 @Path : Class and method level annotation.
-@Produces : Method or field level annotation
+@Produces : Method and class level annotation
 @Consumes : Class and method level annotation
+
+
+Write programs for : 
+@Context
+@BeanParam
+@UriInfo
+
+
+
+
