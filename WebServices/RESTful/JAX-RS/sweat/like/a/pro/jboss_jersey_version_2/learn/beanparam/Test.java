@@ -1,8 +1,5 @@
 package like.a.pro.jboss_jersey_version_2.learn.beanparam;
 
-import javax.ws.rs.QueryParam;
-import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement
 public class Test {
 
 	public Test(String string, String string2) {
@@ -15,10 +12,24 @@ public class Test {
 		super();
 	}
 
-	@QueryParam("fname")
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
 	String fname;
 	
-	@QueryParam("lname")
 	String lname;
 	
 }
