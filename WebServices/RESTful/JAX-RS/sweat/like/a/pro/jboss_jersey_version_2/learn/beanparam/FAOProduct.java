@@ -21,7 +21,9 @@ public class FAOProduct {
 	@QueryParam("costPaidBy")
 	private String costPaidBy;
 	
-	public FAOProduct() {}
+	public FAOProduct() {
+		super();
+	}
 	
 	public FAOProduct(String name,String type,String revision,double cost,String costPaidBy)
 	{
@@ -36,6 +38,7 @@ public class FAOProduct {
 		return name;
 	}
 
+	@QueryParam("name")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -44,6 +47,7 @@ public class FAOProduct {
 		return type;
 	}
 
+	@QueryParam("type")
 	public void setType(String type) {
 		this.type = type;
 	}
@@ -52,6 +56,7 @@ public class FAOProduct {
 		return revision;
 	}
 
+	@QueryParam("revision")
 	public void setRevision(String revision) {
 		this.revision = revision;
 	}
@@ -60,6 +65,7 @@ public class FAOProduct {
 		return cost;
 	}
 
+	@QueryParam("cost")
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
@@ -68,8 +74,16 @@ public class FAOProduct {
 		return costPaidBy;
 	}
 
+	@QueryParam("costPaidBy")
 	public void setCostPaidBy(String costPaidBy) {
 		this.costPaidBy = costPaidBy;
+	}
+
+	@Override
+	public String toString() {
+		return "FAOProduct [name=" + name + ", type=" + type + ", revision="
+				+ revision + ", cost=" + cost + ", costPaidBy=" + costPaidBy
+				+ "]";
 	}
 	
 		

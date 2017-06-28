@@ -1,4 +1,4 @@
-package like.a.pro.jboss_jersey_version_2.learn.beanparam;
+package like.a.pro.jboss_jersey_version_2.learn;
 
 public class Test {
 
@@ -31,5 +31,7 @@ public class Test {
 	String fname;
 	
 	String lname;
+	
+	
 	
 }
