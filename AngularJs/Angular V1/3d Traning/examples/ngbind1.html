@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+	</head>
+	
+	<!-- Initialising variable -->
+	<div ng-init="fname='Jon';lname='Snow'">
+	
+		<p>First name is {{fname}}</p>
+		
+		<p>Last name is {{lname}}</p>
+	
+	</div>
+	
+	
+
+	<!-- Initialising an object using ng-init -->
+	<div ng-init="testObj={name:'Jon snow', type:'Warrior'}">
+
+		<p>{{testObj.name}}  is {{testObj.type}}</p>
+
+	</div>
+	
+	
+	<!-- Initialising an array using ng-init -->
+	<div ng-init="arr=[10,21,14,14]">
+
+		<p>Array is {{arr}}</p>
+
+	</div>
+	
+</html>	

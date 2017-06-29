@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+		
+		<script type="text/javascript">
+		
+			var mymodule = angular.module("mymodule",[]);
+			
+			mymodule.controller("myController", function($scope){
+					$scope.name = "dnyanesh";
+				$scope.person = {name : "Dnyanesh", age : 20, company : "Dassault Systems"};
+				
+				$scope.cities = ["Pune", "Delhi","Satara","Mumbai","Kolkata","Chennai"];
+				$scope.mycity = "Satara";
+				
+				$scope.wishMe = function(){
+					return "Hey there!!";	
+				};
+				
+				$scope.updateCities = function(){
+					$scope.cities.push("New Jersey");
+				};
+			});
+			
+			
+		</script>
+	</head>
+	
+	<body ng-controller="myController">
+	
+			<p>Hello {{name}} {{person.age + person.company}}</p>
+		
+			<p>{{wishMe()}}</p>
+	
+			<select ng-model="mycity">
+				
+				<option ng-repeat="city in cities">{{city}}</option>
+			</select>
+			
+			<input value="Click to add New City" type="button" ng-click="updateCities()"/>
+	</body>
+	
+</html>	

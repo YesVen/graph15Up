@@ -2,7 +2,9 @@ package like.a.pro.jboss_jersey_version_2.learn.beanparam;
 
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.PathParam;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class FAORawMaterial {
 
 	@PathParam("name")

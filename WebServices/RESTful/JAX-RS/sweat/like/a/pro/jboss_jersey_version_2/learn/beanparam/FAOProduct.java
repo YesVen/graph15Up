@@ -1,8 +1,9 @@
 package like.a.pro.jboss_jersey_version_2.learn.beanparam;
 
 import javax.ws.rs.QueryParam;
+import javax.xml.bind.annotation.XmlRootElement;
 
-
+@XmlRootElement
 public class FAOProduct {
 	
 	

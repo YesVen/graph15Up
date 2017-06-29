@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="readyme"> <!--makes angular active in this section of document-->
+<head>
+	<title>Hello World</title>
+	<script type="text/javascript"
+		src="angular.js"></script>
+	<script type="text/javascript">
+
+		var discount = angular.module("discount",[]);
+		discount.factory("DiscountService",function(){
+				
+				
+				this.getDiscount = function _getDiscount()
+				{
+					return 10;
+				};
+
+				return {
+					getDiscounts : this.getDiscount,
+				}
+		});
+
+
+		var readyme = angular.module("readyme",["discount"]);
+
+		readyme.controller("readyController", ["DiscountService", function readyController(discountService){
+
+			this.cost = "";
+			this.qty = "";
+			this.inCur = "IND";
+			this.countries = ["IND", "RUS", "PAK", "AUS"];
+
+			this.getDiscount = function getDiscount()
+								{
+									var result = discountService.getDiscounts();
+									alert(result * this.cost * this.qty);
+								};
+
+		}]);
+
+	</script>	
+</head>
+<body ng-controller="readyController as con">
+	
+	Enter Cost : 
+	<input type="text" ng-model="con.cost"/>
+
+	Enter Qty :
+	<input type="text" ng-model="con.qty">
+	
+	Select Currency :
+	<select ng-model="con.inCur">
+		<option ng-repeat="country in con.countries" >{{country}}</option>
+	</select>
+	<input type="button" value="Pay" ng-click="con.getDiscount()">
+</body>
+</html>

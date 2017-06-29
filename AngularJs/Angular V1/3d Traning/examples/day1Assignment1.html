@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+
+		<script type="text/javascript">
+			
+			function Language(name, likes, dislikes)
+			{
+				this.name = name;
+				this.likes = likes;
+				this.dislikes = dislikes;
+			}
+			
+			var mymodule = angular.module("mymodule",[]);
+			
+			mymodule.controller("myController", function($scope){
+				
+				$scope.languages = [new Language("C#", 0, 0),new Language( "C++", 0, 0),
+									new Language( "AngularJS", 99999999999999999999999999999999999, 0),new Language( "Java", 0, 0)];
+				
+				$scope.incrementLike = function(lang)
+				{
+					lang.likes ++;
+				}
+				
+				$scope.decrementLike = function(lang)
+				{
+					lang.likes --;
+				}
+			});
+		</script>
+	</head>
+
+	<body ng-controller="myController">
+
+		<table >
+			<thead>
+				<td>Name</td>
+				<td>Likes</td>
+				<td>Disikes</td>
+				<td>Option</td>
+			</thead>
+			<tr ng-repeat="lang in languages">
+				<td>{{lang.name}}</td>
+				<td>{{lang.likes}}</td>
+				<td>{{lang.dislikes}}</td>
+				<td><input type="button" value="Like" ng-click="incrementLike(lang)">
+					<input type="button" value="Dislike" ng-click="decrementLike(lang)"></td>
+			</tr>
+		</table>
+	</body>
+</html>	

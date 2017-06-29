@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+
+		<script type="text/javascript">
+
+			function Employee(name, id, company, project)
+			{
+				this.id = id;
+				this.name = name;
+				this.company = company;
+				this.project = project;
+			}
+
+			var module = angular.module("mymodule",[]);
+
+			module.controller("myController", function($scope){
+				var employee1 = new Employee("dnyanesh", 100, "3D", "Apparel");
+				var employee2 = new Employee("Amit", 120, "3D", "Catia");
+				var employee3 = new Employee("Shrikant", 140, "3D", "Delmia");
+				var employee4 = new Employee("Cheeta", 101, "3D", "Biovia");
+				
+			$scope.employees = [employee1, employee2, employee3, employee4];
+				
+				
+			});
+		</script>
+	</head>
+
+	<body ng-controller="myController">
+
+		<table border="1px">
+			<thead>
+				<td>Project</td>
+				<td>Name</td>
+			</thead>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.project}}</td>
+				<td>{{employee.name}}</td>
+			</tr>
+		</table>
+	</body>
+</html>	

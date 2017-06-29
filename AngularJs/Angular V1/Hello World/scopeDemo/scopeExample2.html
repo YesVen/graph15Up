@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="myScopeApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript" src="../angular.js"></script>
+		<script type="text/javascript" src="scopeExample2.js"></script>
+	</head>
+	<body>
+		<div ng-controller="ScopeController as scopeController">
+			<input type="text" ng-model="customTaste">
+			<input type="button" ng-click="changeSpice('chilli')" value="chilli">
+			<input type="button" ng-click="changeSpice(customTaste)" value="Custom Taste">
+			<br><br>		   
+			<h3>This is {{myTaste}} spicy!!</h3>	   
+		</div>
+	</body>
+</html>	

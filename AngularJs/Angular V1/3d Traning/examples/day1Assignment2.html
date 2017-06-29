@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+
+		<script type="text/javascript">
+
+			function Person(fname,lname)
+			{
+				this.fname = fname;
+				this.lname = lname;
+			}
+
+			var mymodule = angular.module("mymodule",[]);
+
+			mymodule.controller("myController", function($scope){
+
+				$scope.persons = [];
+				$scope.fname = "";
+				$scope.lname = "";
+				
+				$scope.addPerson = function()
+				{
+					$scope.persons.push(new Person($scope.fname,$scope.lname));
+					$scope.fname = "";
+					$scope.lname = "";
+				}
+			});
+		</script>
+	</head>
+
+	<body ng-controller="myController">
+
+		<p>
+			First Name 
+			<input type="text" ng-model="fname"/>
+			Last Name
+			<input type="text" ng-model="lname"/>
+			<input type="button" ng-click="addPerson()" value="Add"/>
+		</p>
+		
+		<table >
+			<thead>
+				<td>First Name</td>
+				<td>Last Name</td>
+			</thead>
+			<tr ng-repeat="person in persons">
+				<td>{{person.fname}}</td>
+				<td>{{person.lname}}</td>
+			</tr>
+		</table>
+	</body>
+</html>	

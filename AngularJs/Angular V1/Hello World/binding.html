@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="Calculator"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="calculator.js"></script>
+
+	</head>
+	<body>
+		<div ng-controller="sampleController as controller">
+			Enter Cost : 
+			<input type="text" ng-model="controller.cost" />
+			<br><br>
+			Enter Qunatity :
+			<input type="text" ng-model="controller.qty" />
+			<br><br>
+			Select Currency :
+			<select ng-model="controller.currency">
+				<option ng-repeat="c in controller.currencies" >{{c}}</option>
+			</select>
+			<br><br>
+			Selecy Country :
+			<select ng-model="controller.country">
+				<option ng-repeat="country in controller.getCountries">{{country}}</option>
+			</select>
+			<br><br>
+			<input type="button" ng-click="controller.total()" value="Pay">
+			
+		</div>	
+
+	</body>
+</html>

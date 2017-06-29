@@ -1,0 +1,20 @@
+What is MEAN stack?
+
+ESAPI???
+
+Services : Angular Services are used to do some independant task.
+		e.g. Currency Conversion
+		
+JohnPapa??
+
+directives :
+		click
+		bind
+		model
+		repeat
+		init
+		app
+		controller
+		
+		
+		

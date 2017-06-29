@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="filterApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js"></script>
+		<script type="text/javascript" src="filterExampleJs1.js"></script>
+	</head>
+	<body ng-controller="filterController as controller">
+
+		<p> {{ name | myFilter:true }}</p>
+
+		<p> {{ name | addSpouseName }}</p>
+
+		<p> {{ name | reverse }}</p>		
+
+		<p> {{ name | passwordfy }}</p>				
+	</body>
+</html>

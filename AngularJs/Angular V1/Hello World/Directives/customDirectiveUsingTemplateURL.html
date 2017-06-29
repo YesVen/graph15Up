@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js"></script>
+
+	</head>
+	<body ng-controller="myController as controller">
+
+
+
+		<div my-directive> </div>
+
+
+
+	</body>
+
+	<script>
+
+		angular.module("myApp",[])
+			.controller("myController",["$scope", function($scope){
+				$scope.user = "Dnyanesh";
+			}])
+			.directive("myDirective",function()
+					   {
+			return {
+				templateUrl : "templateURL.html"
+			};
+		})
+
+	</script>
+</html>
