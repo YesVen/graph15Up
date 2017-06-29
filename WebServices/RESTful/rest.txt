@@ -40,12 +40,6 @@ JAX-RS Specification defines some annotations like below
 @Produces : Method and class level annotation
 @Consumes : Class and method level annotation
 
-
-Write programs for : 
-@Context
-@BeanParam
-@UriInfo
-
 JAX-B : Comes with J2EE platform in build
 		Used for XML marshelling
 		
@@ -56,6 +50,13 @@ Jackson : Need to add maven dependency.	Used for JSON marshelling
 					<version>2.8.0</version>
 				</dependency>
 		
+
+
+Write programs for : 
+	Response Returning with appropriate status and location headers
+	Write geneirc exception Mapper : Throwable
+	WebApplicationException
+		NotFoundException and stuff like that
 
 
 
