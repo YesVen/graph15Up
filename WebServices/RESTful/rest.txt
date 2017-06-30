@@ -57,6 +57,16 @@ Jackson : Need to add maven dependency.	Used for JSON marshelling
 				</dependency>
 		
 
-
+REST Exception Hierarchy:
+	WebApplicationException
+		ClientErrorException	status 4xx   	e.g. BadRequestException,NotFoundException etc
+		RedirectionException	status 3xx		e.g. 
+		ServerErrorException	status 5xx 		e.g. InternalServerErrorException, ServiceUnavailableException
+All these exception are analogous with custom Exception mapper.		
+		
+		
+		
+		
+		
 
 

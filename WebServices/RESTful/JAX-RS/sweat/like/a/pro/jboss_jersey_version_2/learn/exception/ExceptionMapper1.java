@@ -1,4 +1,4 @@
-package like.a.pro.jboss_jersey_version_2.learn;
+package like.a.pro.jboss_jersey_version_2.learn.exception;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

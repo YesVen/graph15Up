@@ -1,4 +1,4 @@
-package like.a.pro.jboss_jersey_version_2.learn;
+package like.a.pro.jboss_jersey_version_2.learn.exception;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.MatrixParam;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+		<script type="text/javascript">
+			
+			var mymodule = angular.module("mymodule",[]);
+			
+			mymodule.controller("myController", function($scope, $rawmaterialservice, $dateservice){
+				
+				
+				$rawmaterialservice.gerRM($scope);
+				$scope.date = $dateservice.newDate();
+				 
+			});
+			
+			mymodule.service("$rawmaterialservice", function($http){
+					
+					this.gerRM = function($scope){
+						$http.get("http://localhost:8080/RESTful/MyClass/training")
+							.then(function(response){
+								$scope.cost = response.data.cost;
+								return response.data.cost;
+						});
+					}
+			});
+			
+			mymodule.service("$dateservice", function(){
+				this.newDate = function()
+				{
+					return new Date().toDateString();
+				}
+			});
+			
+		</script>
+	</head>
+
+	<body ng-controller="myController">
+
+		<p>RM Cost at <b>{{date}}</b> is <b> Rs. {{cost | currency: 2}}</b></p><br>
+		
+		
+		
+	</body>
+</html>	

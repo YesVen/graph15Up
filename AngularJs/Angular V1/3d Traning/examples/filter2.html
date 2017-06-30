@@ -48,6 +48,8 @@
 			
 			<input type="button" ng-click="addPerson(fname,lname,salary,dob,email)" value="Add"/>
 		</p>
+
+		<p>Row Limit : <input type="number"  max="5" min="1" step="1" ng-model="rowLimit"/></p>
 		
 		<table >
 			<thead>
@@ -57,11 +59,11 @@
 				<td>DOB</td>
 				<td>Email</td>
 			</thead>
-			<tr ng-repeat="person in persons">
-				<td>{{person.fname}}</td>
-				<td>{{person.lname}}</td>
-				<td>{{person.salary}}</td>
-				<td>{{person.dob}}</td>
+			<tr ng-repeat="person in persons | limitTo : rowLimit">
+				<td>{{person.fname | uppercase }}</td>
+				<td>{{person.lname | lowercase }}</td>
+				<td>{{person.salary | number :2 }}</td>
+				<td>{{person.dob | date:DD/MM/YYYY }}</td>
 				<td>{{person.email}}</td>
 			</tr>
 		</table>
