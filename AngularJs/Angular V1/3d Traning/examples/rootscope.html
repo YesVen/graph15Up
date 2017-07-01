@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+		<script type="text/javascript">
+			
+			var mymodule = angular.module("mymodule",[]);
+			
+			mymodule.controller("firstController", function($scope,$rootScope){
+				
+				$rootScope.sirname = "barkade";
+				$scope.name = "Dnyanesh";
+				
+			});
+			
+			mymodule.controller("secondController", function($scope,$rootScope){
+				$rootScope.village = "Padali";
+				$scope.company = "Dassault Systems";
+			});
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		
+		<div ng-controller="firstController">
+			{{sirname}} {{name}}
+		</div>
+		
+		<div ng-controller="secondController">
+			{{sirname}}
+		</div>
+		
+	</body>
+</html>	

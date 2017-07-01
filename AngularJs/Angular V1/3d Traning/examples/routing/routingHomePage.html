@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../../angular.js">
+		</script>
+		<script type="text/javascript"
+				src="../../angular-route.js">
+		</script>
+		<script type="text/javascript">
+			
+			var mymodule = angular.module("mymodule",["ngRoute"]);
+			
+			//defing routing mechanism
+			mymodule.config(function($routeProvider){
+					$routeProvider
+					.when('/',{
+						templateUrl : 'routingHomePage.html',
+						controller : 'homepageController'
+
+					})
+					.when('/home',{
+						templateUrl : 'homepage.html',
+						controller : 'homepageController'
+						
+					})
+					.when('/contact',{
+						templateUrl : 'contact.html',
+						controller : 'contactController'
+					})
+					.when('/products',{
+						templateUrl : 'products.html',
+						controller : 'productsController'
+					});
+			});
+			
+			
+			//creating homepagecontroller
+			mymodule.controller("homepageController", function($scope){
+				$scope.name = "Home page";
+			});
+			
+			//creating contactController
+			mymodule.controller("contactController", function($scope){
+				$scope.name = "contact page";
+			});
+			
+			//creating productsController
+			mymodule.controller("productsController", function($scope){
+				$scope.name = "Products page";
+			});
+			
+			
+		</script>
+	</head>
+	
+	<body>
+		
+		<p>
+			<a href="homepage.html">Home</a> 
+			<a href="contact.html">Contact</a>
+			<a href="products.html">Products</a>
+		</p>
+		
+		<p>Click on buttons to navigate</p>
+	</body>
+</html>	

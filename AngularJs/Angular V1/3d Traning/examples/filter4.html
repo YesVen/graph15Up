@@ -18,11 +18,27 @@
 			}
 
 			var mymodule = angular.module("mymodule",[]);
+			
+			
+			/*
+				Filter converts salary to undisclosable if it is greater than some amount passed by user
+			*/
+			
+			mymodule.filter("undisclosedIfGreaterThan", function(){
+				return function(salary, maxsalary){
+					if(salary > maxsalary)
+					{
+						return "undisclosable"
+					}
+					return salary;
+				}
+			});
+			
 
 			mymodule.controller("myController", function($scope){
 
-				$scope.persons = [];
-				
+				$scope.persons = [new Person("A","Barkade",120),new Person("B","Bhagavat",1201230),
+								  new Person("C","Dukane",120)];
 				
 				$scope.addPerson = function(fname, lname,salary,dob,email)
 				{
@@ -41,28 +57,22 @@
 			<input type="text" ng-model="lname"/>
 			Salary
 			<input type="number" ng-model="salary"/>
-			DOB
-			<input type="date" ng-model="dob"/>
-			Email
-			<input type="email" ng-model="email"/>
 			
 			<input type="button" ng-click="addPerson(fname,lname,salary,dob,email)" value="Add"/>
 		</p>
+
 		
 		<table >
 			<thead>
 				<td>First Name</td>
 				<td>Last Name</td>
 				<td>Salary</td>
-				<td>DOB</td>
-				<td>Email</td>
+				
 			</thead>
 			<tr ng-repeat="person in persons">
-				<td>{{person.fname}}</td>
-				<td>{{person.lname}}</td>
-				<td>{{person.salary}}</td>
-				<td>{{person.dob}}</td>
-				<td>{{person.email}}</td>
+				<td>{{person.fname | uppercase }}</td>
+				<td>{{person.lname | lowercase }}</td>
+				<td>{{person.salary | undisclosedIfGreaterThan : 200 }}</td>
 			</tr>
 		</table>
 	</body>

@@ -27,5 +27,19 @@ public class HelloRESTService {
 		return Response.ok("Hi there " + "<h1 style='color:red'>" +username + "</h1>" + ", Howdy?").build();
 	}
 	
-	
+	@GET
+	@Path("training")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getMaterial()
+	{
+		
+		RawMaterial RM = new RawMaterial(100, "TEst material", "Vendor", 1000);
+		return Response.ok(RM)				
+				.header("Access-Control-Allow-Origin", "*")
+			      .header("Access-Control-Allow-Methods", "POST, GET, PUT, UPDATE, OPTIONS")
+			      .header("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With")
+			      .build();
+		
+	}
+		
 }
