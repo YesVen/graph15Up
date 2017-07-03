@@ -12,12 +12,12 @@ import javax.ws.rs.core.Response.Status;
 public class ServiceUnavilableExceptionDemo {
 
 	@GET
-	@Path("/test/{id}")
+	@Path("/test1221/{id}")
 	public Response test(@PathParam("id") long id)
 	{
 		if(id > 100)
 		{
-			throw new ServiceUnavailableException(Response.status(Status.SERVICE_UNAVAILABLE)
+			throw new ServiceUnavailableException(Response.status(Status.ACCEPTED)
 					.entity("Requested Service is not availabel now. Pleae try again")
 					.build());
 		}

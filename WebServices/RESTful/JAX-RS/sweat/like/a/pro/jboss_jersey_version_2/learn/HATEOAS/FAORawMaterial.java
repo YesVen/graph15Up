@@ -1,13 +1,13 @@
-package like.a.pro.jboss_jersey_version_2.learn;
+package like.a.pro.jboss_jersey_version_2.learn.HATEOAS;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+import javax.ws.rs.core.Link;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class RawMaterial
+public class FAORawMaterial
 {
 	long id;
 	String Title;
@@ -15,14 +15,14 @@ public class RawMaterial
 	double cost;
 	
 	//added for hateoas
-	List<HashMap<String, String>> links;
+	List<Link>links;
 	
-	public RawMaterial()
+	public FAORawMaterial()
 	{
 		
 	}
 	
-	public RawMaterial(long id,
+	public FAORawMaterial(long id,
 	String Title,
 	String costPaidBy,
 	
@@ -61,18 +61,16 @@ public class RawMaterial
 		this.cost = cost;
 	}
 
-	public List<HashMap<String, String>> getLinks() {
+	public List<Link> getLinks() {
 		return links;
 	}
 
-	public void setLinks(List<HashMap<String, String>> links) {
+	public void setLinks(List<Link> links) {
 		this.links = links;
 	}
 	
 	public void addLink(String rel, String uri)
 	{
-		HashMap<String, String> map = new HashMap<>();
-		map.put(rel, uri);
-		links.add(map);
+		links.add(Link.fromPath(uri).rel(rel).build());
 	}
 }
