@@ -1,4 +1,4 @@
-package sweat.like.pro.five;
+package sweat.like.pro.five.six;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -18,7 +18,7 @@ public class DateMessageBodyWriter implements MessageBodyWriter<Date>
 {
 
 	/*
-	 * This is deprecated so, we gonna return -1 here
+	 * This is deprecated so, we goona return -1 here
 	 * (non-Javadoc)
 	 * @see javax.ws.rs.ext.MessageBodyWriter#getSize(java.lang.Object, java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[], javax.ws.rs.core.MediaType)
 	 */
