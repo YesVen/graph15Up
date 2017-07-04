@@ -68,8 +68,6 @@ IF method produces more than one type, then what type to return is decided based
 @ApplicationPath
 
 Programs : 
-	MessageBodyReaders
-	Custom media type
 	Produces multiple types : Use Accept Header
-	Rest Client
+	
 	
