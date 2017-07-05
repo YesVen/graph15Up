@@ -1,4 +1,4 @@
-package sweat.like.pro.five.six;
+package sweat.like.pro.six;
 
 import java.io.IOException;
 import java.io.OutputStream;

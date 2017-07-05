@@ -25,7 +25,7 @@ public class MyDateParamCoverterProvider implements ParamConverterProvider{
 	 * @see javax.ws.rs.ext.ParamConverterProvider#getConverter(java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[])
 	 */
 	@Override
-	public <T> ParamConverter<T> getConverter(Class<T> rawType, Type genericType, Annotation[] annotations) {
+	public <T> ParamConverter<T> getConverter(final Class<T> rawType, Type genericType, Annotation[] annotations) {
 		
 		if(rawType.getName().equals(MyDate.class.getName()))
 		{
