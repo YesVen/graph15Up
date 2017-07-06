@@ -21,8 +21,6 @@ public class Client2 {
 		fetchFabrics(webTarget);
 		
 		fetchLabels(webTarget);
-			
-		
 	}
 
 	private static void fetchLabels(WebTarget serviceTarget) {
