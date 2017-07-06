@@ -67,7 +67,27 @@ IF method produces more than one type, then what type to return is decided based
 
 @ApplicationPath
 
+Rest Client
+
+Rest Filters
+	ContainerRequestFilter
+	ContainerResponseFilter
+	ClientRequestFilter
+	ClientResponseFilter
+	
+Rest Authentication Using ContainerResponseFilter
+
+Rest Interceptor
+
+Interceptor vs Filter
+	Filter : Designed to manipualate metadata i.e. headers, URI etc
+	Interceptor : Designed to manipulate the input and output streams i.e. body
+
+Difference between MessagebodyWriter and Interceptors??????????????	
+	Interceptor mainly designed to convert data in body to some other format(base64 to utf format) while messagebodyreader/writer are used to actually write the data(Converting data to java object) on the input/output streams.
+	
 Programs : 
 	Produces multiple types : Use Accept Header
-	
+	Add AuthenticationFilter to ApparelService
+	Find out which authentication do enovia servers use? observe request going through
 	
