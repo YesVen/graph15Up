@@ -8,4 +8,4 @@ JAX-RS
 	https://www.tutorialspoint.com/restful/restful_jax_rs.htm
 	http://www.dineshonjava.com/search/label/REST
 	
-	
+	****** http://www.makeinjava.com/execution-flow-filters-interceptors-jax-rs-jersey-example/
