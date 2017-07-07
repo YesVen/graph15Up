@@ -1,0 +1,23 @@
+splice method of array
+
+parent vs parents vs parentsUntil vs parent
+
+closest vs parents
+
+contents vs children
+
+has vs hasClass vs is
+
+filter vs find vs grep
+
+map vs each
+
+after vs insertAfter
+
+remmove vs Detach
+
+replaceAll vs ReplaceWith
+
+hrml() vs text()
+
+wrap vs unwrap vs wrapAll
