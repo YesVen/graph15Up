@@ -1,0 +1,16 @@
+Rod JohnSon
+
+Use Spring tools suite IDE/eclipse plugin for spring developement *******************
+
+As an alternative when everyone is struggling with heavy weight EJBs
+
+Advantages:
+		code in POJOS
+		Dependancy injection (IoC)
+		Lightweight
+		
+IoC is a general concept and it can be implemented in multiple ways. DI is just a flavour of IoC.
+IoC says , "The application controls the framework, not the framework controls the application".
+Even if you remove spring itself from the equation, your application still is decoupled. That much power spring puts in your app.
+
+		
