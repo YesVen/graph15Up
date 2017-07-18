@@ -12,6 +12,6 @@ public class DrawApp {
 		
 		ShapeService shapeService = context.getBean("shapeService", ShapeService.class);
 		
-		shapeService.getCircle().draw();
+		System.out.println(shapeService.getCircle().getName());
 	}
 }
