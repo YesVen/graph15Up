@@ -1,1 +1,3 @@
 http://howtodoinjava.com/java-tutorials-list-howtodoinjava/
+
+https://angular.io/resources

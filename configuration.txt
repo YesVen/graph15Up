@@ -1,0 +1,8 @@
+eclipse : 
+	webclipse 		- for angular js support in eclipse
+	jadclipse 		- decompiling class flies
+	sts 			- Spring support
+	findbugs
+	emma
+	pmd checkstyle	-
+	
