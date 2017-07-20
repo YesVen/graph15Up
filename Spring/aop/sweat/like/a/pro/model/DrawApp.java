@@ -1,4 +1,6 @@
 package sweat.like.a.pro.model;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -12,6 +14,14 @@ public class DrawApp {
 		
 		ShapeService shapeService = context.getBean("shapeService", ShapeService.class);
 		
-		System.out.println(shapeService.getCircle().getName());
+		System.out.println(shapeService.getCircle().getPoints());
+		
+		System.out.println(shapeService.getTriangle().getName());
+		
+		shapeService.getCircle().setPoints(new ArrayList<String>(1));
+		
+		shapeService.getCircle().draw();
+		
+		shapeService.getCircle().reDraw();
 	}
 }

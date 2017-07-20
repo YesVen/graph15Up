@@ -23,6 +23,12 @@ public class ShapeService {
 	public void setTriangle(Triangle triangle) {
 		this.triangle = triangle;
 	}
+
+	public void test() {
+		
+		System.out.println("Testing");
+		
+	}
 	
 	
 }

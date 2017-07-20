@@ -10,9 +10,7 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
 
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-
-<!-- <aop:config proxy-target-class="true"></aop:config> -->
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 	
 	<bean name="circle" class="sweat.like.a.pro.model.Circle">
 		<property name="name" value="my Circle"></property>
