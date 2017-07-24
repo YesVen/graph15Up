@@ -14,7 +14,11 @@ IoC says , "The application controls the framework, not the framework controls t
 Even if you remove spring itself from the equation, your application still is decoupled. That much power spring puts in your app.
 
 
-
+When to use xml configuration and when to use annotation configuration?
+	one of the major disadvantage of annotation based aop is that it required your classes to be rebuild and it it turn involves rebuild, redeploy and restart server. So its advisible to use annotation based aop only when you are not making too much changes in your configuration.
+	On other hand, xml based configuration is pretty hard to handle and creates a confusion. So need to make a concious decision.
+	
+	
 
 
 

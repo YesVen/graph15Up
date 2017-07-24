@@ -16,4 +16,14 @@ public class Triangle implements Shape
 		System.out.println("Drawing Triangle");
 	}
 
+	public void findArea()
+	{
+		System.out.println("triangle area is 100sqcm");
+	}
+	
+	public String getHeight()
+	{
+		return "Triangle height is 10 cm";
+	}
+	
 }
