@@ -1,5 +1,6 @@
 package sweat.like.a.pro.service;
 
+import sweat.like.a.pro.aspect.annotation.MyLoggableAspect;
 import sweat.like.a.pro.model.Circle;
 import sweat.like.a.pro.model.Triangle;
 
@@ -30,5 +31,28 @@ public class ShapeService {
 		
 	}
 	
+	
+	public void getXYZ()
+	{
+		System.out.println("Get XYZ called");	
+	}
+	
+	
+	public void setSomething(String someText)
+	{
+		throw new RuntimeException();
+	}
+	
+	public String setSomethingAndReturn(String someText)
+	{
+		return someText + this.getClass().getSimpleName()
+				;
+	}
+	
+	@MyLoggableAspect
+	public void doSomething()
+	{
+		System.out.println("Doing Something");
+	}
 	
 }

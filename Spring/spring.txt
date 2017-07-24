@@ -1,0 +1,10 @@
+Write program to configure AOP from XML configuration
+
+When to use xml configuration and when to use annotation configuration?
+
+Write your own proxy to show how AOP works?
+
+
+
+
+

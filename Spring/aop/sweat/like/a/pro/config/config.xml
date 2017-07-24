@@ -23,6 +23,12 @@
 	<bean name="shapeService" class="sweat.like.a.pro.service.ShapeService" autowire="byName">
 	</bean>
 	
-	<bean name="loggingAspect" class="sweat.like.a.pro.aspect.LoggingAspect"></bean>
+	<!-- <bean name="loggingAspect" class="sweat.like.a.pro.aspect.LoggingAspect"></bean> -->
+	
+	<!-- <bean name="loggingAspect" class="sweat.like.a.pro.aspect.LoggingAspect2"></bean> -->
+	
+	<!-- <bean name="logginAspect" class="sweat.like.a.pro.aspect.LoggingAspect4"></bean> -->
+	
+	<bean name="logginAspect" class="sweat.like.a.pro.aspect.LoggingAspect5"></bean>
 	
 </beans>

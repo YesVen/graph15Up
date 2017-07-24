@@ -1,0 +1,6 @@
+DispatcherServlet 
+		is servlet container class that written by Spring designers to handle web request. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards requst to individual controllers written by developer.
+		Its written based on JSP modal 2.
+		
+		
+		

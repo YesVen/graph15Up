@@ -33,6 +33,10 @@ public class LoggingAspect {
 	 * 
 	 * @Before("execution(* * *(..)")
 	 * 		each and every method in the system
+	 * 
+	 * @pointcut("within(fully qualified class name)");
+	 * 		run this pointcut for each and every method in this class
+	 * 		
 	 */
 	
 	@Before("execution(public * sweat.like.a.pro.model.Circle.get*())")
@@ -49,10 +53,14 @@ public class LoggingAspect {
 	
 	
 	
-	
-	
-	
-	
+	/**
+	 * Combining two point cuts
+	 */
+	@Before("allReDraw() && withinCircle()")
+	public void logFourthAdvice()
+	{
+		System.out.println("Loggin fourth advice. Combining two pointcuts");
+	}
 	
 	
 	
@@ -64,6 +72,17 @@ public class LoggingAspect {
 	
 	@Pointcut("execution(* *reDraw(..))")
 	public void allReDraw(){}
+	
+	@Pointcut("within(sweat.like.a.pro.model.Circle)")
+	public void withinCircle(){
+		System.out.println("Runng Fourth advice. Calling each and very method of circle and Triangle");
+	}
+	
+	
+	@Before("within(sweat.like.a.pro.model.Triangle)")
+	public void withinTriangle(){
+		System.out.println("Runng Fourth advice. Calling each and very method of circle and Triangle");
+	}
 	
 	
 	
