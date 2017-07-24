@@ -1,6 +1,26 @@
+Why MVC
+	Problem :
+		JSP is terrible since it embeds your core business code into views
+		Servlets are great in terms of seperation of business and view but messes terribly fails in presentation.
+		Thus was born the Model 2 architecture MVC.
+	Modal 1
+	Modal 2
+	Modal 3
+	Modal 4
+	
+	
+
 DispatcherServlet 
-		is servlet container class that written by Spring designers to handle web request. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards requst to individual controllers written by developer.
+		It is servlet container class that written by Spring designers to handle web request. The primary entry point for a Spring application is the DispatcherServlet. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards requst to individual controllers written by developer.
 		Its written based on JSP modal 2.
+		Its Front Controller Servlets
+		
+		
+Is it mandatory to add .htm ass pattern for spring?
+No but 99% people use it
+		
+		
+		
 		
 		
 		

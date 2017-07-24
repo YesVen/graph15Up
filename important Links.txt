@@ -1,3 +1,5 @@
 http://howtodoinjava.com/java-tutorials-list-howtodoinjava/
 
 https://angular.io/resources
+
+http://www.javaworld.com/article/2077995/java-concurrency/java-concurrency-asynchronous-processing-support-in-servlet-3-0.html

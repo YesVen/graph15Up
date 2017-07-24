@@ -1,5 +1,12 @@
 
-Write your own proxy to show how AOP works?
+Fork mvc project from your github?
+		...This is directly from spring designers
+		This has to be hot
+		
+Code your own Application with MVC
+
+
+
 
 
 
