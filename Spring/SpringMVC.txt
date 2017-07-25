@@ -10,7 +10,7 @@ Why MVC
 	
 	
 
-DispatcherServlet 
+DispatcherServlet = Front Controller
 		It is servlet container class that written by Spring designers to handle web request. The primary entry point for a Spring application is the DispatcherServlet. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards requst to individual controllers written by developer.
 		Its written based on JSP modal 2.
 		Its Front Controller Servlets
@@ -18,6 +18,16 @@ DispatcherServlet
 		
 Is it mandatory to add .htm ass pattern for spring?
 No but 99% people use it
+
+HandlerMappingClasses 
+	Its job is to identify the correcdt handlers for the incoming request.
+	There are plenty of handlers available in spring.
+	BeanNameUrlHandlerMapping :
+			This class maps url based to bean which can handle this request
+	sdasd		
+
+
+
 		
 		
 		

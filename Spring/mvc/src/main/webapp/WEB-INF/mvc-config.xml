@@ -12,8 +12,16 @@
 
 
     <mvc:annotation-driven />
+    
+    
+    <!-- This is old way of mapping handlers. Use @RequestMapping Annotation Instead -->
+    <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+    </bean>
 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean name="/welcome.html" class="sweat.like.a.pro.controller.MyController"></bean>
+
+	<bean id="viewResolver" 
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
 	        <property name="prefix" value="/WEB-INF/view/"/>
 	        <property name="suffix" value=".jsp"/>
