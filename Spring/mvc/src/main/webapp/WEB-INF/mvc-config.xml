@@ -9,8 +9,7 @@
     
     <context:component-scan
         base-package="sweat.like.a.pro"/>
-
-
+	
     <mvc:annotation-driven />
     
     
@@ -18,7 +17,7 @@
     <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
     </bean>
 
-	<bean name="/welcome.html" class="sweat.like.a.pro.controller.MyController"></bean>
+	<bean name="/welcome.html" class="sweat.like.a.pro.controller.SimpleXMLDefinedController"></bean>
 
 	<bean id="viewResolver" 
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -24,7 +24,11 @@ HandlerMappingClasses
 	There are plenty of handlers available in spring.
 	BeanNameUrlHandlerMapping :
 			This class maps url based to bean which can handle this request
-	sdasd		
+	
+
+In annotation based configuration, we dont require handler mapping as we can directly annotate a method wrt request its serving.
+
+
 
 
 
