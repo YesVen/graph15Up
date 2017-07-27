@@ -1,11 +1,16 @@
-
-Fork mvc project from your github?
-		...This is directly from spring designers
-		This has to be hot
-		
 Code your own Application with MVC
 
 
+Write program to accept PathVariable, RequestParam etc
+
+Spring has a capability to club variables together into a map. ----> requires annotationdriven tag in config.xml
+
+Access a complex student object in view. It has been set in view by ModalAndView
+
+
+@ModelAttribute - use it to prefetch data and fill model with that data
+
+@ModelAttribute - use it at method level to run the same code for all methods in this controller class.
 
 
 

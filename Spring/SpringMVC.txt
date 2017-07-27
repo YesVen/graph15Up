@@ -29,6 +29,19 @@ HandlerMappingClasses
 In annotation based configuration, we dont require handler mapping as we can directly annotate a method wrt request its serving.
 
 
+@PathVariable
+
+@RequestParam
+
+@ModelAttribute as a method parameter annotation
+		This makes a model bean auto populated. i.e. Automatic data binding
+
+@ModelAttribute at method level annotation
+		If you annotate a method with this annotation, then this method will be called for each and every method within this controller.
+		Note this will be called first and then requestmapping method will be called. It also means that we can do some init work in such a method.
+		
+		
+
 
 
 
