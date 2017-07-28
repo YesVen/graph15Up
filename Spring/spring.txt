@@ -1,16 +1,21 @@
 Code your own Application with MVC
 
+Use BindingResult
 
-Write program to accept PathVariable, RequestParam etc
+What if you dont want some fields to auto bind?--- use initbinder
 
-Spring has a capability to club variables together into a map. ----> requires annotationdriven tag in config.xml
+Use PropertyEditors for user defined custom conversion.
+	from custom date format to Standard DAte Format
+	
+Write your own PropertyEditor class	
+		They are just the preprocessors to data binding. They are handy to tweak the input before binding
+		
+Spring Form Validation
+			Customizing my own messsage
+			Reading message from properties file
 
-Access a complex student object in view. It has been set in view by ModalAndView
 
 
-@ModelAttribute - use it to prefetch data and fill model with that data
-
-@ModelAttribute - use it at method level to run the same code for all methods in this controller class.
 
 
 
