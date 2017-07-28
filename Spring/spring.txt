@@ -1,5 +1,22 @@
 Code your own Application with MVC
 
+Use BindingResult
+
+
+What if you dont want some fields to auto bind?--- use initbinder
+
+Use PropertyEditors for user defined custom conversion.
+	from custom date format to Standard DAte Format
+	
+Write your own PropertyEditor class	
+		They are just the preprocessors to data binding. They are handy to tweak the input before binding
+		
+Spring Form Validation
+			Customizing my own messsage
+			Reading message from properties file
+
+
+
 
 
 
