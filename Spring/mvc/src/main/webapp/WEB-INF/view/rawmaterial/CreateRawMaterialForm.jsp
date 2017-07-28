@@ -11,7 +11,7 @@
 			method="post"  name="rawMaterialbean">
 		<label>Name :</label> <input type="text" border="1px" id="name" maxlength="100" name="name"/><br>
 		
-		 <label>Title :</label> <input type="text" border="1px" id="name" maxlength="100" name="title"/><br>
+		 <label>Title :</label> <input type="text" border="1px" id="title" maxlength="100" name="title"/><br>
 		
 		<label>Currency :</label> <select name="currency"> <option> Dollar</option><option> Yuan </option><option> Rupee</option> </select> <br>
 		

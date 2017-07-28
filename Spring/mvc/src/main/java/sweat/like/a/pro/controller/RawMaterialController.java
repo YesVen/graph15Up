@@ -2,7 +2,12 @@ package sweat.like.a.pro.controller;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import sweat.like.a.pro.customdataeditor.CustomNameEditor;
 import sweat.like.a.pro.model.RawMaterial;
 
 @Controller
@@ -75,8 +81,17 @@ public class RawMaterialController {
 					 value="/createRawMaterial",
 					 produces="text/html",
 					 method=RequestMethod.POST)
-	public ModelAndView createRawMaterial(@ModelAttribute(value="rawMaterialbean") RawMaterial rawMaterialBean)
+	public ModelAndView createRawMaterial(@Valid @ModelAttribute(value="rawMaterialbean") RawMaterial rawMaterialBean,
+											BindingResult result)
 	{
+		/*
+		 * If there are any errors in binding then return the form to user for filling once again
+		 */
+		if(result.hasErrors())
+		{
+			return new ModelAndView("/rawmaterial/CreateRawMaterialForm");
+		}
+		
 		System.out.println(rawMaterialBean);
 		
 		ModelAndView modelAndView = new ModelAndView("/rawmaterial/CreateRawMaterialResponse");
@@ -96,10 +111,30 @@ public class RawMaterialController {
 	public void preProcessRequest(RawMaterial rawMaterialBean)
 	{
 		System.out.println("This will be run before all the methods in this controller");
+		
+		/*
+		 * Note  we can modify bean properties here too :)
+		 */
 		System.out.println(rawMaterialBean.getCurrency());
 	}
 	
 	
+	/*
+	 * This annotation will used while initialing binding
+	 */
+	@InitBinder
+	public void customInitBeanProperties(WebDataBinder binder)
+	{
+		/*
+		 * We don't want spring to auto fill value of id in RawMaterial bean.
+		 */
+		binder.setDisallowedFields(new String[]{"id"});
+		
+		/*
+		 * Prepend "part-" to every raw material
+		 */
+		binder.registerCustomEditor(String.class, "name", new CustomNameEditor());
+	}
 	
 	
 }

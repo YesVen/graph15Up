@@ -11,11 +11,12 @@
 	<br>
 	
 	<!-- We can use bean here as it is even though we cant see its init like stuff here -->
-	${rawMaterial.getName()} 
-	
+	Name is : ${rawMaterial.getName()} 
+	<br><br>
 	<!-- This is the beauty -->
-	${rawMaterial.getId()}
-	${rawMaterial.getCurrency()}
+	Id is : ${rawMaterial.getId()}
+	<br><br>
+	Currency  is : ${rawMaterial.getCurrency()}
 	
 </body>
 </html>

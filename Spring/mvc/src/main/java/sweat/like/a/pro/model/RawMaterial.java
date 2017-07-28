@@ -3,10 +3,14 @@ package sweat.like.a.pro.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Size;
+
 public class RawMaterial {
 
+	@Size(max=10, min=2, message="name should not be null and its length between 2 and 30 characters")
 	private String name;
 	
+	@Size(max=10, min=2, message="title should not be null and its length between 2 and 30 characters")
 	private String title;
 	
 	private Long id;
