@@ -11,8 +11,7 @@
         base-package="sweat.like.a.pro"/>
 	
     <mvc:annotation-driven />
-    
-    
+
     <!-- This is old way of mapping handlers. Use @RequestMapping Annotation Instead -->
     <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
     </bean>
@@ -25,5 +24,20 @@
 	        <property name="prefix" value="/WEB-INF/view/"/>
 	        <property name="suffix" value=".jsp"/>
 	</bean>
+
+
+	<bean  id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames" value="/WEB-INF/messages/mymessages,/WEB-INF/locale/label"></property>
+		<!-- This is cause I am lazy to restart server on every property change -->
+		<property name="cacheSeconds" value="1"></property>
+	</bean>	
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/RawMaterial/**"/>
+			<bean class="sweat.like.a.pro.interceptor.DayOfTheWeekWebRequestInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 
 </beans>

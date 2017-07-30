@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>Raw Material Created</title>
 </head>
 <body>
 	${message}
 	<br>
 	
 	<!-- We can use bean here as it is even though we cant see its init like stuff here -->
-	Name is : ${rawMaterial.getName()} 
+	Name is : ${rawMaterial.getRawMaterialName()} 
 	<br><br>
 	<!-- This is the beauty -->
 	Id is : ${rawMaterial.getId()}

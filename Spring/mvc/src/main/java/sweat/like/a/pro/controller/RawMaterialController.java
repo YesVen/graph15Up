@@ -1,11 +1,13 @@
 package sweat.like.a.pro.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -89,14 +91,17 @@ public class RawMaterialController {
 		 */
 		if(result.hasErrors())
 		{
-			return new ModelAndView("/rawmaterial/CreateRawMaterialForm");
+			List<ObjectError> allErrors = result.getAllErrors();
+			ModelAndView errorView = new ModelAndView("/rawmaterial/CreateRawMaterialForm");
+			errorView.addObject("errorObject", allErrors);
+			return errorView;
 		}
 		
 		System.out.println(rawMaterialBean);
 		
 		ModelAndView modelAndView = new ModelAndView("/rawmaterial/CreateRawMaterialResponse");
 		modelAndView.addObject("rawMaterial", rawMaterialBean);
-		modelAndView.addObject("message", "Raw Material "+ rawMaterialBean.getName() 
+		modelAndView.addObject("message", "Raw Material "+ rawMaterialBean.getRawMaterialName()
 				+" Created Successfully with below details");
 
 		
@@ -120,7 +125,9 @@ public class RawMaterialController {
 	
 	
 	/*
-	 * This annotation will used while initialing binding
+	 * This annotation will used while initialing binding.
+	 * This can be used to run for just one binding by @InitBinder(value="title")
+	 * 
 	 */
 	@InitBinder
 	public void customInitBeanProperties(WebDataBinder binder)
@@ -131,9 +138,14 @@ public class RawMaterialController {
 		binder.setDisallowedFields(new String[]{"id"});
 		
 		/*
-		 * Prepend "part-" to every raw material
+		 * Prepend "part-" to every raw material.
+		 * 
+		 * VIMP : If you add custom Editor in some property then validation wont work on that field.
+		 * So we need to add our own validator
 		 */
-		binder.registerCustomEditor(String.class, "name", new CustomNameEditor());
+		binder.registerCustomEditor(String.class, "rawMaterialName", new CustomNameEditor());
+		//binder.addValidators();
+		
 	}
 	
 	
