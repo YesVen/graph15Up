@@ -90,21 +90,21 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
-		<!-- <dependency>
+		 <dependency>
 		    <groupId>javax.validation</groupId>
 		    <artifactId>validation-api</artifactId>
 		    <version>1.1.0.Final</version>
-		</dependency> -->
+		</dependency>
 		
 	
 
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
-		<!-- <dependency>
+		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-validator</artifactId>
 		    <version>5.0.1.Final</version>
 		</dependency>
-		 -->
+		
 		
 		
 		<!-- Test Artifacts -->

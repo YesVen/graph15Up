@@ -7,9 +7,27 @@
 <head>
 <meta charset="utf-8">
 <title>Raw Material Form</title>
+
+<style type="text/css" >
+	form{
+		margin-top : 50px;
+		margin-left : 10px;
+	}
+	
+	form label {
+		padding-right : 10px;
+	}
+</style>
+
 </head>
 <body>
 
+	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=fr" >French |</a>
+	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=en">English  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+	
+	<a href="/SpringMVC/RawMaterial/createRawMaterial?appTheme=light" >Light Theme |</a>
+	<a href="/SpringMVC/RawMaterial/createRawMaterial?appTheme=dark">Dark Theme</a>
+	
 	<b style="color:red">${errorObject.get(0).getDefaultMessage()}</b>
 	
 	<form action="/SpringMVC/RawMaterial/createRawMaterial"    

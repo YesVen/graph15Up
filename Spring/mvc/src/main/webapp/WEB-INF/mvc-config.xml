@@ -27,16 +27,36 @@
 
 
 	<bean  id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<property name="basenames" value="/WEB-INF/messages/mymessages,/WEB-INF/locale/label"></property>
+		<property name="basenames" value="/WEB-INF/locale/label,/WEB-INF/messages/mymessages"></property>
 		<!-- This is cause I am lazy to restart server on every property change -->
 		<property name="cacheSeconds" value="1"></property>
 	</bean>	
+	
+	
+	<bean name="cookieResolver"  class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+	 	<property name="defaultLocale" value="en"></property>
+	 	<property name="cookieName" value="appLanguage"> </property>
+	 	
+	</bean>
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/RawMaterial/**"/>
 			<bean class="sweat.like.a.pro.interceptor.DayOfTheWeekWebRequestInterceptor"/>
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/RawMaterial/**"/>
+			<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+				<property name="paramName" value="appLanguage"></property>
+			</bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/RawMaterial/**"/>
+			<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+				<property name="paramName" value="appTheme"></property>
+			</bean>
+		</mvc:interceptor>
+		
 	</mvc:interceptors>
 
 
