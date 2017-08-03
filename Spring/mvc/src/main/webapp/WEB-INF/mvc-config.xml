@@ -46,27 +46,21 @@
 	
 	<bean name="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource">
 		<property name="basenamePrefix" value="theme-"></property>
-		<property name="defaultEncoding" value="utf-8"></property>
 	</bean>
-	
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/RawMaterial/**"/>
 			<bean class="sweat.like.a.pro.interceptor.DayOfTheWeekWebRequestInterceptor"/>
 		</mvc:interceptor>
-		<mvc:interceptor>
-			<mvc:mapping path="/RawMaterial/**"/>
-			<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-				<property name="paramName" value="appLanguage"></property>
-			</bean>
-		</mvc:interceptor>
-		<mvc:interceptor>
-			<mvc:mapping path="/RawMaterial/**"/>
-			<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
-				<property name="paramName" value="appTheme"></property>
-			</bean>
-		</mvc:interceptor>
+		
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="appLanguage"></property>
+		</bean>
+
+		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+			<property name="paramName" value="appTheme"></property>
+		</bean>
 		
 	</mvc:interceptors>
 

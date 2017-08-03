@@ -17,16 +17,26 @@
 	form label {
 		padding-right : 10px;
 	}
+	
+	.theme{
+		right:0px;
+	}
+	
+	
 </style>
 
 </head>
 <body>
-
-	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=fr" >French |</a>
-	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=en">English  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
 	
-	<a href="/SpringMVC/RawMaterial/createRawMaterial?appTheme=light" >Light Theme |</a>
-	<a href="/SpringMVC/RawMaterial/createRawMaterial?appTheme=dark">Dark Theme</a>
+	<link rel="stylesheet" href="<spring:theme code='stylesheet'/>" type="text/css"/>
+	
+	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=fr" >French |</a>
+	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=en">English </a>
+	
+	<a class="theme" href="/SpringMVC/RawMaterial/createRawMaterial?appTheme=light" >Light Theme |</a>
+	<a class="theme" href="/SpringMVC/RawMaterial/createRawMaterial?appTheme=dark">Dark Theme</a>
+	
+	
 	
 	<b style="color:red">${errorObject.get(0).getDefaultMessage()}</b>
 	
