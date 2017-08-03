@@ -30,7 +30,6 @@
 		<property name="basenames" value="/WEB-INF/locale/label,/messages/mymessages"></property>
 		<!-- This is cause I am lazy to restart server on every property change -->
 		<property name="cacheSeconds" value="1"></property>
-		<property name="defaultEncoding" value="utf-8"></property>
 	</bean>	
 	
 	
@@ -42,11 +41,16 @@
 	<bean name="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver">
 		<property name="cookieName" value="appTheme"></property>
 		<property name="defaultThemeName" value="dark"></property>
+		
 	</bean>
 	
 	<bean name="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource">
 		<property name="basenamePrefix" value="theme-"></property>
 	</bean>
+	
+	<!-- any requests from this url pattern /RawMaterial/themes/**, Spring will look for the resources from the /resources/theme1/ . -->
+	<!-- <mvc:resources mapping="/RawMaterial/themes/**" location="/WEB-INF/" /> -->
+	
 	
 	<mvc:interceptors>
 		<mvc:interceptor>

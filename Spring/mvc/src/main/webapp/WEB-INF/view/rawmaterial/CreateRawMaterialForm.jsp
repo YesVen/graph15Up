@@ -1,11 +1,12 @@
 <%@ taglib uri="http://www.springframework.org/tags"  prefix="spring"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
     
 <!doctype html>
 <html>
+	<link rel="stylesheet" href="<spring:theme code='stylesheet'/>" type="text/css"/>
 <head>
-<meta charset="utf-8">
+<meta charset="ISO-8859-1">
 <title>Raw Material Form</title>
 
 <style type="text/css" >
@@ -27,8 +28,6 @@
 
 </head>
 <body>
-	
-	<link rel="stylesheet" href="<spring:theme code='stylesheet'/>" type="text/css"/>
 	
 	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=fr" >French |</a>
 	<a href="/SpringMVC/RawMaterial/createRawMaterial?appLanguage=en">English </a>
