@@ -2,13 +2,16 @@ Code your own Application with MVC
 		
 Spring Form Validation
 			Reading message from properties file
-
-Spring internationalization
-		<Spring:message> in jsp
-		give Links in web page to change language
-		
+	
 Supporting themes 		
-			
+
+Exception handling
+				@exceptionHandler annotation	
+				@ControllerAdvice
+				This can also be achieved with ExceptionResolver class mapping in spring config
+				Send Response status using @ResponseStatus
+
+				
 
 
 

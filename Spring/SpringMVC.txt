@@ -40,7 +40,13 @@ In annotation based configuration, we dont require handler mapping as we can dir
 		If you annotate a method with this annotation, then this method will be called for each and every method within this controller.
 		Note this will be called first and then requestmapping method will be called. It also means that we can do some init work in such a method.
 		
-		
+@ExceptionHandler
+		This is used for exception handling in a controller and its default scope is limited to one controller. Means we have to add exception handlers for each and every controller separately.
+		To make it applicable across the controllers use @ControllerAdvice
+
+@ControllerAdvice
+		It is common place to write the advices for all the controllers i the system.
+		e.g. If we want a exception handling method to applied to all the controllers in the system then use this annotation
 
 
 
