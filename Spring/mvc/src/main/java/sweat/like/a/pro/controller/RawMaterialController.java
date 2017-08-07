@@ -1,5 +1,6 @@
 package sweat.like.a.pro.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -76,6 +78,27 @@ public class RawMaterialController {
 	{
 		return new ModelAndView("/rawmaterial/CreateRawMaterialForm");
 	}
+	
+	
+	@RequestMapping(value="/exception")
+	public ModelAndView getRawMaterialNPEException() throws IOException
+	{
+		throw new ArithmeticException("TO demonstrate ArithmeticException");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
