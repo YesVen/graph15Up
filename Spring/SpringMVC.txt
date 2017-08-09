@@ -47,6 +47,10 @@ In annotation based configuration, we dont require handler mapping as we can dir
 @ControllerAdvice
 		It is common place to write the advices for all the controllers i the system.
 		e.g. If we want a exception handling method to applied to all the controllers in the system then use this annotation
+		
+@responseBOdy
+		USed as replacement of MOdelAndView
+		Jackson jar takes care of conversion of data to ModelAndView Object
 
 
 

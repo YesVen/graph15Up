@@ -5,12 +5,16 @@ Spring Form Validation
 	
 Supporting themes 		
 
-Exception handling
-				@exceptionHandler annotation	
-				@ControllerAdvice
-				This can also be achieved with ExceptionResolver class mapping in spring config
-				Send Response status using @ResponseStatus
+Supporting both XML and JSON
+	use postman header param : accept
+	
+Support only one format
+		USe produces
 
+@RequestBody for data marshalling
+
+
+ResponseEntity
 				
 
 

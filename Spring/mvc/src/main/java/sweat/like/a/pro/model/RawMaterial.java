@@ -9,14 +9,26 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+
 import sweat.like.a.pro.annotations.IsValidName;
 
+
+@JsonPropertyOrder(alphabetic=true) // This will make alphabetical sequence of attributes in this bean while sending response
+@JsonIgnoreProperties(value={"id"})//This will skip id prop from response
+@JsonInclude(value=Include.NON_NULL)//This will make those attributes to be part of response which are not null
 public class RawMaterial {
 
 	/*
 	 * Validation is not working for this field because it has custom property editor
 	 */
 	@Size(max=10, min=2, message="Name of the material should be between 2 and 10 characters")
+	@JsonProperty(value="raw_material_name",required=true) // This will change this prop name in response to raw_material_name
 	private String rawMaterialName;
 	
 

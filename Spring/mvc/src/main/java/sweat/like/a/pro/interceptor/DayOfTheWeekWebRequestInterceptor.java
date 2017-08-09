@@ -20,7 +20,7 @@ public class DayOfTheWeekWebRequestInterceptor extends HandlerInterceptorAdapter
 		
 		int day = calendar.get(Calendar.DAY_OF_WEEK);
 		
-		if(day == 7)//1 for sunday and 2 for monday
+		if(day == 1)//1 for sunday and 2 for monday
 		{
 			response.getWriter().write("Sorry, Application is closed on Saturday. See you soon on Sunday to Friday.");
 			return false;
