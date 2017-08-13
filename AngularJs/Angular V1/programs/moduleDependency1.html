@@ -1,0 +1,25 @@
+<html ng-app="mainmodule">
+
+<head>
+<title></title>
+<script src="angular.js"></script>    
+<script>
+    var helloModule = angular.module("helloModule",[]);
+    helloModule.controller("helloController", function(){
+       this.greeting = "Hello There"; 
+    });
+    
+    var mainmodule = angular.module("mainmodule",["helloModule"]);
+    /*
+        See here we have not created a controller in mainmodule. Still we are able to use the helloController of helloModule.
+        This is some sort of inheritence
+        This is the power of modules. We can actually bring in any module developed by any developer in the world and start using that
+    */
+    
+
+</script>
+</head>
+    <body ng-controller="helloController as helloctrl"><!--HElloController is not part of main module-->
+        <span>{{helloctrl.greeting}}</span>
+    </body>
+</html>

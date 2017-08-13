@@ -6,3 +6,6 @@ eclipse :
 	emma
 	pmd checkstyle	-
 	
+	angularJs 		- http://www.eclipse.org/webtools/jsdt/
+					  https://marketplace.eclipse.org/content/angularjs-eclipse#.U4M7rBYqm0o
+	

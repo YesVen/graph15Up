@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="clockApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+        <style>
+            input{
+                border-radius: 5px;
+            }
+        </style>
+		<script type="text/javascript"
+				src="angular.js">
+		</script>
+
+		<script type="text/javascript">
+            
+            var clockApp = angular.module("clockApp",[]);
+            
+            clockApp.controller("clockController", function($scope){
+                $scope.time = new Date(); 
+                
+                $scope.day = $scope.time.getDay();
+                
+                $scope.updateTime = function(){
+                    $scope.time = new Date();  
+                }; 
+            });
+             
+        </script>
+	</head>
+
+	<body ng-controller="clockController as clock">
+
+		<h1>Clock App</h1>
+        
+        <div> Time heals Everything : {{time}}  <input type="button" value="Refresh" ng-click="updateTime()"> </div>
+        
+        <!--This will be shown only if today is monday due to ng-if -->
+        <div ng-if="day===1">{{day}}</div>
+	</body>
+</html>	

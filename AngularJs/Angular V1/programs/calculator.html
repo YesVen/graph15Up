@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- n-change to do validation -->
+
+<html ng-app="calculator"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+        <style>
+            input[type="button"]{
+                border-radius: 5px;
+            }
+            
+            input{
+                margin-bottom: 20px;
+            }
+            
+            .invalidInput{
+                color: crimson;
+            }
+        </style>
+		<script type="text/javascript" 	src="angular.js"></script>
+
+		<script type="text/javascript">
+            var calculator = angular.module("calculator",[]);
+            
+            calculator.controller("appController", function(){
+                
+                this.operation = "*";
+                this.operand1 = "";
+                this.operand2 = "";
+                this.result = "";
+                
+                this.changeOperation = function(event){
+                    this.operation = event.target.value;
+                };
+                
+                this.performOperation = function(){
+                  this.result = eval(this.operand1 + this.operation + this.operand2);
+                };
+            });
+        </script>
+	</head>
+
+	<body ng-controller="appController as c1">
+
+		<input type="number" ng-model="c1.operand1"/>
+                {{c1.operation}} 
+        <input type="number" ng-model="c1.operand2"/>
+        <input type="button" value="=" ng-click="c1.performOperation()"/> {{c1.result}}  <br>
+        
+        <input type="button" value="+" ng-click="c1.changeOperation($event)"/>
+        <input type="button" value="-" ng-click="c1.changeOperation($event)"/>
+        <input type="button" value="*" ng-click="c1.changeOperation($event)"/>
+        <input type="button" value="/" ng-click="c1.changeOperation($event)"/>
+	</body>
+</html>	

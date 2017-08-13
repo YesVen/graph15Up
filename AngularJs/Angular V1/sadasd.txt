@@ -1,0 +1,180 @@
+Programs : 
+		Use any module of your choice from angularmodule.org... to see the power of angular in action
+		Build TODO APP
+		Unit Testing Using Jasmine
+		Learn Build tools  : Gulp, Bower, Yeoman
+		Routing
+		Buils Contacts App - Use 
+								Bootstrap, http-server, json-server, getrandomperson.com
+								module.value()
+								module.constant()  ... diff betwn value and constant?
+								
+		angular Providers?						
+							
+							
+
+Eclipse Configuration For angular : 
+	http://www.eclipse.org/webtools/jsdt/
+	https://marketplace.eclipse.org/content/angularjs-eclipse#.U4M7rBYqm0o
+	ngmodules.org
+	getbootstrat.com
+	
+
+AngularJs is all about thinking in angular way. You have to think from entirely different direction as that of jquery.
+	
+Angular is declarative programming framework
+		Meaning you need to write the logic first and then use it logic as a declaration
+		e.g. You write your directives and just use it in the html
+		
+declarative vs imperative programming
+
+Dependency Injection : A concept says that the dependencies you need are given to you rather than you looking for the dependencies.
+					e.g. Koushik told example of dev conference  food system
+
+Directive : At a high level, directives are markers on a DOM element that tell AngularJS's HTML compiler ( $compile ) to attach a specified behavior to that DOM element (e.g. via event listeners), or even to transform the DOM element and its children.
+
+
+Module : Its a collection of directives, services, controllers etc.
+
+ng-init : USed for init purpose but not recommended. It inits variables at $scope.
+
+ng-app : Typically we have only one ng-app per html application but it is perfectly fine to have two ng-app in a html. In this case, angular would not auto bootstrap the application and you have to specify the bootstrapping steps.
+
+ng-bind : used to bind an attribute from controller to dom
+		  A shorthand notation is preferred in place of this which is {{}}.
+		  
+ng-model : this directive acts as a model in mvw. 
+		  
+ng-change : used to trigger a function when something changes.		  
+
+ng-if : evaluate the condition and add/remove element from DOM. As it removes element from DOM its expensive operation as compared to ng-show, ng-hide.
+ng-show : evaluate the condition and show the element in DOM
+ng-hide : evaluate the condition and hide the element from DOM
+
+ng-repeat : loop over items 
+
+scope : every variable you use in html is $scoped. Meaning it is implicitly attached to $scope.
+		Every time property is updated in $scope, angular automatically updates view. This is called duel way binding.
+		
+		Every Controller has its own scope. WE cannot use variable in scope of controller1 inside controller2.
+		
+		There is a global scope which every controller has access to. Its called $rootscope.
+	
+		When we use nested controllers, the scope of parent controller is accessible inside child controllers.
+		i.e. If parent scope has variable name=Dnyanesh and we use name variable inside child scope, it will become name=Dnyanesh
+		So generally speaking, angular scans scope in upward direction till it find the variable value.
+			(Analogous to one of the jquery method that scans in upward direction untill element is found)
+		Angular scans till the $rootscope which is THE GOD scope
+		
+		So in an enterprise application, where hundreds of controllers are there each having its own scope, its relly messy to find out from which scope does this variable value came from.
+		To avoid this situation, angular developers have came up with "controller as" syntax. You declare a controller using this syntax and dont worry about the scope issues.
+		In this "controller as" syntax it is recommended that u should not inject $scope into a controller.
+		e.g. 
+			use below code style
+			
+			var app = angular.module("app", []);
+			app.controller("appController", function(/*  No scope injection here  */){
+				//angular compiler is gonna provide you scope implicitly using this
+				//so this here refers to $scope
+				this.name = "Dnyanesh" // This means name variable is attached to $scope of appController
+			});
+		
+			and use this 
+			<div ng-controller="appController as controller">
+				Name is {{controller.name}} // similar to name --> $scope.name
+			</div>
+		
+		IMP : Use of "this" instead of $scope works only in case of "controller as" syntax. Without controller-as syntax you must inject $scope as usual
+		
+		See G:\MyWork\Git\graph15Up\AngularJs\Angular V1\programs\test4.html
+		You can use {{name}} and {{controller1.name}} both. choice is yours but second one limits your scope to controller1.
+			While first scans for name variable until $rootscope.
+		
+		Angular doesnt create scope just for controllers. It happens to be that it create scopes for few other elements too.
+			ng-if
+			each item in ng-repeat
+			etc
+			To understand it, open inspector, look for class ng-scope. You will find it for controller as well as ng-if
+		
+		
+		
+Module : Module is a collections of controllers, services, factories etc.
+		For each different functionality we can as many modules as we want. They make our code very loosely coupled. So we can import any module developed by any developer in our application and start using right away. We just need to add dependency of that module in our module.
+		
+		Opposite to it, angular services are local to your application. You can build reusable services and let your controllers depend on the services.
+			But you cannot use a service DIRECTLY from another developer from www. In a way what you can do is inject a dependancy of some other module and use services of it,BUT not a service directly
+			
+			var mymodule = angular.module("app", ["$someRandomServiceFromInternet"]);
+			
+			mymodule.controller("appController", function("$http","$location","xyz service from $someRandomServiceFromInternet"){
+			
+				//code goes here
+			});
+		
+	
+module.contants()  : USed for sharing common constant data within different controllers of same module.
+		
+
+module.value()  : USed for sharing common value data within different controllers of same module.
+					Note we can also write a common function to be shared by different controllers of same module.
+				
+				
+
+module.controller()
+
+
+module.factory() : Its a service. The problem with constants and value service is it requires second argument as data/function itself.
+					module.value("AppValuesService", {
+						"name" : "Dnyanesh",
+						"cell" : 97422,
+						"address" : "sdasdds"
+					});
+					
+					or 
+					
+					module.value("AppValuesService", function(){
+						return "Hello There";
+					});
+					
+					Above, you see, we always need an concrete object or function as second parameter to constant/value service. In real world, our data comes from DB or some third party service. So we need something which can bring data for us. That "something" may depend upon other services And thats exactly why we use factories.
+					Just like automoboile factories pull up the raw material and dish out concrete vehicles, our factory service gonna take in raw data and take out concrete usable objects.
+					
+					So we can write
+						module.value("AppValuesService", function($someservice1, $someservice2){
+							return $someservice1.getdata() + $someservice2.getdata();
+						});
+					Here factory being factory can depend on other services which constant/value cannot. In case of value/constant it has to be a concrete object or plain old javascript function
+						
+					
+
+module.service() : Similar to factory but it with one minor diffrence.
+					module.service("myservice", function(){
+						this.name = "Dnyanesh",
+						this.age = 27
+					});
+					
+					second argument to service service has to be a constructor function while for factory it can be a normal function returning value.
+					In case of factory function we must return a value/object.
+					In case of service function JavaScript implicitly return a constructed object		
+
+					Recommended way is to use service because its more inclined towards angular2
+					
+Diffrence between factory and service
+					See explanation above
+					
+					
+Diffrence between below ? 
+					function getDate(){	
+						return "Hello";
+					}
+					doSomething(getData) vs doSomething(getData())???????????????
+				
+				doSomething(getData) --> This will pass getData function as a argument to doSomething()
+				doSomething(getData()) --> This will pass data returned by getData() function as a argument to doSomething()
+					
+					
+					
+What is IFFE : Immediately Invoked Function Expression.
+						Used to restrict the variables leaking in global scope
+					
+What is callback hell?					

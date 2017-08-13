@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="app"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+        <style>
+            input{
+                border-radius: 5px;
+            }
+        </style>
+		<script type="text/javascript"
+				src="angular.js">
+		</script>
+
+		<script type="text/javascript">
+            
+            angular.module("app", []).controller("appController", function(){
+                this.opinion = true;
+                this.languages = ["jquery","angular","java","spring","javascript"];
+                this.fav = "jquery";
+                
+                
+                this.persons = [
+                    {"name" : "Dnyanesh", "age" : 24},
+                    {"name" : "Ashu", "age" : 24},
+                    {"name" : "Niky", "age" : 26},
+                    {"name" : "Amol", "age" : 28},
+                ];
+            });
+             
+        </script>
+	</head>
+
+	<body ng-controller="appController as controller">
+
+		Is Angular Interesting? <input type="checkbox" ng-model="controller.opinion"/>
+        
+        <p ng-show="controller.opinion">  There is a way to go buddy. Keep your ass moving. </p>
+        
+        <p ng-hide="controller.opinion">  There is no way either. You better find it interesting.  </p>
+        
+        <!--We could have used ng-if but As it removes element from DOM its expensive operation as compared to ng-show, ng-hide-->
+        
+        
+        Your favourite Language <select ng-model="controller.fav" >
+            <option ng-repeat="language in controller.languages"> {{language}}  </option>
+        </select>
+        {{controller.fav}}
+        
+        <hr/>
+        
+        Persons Repeater : 
+        <div ng-repeat="person in controller.persons">
+            <p>{{person.name}} {{person.age}}</p>
+            <p>Person {{$index}} is 
+                    <span ng-if="$even"> at Even position</span>
+                    <span ng-if="$odd"> at Odd position</span>
+            <p>
+                <span ng-if="$first"> {{person.name}}is a First Person</span>
+                <span ng-if="$last"> {{person.name}} is a Last Person</span>
+            </p>    
+            <!-- Yuo can use other implicit elements in ng-repeat like $first, $last, $middle, $even, $odd-->
+            <br>
+            <p></p>
+        </div>
+        
+        
+	</body>
+</html>	

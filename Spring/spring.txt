@@ -5,16 +5,6 @@ Spring Form Validation
 	
 Supporting themes 		
 
-Supporting both XML and JSON
-	use postman header param : accept
-	
-Support only one format
-		USe produces
-
-@RequestBody for data marshalling
-
-
-ResponseEntity
 				
 
 

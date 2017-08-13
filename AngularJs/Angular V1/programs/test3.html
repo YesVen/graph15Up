@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<!-- n-change to do validation -->
+
+<html ng-app="clockApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+        <style>
+            input[type="button"]{
+                border-radius: 5px;
+            }
+            
+            input{
+                margin-bottom: 20px;
+            }
+            
+            .invalidInput{
+                color: crimson;
+            }
+        </style>
+		<script type="text/javascript"
+				src="angular.js">
+		</script>
+
+		<script type="text/javascript">
+            
+            var clockApp = angular.module("clockApp",[]);
+            
+            clockApp.controller("clockController", function($scope){
+                $scope.time = new Date(); 
+                
+                $scope.day = $scope.time.getDay();
+                
+                $scope.updateTime = function(){
+                    $scope.time = new Date();  
+                }; 
+                
+                $scope.checkName = function(textbox){
+                      var value = textbox.userName;
+                    if(value.length < 5)
+                    {
+                        
+                    }
+                };
+            });
+             
+        </script>
+	</head>
+
+	<body ng-controller="clockController as clock">
+
+		<h1>Clock App</h1>
+        
+        <div> Time heals Everything : {{time}}  <input type="button" value="Refresh Time" ng-click="updateTime()"> </div>
+        
+        
+        <!--Note Here : Even though we have not created property in scope, angular is able to bind userName
+
+            How does it do that ? 
+                    Reason is angular creates a property in scope implicitely. You dont need to create a property on your own explicitely.
+            -->
+        
+        Enter your Name : <input  type="text" placeholder="Enter Name Here..." ng-model="userName" />
+        <span ng-if="userName.length < 5" class="invalidInput"> Name must be more than 5 characters </span> <br>
+
+        
+        
+        Enter Date  : <input type="date" ng-model="userDOB"/> Date is {{userDOB}}<br>
+
+        
+        
+        Indian ?   <input type="checkbox" ng-model="isIndian"/> Nationality is Indian {{isIndian}}<br>
+        
+        
+        
+        Enter Sex : <input type="radio" ng-model="sex" value="Male"> Male </input>
+                    <input type="radio" ng-model="sex" value="Female"> Female </input>      
+        Sex is {{sex}}
+
+
+        <div ng-if="day===1">{{day}}</div>
+	</body>
+</html>	
