@@ -113,11 +113,18 @@ Module : Module is a collections of controllers, services, factories etc.
 		
 	
 module.contants()  : USed for sharing common constant data within different controllers of same module.
-		
+						Constant's value can not be change 
+						Value's data can be change
+						Constant can be injected any where 
+						Value can be injected in controller, service, factory but can't be injected in config.
 
 module.value()  : USed for sharing common value data within different controllers of same module.
-					Note we can also write a common function to be shared by different controllers of same module.
-				
+					Note we can also write a common function to be shared by different controllers of same module as a value service.
+					
+					Constant's value can not be change 
+					Value's data can be change
+					Constant can be injected any where 
+					Value can be injected in controller, service, factory but can't be injected in config.
 				
 
 module.controller()
@@ -140,7 +147,7 @@ module.factory() : Its a service. The problem with constants and value service i
 					Just like automoboile factories pull up the raw material and dish out concrete vehicles, our factory service gonna take in raw data and take out concrete usable objects.
 					
 					So we can write
-						module.value("AppValuesService", function($someservice1, $someservice2){
+						module.factory("AppValuesService", function($someservice1, $someservice2){
 							return $someservice1.getdata() + $someservice2.getdata();
 						});
 					Here factory being factory can depend on other services which constant/value cannot. In case of value/constant it has to be a concrete object or plain old javascript function
@@ -153,9 +160,9 @@ module.service() : Similar to factory but it with one minor diffrence.
 						this.age = 27
 					});
 					
-					second argument to service service has to be a constructor function while for factory it can be a normal function returning value.
-					In case of factory function we must return a value/object.
-					In case of service function JavaScript implicitly return a constructed object		
+					second argument to service service has to be a "constructor function" while for factory it can be a normal function returning value.
+					In case of factory function, we must return a value/object.
+					In case of service function, JavaScript implicitly return a constructed object
 
 					Recommended way is to use service because its more inclined towards angular2
 					
