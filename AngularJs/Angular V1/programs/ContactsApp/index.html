@@ -21,18 +21,78 @@
     
 <body>
     <header ng-controller="headerController as header" >
-        {{header.message}}
+        <h2>{{header.message}}</h2>
     </header>
     
     
     <div ng-controller="contactController as contact" class="container-fluid body-content">
-        {{contact.hello}}
-        
-        Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>
-  Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>
-  Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>
-  Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>
-  Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>Lorem Ipsum<br/>
+        <ul class="list-group">
+            <div class="row">
+                <div class="col-md-8">
+                    <li ng-click="contact.handleContactClick($index)" ng-class="{active : hover}"
+                        class="list-group-item list-group-item-action list-group-item-success"  ng-repeat="eachContact in contact.contacts">
+                        <h6 >{{eachContact.name.first}} {{eachContact.name.last}}</h6>
+                    </li>
+                </div>
+                <div class="col-md-4">
+                    <input type="button" value="Edit" class="btn btn-primary" ng-click="contact.editContact($event, $index)" 
+                           ng-hide="contact.editMode"/>
+                    <input type="button" value="Save" class="btn btn-primary" ng-click="contact.saveContact($event, $index)" 
+                           ng-show="contact.editMode"/>
+                    <input type="button" value="Add" class="btn btn-primary" ng-click="contact.createContact($event, $index)"
+                           ng-hide="contact.editMode"/>
+                    
+                    <!-- Contact Details for View purpose -->
+                    <div class="card" style="width: 15rem;" ng-hide="contact.editMode">
+                          <img class="card-img-top" ng-src="{{contact.selectedContact.picture.large}}" alt="Card image cap">
+                          <div class="card-body">
+                            <h4 class="card-title">
+                                    {{contact.selectedContact.name.title}}.
+                                    {{contact.selectedContact.name.first}} 
+                                    {{contact.selectedContact.name.last}}</h4>
+                            <p class="card-text">
+                                {{contact.selectedContact.gender}}, from 
+                                {{contact.selectedContact.nat}}
+                            </p>
+                          </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{contact.selectedContact.email}}</li>
+                            <li class="list-group-item">{{contact.selectedContact.cell}}</li>
+                            <li class="list-group-item">{{contact.selectedContact.dob}}</li>
+                          </ul>
+                    </div>
+                    
+                    <!-- Contact Details for Edit purpose -->
+                    <div class="card" style="width: 15rem;" ng-show="contact.editMode">
+                          <img class="card-img-top"  
+                               ng-src="{{contact.selectedContact.picture.large}}"
+                               alt="Card image cap">
+                          <div class="card-body">
+                                <input type="text" value="{{contact.selectedContact.name.title}}. {{contact.selectedContact.name.first}} {{contact.selectedContact.name.last}}">
+                              </input>
+                            <input class="card-text" value="{{contact.selectedContact.gender}}, from {{contact.selectedContact.nat}}" />
+                          </div>
+                          
+                          <div class="input-group">
+                              <span class="input-group-addon">email</span>
+                              <input type="text" class="form-control" placeholder="email" aria-label="email" 
+                                     ng-model="contact.selectedContact.email">
+                          </div>
+                          <div class="input-group">
+                              <span class="input-group-addon">DOB</span>
+                              <input type="text" class="form-control" placeholder="DOB" aria-label="Date Of Birth" 
+                                     ng-model="contact.selectedContact.dob">
+                          </div>
+                          <div class="input-group">
+                              <span class="input-group-addon">Cell</span>
+                              <input type="text" class="form-control" placeholder="Cell" aria-label="Cell" 
+                                     ng-model="contact.selectedContact.cell">
+                          </div>
+                    </div>
+                    
+                </div>
+            </div>    
+        </ul>
     </div>
     
     <footer ng-controller="footerController as footer">

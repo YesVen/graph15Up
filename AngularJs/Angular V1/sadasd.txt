@@ -184,4 +184,8 @@ Diffrence between below ?
 What is IFFE : Immediately Invoked Function Expression.
 						Used to restrict the variables leaking in global scope
 					
-What is callback hell?					
+What is callback hell?			
+
+
+Promise : An operation that hasnt completed yet but expected to complete in future
+			
