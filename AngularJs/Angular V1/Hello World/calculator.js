@@ -29,7 +29,7 @@
 	
 	
 	angular.module("Calculator",["Discount"])
-		.controller("sampleController", ['DiscountService',function calculationController(discountService){
+		.controller( "sampleController", ['DiscountService',function calculationController(discountService){
 				
 		this.cost = 2;
 		this.qty = 13;

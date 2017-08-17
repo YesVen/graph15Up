@@ -27,14 +27,19 @@
     
     <div ng-controller="contactController as contact" class="container-fluid body-content">
         
-        <p>Add filter over the contacts here</p>
-            
+        <div class="input-group">
+          <span class="input-group-addon" id="searchContact">Search</span>
+          <input type="text" class="form-control" placeholder="search contact here" 
+                 aria-describedby="searchContact" ng-model="searchText.name.first"><!--Searching over first name only-->
+        </div>
+        
         <ul class="list-group">
             <div class="row">
                 <div class="col-md-8">
-                    <li ng-click="contact.handleContactClick($index)"
-                        class="list-group-item list-group-item-action list-group-item-success"  ng-repeat="eachContact in contact.contacts">
-                        <h6 >{{eachContact.name.first}} {{eachContact.name.last}}</h6>
+                    <li ng-click="contact.handleContactClick(eachContact)" ng-class="{active : hover}"
+                        class="list-group-item list-group-item-action list-group-item-success"  
+                        ng-repeat="eachContact in contact.contacts | filter : searchText">
+                        <h6 >{{eachContact.name.first | uppercase}} {{eachContact.name.last}}</h6>
                     </li>
                 </div>
                 <div class="col-md-4">
