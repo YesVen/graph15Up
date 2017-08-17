@@ -9,9 +9,10 @@ Programs :
 								module.value()
 								module.constant()  ... diff betwn value and constant?
 								
-		angular Providers?						
-							
-							
+		angular Providers?	
+		Table column sort by clicking header
+		You can write your own filter function : for filtering the data, for formatting data					
+		use ng-include to seperat the views
 
 Eclipse Configuration For angular : 
 	http://www.eclipse.org/webtools/jsdt/
@@ -37,13 +38,16 @@ Directive : At a high level, directives are markers on a DOM element that tell A
 Module : Its a collection of directives, services, controllers etc.
 
 ng-init : USed for init purpose but not recommended. It inits variables at $scope.
-
+			Ideal use of this is to alias the special properties of ng-repeat
+			
 ng-app : Typically we have only one ng-app per html application but it is perfectly fine to have two ng-app in a html. In this case, angular would not auto bootstrap the application and you have to specify the bootstrapping steps.
 
 ng-bind : used to bind an attribute from controller to dom
 		  A shorthand notation is preferred in place of this which is {{}}.
 		  
 ng-model : this directive acts as a model in mvw. 
+		   If you add ng-model, to any html element, angular is going to create a property on $scope object.
+		   You can actually access that property in your js code.
 		  
 ng-change : used to trigger a function when something changes.		  
 
@@ -154,7 +158,7 @@ module.factory() : Its a service. The problem with constants and value service i
 						
 					
 
-module.service() : Similar to factory but it with one minor diffrence.
+module.service() : Similar to factory but it with one minor difference.
 					module.service("myservice", function(){
 						this.name = "Dnyanesh",
 						this.age = 27
@@ -165,6 +169,20 @@ module.service() : Similar to factory but it with one minor diffrence.
 					In case of service function, JavaScript implicitly return a constructed object
 
 					Recommended way is to use service because its more inclined towards angular2
+					
+					if you want to use Service from  some different module, you must use below syntax
+						var module1 = angular.module("module1", ["module2"]);
+						module1.controller("controller1", function(ServicefromModule2){
+							//Service 2 is accessible here only if you use exact name in function parameter above
+						});
+						
+					else you need to use below syntax
+						module1.controller("controller1",["ServicefromModule2", "$scope", function(module2Service, scope){
+							//now i can use $http as http or whatever name if have given in function parameter
+							
+							//now i can use ServicefromModule2 as module2Service.
+						}]);
+						
 					
 Diffrence between factory and service
 					See explanation above
@@ -189,3 +207,6 @@ What is callback hell?
 
 Promise : An operation that hasnt completed yet but expected to complete in future
 			
+			
+ng-include : It is used to embed html page into another html pages
+				This is extremely useful for injecting same view in multiple places in your application

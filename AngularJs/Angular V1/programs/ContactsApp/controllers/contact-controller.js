@@ -20,8 +20,9 @@
         this.editMode = false;
         this.selectedContact =  {};
 
-        this.handleContactClick = function (index) {
-            this.selectedContact = this.contacts[index];
+        this.handleContactClick = function (eachContact) {
+            
+            this.selectedContact = eachContact;
         };
 
 
