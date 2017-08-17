@@ -9,3 +9,9 @@ JAX-RS
 	http://www.dineshonjava.com/search/label/REST
 	
 	****** http://www.makeinjava.com/execution-flow-filters-interceptors-jax-rs-jersey-example/
+	
+Bootstrap
+	https://getbootstrap.com/docs/4.0/getting-started/introduction/
+	
+Angularjs 1.x
+	https://docs.angularjs.org/api/ng

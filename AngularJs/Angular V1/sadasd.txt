@@ -5,9 +5,10 @@ Programs :
 		Learn Build tools  : Gulp, Bower, Yeoman
 		Routing
 		Buils Contacts App - Use 
-								Bootstrap, http-server, json-server, getrandomperson.com
-								module.value()
-								module.constant()  ... diff betwn value and constant?
+								Add filter to search results
+                                Add password field and make it undisclosable using filter
+                                Make last name capital
+                                Add ng-class-odd, ng-class-even
 								
 		angular Providers?						
 							
@@ -18,6 +19,7 @@ Eclipse Configuration For angular :
 	https://marketplace.eclipse.org/content/angularjs-eclipse#.U4M7rBYqm0o
 	ngmodules.org
 	getbootstrat.com
+    getrandomuser.me
 	
 
 AngularJs is all about thinking in angular way. You have to think from entirely different direction as that of jquery.
@@ -188,4 +190,45 @@ What is callback hell?
 
 
 Promise : An operation that hasnt completed yet but expected to complete in future
+
+
+Angular Js fefault Services?
+
+
+Filters : They are used more of for data representation. There are several default filters available like
+            limitTo,uppercase, lowercase, number,currency,date, json, filter
+            
+
+            We can define our own filters also at module level.
+            
+            mymodule.filter("isPassword", function(){
+                return function(field){
+                    return ******;
+                };
+            });
+            
+            <td>{{person.password | isPassword }}</td>
+            
+            This will cause password fields to be displayed as **** instead of plain text
+            
+            
+            
+            filter	: Selects a subset of items from array and returns it as a new array.
+            currency : Formats a number as a currency (ie $1,234.56). When no currency symbol is provided, default symbol for current            locale is used.
+
+            number	: Formats a number as text.
+
+            date	:Formats date to a string based on the requested format.
+
+            json    : Allows you to convert a JavaScript object into JSON string.
+
+            lowercase : Converts string to lowercase.
+
+            uppercase	:Converts string to uppercase.
+
+            limitTo	:Creates a new array or string containing only a specified number of elements. The elements are taken from either           the beginning or the end of the source array, string or number, as specified by the value and sign (positive or           negative) of limit. Other array-like objects are also supported (e.g. array subclasses, NodeLists,                       jqLite/jQuery collections etc). If a number is used as input, it is converted to a string.
+
+            orderBy	: Returns an array containing the items from the specified collection, ordered by a comparator function based on            the values computed using the expression predicate.
+            
+            
 			
