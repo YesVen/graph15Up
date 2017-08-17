@@ -4,8 +4,7 @@ Programs :
 		Unit Testing Using Jasmine
 		Learn Build tools  : Gulp, Bower, Yeoman
 		Routing
-		Buils Contacts App - Use 
-								Add filter to search results
+		Buils Contacts App - Use
                                 Add password field and make it undisclosable using filter
                                 Make last name capital
                                 Add ng-class-odd, ng-class-even

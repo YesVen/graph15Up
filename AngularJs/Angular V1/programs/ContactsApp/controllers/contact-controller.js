@@ -5,8 +5,9 @@
     contactApp.controller("contactController", function (contactsService) {
 
         this.hello = "Hello World";
+        this.contacts = [];
         var self = this;
-
+        this.searchText = "";
 
         //Note here : geContacts doesnt return a contacts data but a promise object
         //and the object has to handled by using promise pattern 
