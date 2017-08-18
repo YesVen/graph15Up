@@ -11,18 +11,18 @@
     
     
     contactApp.filter("prependtitle", function(){
-        return function(contact){
-            if(contact.name.title === "ms"){
-                return "Miss." + contact.name.first;
+        return function(title){
+            if(title === "ms" || title === "miss"){
+                return "Miss. " ;
             }
-            else if(contact.name.title === "mr"){
-                return "Mr." + contact.name.first;
+            else if(title === "mr"){
+                return "Mr. " ;
             }
-            else{
-                return contact.name.first;
+            else if(title === "mrs"){
+                return "Mrs. "
             }
             
-            return contact.name.first;
+            return title;
         };
     });
     

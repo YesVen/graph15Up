@@ -62,12 +62,12 @@
     });
     
     
-    contactApp.value("dummyData", function(){
-        return "Contacts App dummy data";
+    
+    
+    contactApp.constant("viewsConstants", {
+        "header" : "'views/header.html'",
+        "footer" : "'views/footer.html'"
     });
-    
-    
-    contactApp.constant("constantDummyData1", "constantDummyData1");
     
     contactApp.constant("constantDummyData2", {
        "name" : "Test" ,

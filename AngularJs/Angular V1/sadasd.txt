@@ -1,17 +1,14 @@
 Programs : 
 		Use any module of your choice from angularmodule.org... to see the power of angular in action
-		Build TODO APP
 		Unit Testing Using Jasmine
 		Learn Build tools  : Gulp, Bower, Yeoman
 		Routing
 		Buils Contacts App - Use
                                 Add password field and make it undisclosable using filter
-                                Make last name capital
                                 Add ng-class-odd, ng-class-even
 								
 		angular Providers?	
 		Table column sort by clicking header
-		You can write your own filter function : for filtering the data, for formatting data					
 		use ng-include to seperat the views
 
 Eclipse Configuration For angular : 
