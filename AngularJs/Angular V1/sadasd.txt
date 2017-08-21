@@ -2,10 +2,7 @@ Programs :
 		Use any module of your choice from angularmodule.org... to see the power of angular in action
 		Unit Testing Using Jasmine
 		Learn Build tools  : Gulp, Bower, Yeoman
-		Routing
-		Buils Contacts App - Use
-                                Add ng-class-odd, ng-class-even
-								
+									
 		angular Providers?
 		routing
 			$routeParams

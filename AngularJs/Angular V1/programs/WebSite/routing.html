@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Eastwath</title>
+        <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+		<script type="text/javascript"
+				src="../angular-route.js">
+		</script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        
+		<script type="text/javascript">
+			
+			var mymodule = angular.module("mymodule",["ngRoute"]);
+			
+			//defing routing mechanism
+			mymodule.config(function($routeProvider){
+                
+                    /*This makes case insensitive route URL be mapped to correct URL*/
+                    $routeProvider.caseInsensitiveMatch = true;
+                
+					$routeProvider
+					.when('/home',{
+						templateUrl : 'home.html',
+						controller : 'homepageController',
+                        controllerAs : 'homeCtrl'
+					})
+					.when('/contact',{
+						templateUrl : 'contact.html',
+						controller : 'contactController as contactCtrl'
+					})
+					.when('/products',{
+						templateUrl : 'products.html',
+						controller : 'productsController as productsCtrl'
+					})
+                    .when('/locations', {
+                        template : '<div> <p> WE can add html inline as well </p> </div>',
+                        controller : 'homepageController as homeCtrl' /*We can assign any controller in charge of this template*/
+                    })
+                    .when('/business',{
+                        redirectTo : '/products'
+                    })
+                    .otherwise({
+                        template : "<p> View Mapping is not provided in $routeprovider so this view is rendered by default</p>"
+                        /*,redirectTo : '/contact'*     This can also be used instead of template */
+                    });
+                
+			});
+			
+			
+			//creating homepagecontroller
+			mymodule.controller("homepageController", function($scope){
+				this.name = "Home page";
+			});
+			
+			//creating contactController
+			mymodule.controller("contactController", function($scope, $http, $route, $log){
+				this.name = "Contact page";
+                
+                /*This will reload only current route and not */
+                this.reload = function(){
+                    $route.reload();
+                };
+                
+                //we can also use $locationChangeStart
+                $scope.$on("$routeChangeStart",function(event, nextRoute, currentRoute){
+                    if(!confirm("Are you really want to navigate away from " + 
+                                currentRoute.$$route.originalPath +
+                                " to "+ 
+                                nextRoute.$$route.originalPath)){
+                        event.preventDefault();
+                    }   
+                });
+                
+                $scope.$on("$routeChangeSuccess", function(event){
+                    $log.info("Route Change Successful");
+                });
+			});
+			
+			//creating productsController
+			mymodule.controller("productsController", function($scope){
+				this.name = "Products page";
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+            
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/products">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/locations">Locations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#/business">Business</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        
+        <div class="container">
+            <!--There can be maximum one ng-view present in entire application-->
+            <ng-view></ng-view>
+        </div>
+        
+        
+        <footer class="footer">
+          <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+          </div>
+        </footer>
+	</body>
+</html>	
