@@ -4,12 +4,15 @@ Programs :
 		Learn Build tools  : Gulp, Bower, Yeoman
 		Routing
 		Buils Contacts App - Use
-                                Add password field and make it undisclosable using filter
                                 Add ng-class-odd, ng-class-even
 								
-		angular Providers?	
-		Table column sort by clicking header
-		use ng-include to seperat the views
+		angular Providers?
+		routing
+			$routeParams
+			$route : reload instead of whole app refresh
+					 
+		
+		
 
 Eclipse Configuration For angular : 
 	http://www.eclipse.org/webtools/jsdt/
@@ -248,4 +251,50 @@ Filters : They are used more of for data representation. There are several defau
 			
 ng-include : It is used to embed html page into another html pages
 				This is extremely useful for injecting same view in multiple places in your application
+			You can either use ng-include directive or ng-include html tag
 
+				
+$http Service : This is one of the core services built on top of XMLHTTPRequest
+					It accepts only one parameter.
+					
+				$http({
+				  method: 'GET',
+				  url: '/someUrl'
+				}).then(function successCallback(response) {
+					// this callback will be called asynchronously
+					// when the response is available
+				  }, function errorCallback(response) {
+					// called asynchronously if an error occurs
+					// or server returns response with an error status.
+				  });	
+					
+				OR
+
+				you can use shortcut methods like $http.get(), $http.post() etc.
+					
+				Note angular automatically converts a JSON response to javascript object without writing a single line of code. That conversion happens implicitly	
+				
+ng-view :   Applications can only have one ng-view directive, and this will be the placeholder for all views provided by the route.
+			It can be expressed as 
+				<div class="ng-view"></div> OR
+				<ng-view></ng-view> OR
+				<div ng-view></div>
+
+				
+Routing : 	This is a application configuration mechanism  with which we can control how pages are loaded within application.
+			We can map the urls to the actual view templates using routing.
+		  	Events
+				$routeChangStart
+				$locationChangeStart
+				$routeChangeSuccess
+				$locationChangeSuccess
+			$routeParams
+			Resolving Route change
+				This is required when our http calls take time and we dont want to change the route untill http call fetches data 
+
+				
+
+ui-router :	A powerful third party module
+			ngRoute is tightly coupled with the application URL.
+			uiRouter is bounded with Application state which makes most of the developers to use it over ngRoute
+			

@@ -8,7 +8,7 @@
         value service can return a primitive value, an object or a function
         I am returning a string here.
     */
-    contactApp.value("footerData", "@powerrdBy : Dnyanesh");
+    contactApp.value("footerData", "Made in love with the angular");
     
     
     /*
@@ -22,7 +22,7 @@
     
     
     
-    contactApp.service("contactsService", function($http){
+    contactApp.service("contactsService", function($http,$log){
         var self = this;
         
         this.getContacts = function(){
@@ -32,8 +32,9 @@
                 //Note here : geContacts doesnt return a contacts data but a promise object
                 //and the object has to handled by using promise pattern  
             },
-            function(){
+            function(response){
                 self.errorMessage = "There was an error. Please try again.";
+                $log.error("Server Error has occurred : " + response);
             });
         };
         
@@ -65,8 +66,8 @@
     
     
     contactApp.constant("viewsConstants", {
-        "header" : "'views/header.html'",
-        "footer" : "'views/footer.html'"
+        "header" : "views/header.html",
+        "footer" : "views/footer.html"
     });
     
     contactApp.constant("constantDummyData2", {

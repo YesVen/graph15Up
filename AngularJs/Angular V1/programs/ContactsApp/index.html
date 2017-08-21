@@ -22,7 +22,9 @@
     
 <body>
 
-    <div ng-include="'views/header.html'"></div>
+    <div ng-controller="headerController as header">
+        <div ng-include="header.view"></div>
+    </div>
     
     <div ng-controller="contactController as contact" class="container-fluid body-content">
         
@@ -30,6 +32,8 @@
           <span class="input-group-addon" id="searchContact">Search</span>
           <input type="text" class="form-control" placeholder="search contact by first name" 
                  aria-describedby="searchContact" ng-model="searchText.name.first"><!--Searching over first name only-->
+          <input type="button" value="Reload" class="btn btn-primary" ng-click="contact.reloadContacts($event)"
+                 style="cursor:hand"/>    
         </div>
         
         <ul class="list-group">
@@ -106,7 +110,8 @@
         </ul>
     </div>
     
-    <div ng-include="'views/footer.html'"></div>
+<!--    <div ng-include="'views/footer.html'"></div>-->
+    <ng-include src="'views/footer.html'"></ng-include>
   
 </body>
 </html>    

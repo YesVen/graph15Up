@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="mymodule"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../../angular.js">
+		</script>
+		<script type="text/javascript"
+				src="../../angular-route.js">
+		</script>
+		<script type="text/javascript">
+			
+			var mymodule = angular.module("mymodule",["ngRoute"]);
+			
+			//defing routing mechanism
+			mymodule.config(function($routeProvider){
+                
+                    /*This makes case insensitive route URL be mapped to correct URL*/
+                    $routeProvider.caseInsensitiveMatch = true;
+                
+					$routeProvider
+					.when('/home',{
+						templateUrl : 'home.html',
+						controller : 'homepageController',
+                        controllerAs : 'homeCtrl'
+					})
+					.when('/contact',{
+						templateUrl : 'contact.html',
+						controller : 'contactController as contactCtrl'
+					})
+					.when('/products',{
+						templateUrl : 'products.html',
+						controller : 'productsController as productsCtrl'
+					})
+                    .when('/locations', {
+                        template : '<div> <p> WE can add html inline as well </p> </div>',
+                        controller : 'homepageController as homeCtrl' /*We can assign any controller in charge of this template*/
+                    })
+                    .when('/business',{
+                        redirectTo : '/products'
+                    })
+                    .otherwise({
+                        template : "<p> View Mapping is not provided in $routeprovider so this view is rendered by default</p>"
+                        /*,redirectTo : '/contact'*     This can also be used instead of template */
+                    });
+                
+			});
+			
+			
+			//creating homepagecontroller
+			mymodule.controller("homepageController", function($scope){
+				this.name = "Home page";
+			});
+			
+			//creating contactController
+			mymodule.controller("contactController", function($scope, $http, $route, $log){
+				this.name = "Contact page";
+                
+                /*This will reload only current route and not */
+                this.reload = function(){
+                    $route.reload();
+                };
+                
+                //we can also use $locationChangeStart
+                $scope.$on("$routeChangeStart",function(event, nextRoute, currentRoute){
+                    if(!confirm("Are you really want to navigate away from " + 
+                                currentRoute.$$route.originalPath +
+                                " to "+ 
+                                nextRoute.$$route.originalPath)){
+                        event.preventDefault();
+                    }   
+                });
+                
+                $scope.$on("$routeChangeSuccess", function(event){
+                    $log.info("Route Change Successful");
+                });
+			});
+			
+			//creating productsController
+			mymodule.controller("productsController", function($scope){
+				this.name = "Products page";
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+		
+		<p>
+			<a href="#/home">Home</a> 
+			<a href="#/contact">Contact</a>
+			<a href="#/products">Products</a>
+            <a href="#/locations">Locations</a>
+            <a href="#/business">Business</a>
+		</p>
+		
+		<p>Click on buttons to navigate</p>
+        <div>
+            <!--There can be maximum one ng-view present in entire application-->
+            <ng-view></ng-view>
+        </div>
+	</body>
+</html>	

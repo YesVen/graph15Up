@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="scrollApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="angular.js">
+		</script>
+		
+		<script type="text/javascript">
+			
+			angular.module("scrollApp", [])  
+                   .controller("scrollController", function($location,$anchorScroll){
+                        this.scrollTo = function(element){
+                        $location.hash(element);
+                        $anchorScroll.yOffset = 100;
+                        $anchorScroll();
+                    };
+                });
+			
+		</script>
+	</head>
+	
+	<body ng-controller="scrollController as ctrl">
+		<div>
+            <button id="top" ng-click="ctrl.scrollTo('bottom')">Clik here to go to bottom</button>
+        </div>
+        
+        <div>
+        
+            <p>This is  a test</p>
+            <br><br>
+            
+            <p>This is  a test</p>
+            <br><br>
+            
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            <p>This is  a test</p>
+            <br><br>
+            
+            <p>This is  a test</p>
+            <br><br>
+            
+        </div>
+        
+        <div>
+            <button id="bottom" ng-click="ctrl.scrollTo('top')">Clik here to go to top</button>
+        </div>
+	</body>
+</html>	

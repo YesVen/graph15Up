@@ -7,7 +7,7 @@
         this.hello = "Hello World";
         this.contacts = [];
         var self = this;
-        this.searchText = "";
+        this.searchText = {};
 
         //Note here : geContacts doesnt return a contacts data but a promise object
         //and the object has to handled by using promise pattern 
@@ -26,6 +26,13 @@
             this.selectedContact = eachContact;
         };
 
+        
+        this.reloadContacts = function($event){
+            self.contacts = contactsService.getContacts().then(function(data){
+               self.contacts = data;
+               self.selectedContact = data[0];    
+            });
+        };
 
         this.editContact = function ($event, $index) {
             this.editMode = true;
