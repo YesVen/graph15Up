@@ -7,7 +7,7 @@ Programs :
 		routing
 			$routeParams
 			$route : reload instead of whole app refresh
-					 
+		Custom Directive with expression Evaluation			 
 		
 		
 
@@ -30,7 +30,13 @@ declarative vs imperative programming
 Dependency Injection : A concept says that the dependencies you need are given to you rather than you looking for the dependencies.
 					e.g. Koushik told example of dev conference  food system
 
-Directive : At a high level, directives are markers on a DOM element that tell AngularJS's HTML compiler ( $compile ) to attach a specified behavior to that DOM element (e.g. via event listeners), or even to transform the DOM element and its children.
+Directive : At a high level, directives are markers on a DOM element that tell AngularJS's HTML compiler ( $compile ) to attach a specified behavior 
+			to that DOM element (e.g. via event listeners), or even to transform the DOM element and its children.
+			
+			Custom directive can be expressed in following ways
+				<my-custom-directive></my-custom-directive>
+				<div my-custom-directive></div>
+				<div class="my-custom-directive"></div>
 
 
 Module : Its a collection of directives, services, controllers etc.
@@ -294,4 +300,7 @@ Routing : 	This is a application configuration mechanism  with which we can cont
 ui-router :	A powerful third party module
 			ngRoute is tightly coupled with the application URL.
 			uiRouter is bounded with Application state which makes most of the developers to use it over ngRoute
+			
+			uiRouter allows us to have nested state wherein parent state data is accessed by child state
+			With uiRouter we can have multiple ng-views within a application (basically multiple named views)
 			
