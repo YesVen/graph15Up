@@ -303,4 +303,19 @@ ui-router :	A powerful third party module
 			
 			uiRouter allows us to have nested state wherein parent state data is accessed by child state
 			With uiRouter we can have multiple ng-views within a application (basically multiple named views)
+
+$compile :	This is first step in processing angular application which is preceeded by Linking ($link)
+			Angular walks through the DOmand see if any angular people living on the dom. If it finds any, angular will traverse them to see if 
+			that guy has any angular people associated with it.
+			Once traversing is completed, angular executes the code within each guy (say directive, filter etc.)
 			
+			<div my-custom-directive city="Pune">
+			</div>  ----------> this is a template for directive myCustomDirective
+			
+			Its followed by Linking Phase
+					Step 1 : Template clone is created 
+					Step 2 : Controller of directive is run
+					Step 3 : Pre linking 
+					Step 4 : Post Linking
+					Step 5 : template gets rendered in DOM
+				Note step 2,3,4 steps will be performed against the template clone created in first step
