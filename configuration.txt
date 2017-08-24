@@ -8,4 +8,9 @@ eclipse :
 	
 	angularJs 		- http://www.eclipse.org/webtools/jsdt/
 					  https://marketplace.eclipse.org/content/angularjs-eclipse#.U4M7rBYqm0o
-	
+					  
+					  
+Must have popular command line tool : http://cmder.net/	
+
+http://yeoman.io/
+

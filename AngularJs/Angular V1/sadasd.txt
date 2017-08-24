@@ -7,7 +7,8 @@ Programs :
 		routing
 			$routeParams
 			$route : reload instead of whole app refresh
-		Custom Directive with expression Evaluation			 
+		Custom Directive with expression Evaluation		
+		Create a directive to update time at footer of your site
 		
 		
 
@@ -33,12 +34,24 @@ Dependency Injection : A concept says that the dependencies you need are given t
 Directive : At a high level, directives are markers on a DOM element that tell AngularJS's HTML compiler ( $compile ) to attach a specified behavior 
 			to that DOM element (e.g. via event listeners), or even to transform the DOM element and its children.
 			
+			There are three types of directives
+				Decorator Directives
+				DOM manipulating directives
+				..???
+			
 			Custom directive can be expressed in following ways
 				<my-custom-directive></my-custom-directive>
 				<div my-custom-directive></div>
 				<div class="my-custom-directive"></div>
+				
+			We can restrict how it can be used in html by providing restrict option to directive
+				A =  <div Doc></div>
+				C =  <div class="Doc"></div>
+				E =  <Doc data="book_data"></Doc>
+				M =  <!--directive:Doc -->
 
-
+				
+					
 Module : Its a collection of directives, services, controllers etc.
 
 ng-init : USed for init purpose but not recommended. It inits variables at $scope.
@@ -304,6 +317,7 @@ ui-router :	A powerful third party module
 			uiRouter allows us to have nested state wherein parent state data is accessed by child state
 			With uiRouter we can have multiple ng-views within a application (basically multiple named views)
 
+
 $compile :	This is first step in processing angular application which is preceeded by Linking ($link)
 			Angular walks through the DOmand see if any angular people living on the dom. If it finds any, angular will traverse them to see if 
 			that guy has any angular people associated with it.
@@ -319,3 +333,13 @@ $compile :	This is first step in processing angular application which is preceed
 					Step 4 : Post Linking
 					Step 5 : template gets rendered in DOM
 				Note step 2,3,4 steps will be performed against the template clone created in first step
+
+			
+			
+Angular JS uses a light version of jquery (JqLite) to make use of the great javascript library for dom manipulation.
+If jquery is present in application, it uses jquery else subset of jquery jqLite is used.
+If you are using jquery then make sure you include it before angular.js script otherwise it will not be used (jqlite will be used)
+JqLite implements only the most commonly needed functionality with the goal of having a very small footprint.
+
+			
+

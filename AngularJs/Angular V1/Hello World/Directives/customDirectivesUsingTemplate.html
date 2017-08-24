@@ -12,8 +12,16 @@
 		
 		<div my-directive> </div>
 
-		
+		<div element-directive></div> <!--This will not show up as this is element only directive-->
+        <element-directive></element-directive>
 
+        <br><br>
+        
+        <div class="element-and-class-directive"></div>
+        
+        
+        <div current-date-time country="Ravet" language="Marathi"></div>
+        
 	</body>
 
 	<script>
@@ -26,8 +34,34 @@
 			{
 				return {
 					template : "<p> {{user}} </p><br><br><p>Hello  {{user}} </p>"
-				};
+				}
 			})
+            .directive("elementDirective", function(){
+                return {
+                    template : "This is a test for element only directive",
+                    restrict : "E"
+                }
+            })
+            .directive("elementAndClassDirective", function(){
+                return {
+                    template : "Element and class directive",
+                    restrict : "EC"
+                }
+            })
+            .directive("currentDateTime", function($interval, $log){
+                
+                /*This is type directive which manipulates the DOM */
+            
+                return {
+                    link : function(scope, element, attributes){
+                            $log.info(attributes);
+                            $interval(function(){
+                                element.text( attributes.country + " time is " + new Date().toTimeString());
+                                $log.info("Updating time");
+                            }, 1000);
+                    }
+                }
+            });
 
 	</script>
 </html>
