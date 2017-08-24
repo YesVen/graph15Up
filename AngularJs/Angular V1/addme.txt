@@ -1,11 +1,2 @@
-A =  <div Doc></div>
 
-C =  <div class="Doc"></div>
 
-E =  <Doc data="book_data"></Doc>
-
-M =  <!--directive:Doc -->
-
-https://docs.angularjs.org/guide/directive
-
-Create a directive to u[date time at footer of your site
