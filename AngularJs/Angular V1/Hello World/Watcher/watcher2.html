@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+        </script>
+
+        <script>
+            angular.module("myApp" , [])
+            .controller("myController", function($scope){
+                $scope.fname = "";
+                $scope.lname = "";
+                $scope.city = "";
+                $scope.company = "";
+                $scope.allInfo = "";
+                
+                $scope.skills = [];
+                
+               $scope.$watchGroup(['fname','lname','city'],function(newValue){
+                   $scope.allInfo  =  newValue;
+                   console.log($scope.allInfo);
+                   //alert(typeof $scope.allInfo);
+                   
+                   $scope.skills.push("Java");
+               });
+                
+                
+                $scope.$watchCollection("skills", function(){
+                    alert("Skills updated");
+                    
+                    //Note this watcher is called only for addition/deletion of element in skills array
+                });
+                
+                
+            });
+        </script>
+    </head>
+    <body ng-controller="myController">
+        Name : <input ng-model="fname" />
+        {{allInfo}}
+    </body>
+</html>

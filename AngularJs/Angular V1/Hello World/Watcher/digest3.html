@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+        </script>
+
+        <script>
+            angular.module("myApp" , [])
+                .controller("myController", function($scope, $rootScope){
+                
+                    $scope.a = 10;
+                    $scope.b = 20;
+                    $scope.result = 0;        
+                
+                    $scope.sum  = function(){
+                        $scope.result = parseInt($scope.a) + parseInt($scope.b);
+                    };
+                    
+                });
+            
+            var makeSum1 = function(){
+                var angularScope = angular.element(document.getElementById('body')).scope();
+                angularScope.result = parseInt(angularScope.a) + parseInt(angularScope.b);
+                
+                //upto this stage, result is calculated but its not updated on UI
+                //because nobody kicked digest cycle to run
+                
+                angularScope.$apply();
+                
+            }
+            
+            var makeSum2 = function(){
+                var angularScope = angular.element(document.getElementById('body')).scope();
+
+                angularScope.$apply(function(){
+                    //Run this peice of code and then run apply
+                    angularScope.result = parseInt(angularScope.a) + parseInt(angularScope.b);
+                });
+                
+            }
+            
+            
+            
+        </script>
+    </head>
+    <body ng-controller="myController" id="body">
+    
+        a = <input ng-model="a"/> {{a}}<br>
+        b = <input ng-model="b"/> {{b}}<br>
+        <span> Sum = {{result}}</span><br><br>
+        <input type="button" value="Angular Sum" ng-click="sum()">
+        
+        
+        <input type="button" value="Non-Angular Sum - way1" onclick="makeSum1()"/>
+        <input type="button" value="Non-Angular Sum - way2" onclick="makeSum2()"/>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js"></script>
+
+        <script>
+    
+        angular.module("myApp" , [])
+        .controller("myController", function(){
+            
+        })
+        .directive("myDirective", function($interpolate){
+            return {
+              
+                // During compiling phase, original template elememt and attributes are accesible. Hence named as tElement
+                compile : function(tElement, tAttributes){
+                    
+                    console.log(tAttributes.index + "During Compile phase");//During compile phase, expression is not evaulated
+                    
+                    //tElement is Jquery object bdw
+                    tElement.css("border",  "1px solid Red");
+                    
+                    
+                    return {
+                        //During linking phase scope is accesible. Also template instance/clone is created.
+                        //So instance element and attributes are present so named as iElement
+                        pre : function(scope, iElement, iAttributes,controller){
+                            console.log(iAttributes.index + "During pre-linking");
+                        },
+                        post : function(scope, iElement, iAttributes,controller){
+                            console.log(iAttributes.index + "During post-linking");
+                            
+                            //This is right place to modify individual instance elements
+                            if(parseInt(iAttributes.index) === 4){
+                                iElement.css("border", "2px dotted green").css("background-color", "magenta");
+                            }
+                            
+                            if(iAttributes.index === 'dnyanesh'){
+                                iElement.text("See DNYANESH is now CAPS");
+                            }
+                        }
+                    };
+                },
+                controller : function($scope, $element, $attrs){
+                    
+                    console.log($attrs.index);//we need to interpolate attribute into scope manually
+                    
+                    var ss = $interpolate($attrs.index)($scope);
+                    
+                    console.log(ss + "During controller run");
+                }
+                
+            };
+        })
+        .directive("mySecondDirective", function(){
+            
+            /*
+                This will be by default treated as post link function
+                This is a common and famous signature
+            */
+           return function(scope, iElement, iAttributes, controller){
+               iElement.css("background-color", "#76FF12")
+                   .css("border","1px solid blue")
+                   .css({"height" : "100px", "width" : "100px"});
+           } 
+        })
+        .directive("myThirdDirective", function(){
+           return {
+             link : {
+                 //You can skip pre phase if you want
+                 post : function(scope, iElement, iAttributes, controller){
+                        iElement.on("click", function(event){
+                           alert(event.target.name + " , dont you think?"); 
+                        });
+                     
+                        iElement.css('border-radius','5px');
+                 }
+             }  
+           } 
+        });
+    
+    </script>
+        
+	</head>
+    <body ng-controller="myController as controller">
+        
+        <div id="{{val}}" my-directive ng-repeat="val in [1,2,3,4,5,'dnyanesh']" index="{{val}}">
+            {{val}}
+        </div>
+        
+        <br><br><br>
+        
+        <div my-second-directive>
+        
+        </div>
+        
+        <br><br><br>
+        
+        <input type="button" my-third-directive name="Directives are awsome " value="Directives are awsome"/>
+    </body>
+    
+    
+    
+</html>

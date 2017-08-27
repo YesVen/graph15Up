@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+        </script>
+
+        <script>
+            angular.module("myApp" , [])
+            .controller("myController", function($scope){
+                $scope.o  = {
+                  a : 1,
+                  b : 2,
+                  c : 3
+                };
+                
+                $scope.contacts = [{
+                                        name : "A",
+                                        city : "Pune"
+                                    },
+                                  {
+                                        name : "B",
+                                        city : "Mumbai"
+                                  }];
+                
+                $scope.$watch("o", function(newValue, oldValue){
+                    if(newValue != oldValue){
+                        console.log("O's watcher called");
+                        $scope.o.c = $scope.o.a * $scope.o.b;
+                    }
+                }, true);//This true flag makes object/array being deep watched 
+                
+                //IF we set a flag true, then every object in array is watched for modification. 
+                //Array itself is watched for addition/deletion
+                $scope.$watch("contacts", function(){
+                    console.log("Contacts watcher called");
+                }, true);
+
+                
+                $scope.addEmp = function(){
+                    $scope.contacts.push({
+                        name : "C",
+                        city : "NY"
+                    });
+                };
+                
+                $scope.removeEmp = function(){
+                    $scope.contacts.pop();
+                }
+                
+                $scope.index = 0;
+                
+                $scope.modEmp = function(){
+                    $scope.contacts[0].id = $scope.index ++;
+                }
+            });
+        </script>
+    </head>
+    <body ng-controller="myController">
+        <input ng-model="o.a">*
+        <input ng-model="o.b">=
+        {{o.c}}
+        <br><br><br><br>
+        
+        <input ng-click="addEmp()" value="Add Employee" type="button"/>
+        <input ng-click="removeEmp()" value="Remove Employee" type="button"/>
+        <input ng-click="modEmp()" value="Modify First Employee" type="button"/>
+    </body>
+</html>    

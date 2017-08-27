@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+        </script>
+
+        <script>
+            angular.module("myApp" , [])
+                .controller("myController", function($scope, $rootScope){
+                
+                    $scope.a = 10;
+                    $scope.b = 20;
+                        
+                });
+        </script>
+    </head>
+    <body ng-controller="myController">
+    
+        a = <input ng-model="a"/> {{a}}<br>
+        b = <input ng-model="b"/> {{b}}<br>
+        
+        <p>open developer tools, open console.
+        <p>select a body element on elements tab of dev tools</p>    
+        </p>on console
+            <ul>
+                <li>run angular.element($0).scope().a</li>
+                <li>run angular.element($0).scope().a = 989</li>
+                <li>check if a's value on scope is modified by running angular.element($0).scope().a</li>
+                <li> observe ui if a's value is changed on UI. It should not as we are triggering scope variable 
+                    modification outside angular context</li>
+                <li>now run angular.element($0).scope().$apply();</li>
+                <li>Now observe UI. It should reflect change</li>
+            </ul>
+        
+    </body>
+</html>

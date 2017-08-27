@@ -50,8 +50,10 @@ Directive : At a high level, directives are markers on a DOM element that tell A
 				E =  <Doc data="book_data"></Doc>
 				M =  <!--directive:Doc -->
 
-				
-					
+			When u feel you are not writing compile or link function in directive, its good time to use component instead of directive.	
+			
+			A directive creates its own new scope.
+			
 Module : Its a collection of directives, services, controllers etc.
 
 ng-init : USed for init purpose but not recommended. It inits variables at $scope.
@@ -318,10 +320,11 @@ ui-router :	A powerful third party module
 			With uiRouter we can have multiple ng-views within a application (basically multiple named views)
 
 
-$compile :	This is first step in processing angular application which is preceeded by Linking ($link)
-			Angular walks through the DOmand see if any angular people living on the dom. If it finds any, angular will traverse them to see if 
-			that guy has any angular people associated with it.
-			Once traversing is completed, angular executes the code within each guy (say directive, filter etc.)
+$compile :	This is first step in processing angular application which is preceded by Linking ($link)
+			Angular walks through the DOm and see if any angular people living on the dom. If it finds any, angular will traverse them to see if 
+			that guy has any angular people associated with it. And so on...
+			Once traversing is completed, angular executes the code within each guy (say directive, filter etc.). This is called as compiling a directive
+			It happens only once.
 			
 			<div my-custom-directive city="Pune">
 			</div>  ----------> this is a template for directive myCustomDirective
@@ -334,12 +337,108 @@ $compile :	This is first step in processing angular application which is preceed
 					Step 5 : template gets rendered in DOM
 				Note step 2,3,4 steps will be performed against the template clone created in first step
 
+			If you write a compile phase of directive. It has below signature.
+				app.directive("myDirective" function(){
+					compile : function(){
+						//compile related code goes here
+						
+						return {
+							pre : function(){}  //prelink code
+							post: function(){}  // postlink code
+						}
+					}
+				});
+			If you see code like this, 
+				app.directive("myDirective" function(){
+					compile : function(){
+						return function(){
+							//This is a by default considered as post-link function body
+						}
+					}
+				}				
+			
+			OR
+				app.directive("myDirective" function(){
+					return {
+						//This is a by default considered as post-link function body
+					}
+				});
+			
+			This is a by default considered as post-link function body
+				
+			$interpolate : It is used if some expressions are need to be evaluated while running controller of directive
 			
 			
 Angular JS uses a light version of jquery (JqLite) to make use of the great javascript library for dom manipulation.
 If jquery is present in application, it uses jquery else subset of jquery jqLite is used.
 If you are using jquery then make sure you include it before angular.js script otherwise it will not be used (jqlite will be used)
 JqLite implements only the most commonly needed functionality with the goal of having a very small footprint.
+At certain places angular js returns a jquery element such as in postlink function.
 
+
+Watchers : 	This is core service used by angular internally to keep track of changes in the scope variables.
+			Not for each scope variable $watch is create automatically, but how many data binding exist in view.
 			
-
+			At a time any number of watchers may exist but angular suggests watchers count < 2000
+			
+			$scope.$watch('salary', function(newvalue, oldvalue){
+				//things to do after listening to change in scope variable salary
+			}
+			
+			Types of watches : 
+				Reference Watch : 
+									When complex object is being watched, its called reference watch.
+									So until reference is not changed this watch is not going to fire.
+									To make it work for prop change in object being watched (i.e. equality watch), we need to pass third parameter as true.
+				Equality/Deep Watch : 	
+									watches if primitive is changed. Works for primitive variables on scope. 
+				
+				as we can see, $watch watches at a time only one scope variable. To counter the $watchgroup is used. It watches for a given group scope variables.
+					$scope.$watchgroup(['a','b','c'], function(){});
+				IMP : watchgroup doesn't support equality watch	
+					
+				Collection Watch : 
+									Used to watch Arrays	
+									$scope.$watchCollection(contacts, function(){});
+									
+									Detect modifications to Arrays in terms of only addition or deletion.
+									It never detects if item of an array is modified or not.
+									e.g. It can watch if new contact is added in your list. But it never watch if contact is renamed.
+									
+									For that purpose, you can use $watch(contacts) on your own will considering performance.
+									
+				All watchers are kept in watchList. Each scope has a different watchlist including $rootscope.
+					
+					
+					
+Digest : 	Its a core concept in angularJS
+			There is a separate process(not OS process) within a angular context which does digest.
+			Its a process of walking through all watchlist (implicit watchers/explicit watchers) to dirty check if anything has modified that is being watched.
+			Once this process completed, angular fw is informed to update view.
+			
+			Digest process runs at global angular context level and not scope level. It starts at root scope.
+			
+			min 2 iterations are must be done
+			Max 10 iterations of digest cycle are allowed else error is thrown
+			
+			Who asks digest process to kick in ?
+					Whenever there is a browser interaction happens such as DOM even(ng-click, ng-change), Ajax callbacks($http), timers($interval, $timeout),
+					browser location change, manual invocation of ($apply, programmatic trigger etc.)
+			
+			So it is very clear that for all external events digest process will not start.
+			e.g. If you are using jquery to handle events (onclick and not ng-click), digest process will not start. 
+				If it becomes a must thing for you to use jquery etc for event handling then you must kick diest process manually by using $digest service.
+				
+			How to kick in digest process?
+				When you are doing something outside angular context and you want UI to be updated by angular automatically, digest process need to be kicked in.
+				Two ways 
+					$scope.$apply() :  	This kicks digest process at "RootScope" always.
+										From root scope, it goes on dirty checking child scopes, nested scopesone after the another.
+										This apply() method for kicking digest loop is used internally by angular creators behind the scenes for lot of things 
+											like ng-click, $http callback etc.
+										No matter where you can $apply(), it starts digest loop from $rootscope	always.
+											
+											
+					$scope.$digest():	This kicks digest process in current scope and its child/nested scope only.
+										Could be called from $rootscope also.
+				

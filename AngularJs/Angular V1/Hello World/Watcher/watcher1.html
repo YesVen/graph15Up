@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+		<script type="text/javascript"
+				src="../angular.js">
+        </script>
+
+        <script>
+            angular.module("myApp" , [])
+            .controller("myController", function($scope){
+                $scope.name = "";
+                $scope.lname = "Barkade";
+                $scope.address = "";
+                
+                $scope.fullName = "";
+                
+                $scope.updateName = function(){
+                    $scope.fullName =   $scope.name + " " + $scope.lname;
+                };
+                
+                /*Watcher 2*/
+                $scope.$watch('fullName', function(newValue, oldValue){
+                    
+                    console.log("Full name is updated to " + $scope.fullName + "Ravet");        
+                    $scope.address = $scope.fullName + " Ravet";
+                });
+                
+                /*Watcher 3*/
+                $scope.$watch('address', function(newValue, oldValue){
+                    console.log("Address is "+ $scope.address);
+                });
+                
+            });
+        </script>
+    </head>  
+    <body ng-controller="myController">
+        <div>
+            Name  : <input type="text" ng-model="name" ng-change="updateName()"/> <!--Watched 1-->
+            
+        </div>
+    </body>
+</html>

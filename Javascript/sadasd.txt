@@ -13,3 +13,109 @@ Design Patterns
 	Prototype
 	
 	
+Javascript is compiled and interpreted language. Fact is that compilation happens before interpretation in just fraction of seconds.
+	Compilation : 	It does happen. Period. 
+					No intermediate file is created like other languages. Like java created .class file after compilation.
+					Here it actually does lot of work like variable hoisting, scope resolution etc within a fraction of seconds. 
+					
+	Interpretation :	Executes code. 
+					
+	
+In javascript function is object. 
+	function greet(){
+		console.log("hello window object");
+	}
+	
+	var msg = "Hello";
+	
+	Both msg and greet() are attached to window object.
+	
+
+Javascript is function scoped language. A scope is created for a new function. 
+Note : a new block will not create a new scope.
+		var name = "Dnyanesh";
+		function getName(){
+			var name = "Dnyanesh" //inner scope
+		}
+		console.log(name); //global scope
+		
+		{
+			var city = "Pune" // This is still a global scope. city is global variable (NOT a local)
+		}
+	
+	
+Read Operation : When we read a value from a variable its called read operation. ------ console.log(name);
+Write Operation : When we write a value from a variable its called write operation	------- var a = 10;
+
+		You can use undeclared variable in write operation. 
+			gender = "Male";
+			console.log(gender)// gender "global" variable created and Male will be printed
+							  // here "global" variable is created which made our problem even worse by polluting global scope. 
+							  // So thumb rule is to always declare a variable before using it.
+			
+		You cannot use undeclared variable in read operation
+				console.log(address);// syntax error will be thrown
+
+				
+Why not to pollute global namespace?
+		When you run your app, there are lot of js code running in background be it code developed by fellow js developer, a useful js library or anything.
+		There might be chances that the global variable you used might be inadvertently used by some other library which in turn overrides 
+		and beaks your app which is hard to debug.
+		
+		
+IIFE : 	Immediately Invoked Function Expression.
+		This is a way to avoid variables sand functions to get attached to window object. Whatever declared within a IIFE stays within a IIFE.
+		Even IIFE does not get attached to window object.
+		
+		IIFE create a anonymous function and executes it immediately.
+		(function(){
+			//code inside an IIFE will be IIFE scoped and not GLOBAL
+		})();
+		
+  		
+		
+Hoisting : 
+			Javascript allows you to write code like this,
+				function(){
+					console.log(salary);  // Using variable before declaring----prints undefined because of variable declaration hoisting
+					var salary = "10k";
+				}
+				
+			Reason is : Javascript variables declaration and function declaration is hoisted.
+						Remember only declaration is hoisted not assignment
+				
+			Hoisting is done in compilation phase.
+			Function Expression is not hoisted but function declaration is.
+			
+					add(); // This gives error. add() undefined.
+					var add = function(){
+									//add two numbers
+							  }
+					BUT
+					
+					add(); // This works
+					function add(){
+						//add two numbers
+					}
+		
+					The reason second one works is function declaration result in creating function object in compilation phase. It is then attached
+					to scope and referred from scope during execution.
+					But for first case, hoisting does happen but function object is not created in scope.
+					Thats the difference.
+					
+					
+		
+Strict Mode : 	"use strict";
+				it will not allow you to use variable without declaration. It will throw syntax error.
+				
+					var Name = "Dnyanesh";
+					name = "Niky"; // name is here not "Name" (notice typo in variable name)
+					console.log(name);
+				
+					strict mode will see that Name variable is not declared before using nad it will throw error.
+					In normal case, it would have created a new name variable which is kind of dirty.
+					
+				If you add "use strict" as a first line of your js, it will be applicable to whole script.
+				You can use it in only function level also. Add it as first line of function.
+					
+				
