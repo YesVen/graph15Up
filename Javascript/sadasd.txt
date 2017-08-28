@@ -119,3 +119,21 @@ Strict Mode : 	"use strict";
 				You can use it in only function level also. Add it as first line of function.
 					
 				
+Closures :	Closure Remembers (Like North Remembers)
+			Closure Remembers the scope in which it has created. It remembers the variable values in which it has been created.
+			
+			There is no way in Javascript to have public, private, protected accesses to methods, variables.
+					var  person = {
+						fname : "Dnyanesh",
+						lname : "Barkade",
+						getFname : function(){ return this.fname},
+						getLname : function(){ return this.lname}
+					}
+					
+					Here we have added getter and setter to person object. So ideally we should be using 
+						new Person().getFName() --- to get Name
+					but wait....I can also do 
+						new Person().fname ------to get fname / so getter and setters purpose is nullified here
+			
+			Closures comes here to rescue you in this situation. By using closures you can restrict access to only required things.
+			

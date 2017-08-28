@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+			
+            var i;
+                
+            function print(){
+                console.log(i);
+            }
+            
+            //This is straight forward
+            for(i=0; i<10; i++){
+                print();
+            }
+            
+            //This is also straight forward. Javascript is fast enough to execute all 10 iterations within 1 second before giving control to
+            // setTimeout to print. Ny the time settimeout is executed i vavlue has been changed to 10
+            for(i=0; i<10; i++){
+                setTimeout(print, 1000);
+            }
+            
+            // In javascript variables are function scoped and not block scoped
+            //So here, i will overwrite global variable i
+            for(var i=0; i<10; i++){
+                setTimeout(print, 1000);
+            }
+            
+            function test(){
+                //I will be a local scoped variable here
+                for(var i=0; i<10; i++){
+                    //This will print i=10 because previous code has modofied i value to 10;
+                    setTimeout(print, 1000);
+                }   
+            }
+            
+            test();
+            
+		</script>
+        
+        Guess What will be printe on console?
+        
+	</body>
+</html>

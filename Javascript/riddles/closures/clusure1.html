@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+			
+            var  a = 10;
+            console.log(a);
+            
+            function outer(){
+                var b =20;
+                
+                return function(){
+                    console.log(b);
+                    console.log(a);
+                }
+            }
+            
+            var inner  = outer();
+            
+            inner();
+            
+		</script>
+        
+        Guess What will be printe on console?
+        
+	</body>
+</html>

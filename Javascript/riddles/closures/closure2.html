@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+			
+            var  a = 10;
+            
+            function outer(){
+                var b =20;
+                
+                return function(){
+                    a++;
+                    b++;
+                    console.log(b);
+                    console.log(a);
+                }
+            }
+            
+            /*
+                This will create a new copy of closure with scoped variables (b=20)
+            */
+            var inner  = outer();
+            
+            /* This step will use the same copy created in above step */
+            inner();
+            
+            /* This step will use the same copy created in above step */
+            inner();
+            
+            
+            /*
+                This will create a new copy of closure with scoped variables (b=20)
+            */
+            var innerAgain = outer();
+            
+            
+            /* This step will use the same copy created in above step */
+            innerAgain();
+            
+		</script>
+        
+        Guess What will be printe on console?
+        
+	</body>
+</html>
