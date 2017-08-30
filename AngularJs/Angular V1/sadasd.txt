@@ -8,7 +8,7 @@ Programs :
 			$routeParams
 			$route : reload instead of whole app refresh
 		Custom Directive with expression Evaluation		
-		Create a directive to update time at footer of your site
+		
 		
 		
 
@@ -441,4 +441,58 @@ Digest : 	Its a core concept in angularJS
 											
 					$scope.$digest():	This kicks digest process in current scope and its child/nested scope only.
 										Could be called from $rootscope also.
+
+
+$eval :	USed for evaluating expressions.
+		Plain old JS eval with few additions
+		It works on scope used to call eval
+		
+		$scope.$eval("a * b *c", {c:123});
+			Here, a ,b,c must be the scope variables. If any variable is not present in scope it will be taken from locale object (second parameter to eval)
+		It uses $parse internally with $scope. 
+		
+		
+$parse : 	It just parses the expression and returns a function.
+			e.g. var func = $parse(a*b);
+					func($scope);
+				we can use this func on any object which can have a and b variables.
+				So,
+					func({a : 12, b:23});
+					
+			Shorthand Notation : $parse("a*b")($scope);		
+					
+			$eval uses $parse internally with $scope.		
+			
+			$parse returns a function which has one more function called assign. Assign can change object variable value.
+			If assign method changes scope variable value, Digest loop gets kicked in automatically.
+			SO its very important to note down.
+			
+			
+			
+$interpolate: 	Its another flavour to evaluate expression but slightly advanced.
+				We can pass any arbitrary string having angular expression to it and it will evaluate ot for you.
 				
+				$interpolate("Result of the a*b is {{a*b}}", and double of that is {{a*b*2}}")($scope);
+				It internally uses $parse.
+				$Interpolate cannot modify the variable value using assign but $parse does.
+				
+				
+Directive : 	By default, Directive shares scope with the controller in which directive is embedded.
+				Its scope can be 
+								isolated from parent
+								new child scope + Parent scope
+								Shared scope with parent (default behavior)
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
