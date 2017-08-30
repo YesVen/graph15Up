@@ -1,0 +1,61 @@
+
+
+http://exploringjs.com/es6/ch_overviews.html#overview-entry-about-es6.md
+http://qnimate.com/post-series/ecmascript-6-complete-tutorial/
+
+JavaScript is a superset of ECMAScript scripting language. ECMAScript forms the language base for JavaScript, JScript and ActionScript
+
+var vs let vs const
+	var : function scoped
+	let : block scoped
+	const : block scoped. Variable need to be assigned immediately after declaration and cannot be reassigned
+
+template Strings
+
+Symbol
+
+Default parameter values
+
+varargs
+
+
+Arrow Functions
+
+new methods added to Object
+
+OO terminology in JS
+	Class
+	constructor
+	extends
+	super
+	interface
+	
+Modules
+
+named exports
+
+for...of loop
+
+Map, Set, WeakMap, WeakSet
+
+New Array features
+
+Uint8Array, Int16Array, Float32Array
+
+Generators 
+
+Spread operator
+
+Reflect
+	
+Metaprogramming with proxies	
+	
+
+	
+
+
+
+
+
+
+

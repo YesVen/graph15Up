@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("MyController", function($scope){
+            $scope.a = 10;
+            $scope.b = 20;
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+            $scope.result1 = $scope.$eval("a * b");
+            
+            //I can evaluate a prooperty on object
+            $scope.mobile = $scope.$eval("user.contact.mobile");
+            
+            //second parameter is local object to used for evaluating expression
+            $scope.result2 = $scope.$eval("a * b", {});
+            
+            $scope.result3 = $scope.$eval("a * b * c", {c:2});
+        });
+    
+    </script>
+</head>
+<body ng-controller="MyController as ctrl">
+    a = {{a}}
+    b = {{b}}
+    
+    <hr>
+    
+    Result1 = {{result1}}
+    Mobile = {{mobile}}
+    Result2 = {{result2}}
+    Result3 = {{result3}}
+</body>
+</html>
