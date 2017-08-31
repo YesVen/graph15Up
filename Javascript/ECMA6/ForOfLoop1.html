@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+            "use strict";
+            const persons = [{name : "A", age : "7"},
+                            {name : "B", age : "3"},
+                            {name : "C", age : "4"},
+                            {name : "D", age : "6"}];
+            
+            for(const person of persons){
+                console.log(person.name + "'s age is "+ person.age);
+            }
+
+            
+            
+            
+            const a =12;
+            a =100;
+            //Should throw .....Uncaught TypeError: Assignment to constant variable
+            console.log(a);
+            
+        </script>
+        
+        Guess What will be printe on console?
+            --------------   Note we are using for of loop
+        
+	</body>
+</html>

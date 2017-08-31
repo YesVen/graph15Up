@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+            
+            var persons = new Set();
+            
+            persons.add(11);
+            persons.add({name : "dnyanesh", age :28});
+            persons.add("Niky");
+            
+            console.log(persons);
+            
+            //This will not be added as set does not allow duplicates
+            persons.add(11);
+            console.log(persons);
+            
+            persons.delete("Niky");
+            console.log(persons);
+            
+            
+            console.log("Does set contains 11 --- " + persons.has(11));
+            
+            
+        </script>
+        
+        Guess What will be printe on console?
+            --------------   Note we are using for of Set
+        
+	</body>
+</html>

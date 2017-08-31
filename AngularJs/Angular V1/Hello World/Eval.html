@@ -26,6 +26,11 @@
             $scope.result2 = $scope.$eval("a * b", {});
             
             $scope.result3 = $scope.$eval("a * b * c", {c:2});
+            
+            
+            //local object gets precedence if it has any matching variable
+            $scope.result4 = $scope.$eval("a * b * c", {c:2, a:2});
+            
         });
     
     </script>
@@ -36,9 +41,10 @@
     
     <hr>
     
-    Result1 = {{result1}}
-    Mobile = {{mobile}}
-    Result2 = {{result2}}
-    Result3 = {{result3}}
+    Result1 = {{result1}}<br>
+    Mobile = {{mobile}}<br>
+    Result2 = {{result2}}<br>
+    Result3 = {{result3}}<br>
+    Result4 = {{result4}}<br>
 </body>
 </html>

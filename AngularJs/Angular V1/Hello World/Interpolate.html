@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("MyController", function($scope,$interpolate){
+            $scope.a = 10;
+            $scope.b = 20;
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+            
+            var user2 = {
+                name : "Niky",
+                city : "Pune",
+                contact : {
+                    mobile : "2342342423",
+                    home : "63453764676574235"
+                }
+            };
+
+            /*
+                $interpolate is a service used to evaluate expressions just like $parse and $eval
+                It allows us to evaluate many expressions at a time in single pass.
+                
+                It internally uses $parse service. As like $parse it cannot chage value.
+                So its read only service
+            */
+            
+            
+            //shorthand notation
+            $scope.result1 = $interpolate("The result of a * b is {{a*b}}")($scope);
+            
+            //we can use multiple expression in a single pass
+            $scope.result2 = $interpolate("The result of a * b is {{a*b}} and result of b/a is {{b/a}}")($scope);
+            
+        });
+    
+    </script>
+</head>
+<body ng-controller="MyController as ctrl">
+    a = {{a}}
+    b = {{b}}
+    
+    <hr>
+    
+    Result1 = {{result1}}<br>
+    
+    Result2 = {{result2}}<br>
+</body>
+</html>

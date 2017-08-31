@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+        })
+        .controller("user2Controller", function($scope){
+            $scope.user = {
+                name : "niky",
+                city : "Pune",
+                contact : {
+                    mobile : "324234234",
+                    home : "10000000"
+                }
+            };
+            
+        })
+        .directive("message", function(){
+          return {
+              template : "<p>I am from message directive.</p><p>User info : {{user.name}}</p>"
+          }  
+        });
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    <div message id="parent">
+        
+    </div> 
+    <hr>
+    
+    <div ng-controller="user2Controller as ctrl2">
+        <div message>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

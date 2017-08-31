@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+            "use strict";
+            var persons = new Map();
+            
+            persons.set(1,"Dnyanesh");
+            persons.set(2,{
+                name : "Dnyanesh",
+                age : 29
+            });
+            
+            persons.set(3, 5);
+            
+            console.log(persons);
+            
+            console.log(persons.entries());
+            
+            //Iterating over map
+            for(const i of persons.entries()){
+                console.log("Entry " + i);
+            }
+            
+            //iterating over keys
+            for(const i of persons.keys()){
+                console.log(i);
+                console.log(persons.get(i));
+            }
+            
+            console.log("This is interesting");
+            //Iterating over map
+            for(const i of persons.entries()){
+                console.log(persons.entries().next());        
+            }
+            
+            
+        </script>
+        
+        Guess What will be printe on console?
+            --------------   Note we are using for of Map
+        
+	</body>
+</html>
