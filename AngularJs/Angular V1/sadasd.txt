@@ -150,7 +150,11 @@ module.value()  : USed for sharing common value data within different controller
 					Value can be injected in controller, service, factory but can't be injected in config.
 				
 
-module.controller()
+controller	: 	This guy is C in MVC.
+				
+				If Controller is nested, child controller inherits the scope of parent controller.
+				
+				@see ControllerScope1.html, @see ControllerScope2.html
 
 
 module.factory() : Its a service. The problem with constants and value service is it requires second argument as data/function itself.
@@ -270,6 +274,7 @@ Filters : They are used more of for data representation. There are several defau
 ng-include : It is used to embed html page into another html pages
 				This is extremely useful for injecting same view in multiple places in your application
 			You can either use ng-include directive or ng-include html tag
+			Note it create a new scope.
 
 				
 $http Service : This is one of the core services built on top of XMLHTTPRequest
@@ -480,11 +485,29 @@ $interpolate: 	Its another flavour to evaluate expression but slightly advanced.
 Directive : 	By default, Directive shares scope with the controller in which directive is embedded.
 				Its scope can be 
 								isolated from parent
-								new child scope + Parent scope
+										If we create an isolated scope, it cannot access inherited properties. But if we wish, we can pass them by using certain conventions such as @, & and =
+										Isolated scope can be created by using scope : {} inside a directive. 
+										When parent data need to passed in to isoolated scope,
+											@ --- String passed from parent to isolated scope
+											& --- Function is passed from parent to isolated scope
+											= --- Object is passed from parent to isolated scope
+								new child scope + Parent scope 
 								Shared scope with parent (default behavior)
 				
 			
-			
+Angular Events : 	First thing is they are not DOM events like click, mouseout, drag etc.
+					Understood only angularJS.
+					
+					$broadcast : Moves from top to bottom.
+								 e.g. $rootscope.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000});
+									This event will go from rootscope to all child scopes.
+									Note , it doesnt matter from how deply nested scope event is broadcasted, it will start from the scope from hwich it is broadcasted
+										i.e. $scope4.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000}); 
+											this will start from $scope4 till its scope end.
+											
+					
+					$emit :		Moves from current scope uptill rootscope.
+								Once it reaches rootscope it starts top to bottom searching for listeners.
 			
 			
 			

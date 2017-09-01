@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <style>
+        #directive1 {
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.name = "user1Controller";
+        })
+        .directive("message", function(){
+            return {
+                transclude : true,
+                template : "Transclude Demo<br><div ng-transclude></div>"
+            }
+        })
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    
+    Controller data : {{name}} <br><br>
+    
+    <div message id="directive1">
+        <p style="color:crimson">This is text not from directive but it is transcluded from DOM to directive</p>
+    </div>
+    
+</body>
+</html>

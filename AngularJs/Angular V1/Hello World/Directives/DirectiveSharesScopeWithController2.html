@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+            $scope.company = "3D";
+            $scope.employees = 2000;
+            
+        })
+        .directive("message", function(){
+          return {
+              template : "<p> company = {{company}}</p> <p><input ng-model='company'/></p>",
+              /*
+                This will cause to create a new scope in directive. So updating a inherited controller property in 
+                    directive will not update it in controller.
+                    
+                This is called isolating scope of controller.    
+              */
+              scope : true
+          }  
+        });
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    
+    Controller : company = {{company}}<hr>
+    
+    <div message >
+        
+    </div> 
+    <br>
+    <div message >
+        
+    </div> 
+    <hr><br><br><br>
+    <p>Note we have added scope:true in directive which will create a new scope for directive</p>
+    <p> Please see DirectiveSharesScopeWithController1.html to understand it better
+    </p>
+    
+</body>
+</html>

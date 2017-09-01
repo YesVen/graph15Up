@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <style>
+        #directive1 {
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.name = "user1Controller";
+        })
+        .directive("message", function(){
+            return {
+                transclude : true,
+                template : "Transclude Demo<br><div id='test'></div>",
+                controller : function($scope, $element, $attrs, $transclude){
+                    var contentToTransclude = $transclude();
+                    //levereging jquery to update DOM
+                    $element.find('div').append(contentToTransclude);
+                }
+            }
+        });
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    
+    <h3>Transclusion using directive controller</h3>
+    Controller data : {{name}} <br><br>
+    
+    <div message id="directive1">
+        <p style="color:crimson">This is text not from directive but it is transcluded from DOM to directive</p>
+        <p style="color:crimson">Transclusion using directive controller</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+            $scope.company = "3D";
+            $scope.employees = 2000;
+            $scope.brand = "Enovia";
+            $scope.floor = 100;
+            
+        })
+        .directive("message", function(){
+          return {
+              template : "<p>Directive :  company = {{company}}.</p> <p>Company property is not accessible here" + 
+                        " because we have created <b style='font-size:200%'><u>isolated scope</u></b> for message directive</p>"+
+                        "<p> We can get team = {{team}} and brand ={{brand}} because these props are being passed to isolated scope.</p><br>"+
+                        "<br> Floor : {{floor}}<input type='button' value='change floor to 4' ng-click='changeFloor(4)'/>",
+              scope : {
+                  team : "@myteam",//Getting data passed from parent 
+                  brand : "@mybrand"
+              },
+              controller : function($scope){
+                  //$scope here is isolated scope
+                  $scope.floor = "2";
+                  
+                  //function added to isolated scope
+                  $scope.changeFloor = function(num){
+                      $scope.floor = num;
+                  }
+              }
+          }
+        });
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    
+    <p>Passing primitive value to isolated directive. By default it will be one way data binded.</p>
+    Controller : company = {{company}} Floor=  {{floor}}  <hr>
+    
+    <div message myteam="Apparel" mybrand="{{brand}}">
+        
+    </div> 
+   
+</body>
+</html>

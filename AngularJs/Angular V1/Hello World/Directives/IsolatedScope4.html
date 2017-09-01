@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.user = {
+                fname : "Dnyanesh",
+                lname : "Barkade",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+            $scope.getFullName = function(){
+                alert($scope.user.fname + " " + $scope.user.lname);
+            }
+            
+        })
+        .directive("fullName", function(){
+          return {
+              template : "Isolated Directive borrowed a function from parent<br>"+
+                            "<button ng-click='getFullnameFromExternalSource()()'>Get Full Name </button>",
+              scope : {
+                  //Borrowing a function definition from parent
+                  getFullnameFromExternalSource : "&getFullNameFromParent"
+              },
+              controller : function($scope){
+                  
+              }
+          }
+        });
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    
+    <p>Passing function to isolated directive.</p>
+    
+    Controller : <input type="button" ng-click="getFullName()" value="Get Full Name"> <hr>
+    
+    <div full-name get-full-name-from-parent="getFullName">
+    </div> 
+    
+</body>
+</html>

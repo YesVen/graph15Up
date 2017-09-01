@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.a = 10;
+            $scope.b = 20;
+            
+        })
+        .controller("user2Controller", function($scope){
+           $scope.c = 30;
+            $scope.d = 40;
+        });
+    
+    </script>
+</head>
+<body >
+    <div ng-controller="user1Controller as ctrl1" id="parent">
+            a = {{a}} and b = {{b}}
+            <input type="text" ng-model="a"/>
+        <hr>
+        <div ng-controller="user2Controller as ctrl2">
+            a = {{a}} and b = {{b}}
+            c = {{c}} and d = {{d}}
+            <input type="text" ng-model="a"/>
+        </div>
+    </div> 
+    
+    <ul>
+        <li>Update a value in parent controller...see child controller a value is also updated</li>
+        <li>Now update child controller a value...see only child controller a value updated</li>
+        <li>Update a value in parent controller..see only parent controller a value is updated. 
+            This is because once child a is updated a new property "a" is created inside child scope. And updation happens only on that
+            value. Now even though we updated parent A value, it cannot updated child A as child has its own A.
+    </ul>
+    
+</body>
+</html>

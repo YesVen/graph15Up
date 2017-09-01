@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.a = 10;
+            $scope.b = 20;
+            
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+            
+            $scope.company = "3D";
+            
+        })
+        .controller("user2Controller", function($scope){
+           $scope.c = 30;
+            $scope.d = 40;
+        });
+    
+    </script>
+</head>
+<body >
+    <div ng-controller="user1Controller as ctrl1" id="parent">
+            
+            name  = {{user.name}}
+            <input ng-model="user.name"/>
+            
+        <hr>
+        <div ng-controller="user2Controller as ctrl2">
+            name  = {{user.name}}
+            <input ng-model="user.name"/>
+            Company = {{company}}<input ng-model="company"/>
+        </div>
+    </div> 
+    
+    
+    
+</body>
+</html>

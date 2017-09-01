@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Eval Example</title>
+    <script type="text/javascript" src="../angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller("user1Controller", function($scope){
+            $scope.user = {
+                name : "Dnyanesh",
+                city : "Pune",
+                contact : {
+                    mobile : "12312312321",
+                    home : "634534235"
+                }
+            };
+        })
+        .directive("message", function(){
+          return {
+              template : "Parent scope object is passed to isolated scope."+
+                        "<p>User info - {{userObject.name}},{{userObject.city}}, {{userObject.contact.mobile}}</p>"+
+                        "<p>USer object is by default two way binded</p><input type='text' ng-model='userObject.name'>",
+              scope : {
+                  userObject : "=parentUserObject"
+              },
+              controller : function($scope){
+                  $scope.floor = "2";   // floor will be local to isolated scope
+              }
+          }
+        });
+    
+    </script>
+</head>
+<body ng-controller="user1Controller as ctrl1">
+    
+    <p>Passing object to isolated directive. By default it will be two way data binded.</p>
+    
+    Controller : Name = {{user.name}}          Mobile=  {{user.contact.mobile}}  <hr>
+    
+    <div message parent-user-object="user">
+        
+    </div> 
+   
+    
+</body>
+</html>
