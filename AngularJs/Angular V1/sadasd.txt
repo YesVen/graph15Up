@@ -7,7 +7,11 @@ Programs :
 		routing
 			$routeParams
 			$route : reload instead of whole app refresh
-		Custom Directive with expression Evaluation		
+		Custom Directive with expression Evaluation	
+		$parse
+		$eval
+		$interpolate
+		scopes in directives
 		
 		
 		
