@@ -1,0 +1,10 @@
+package sweat.like.a.pro.factory;
+
+public class Notebook {
+
+	public void doHomeWork() {
+		
+	}
+
+	
+}

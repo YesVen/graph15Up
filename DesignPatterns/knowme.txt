@@ -1,0 +1,31 @@
+SingleTon
+	"Ensure that a class has only one instace and provide global point of accessto it"
+	Breaking Singleton : 
+			Reflection
+			Serialization/Deserilization
+			Cloning
+			Multi threaded Environment
+			Multiple class loaders
+			Garbage Collection : Prior to jdk1.2 version, GC is garbage collecting singleton
+			
+	Why Synchronised keyword cannot be used on getInstance()
+	Why we cant move synchronized inside method?
+	Why double checked lock is required ? Problem with double checking?
+	Final Solution : make instance private static volatile
+	Inner class to initialise object
+	
+	Josh Bloch : Use enum to create singleton as it OOT provides Reflection safety, thread safety, cloning safety, serialization safety for object.
+
+Factory : 
+		Creational
+		Used to decouple object creation logic from implementation
+			e.g Notebook doesnt need to know who is writing on it. It just need to know that whatever it may be, it can write. :)
+	
+
+Abstract Factory : 
+				Creational
+				Its called factory of factories.
+				Its used when you want to create lot of factories within factory.
+	
+Factory Method
+

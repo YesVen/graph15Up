@@ -1,0 +1,25 @@
+package sweat.like.a.pro;
+
+public class Singleton {
+
+	
+}
+
+
+class DBConnection
+{
+	private static DBConnection connection;
+
+	private DBConnection() {
+		
+	}
+	
+
+	public static DBConnection getConnection(){
+		if(connection == null){
+			connection = new DBConnection();
+		}
+		return connection;
+	}
+	
+}

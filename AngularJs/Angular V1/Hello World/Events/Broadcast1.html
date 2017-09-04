@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+        <style>
+            input{
+                border-radius: 5px;
+            }
+            
+            div{
+                border: 1px solid green;
+            }
+            
+            div.child{
+                margin: 10px;
+            }
+        </style>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+
+		<script type="text/javascript">
+            
+            angular.module("myApp",[])
+            .controller("ParentController", function($scope){
+                
+                var self = this;
+                self.name = "ParentController";
+                
+                
+                this.broadcast2 = function(){
+                    //This will be listened to all child controller but not sibling
+                    $scope.$broadcast("broadcast2", {name : "broadcast2", fromController : "ParentController"});
+                }
+                
+                $scope.$on("broadcast3", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+                
+            })
+            .controller("Child1Controller", function($scope){
+                var self = this;
+                self.name = "Child1Controller";
+                
+                //Broadcast travels from top to bottom
+                //This will be broadcasted to this and its child controller only as its the dead end.
+                //Even though we add listener on outer scope this event will not reach there
+                this.broadcast1 = function(){
+                    $scope.$broadcast("broadcast1",{name : "broadcast1", fromController : "Child1Controller"});
+                }
+                
+                $scope.$on("broadcast1", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                    event.stopPropagation();
+                });
+                
+                $scope.$on("broadcast3", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+                
+            })
+            .controller("Child2Controller", function($scope){
+                
+                var self = this;
+                self.name = "Child2Controller";
+                
+                $scope.$on("broadcast1", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+                
+                
+                $scope.$on("broadcast2", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+                
+                $scope.$on("broadcast3", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+                
+            })
+            .controller("SiblingController", function($rootScope,$scope){
+                
+                var self = this;
+                self.name = "SiblingController";
+                
+                
+                this.broadcast3 = function(){
+                    //This will we boradcasted everywhere
+                    //see we are broadcasting it from $rootscope and not sibling scope.
+                    $rootScope.$broadcast("broadcast3", {name : "broadcast3", fromController : "SiblingController"})
+                } 
+                
+                $scope.$on("broadcast3", function(eventObj, args){
+                    alert("Event "+ eventObj.name + " brodcasted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+            });
+            
+        </script>
+	</head>
+
+	<body>
+        <div ng-controller="ParentController as parentCtrl">
+            
+            <p>Parent Controller</p>
+            <input type="button" ng-click="parentCtrl.broadcast2()" value="Braodcast2 Event"/>
+            
+            <div ng-controller="Child1Controller as child1Ctrl" class="child">
+                <p>Child-1 Controller</p>
+                <input type="button" value="Broadcast1 Event" ng-click="child1Ctrl.broadcast1()"/>
+                
+                <div ng-controller="Child2Controller as child2Ctrl" class="child">
+                    <p>Child-2 Controller</p>
+                    
+                </div>    
+            </div>
+                
+            </div>
+        </div>
+        
+        <br><br>
+        <div ng-controller="SiblingController as siblingCtrl">
+            <p>Sibling Controller</p>
+            <input type="button" value="Broadcast3 Event" ng-click="siblingCtrl.broadcast3()"/>
+        </div>
+	</body>
+</html>	

@@ -1,0 +1,8 @@
+package sweat.like.a.pro;
+
+public class Singleton {
+
+	public static void main(String[] args) {
+		System.out.println("Hello Patterns, I am coming after you.");
+	}
+}

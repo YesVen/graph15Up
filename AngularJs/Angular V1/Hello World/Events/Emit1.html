@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="myApp"> <!--makes angular active in this section of document-->
+	<head>
+		<title>Hello World</title>
+        <style>
+            input{
+                border-radius: 5px;
+            }
+            
+            div{
+                border: 1px solid green;
+            }
+            
+            div.child{
+                margin: 10px;
+            }
+        </style>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+
+        <!--
+            Emit travels from bottom to top. It gets canceled if someone cancels it.
+            Broadcast travels from top to bottom.BROADCAST CANNOT BE CANCELLED.
+        -->
+        
+        
+		<script type="text/javascript">
+            
+            angular.module("myApp",[])
+            .controller("ParentController", function($scope){
+                
+                var self = this;
+                self.name = "ParentController";
+                
+                //This will be listened as Emit travels bottom to up
+                $scope.$on("Emit1", function(event, args){
+                   alert("Event "+ event.name + " Emitted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+                
+                
+            })
+            .controller("Child1Controller", function($scope){
+                var self = this;
+                self.name = "Child1Controller";
+                
+                self.emit1 = function(){
+                    $scope.$emit("Emit1", {fromController : self.name});
+                }
+                
+                //This will be listened as Emit travels bottom to up
+                $scope.$on("Emit1", function(event, args){
+                   alert("Event "+ event.name + " Emitted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                    
+                    //Emit can be stopped in between but broadcast cannot be
+                    //event.stopPropagation();
+                });
+                
+            })
+            .controller("Child2Controller", function($scope){
+                
+                var self = this;
+                self.name = "Child2Controller";
+
+                //This will not listened as Emit travels bottom to up
+                $scope.$on("Emit1", function(event, args){
+                   alert("Event "+ event.name + " Emitted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+             })
+            .controller("SiblingController", function($rootScope,$scope){
+                
+                var self = this;
+                self.name = "SiblingController";
+                
+                
+                //This will not listened as Emit travels bottom to up
+                $scope.$on("Emit1", function(event, args){
+                   alert("Event "+ event.name + " Emitted from " + args.fromController+ "\n"+
+                         "This event listened on "+ self.name);
+                });
+            });
+            
+        </script>
+	</head>
+
+	<body>
+        <div ng-controller="ParentController as parentCtrl">
+            
+            <p>Parent Controller</p>
+            <input type="button" ng-click="parentCtrl.Emit2()" value="Emit2 Event"/>
+            
+            <div ng-controller="Child1Controller as child1Ctrl" class="child">
+                <p>Child-1 Controller</p>
+                <input type="button" value="Emit1 Event" ng-click="child1Ctrl.emit1()"/>
+                
+                <div ng-controller="Child2Controller as child2Ctrl" class="child">
+                    <p>Child-2 Controller</p>
+                    
+                </div>    
+            </div>
+                
+            </div>
+        </div>
+        
+        <br><br>
+        <div ng-controller="SiblingController as siblingCtrl">
+            <p>Sibling Controller</p>
+            <input type="button" value="Emit3 Event" ng-click="siblingCtrl.emit3()"/>
+        </div>
+    
+    
+        <p style="margin-top:50px; color:red">Emit travels from bottom to top. It gets canceled if someone cancels it.</p>
+        <p style="margin-top:50px; color:red">Broadcast travels from top to bottom. <h4>BROADCAST CANNOT BE CANCELLED.</h4></p>
+    
+	</body>
+</html>	

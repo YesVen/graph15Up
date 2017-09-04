@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.DBConnection"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.factory.Notebook"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.factory.WritableFactory"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.factory.Writable"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+</qualifiedTypeNameHistroy>

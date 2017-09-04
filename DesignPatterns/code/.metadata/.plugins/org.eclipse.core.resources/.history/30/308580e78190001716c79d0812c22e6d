@@ -1,0 +1,17 @@
+package sweat.like.a.pro.factory;
+
+public class WritableFactory {
+
+	public Writable getWriter(String writeType){
+		Writable writer;
+		
+		switch (writeType) {
+		case "Pen":
+			writer = new Pen();
+			break;
+
+		default:1
+			break;
+		}
+	}
+}

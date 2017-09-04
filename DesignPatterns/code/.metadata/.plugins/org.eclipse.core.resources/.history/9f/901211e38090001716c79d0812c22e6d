@@ -1,0 +1,9 @@
+package sweat.like.a.pro.factory;
+
+public class Pen implements Writable{
+	
+	public void write() {
+
+	}
+
+}

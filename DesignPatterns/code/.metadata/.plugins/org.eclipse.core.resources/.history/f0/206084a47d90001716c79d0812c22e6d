@@ -1,0 +1,32 @@
+package sweat.like.a.pro;
+
+public class Singleton {
+
+	public static void main(String[] args) {
+		DBConnection.getConnection();
+	}
+}
+
+
+class DBConnection
+{
+	private static DBConnection connection;
+
+	private DBConnection() {
+		
+	}
+
+	public static DBConnection getConnection(){
+		if(connection == null){
+			System.out.println("Creating Connection");
+			System.out.println("This will be once in entire life of this app.");
+			connection = new DBConnection();
+		}
+		return connection;
+	}
+	
+	public boolean reconnect(DBConnection connection){
+		//code to reconnect
+		return true;
+	}
+}

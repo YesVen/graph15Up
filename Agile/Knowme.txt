@@ -1,0 +1,66 @@
+Scrum
+	Agile Methodology.
+	Values : 
+			Potentially Shippable product at the end of sprint
+			Short development Cycle
+			Continuous Integration
+			Transparent
+
+Scrum of Scrums
+	Meeting between Scrum Masters
+	
+Agile Coach
+	Mentor to drive the budding teams into agile world
+	
+Sprint 
+	A pre decided span of time(2 - 3 weeks) during which scrum activities takes place
+
+Epic
+	A very log story that is undefined and cannot be estimated in planning poker
+
+Story
+	A well known requirement which has been discussed in spring planning meeting.
+	Definition of Done is created, all scenarios and use cases are captured in story.
+	
+Definition of Done
+	all scenarios and use cases are captured
+
+Retrospective
+	What went good and what wend wrong. Where can we improve and how.
+
+Burndown Chart
+	How much work is completed out of product backlog
+
+Burnup chart
+	How much work is remaining out of product backlog
+	
+Planning Poker
+	A game to estimate efforts. 0,1,2,4,7,11,15,epic
+	
+Product Backlog
+	All the things we need to develop.
+
+Sprint Backlog
+	All the things we need to develop in a sprint
+
+Product OWner
+	A stake holder or equivalent who transforms business requirements to stories and validates them.
+
+Scrum Master 
+	A guy facilitating the daily scrum meetings and SoS.
+
+Spring Planning
+	8 hours long activity held to plan things which involves sprint retrospective, planning poker, requirement understanding etc.
+	
+Spring review
+	Involver sprint retrospective
+	
+Velocity
+	The number of stories delivered in this sprint. 
+	Its sum of story numbers actually.
+	
+TDD
+	Write test cases first then start developing
+	
+BDD
+	Write business test cases and then start developing
