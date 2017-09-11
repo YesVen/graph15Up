@@ -40,8 +40,20 @@ Factory Method :
 			Book definition : Defines an interface for creating an object, but let's the classes that implement the interface decide which class to instantiate. The Factory method lets a class defer instantiation to subclasses.
 			
 Builder : 	Creational
-			Gang of Four :
-			Silghtly twisted way : telusko
+			Gang of Four : Different objects of same family  can be built using the same process
+				e.g. Coffee, Tea, thas the same steps to prepare just the ingredient changes.
+				
+			Slightly twisted advanced way : rather than using constructor use setter methods to build object.
+				Tea tea - new Teabuilder().setWater().setMilk().setSugar().build();
+				This makes you free from creating too many constructors in a class and you can use any order to create object. Object will be built only when you call build().
 			
-			https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
+			Brilliantly Expained  - https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
+			
+			
+Prototype : Creational
+			GOF definition  "Create objects from an exsiting object through cloning if cost of object creation is high"
+			
+			Creating objects with new is definitely costlier than that of clone if new involves IO, DB call, or any other resource intensive operation.
+			https://howtodoinjava.com/design-patterns/creational/prototype-design-pattern-in-java/
+				
 			

@@ -1,0 +1,107 @@
+Bridge :	Structural
+			"decouple an abstraction from its implementation so that the two can vary independently"
+			
+			Consider u have a Drawing interface which has draw method. Point here is dont create a Circle class which implements Drawing interface.
+			Just decouple the abstraction(Drawing Interface) from implementation(Circle), so that both can grow independently
+			
+			interface Idrawing(){
+				public void draw();
+			}
+			
+			class DrawingWay1 implements Idrawing(){
+				public void draw(){
+					syso("Drawing with way1");
+				}
+			}
+			
+			class DrawingWay2 implements Idrawing(){
+				public void draw(){
+					syso("Drawing with way2");
+				}
+			}
+			
+			class Circle{
+				Idrawing drawer;
+				
+				public void draw(){
+					drawer.draw();
+				}
+			}
+			
+			class Square{
+				Idrawing drawer;
+				
+				public void draw(){
+					drawer.draw();
+				}
+			}
+			
+			
+			psv main(String [] args){
+				new Circle().draw();
+				new Square().draw();
+			}
+			
+			Look here, circle's responsibility of drawing is decoupled from him. Now circle dont know how to draw. Instead it depends on Idrawing interface to provide the 
+			behaviour.
+			
+
+Strategy : 	Behavioural
+			https://en.wikipedia.org/wiki/Strategy_pattern
+			https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm
+			http://www.geeksforgeeks.org/strategy-pattern-set-2/
+			Similar to Bridge design pattern
+			
+			Strategy pattern involves removing an algorithm from its host class and putting it in separate class so that in the same programming context 
+			there might be different algorithms (i.e. strategies), which can be selected in runtime
+			
+			e.g. Collection.sort() creates a strategy pattern for sorting. It wants you to pass the strategy for sorting.
+				
+				MathematicalOprationStrategy class can be built which expects a operation instance(add,divide,multiply etc) to be passed to perform operation.	
+				So its all about "selecting an algorithm at runtime"
+				It works seamlessly even if you add a new operation like squareroot. It follows an open/close principle.
+				
+			wiki : According to the strategy pattern, the behaviors of a class should not be inherited. Instead they should be encapsulated using interfaces. 
+			As an example, consider a car class. Two possible functionalities for car are brake and accelerate.
+			Since accelerate and brake behaviors change frequently between models, a common approach is to implement these behaviors in subclasses. 
+			This approach has significant drawbacks: accelerate and brake behaviors must be declared in each new Car model. 
+			The work of managing these behaviors increases greatly as the number of models increases, and requires code to be duplicated across models. 
+			Additionally, it is not easy to determine the exact nature of the behavior for each model without investigating the code in each.
+			
+			
+Chain of Responsibility : 	a request from client is passed to a chain of objects to process them. Later, the object in the chain will decide 
+			themselves who will be processing the request and whether the request is required to be sent to the next object in the chain or not.			
+			
+			This pattern is recommended when multiple objects can handle a request and the handler doesn’t have to be a specific object. 
+			Also, handler is determined at runtime. Please note that that a request not handled at all by any handler is a valid use case.
+			
+			e.g. Event mechanism in browser. There can be multiple event handlers in bubling, propogating etc phases. One of them handles the event or passes along the 
+			hierarchy chain.
+			
+			IMP : This type of pattern generally have a member which can point to next request handler.
+			In chain of responsibility there can be many handlers for single request object
+			
+
+Observer : 	Suppose we are building a cricket app that notifies viewers about the information such as player score, team score etc whenever a run has been scored.
+			In such type of cases, observer pattern is used.
+			
+			http://www.geeksforgeeks.org/observer-pattern-set-1-introduction/
+			https://en.wikipedia.org/wiki/Observer_pattern
+			https://www.tutorialspoint.com/design_pattern/observer_pattern.htm
+			
+			The thing being observed is called Observable/subject.
+			Whenever a subject is modified it send event to all observers about its state change.
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+				 
+			
+			
+			
