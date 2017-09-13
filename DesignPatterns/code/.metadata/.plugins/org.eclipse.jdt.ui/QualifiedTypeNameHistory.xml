@@ -6,4 +6,18 @@
 <fullyQualifiedTypeName name="sweat.like.a.pro.factory.WritableFactory"/>
 <fullyQualifiedTypeName name="sweat.like.a.pro.factory.Writable"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.adapter.EnglishSpeaker"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.adapter.Translator"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.adapter.MarathiSpeaker"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.decorator.PizzaDecorator"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.decorator.IPizza"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.decorator.ChickenPizza"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.decorator.Pizza"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.composite.IEmployee"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.composite.Manager"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.composite.TeamLeader"/>
+<fullyQualifiedTypeName name="sweat.like.a.pro.structural.composite.Employee"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
