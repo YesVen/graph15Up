@@ -75,7 +75,7 @@ Chain of Responsibility : 	a request from client is passed to a chain of objects
 			This pattern is recommended when multiple objects can handle a request and the handler doesn’t have to be a specific object. 
 			Also, handler is determined at runtime. Please note that that a request not handled at all by any handler is a valid use case.
 			
-			e.g. Event mechanism in browser. There can be multiple event handlers in bubling, propogating etc phases. One of them handles the event or passes along the 
+			e.g. Event mechanism in browser. There can be multiple event handlers in bubbling, propagating etc phases. One of them handles the event or passes along the 
 			hierarchy chain.
 			
 			IMP : This type of pattern generally have a member which can point to next request handler.
@@ -92,7 +92,41 @@ Observer : 	Suppose we are building a cricket app that notifies viewers about th
 			The thing being observed is called Observable/subject.
 			Whenever a subject is modified it send event to all observers about its state change.
 			
+Mediator : Usually a program is made up of a large number of classes. Logic and computation is distributed among these classes. 
+			However, as more classes are added to a program, especially during maintenance and/or refactoring, the problem of communication between these classes 
+			may become more complex. This makes the program harder to read and maintain. 
+			Furthermore, it can become difficult to change the program, since any change may affect code in several other classes.
 			
+			So mediator pattern defines how two classes interact with each other.
+			
+			definition : "define an object that encapsulates how a set of objects interact"
+			
+			Mediator pattern is used to reduce communication complexity between multiple objects or classes. 
+			This pattern provides a mediator class which normally handles all the communications between different classes and supports easy maintenance
+			of the code by loose coupling. Mediator pattern falls under behavioral pattern category.
+			
+			e.g. In chatroom example, individual user is not sending messages to other user but to chatroom. Chatroom is mediator which takes care of the tracking which
+			user is chatting with whom and stuff like that.
+			
+			Air traffic controller is a great example of mediator pattern where the airport control room works as a mediator for communication between different flights. 
+			Mediator works as a router between objects and it can have it’s own logic to provide way of communication.
+			
+			
+			
+Template method :	Behavioural
+					When you want a system to run in certain sequence and you dont want anyone to alter the sequence then Template design pattern is used.
+					e.g. When a house is built, it consist of certain steps like laying foundation, building walls, adding roof, painting house and decorating. These steps 
+					are fixed for all houses.
+					So template method define this sequence and forces developer to follow it. Developer can alter individual step like  walls can be concrete wall or glass wall.
+					
+					code it : buildhouse should be final so that no one can reimplement it and change order of steps.
+					
+					
+					
+Interpreter : Behavioural
+			  Widely used in evaluating expressions such as SQL, programming language grammar, arithmetic operations,symbol processing engine etc.
+			  
+			  
 			
 			
 			
