@@ -84,6 +84,9 @@ Remaining :
 			Remaining Collection Classes : BlockingQueue, FIFOQueue etc.
 			ForkJoinPool
 			Difference between java 7 ,6,8?
+			java Memory model
+			JDBC
+			Servlets - Lifecycle and stuff
 
 
  Links :
