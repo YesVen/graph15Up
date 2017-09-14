@@ -19,7 +19,7 @@ public class ThreadPriorityExample2 {
 			}
 		});
 		/*
-		 * UnComment out below line and run program. See output
+		 * UnComment below line and run program. See output
 		 * Comment below line and run program. See output
 		 */
 		//t1.setPriority(1);
@@ -28,7 +28,7 @@ public class ThreadPriorityExample2 {
 		
 		for(int i =0; i<10; i++)
 		{
-			System.out.print(i + " ");
+			System.out.print(i + "-main  ");
 		}
 		
 		

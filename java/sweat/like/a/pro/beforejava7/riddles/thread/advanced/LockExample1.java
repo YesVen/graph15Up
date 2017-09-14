@@ -5,6 +5,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LockExample1 {
 	public static void main(String[] args) {
 		Display d = new Display();
+		
+		/*
+		 * Note here same d object is used hence locking is required.
+		 * If we use 2 diff objects d1 and d2 then lock is not required
+		 */
 		MyThread t2 = new MyThread(d, "Yuvraj");
 		MyThread t1 = new MyThread(d, "Dhoni");
 		
@@ -19,7 +24,7 @@ class Display {
 	public void wish(String name)
 	{
 		/*
-		 * It is recommended that use code to run in synchronized fashion should be kept in
+		 * It is recommended that code to run in synchronized fashion should be kept in
 		 * try catch block. And use finally for unlocking this lock in case if this thread get interrupted.
 		 * Else it will cause permanent starvation of other threads waiting for lock. If This thread dies abruptly
 		 * there is no one to unlock the lock

@@ -1,7 +1,7 @@
 package sweat.like.a.pro.beforejava7.riddles.thread;
 
 /**
- *	Threads have priority between 1 -10
+ *	Threads have priority between 1 to 10
  *	Attempt to set it above 10 will give IllegalArgumentException 
  * 
  *	Main thread priority is 5.
@@ -39,7 +39,15 @@ public class ThreadPriorityExample {
 		t1.start();
 		t2.start();
 		
-		
+		/*
+		 * Not we can set Max priority to thread group but not to thread
+		 * Threads inherits the priority from thread its group.
+		 * 
+		 * 
+		 * subGroup2.setMaxPriority(151);
+		 * Above statement will not have any impact. Changing priority out of bounds will not have any effect  
+		 * See setMaxPriority implementation 
+		 */
 		t1.setPriority(100);// This will throw IllegalArgumentException
 	}
 }

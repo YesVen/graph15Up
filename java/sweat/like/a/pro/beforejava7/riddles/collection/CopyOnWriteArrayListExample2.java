@@ -16,7 +16,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * 
  *
  */
-public class CopyOnWriteArrayListExample {
+public class CopyOnWriteArrayListExample2 {
 	public static void main(String[] args) {
 		List<String> words1 = new ArrayList<String>();
 		

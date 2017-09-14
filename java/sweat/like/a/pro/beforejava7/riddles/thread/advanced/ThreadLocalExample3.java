@@ -14,7 +14,7 @@ public class ThreadLocalExample3 {
 		
 		Thread t1 = new Thread(() -> {
 			local.set("Dnyanesh");
-			System.out.println("Local Value is in t2 is " + local.get());
+			System.out.println("Local Value is in t1 is " + local.get());
 			Thread t2 = new Thread(()->{
 				System.out.println("Local Value is in t2 is " + local.get());
 			},"t2");

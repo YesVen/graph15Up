@@ -46,64 +46,7 @@ Builder : 	Creational
 			Slightly twisted advanced way : rather than using constructor use setter methods to build object.
 				Tea tea - new Teabuilder().setWater().setMilk().setSugar().build();
 				This makes you free from creating too many constructors in a class and you can use any order to create object. Object will be built only when you call build().
-
-				https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
-
-				
-Adapter :	Structural		
-			Definition : “Convert the interface of a class into another interface clients expect.
-				*  Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.”		
-				
-			e.g FileinputStreamReader
-
-
-Proxy	:	Thumbnails that we ee on internet are best examples of proxy in general world. They dont load actual images but proxy images that looks real.
-			Actual hd image is loaded only when requested by user.
 			
-			Here we keep a middle man between which we think as an actual target.
-			
-			There are four common situations in which the Proxy pattern is applicable:
-
-				1)Remote :  A remote proxy provides a local representative for an object that resides in a different address space. This is what the "stub" code in RPC and CORBA provides.
-
-				2)Virtual :  A virtual proxy is a placeholder for "expensive to create" objects. The real object is only created when a client first requests/accesses the object.
-				e.g. Instead of loading all stringresource files in cache, what we do is load only essential files.User here thinks that he hhas got all 
-					the string resources but actually its not. When user navigates to certain
-				screen where stringresource is not loaded, proxy does it behind the curtain without user knowing it.
-
-				3)Protection :  A protective proxy controls access to a sensitive master object. The "surrogate" object checks that the caller has the access permissions required prior to forwarding the request.
-				
-			http://javabeginnerstutorial.com/design-pattern/proxy-design-pattern/
-			http://www.java2novice.com/java-design-patterns/proxy-design-pattern/
-			
-			
-Facade : 	The Facade design pattern is often used when a system is very complex or difficult to understand because the system has a large number of interdependent classes or its source code is unavailable. This pattern hides the complexities of the larger system and provides a simpler interface to the client.
-			In short its  kind if controller.
-
-			e.g. We have a Processor, HardDrive, RAM, MotherBoard classes. In order to start a computer, rough processes would be Motherboard switched on, loaded with RAM, processor init, Jump to current data and so on. We can write a ComputerFacade which has only one method exposed ComputerFacade.startComputer();
-			
-			CDDFacade u pretty know of it.
-			
-Decorator : a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior 
-			of other objects from the same class
-
-			The decorator pattern is an alternative to subclassing. Subclassing adds behavior at compile time, and the change affects all instances of the original class; decorating can provide new behavior at run-time for selective objects.
-			
-			e.g. Decorator directives. They add extra capabilities to objects.
-			http://idiotechie.com/gang-of-four-decorate-with-decorator-design-pattern/
-			
-			
-Composite :	Structural
-			This is used when object forms a tree like structure.
-			"A Composite Pattern says that just "allow clients to operate in generic manner on objects that may or may not represent a hierarchy 
-			of objects".
-			The composite pattern describes a group of objects that is treated the same way as a single instance of the same type of object	
-			
-			This pattern is most suitable in cases where you need to work with objects which form a tree like hierarchy. In that tree, each node/object (except root node) is either composite or leaf node. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
-
-			E.G. Office Staff hierarchy where everyone is Employee but forms a tree like structure
-			https://en.wikipedia.org/wiki/Composite_pattern
-			https://www.javatpoint.com/composite-pattern			
 			Brilliantly Expained  - https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
 			
 			
@@ -113,5 +56,4 @@ Prototype : Creational
 			Creating objects with new is definitely costlier than that of clone if new involves IO, DB call, or any other resource intensive operation.
 			https://howtodoinjava.com/design-patterns/creational/prototype-design-pattern-in-java/
 				
-			
-
+			Prototype is something which is created before creatin actual implementation

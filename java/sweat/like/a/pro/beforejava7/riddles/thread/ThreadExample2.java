@@ -8,7 +8,7 @@ class MyThread extends Thread
 	}
 }
 
-public class ThreadExample1 {
+public class ThreadExample2 {
 	public static void main(String[] args) {
 		MyThread t1 = new MyThread();
 		System.out.println("Executing main thread");

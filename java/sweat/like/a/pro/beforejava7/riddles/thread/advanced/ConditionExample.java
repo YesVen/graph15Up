@@ -38,6 +38,7 @@ class Wisher
 				if(Thread.currentThread().getName().equals("t1") && i == 5)
 				{
 					halfExecution.await();
+					System.out.println("t1 resuming");
 				}
 				try {
 					Thread.sleep(1000);
@@ -47,6 +48,7 @@ class Wisher
 			}
 			if(Thread.currentThread().getName().equals("t2"))
 			{
+				System.out.println("Signalling t1 to resume");
 				halfExecution.signal();
 			}
 		} finally{

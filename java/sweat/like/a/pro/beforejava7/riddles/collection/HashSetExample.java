@@ -10,6 +10,9 @@ import java.util.Set;
  * Backing collection is Hashtable/Hashmap So search operation is fast
  * Preferred when we need to search elements in collection
  * 
+ * @see : Hashset constructor in jdk. Its self explainatory.
+ * 
+ * 
  * @author Nightfury
  *
  */

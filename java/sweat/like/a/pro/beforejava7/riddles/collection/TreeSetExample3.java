@@ -36,6 +36,9 @@ public class TreeSetExample3 {
 		
 		
 		//Due to autoboxing/unboxing this Default natural sorting order works and we dont get class cast exception
+		/*
+		 * Interger class provides default natural sorting oder
+		 */
 		numbers.add(new Integer(1));
 		numbers.add(new Integer(2));
 		numbers.add(new Integer(1));//will not be inserted

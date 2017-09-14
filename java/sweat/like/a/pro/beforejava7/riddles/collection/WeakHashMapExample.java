@@ -13,6 +13,10 @@ import java.util.WeakHashMap;
  * But HashMap is stronger than GC. It will give left and right to garbage collector 
  * if GC tries to delete objects when are used in hashmap 
  * 
+ * 
+ * Weakhashmap is used in memory intensive applications where freeing up memory is more important than
+ * holding onto weak references. 
+ * 
  * @author Nightfury
  *
  */

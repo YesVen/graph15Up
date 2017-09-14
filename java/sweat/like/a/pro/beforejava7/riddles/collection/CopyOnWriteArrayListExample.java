@@ -21,6 +21,7 @@ public class CopyOnWriteArrayListExample {
 		
 		CopyOnWriteArrayList<String> words2 = new CopyOnWriteArrayList<>();
 		words2.add("Dnyanesh");// duplicates will be added
+		words2.add("Dnyanesh");// duplicates will be added
 		words2.addIfAbsent("Dnyanesh");//wont be added as words2 has Dnyanesh
 		System.out.println(words2);
 		
@@ -33,9 +34,10 @@ public class CopyOnWriteArrayListExample {
 		
 		while(itr.hasNext())
 		{
-			System.out.println(itr.next());
+			System.out.print(itr.next()+ " ");
 		}
 		
+		System.out.println("\n");
 		
 		//This will combine all copies of words2 and print effective list at the end
 		System.out.println(words2);

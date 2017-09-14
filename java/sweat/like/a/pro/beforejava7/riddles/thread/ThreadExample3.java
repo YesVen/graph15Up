@@ -21,7 +21,7 @@ class MyThread extends Thread
 	}
 }
 
-public class ThreadExample1 {
+public class ThreadExample3 {
 	public static void main(String[] args) {
 		MyThread t1 = new MyThread();
 		System.out.println("Executing main thread");

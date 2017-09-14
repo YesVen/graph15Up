@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * ThreadFactory reduces extra wiring required for creating threads and makes programmers life simple
  * It creates threads on demand.
  * 
- * e.g if you want few threads which does same task, then rathen than creatig them independantly, its better to
+ * e.g if you want few threads which does same task, then rather than creating them independently, its better to
  * declare behavior in one shot inside threadfactory.
  * Here I want 5 threads which prints numbers 1 to 10. 
  */
@@ -23,7 +23,7 @@ public class MyThreadFactory implements ThreadFactory
 			l.lock();
 			for (int i = 0; i < 10; i++) {  
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(500);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

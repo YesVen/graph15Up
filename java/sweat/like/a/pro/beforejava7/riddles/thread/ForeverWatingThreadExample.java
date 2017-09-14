@@ -9,12 +9,20 @@ public class ForeverWatingThreadExample {
 		t1.setName("t1");
 		
 		t1.start();
+		
+		/*
+		 * This is causing the main thread to wait forever.
+		 * Here, due to sleep, main thread is not yet called wait on t1 but by the time thread t1 has completed
+		 * its execution and notified all threads wating for t1.
+		 * This notify call goes in vain as main thread has not called wait before t1 called notfy. 
+		 */
 		Thread.sleep(1000);
+		
 		synchronized (t1) {
 			System.out.println("main thread calling wait method");
 
 			/*
-			 * This thread will wait untill it is get notified. In this case it will wait forever.
+			 * This thread will wait until it is get notified. In this case it will wait forever.
 			 * Solution is to have waiting limited time
 			 * t1.wait(5000)
 			 */

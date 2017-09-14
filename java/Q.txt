@@ -2,4 +2,7 @@ https://howtodoinjava.com/interview-questions/useful-java-collection-interview-q
 
 http://javahungry.blogspot.com/2013/08/how-sets-are-implemented-internally-in.html
 
-http://javaconceptoftheday.com/how-hashset-works-internally-in-java/
+https://howtodoinjava.com/java-interview-questions/
+
+
+https://howtodoinjava.com/java-concurrency-tutorial/

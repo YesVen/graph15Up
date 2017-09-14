@@ -1,6 +1,5 @@
 package sweat.like.a.pro.beforejava7.riddles.thread;
 
-import sun.rmi.runtime.NewThreadAction;
 
 public class ThreadGroupExample {
 	public static void main(String[] args) {
@@ -56,7 +55,13 @@ public class ThreadGroupExample {
 		System.out.println(" Main group max priority is "+mainGroup.getMaxPriority() +" \n child group max priority is "+ subGroup1.getMaxPriority() 
 				+ "\n t1 priority is "+t1.getPriority() + "because parent thread is main and main has priority 5");
 		
+		/*
+		 * This will not have any impact. Changing priority out of bounds will not have any effect  
+		 * See setMaxPriority implementation
+		 */
 		subGroup2.setMaxPriority(151);
+		
+		
 		
 		System.out.println(subGroup2.getMaxPriority());
 		

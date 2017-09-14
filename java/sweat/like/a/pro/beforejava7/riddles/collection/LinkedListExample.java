@@ -23,6 +23,7 @@ public class LinkedListExample {
 		list.peekFirst();// retrieves but does not remove first
 		list.peekLast();// retrieves but does not remove lase
 		
+		System.out.println(list);
 		
 		//Retrieve and remove element
 		System.out.println("Removed element is "+ list.poll() + "\n\nNow list is " + list);
