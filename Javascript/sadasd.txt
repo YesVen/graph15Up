@@ -137,3 +137,30 @@ Closures :	Closure Remembers (Like North Remembers)
 			
 			Closures comes here to rescue you in this situation. By using closures you can restrict access to only required things.
 			
+			
+Array : 
+		Splice : Used to add/remove elements in single call in array
+				
+		slice : USed to slice an array and return a new array.
+				Pass indexes and it will give you new array fromindex to endindex.
+		
+		Shift : Removes first element from array and returns it.
+		
+		Unshift : Adds element at first position and returns it
+		
+		push : pushes element at the end of array
+		
+		pop : pop last element from an array
+		
+		join : joins all elements into a string
+				numbers.join(",") ---> 1,2,3,4,4,5
+				
+		concat : Joins two arrays and return joint array 
+		
+		
+		
+
+		
+				
+				
+			

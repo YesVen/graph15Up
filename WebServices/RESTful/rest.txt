@@ -147,8 +147,24 @@ There are tow ways to read headers : @Context Httpheaders
 @XMLRootElement : If we specify this annotation on a class, the class becomes eligible for automatic data marshelling between xml and POJO.
 				  This JAX-B annotation.
 				  
-ParamConverterProvider : 
+ParamConverterProvider : yesterday to new date object with yesterday's date
 
-MessageBodyReader/Writer : 
+MessageBodyReader/Writer : Read write to input/output streams
 
-ContainerResponseFilter/ContainerRequestFilter				  
+ContainerResponseFilter/ContainerRequestFilter	: Able to manipulate response and request objects. 
+													Adding PoweredBy header to response			
+													Aborting request when it cant find cookie header.
+													
+													
+Above classes are present at server side. Similar classes are present on client side as well.
+ClientRequestFilter, ClientResponseFilter etc.
+see javabrains final video on advanced Rest
+
+
+@beanParam : USed to marshall data from input request to POJO.
+
+
+
+
+
+													

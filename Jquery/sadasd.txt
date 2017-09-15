@@ -3,21 +3,111 @@ splice method of array
 parent vs parents vs parentsUntil vs parent
 
 closest vs parents
+    closest : starts with the current element and exits when it finds matched selector. 
+                It will return the first matched element
+    parents : starts with the current element and exits when it finds matched selector
+                It will return the set of elements from itself till parent.(Including parent)
+    parentUntill : starts with the current element and exits when it finds matched selector
+                It will return the set of elements from itself till parent excluding parent 
+                    see..its parents untill...self explainatory
 
-contents vs children
+contents vs children : both finds children except, contents will include text and comment nodes also
 
 has vs hasClass vs is
+    ul.has(li) ---> true/false
+    hasClass --> Simple
+    li.is(:first-child)---> true
 
 filter vs find vs grep
-
+    grep : works on array. $ object has grep function
+    find : works on jquery object
+    
 map vs each
+    both used to iterate over the set of elements
+    map : creates a new set of elements by mapping original elements.
+            lowercaseLetters.map ---> uppercase letters
+            Here a new set of elements are created as uppercase letters keeping original set intact
+    each : original set get modified        
+
 
 after vs insertAfter
+    Both are inverses of each other
+    a after b ---> ab :::: tell browser that a's after element is b
+    a insertAfter b ---> ba
 
-remmove vs Detach
+
+remove vs Detach
+   remove removes an element from DOM. Same element cannot be add after removing.
+   detach removes element from DOM but returns it to you in form of jquery object so thatyou can work on it
+
 
 replaceAll vs ReplaceWith
+    As like after and insertAfter they are inverses of each opher.
 
-hrml() vs text()
+html() vs text()
+    text : it will return only text of all elements "recursively"
+    html : return html contents of target
 
-wrap vs unwrap vs wrapAll
+
+wrap vs unwrap vs wrapAll vs wrapInner
+    $('.green').wrap(<div></div>) : wraps each  green element with div.
+    $('.green').wrapAll(<div></div>) : wraps all element with div. Note here only one div will be added over for all green elements.
+    
+   wrapInner :  Wrap an HTML structure around the "content of each element" in the set of matched elements.  
+    
+
+children vs find
+   children() only looks at the immediate children of the node, while find() traverses the entire DOM below the node
+   
+   
+   
+   
+   
+extend vs fn.extend
+    extend : USed to merge two or more objects into first object
+    fn.extend : to write jquery plugins
+    
+    
+toArray vs makeArray
+    toArray : convert jquery set to js array
+    makeArray : converts any arraylike object to pure js array
+                make array is static method..... $.makearray(document.getElementsByTagName("div"));
+                    here, document.getElementsByTagName("div") returns a nodelist which is not a jquery set nor an array
+					
+					
+					
+Event Lifecycle : Trickle down, bubble up
+				  Capturing, targeting and  Bubbling		
+				  
+				  
+Target vs currentTarget
+				target : Where event has actually happended
+				currentTarget : the listner element during event propogation phases capturing and bubbling
+				
+				
+StopPropogation 
+	In event bubbling phase if we call this method, then it will terminate the bubling phase.
+	The parent listeners will not able to listen to the event.
+
+stopImmediatePropogation
+	an element can attach more then one listener for a single event.
+	If we call event.stopImmediatePropogation() then,
+		parent listeners will not able to listen to the event + rest event handlers of of this element will not be listened.
+		
+		p attaches two events on click. One is using stopImmediatePropagation so second event will not be listened
+		
+		$("p").click(function(event){
+		  event.stopImmediatePropagation();
+		});
+		$("p").click(function(event){
+		  // This function won't be executed
+		  $(this).css("background-color", "#f00");
+		});
+		
+		
+		
+		
+		
+
+				
+                    

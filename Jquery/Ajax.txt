@@ -8,11 +8,11 @@
 
 .ajaxError() : Will be called for each and all request only when it fails
 
-.ajaxstart() : Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. 
+.ajaxStop() : Whenever an Ajax request is about to be sent, jQuery checks whether there are any other outstanding Ajax requests. 
 			If none are in progress, jQuery triggers the ajaxStart event. 
 			Any and all handlers that have been registered with the .ajaxStart() method are executed at this time.
 
-.ajaxStop() : Whenever an Ajax request completes, jQuery checks whether there are any other outstanding Ajax requests. 
+.ajaxstart() : Whenever an Ajax request completes, jQuery checks whether there are any other outstanding Ajax requests. 
 				If none remain, jQuery triggers the ajaxStop event. 
 			Any and all handlers that have been registered with the .ajaxStop() method are executed at this time. 
 			The ajaxStop event is also triggered if the last outstanding Ajax request is cancelled by returning false within the beforeSend callback function.
@@ -23,14 +23,6 @@
 .load() : Load data from the server and place the returned HTML into the matched element.
 			Please take a not that it returns a HTML document to inserted in DOM. So it can be called on any DOM element.
 				e.g $( "dic.content1" ).load( "ajax/test.html" );
-
-
-
-
-ajaxstart --> ajaxSend --> ServerProcessing --> ajaxError/ajaxSuccess --> ajaxComplete --> ajaxStop
-
-
-
 
 
 
