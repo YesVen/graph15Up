@@ -77,7 +77,7 @@ IIFE : 	Immediately Invoked Function Expression.
 Hoisting : 
 			Javascript allows you to write code like this,
 				function(){
-					console.log(salary);  // Using variable before declaring----prints undefined because of variable declaration hoisting
+					console.log(salary);  // Using variable before declaring----prints undefined because of "only variable declaration" hoisting
 					var salary = "10k";
 				}
 				
@@ -122,7 +122,7 @@ Strict Mode : 	"use strict";
 Closures :	Closure Remembers (Like North Remembers)
 			Closure Remembers the scope in which it has created. It remembers the variable values in which it has been created.
 			
-			There is no way in Javascript to have public, private, protected accesses to methods, variables.
+			There is no way in JavaScript to have public, private, protected accesses to methods, variables.
 					var  person = {
 						fname : "Dnyanesh",
 						lname : "Barkade",
