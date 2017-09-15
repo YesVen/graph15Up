@@ -22,7 +22,7 @@ public class MessageService {
 
 	
 	/**
-	 * Note we dont provide any GET/POST here
+	 * Note we don't provide any GET/POST here.
 	 * 
 	 * We want to delegate the the authority to sub resource.
 	 * All request come to comments should go to a new service CommentService

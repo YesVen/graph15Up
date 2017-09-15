@@ -1,5 +1,6 @@
 ROY Fielding
-Representational State Transfer
+Representational State Transfer 
+	We are transferring the representation of a resource in form of json,xml,html etc.
 Merely an Architechtural Style
 Services built on the principles of REST are called RESTful web services
 Uses HTTP protocol
@@ -14,18 +15,18 @@ Advantages :
 	No language/framework barrier cause it can work with any lang and fw.
 	Can work with any data type(due to HTTP)
 	Layered Architecture
-		We can Put an extra middleware layer between client and server which can have diffrent purpose(redirecting, partial response etc). This is called layered architecture
+		We can Put an extra middleware layer between client and server which can have different purpose(redirecting, partial response etc). This is called layered architecture
 	
 REST style has a specification JAX-RS
 SOAP style has a specification JAX-WS
 
-JAX-RS Specification is implementated by few vendors like 
+JAX-RS Specification is implemented by few vendors like 
 		Apache CXF
 		JBoss RestEasy
 		Oracle Jersey
 		GlassFish Jersey
 		
-JAX-WS Specification is implementated by few vendors like 
+JAX-WS Specification is implemented by few vendors like 
 		Apache Axis
 		
 		
@@ -40,12 +41,28 @@ JAX-RS Specification defines some annotations like below
 @Produces : Method and class level annotation
 @Consumes : Class and method level annotation
 
-JAX-B : Comes with J2EE platform in build
-		Used for XML marshelling
+@DefaultValue : Provide a default value to params if found null
+
+
+JAX-B : Comes with J2EE platform in build (Java Architecture for XML Binding)
+		Used for XML marshalling
+		
+		
+TOp Down WEb Service Approach : 
+	USed in SOAP where u create a WSDL and then looking at WSDL, you design your java classes
+	If WSDL changes, java code has to change
+	
+	In oppose to that, in bottom up approach, java classes are designer with annotations and WSDL will be automatically generated.
+	
+
+There is no need to handle thread safety in WS because by default a new resource will be created to for each request. 
+Service classes are not Singleton by default, so no need to worry about thread safety.
+		
+	
 		
 		
 		
-Jackson : Need to add maven dependency.	Used for JSON marshelling
+Jackson : Need to add maven dependency.	Used for JSON marshalling
 				<dependency>
 					<groupId>com.fasterxml.jackson.jaxrs</groupId>
 					<artifactId>jackson-jaxrs-json-provider</artifactId>
@@ -61,9 +78,9 @@ REST Exception Hierarchy:
 All these exception are analogous with custom Exception mapper.		
 
 		
-IF method produces more than one type, then what type to return is decided based on Accept header of request.
+IF method produces more than one type of data, then what type to return is decided based on Accept header of request. This is called Content Negotiation.
 
-@sinngleton
+@singleton
 
 @ApplicationPath
 
@@ -91,3 +108,47 @@ Programs :
 	Add AuthenticationFilter to ApparelService
 	Find out which authentication do enovia servers use? observe request going through
 	
+	
+HATEOAS : Hypermedia As The Engine OD Application State
+			IN addition to sending the requested data, send sonething the client might be interested into.
+			e.g. While sending the product information, send the raw materials associated with it.
+			
+			
+			
+Security : 
+			javax.ws.core.Security package
+			public String sayHello(@Context SecurityContext sc){}
+				sc object then can be used to check authentication and authorization.
+			Method level annotation @DenyAll,@permitAll,@RolesAllowed can be used
+
+
+Request Validation : @validator
+					 Add a class to do validation (implement validator adaptor)
+					 
+Best Practices : 
+				Nouns instead of Verbs
+				Versioning
+				HATEOAS
+				Select your HTTP method wisely
+				
+				
+OPTIONS : This http method used to find out which http methods are supported by the web server.
+		  This is read only method.
+		  
+HEAD : To get just headers and not the body.		  
+				
+	
+CORS : Cross Origin 
+
+There are tow ways to read headers : @Context Httpheaders
+									 @HeaderParam param
+									 
+									 
+@XMLRootElement : If we specify this annotation on a class, the class becomes eligible for automatic data marshelling between xml and POJO.
+				  This JAX-B annotation.
+				  
+ParamConverterProvider : 
+
+MessageBodyReader/Writer : 
+
+ContainerResponseFilter/ContainerRequestFilter				  

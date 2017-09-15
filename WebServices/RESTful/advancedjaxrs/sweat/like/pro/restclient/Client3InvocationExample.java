@@ -12,7 +12,7 @@ public class Client3InvocationExample {
 		
 		Invocation target  = getTarget();
 		/*
-		 * This is classic way to outsource the work of building the requests.
+		 * This is classic way to out source the work of building the requests.
 		 * 
 		 * Similar like JPO.invoke
 		 */

@@ -14,7 +14,7 @@ public class ExceptionMapper2 extends Exception implements ExceptionMapper<Excep
 	 */
 	private static final long serialVersionUID = 1L;
 	/*
-	 * These will be a default values for below fields. If user dont provide, it we used
+	 * These will be a default values for below fields. If user don't provide, it we used
 	 */
 	private Status status = Status.INTERNAL_SERVER_ERROR;
 	private String returnMediaType = MediaType.TEXT_HTML;

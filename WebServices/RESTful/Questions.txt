@@ -1,6 +1,7 @@
 What is Jackson?
 
 How to support multiple return types?
+	By using produces annotation.
 
 Waht is @MatrixParam? What is use of it?
 
@@ -11,5 +12,6 @@ Waht is @MatrixParam? What is use of it?
 How to make url case-insensitive? :http://howtodoinjava.com/jersey/case-insensitive-path-urls-with-jax-rs-jersey/
 
 Return a cookie from Response?
+
 
 Pre and Post Request filtering?	

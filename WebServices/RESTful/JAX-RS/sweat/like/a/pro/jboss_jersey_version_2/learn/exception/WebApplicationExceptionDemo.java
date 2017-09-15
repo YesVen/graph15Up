@@ -18,10 +18,10 @@ public class WebApplicationExceptionDemo {
 		if(id > 100)
 		{
 			/*
-			 * We dscourage this way if hrowing exceptin over ExceptionMapper
+			 * We discourage this way of throwing exception over ExceptionMapper
 			 * cause 
 			 * 		1. we are unnecessarily adding exception code inside business logic,
-			 * 			its good idea to keep our non business logic code seperated
+			 * 			its good idea to keep our non business logic code separated
 			 * 		2. It makes our clean code cluttered	
 			 */
 			throw new WebApplicationException(Response.status(Status.NOT_FOUND)

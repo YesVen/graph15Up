@@ -5,15 +5,14 @@ import java.io.IOException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
-import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.ext.Provider;
 
 /*
- * This class is very useful when you want to intercept the reponse thet is sent to client
+ * This class is very useful when you want to intercept the response that is sent to client
  * 
- *  Here I am adding a hreader PoweredBY=Dnyanesh to every response
+ *  Here I am adding a header PoweredBY=Dnyanesh to every response
  *  
- *  Note :  This gets excuted no matter if request fails or passes(even in case of 404 it executes) 
+ *  Note :  This gets executed no matter if request fails or passes(even in case of 404 it executes) 
  */
 @Provider
 public class MyResponseFilter implements ContainerResponseFilter
