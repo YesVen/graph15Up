@@ -1,10 +1,10 @@
-package java.sweat.like.a.pro.java8;
+package sweat.like.a.pro.java8;
 
 public class DefualtMethod1 {
 	public static void main(String[] args) {
 		Hero amir = new Hero();
 		amir.makeComedy(); // makeComedy default method will get inherited just like any other method of interface
-		//But implementing class is not forced to implememt it as it id already implemented inside interface
+		//But implementing class is not forced to implement it as it is already implemented inside interface
 		
 		/**
 		 * Have a look at List Interface docs. It has added default method forEach
@@ -17,7 +17,7 @@ interface Actor
 {
 	public void act();
 	
-	// all classes implementing this interface will get maeComedy method.
+	// all classes implementing this interface will get makeComedy method.
 	//Implementing class will free to override the default method
 	default public void makeComedy()
 	{

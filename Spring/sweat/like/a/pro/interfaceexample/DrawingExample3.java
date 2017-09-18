@@ -17,6 +17,8 @@ public class DrawingExample3 {
 		
 		shape.draw();
 		
+		shape1.draw();
+		
 		
 	}
 }

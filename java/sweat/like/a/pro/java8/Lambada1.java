@@ -1,4 +1,4 @@
-package java.sweat.like.a.pro.java8;
+package sweat.like.a.pro.java8;
 
 public class Lambada1 {
 
@@ -24,6 +24,7 @@ public class Lambada1 {
 		};
 		Thread t= new Thread(runnable);
 		t.start();//this is normal way
+		
 		Runnable lambdaRunnable = () -> System.out.println("Inside Lambda Run method");
 		lambdaRunnable.run();// this is lambda way. See that lot of boiler plate code of anonymous inner class is not required
 		

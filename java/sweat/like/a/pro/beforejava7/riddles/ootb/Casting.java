@@ -25,7 +25,7 @@ public class Casting {
 		System.out.println(s2);
 		
 		
-		//permutation("", s1);
+		permutation("", s1);
 	}
 	
 	

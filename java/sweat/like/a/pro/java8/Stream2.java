@@ -1,4 +1,4 @@
-package java.sweat.like.a.pro.java8;
+package sweat.like.a.pro.java8;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 /*
- * Problem : multiply each number from numners list by two and add them. 
+ * Problem : multiply each number from numbers list by two and add them. 
  * Finally return a result.
  */
 
@@ -25,6 +25,7 @@ public class Stream2 {
 		
 		//Function is functional interface having method apply
 		// Function is type that accepts one value and returns one value
+		//Predicate is a type that accepts one value and returns boolean
 		Function<Integer, Integer> mapFunction =  new Function<Integer, Integer>() {
 			public Integer apply(Integer value)
 			{

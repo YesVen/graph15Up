@@ -11,6 +11,8 @@ public class DrawingExample3 {
 		
 		triangle.draw();
 		
+		triangle.getPointA().getX();
+		
 		System.out.println(triangle.getType());
 	}
 }

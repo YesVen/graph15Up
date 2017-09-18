@@ -8,7 +8,7 @@ public class DrawingExample3 {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("lifecycle.xml");
 		
 		/*
-		 * This is required for calling destroy method of traingle bean
+		 * This is required for calling destroy method of triangle bean
 		 */
 		context.registerShutdownHook();
 		

@@ -48,7 +48,7 @@ final class FinalPerson
 	{
 		this.age = age;
 		this.name = name;
-		HashMap<String, String> tempMap = new HashMap<>();
+		final HashMap<String, String> tempMap = new HashMap<>();
 		
 		//for initialising info object dont use assignment, instead create deep copy
 		Iterator<String> iter = info.keySet().iterator();

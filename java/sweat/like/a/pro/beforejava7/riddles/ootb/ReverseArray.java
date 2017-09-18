@@ -28,8 +28,13 @@ public class ReverseArray {
 		Object ff[] =  Arrays.asList(words).stream().sorted(Collections.reverseOrder()).toArray();
 		
 		System.out.println(Arrays.toString(ff));
+		
+		//Collections.reverse(Arrays.asList(words));
 	}
 
+	/*
+	 * Swap the elements keeping center as it is
+	 */
 	private static void smartway(String[] words) {
 		for(int i=0; i<words.length/2; i++)
 		{

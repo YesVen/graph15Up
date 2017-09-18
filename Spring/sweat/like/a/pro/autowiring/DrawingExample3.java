@@ -17,7 +17,7 @@ public class DrawingExample3 {
 		triangle.draw();
 		
 		/**
-		 * This proved that traingle object returned by spring container is singleton
+		 * This proves that triangle object returned by spring container is singleton
 		 * 
 		 * default scope is singleton
 		 */
