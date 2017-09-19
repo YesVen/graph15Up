@@ -137,6 +137,18 @@ Closures :	Closure Remembers (Like North Remembers)
 			
 			Closures comes here to rescue you in this situation. By using closures you can restrict access to only required things.
 			
+			From Stackoverflow: 
+				When you use new Function(…) (the Function constructor) inside a function, it does not create a closure. 
+				A closure in JavaScript is like keeping a copy of all the local variables, just as they were when a function exited.
+			
+			Cognizant inteview : defn : A function inside another function is closure.
+								function do(){
+									var a - 10;
+									var display  - function(){
+										conmsole.log(a);
+									}
+								}
+								This is a closure. It is not mandatory for closure to return a function.	
 			
 Array : 
 		Splice : Used to add/remove elements in single call in array

@@ -6,3 +6,5 @@ http://www.javaworld.com/article/2077995/java-concurrency/java-concurrency-async
 
 Free Node JS tuts
 https://www.udemy.com/node-js-training-and-fundamentals/
+
+http://www.techstrikers.com/AngularJS/index.php
