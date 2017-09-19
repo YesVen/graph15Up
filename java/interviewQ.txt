@@ -1,101 +1,11 @@
-Questions
-
-	new vs newInstace
-
-	jdk jre jvm jit
-
-	classnotfundException vs NoCLassDefFoundError
-
-	instanceof vs isInstance
-
-	ways  to execute java program -- 4... java , java -jar demojar	.jat, double clicking, bat file
-
-	web server vs App server
-	
-	final vs finally vs finalize
-	
-	Why String Immutable
-	
-	How to create immutable class?
-	
-	Collection
-			How hashMap works
-			Collection vs Collections : methods in both classes
-			When to use which Collection?
-			Comparable vs Comparator
-			Cursors : Interator, ListInterator, Enumeration
-			diffrence between Arrays.Aslist and new List --- why Arrays class jas	
-			Which classes implement RandomAccess interface and what is its advantage?
-			http://javahungry.blogspot.com/
-			diffrence between Arrays.Aslist and new List 
-			When to use enumeration vs iterator vs ListIterator
-			How Treeset internally works?
-			Why it does not give compile time error when you dont implement equals method in Comparator interface?
-			What is static import?
-			What is try-with-resources in java
-			Can we run Abstract class? --yes
-			Reflection API usage can break the design pattern such as Singleton pattern by invoking the private constructor
-			How to invoke GC? System.gc() and Runtime.getRunTime().gc()
-			run jar through cmd?
-			volatile vs transient
-			ReadBarrier, WriteBarrier, Latch, BlockingQueue, CountDownLatch and Semeaphore.
-			 Is ++ operator is thread-safe in Java?
-			Serial and Parallel Garbage Collector
-			How do you print Array in Java
-			Serializable and Externalizable
-			DOM and SAX parser in Java
-			synchrinisedmap vs hashtable vs concurrenthashmap
-			
-Concurrent Collections :
-			1.5 
-				Atomic Integer
-				Lock
-				Latch
-				Semaphore
-				Barriers
-				Executers
-				Mutex
-				Condition
-				Exchangers
-				Blocking Collections - Dequeue, BlockingQueue, Priority Queue
-			1.7
-				ForkJoinPool
-				Phasers
-			Questions	
-				Why would you want to wake up all of the threads if only one is going to execute at all?
-				Callable vs Runnable	
-			
-Threading
-			IllegalMonitorStateException?
-
-			
-To update in notepad :
- 	same name to two threads?
- 	A hint to the scheduler that the current thread is willing to yield its current use of a processor. The scheduler is free to ignore this hint.
- 	if a thread takes too much time for execution, it can use yield method to check if there are any
- 	runnable thread of same priority is present. If yes give its resources for execution.
-						
-			
-Remaining : 
-			Inner classes
-			Exception Handling
-			Java 5 Thread new Classes
-			Access Modifiers
-			Remaining Collection Classes : BlockingQueue, FIFOQueue etc.
-			ForkJoinPool
-			Difference between java 7 ,6,8?
-
-
- Links :
-	 	https://www.leveluplunch.com/java/examples/#java-stream
-	 	http://howtodoinjava.com/java-concurrency-tutorial/
- 		http://howtodoinjava.com/category/core-java/multi-threading/
-		
-		
-		
-https://www.javacodegeeks.com/2014/04/java-interview-questions-answers.html		
- 
- 
- 
- 
- 
+Collection vs Stream
+No storage. 
+		A stream is not a data structure that stores elements; instead, it conveys elements from a source such as a data structure, an array, a generator function, or an I/O channel, through a pipeline of computational operations.
+Functional in nature. 
+		An operation on a stream produces a result, but does not modify its source. For example, filtering a Stream obtained from a collection produces a new Stream without the filtered elements, rather than removing elements from the source collection.
+Laziness-seeking. 
+		Many stream operations, such as filtering, mapping, or duplicate removal, can be implemented lazily, exposing opportunities for optimization. For example, "find the first String with three consecutive vowels" need not examine all the input strings. Stream operations are divided into intermediate (Stream-producing) operations and terminal (value- or side-effect-producing) operations. Intermediate operations are always lazy.
+Possibly unbounded. 
+		While collections have a finite size, streams need not. Short-circuiting operations such as limit(n) or findFirst() can allow computations on infinite streams to complete in finite time.
+Consumable 
+		The elements of a stream are only visited once during the life of a stream. Like an Iterator, a new stream must be generated to revisit the same elements of the source

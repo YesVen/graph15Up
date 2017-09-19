@@ -71,6 +71,8 @@
              link : {
                  //You can skip pre phase if you want
                  post : function(scope, iElement, iAttributes, controller){
+                        
+                        // iElement is jqury element
                         iElement.on("click", function(event){
                            alert(event.target.name + " , dont you think?"); 
                         });

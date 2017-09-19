@@ -539,5 +539,6 @@ How to perform manual bootstraping of angular app?
 			
 WatchGroup vs WatchCollection			
 			
+$sceDelegateProvider			
 			
 			

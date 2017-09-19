@@ -27,12 +27,13 @@
         
         this.getContacts = function(){
             return $http.get("https://randomuser.me/api/?results=10")
-                .then(function(response){
+                .then(
+            function(response){
                     return response.data.results;
                 //Note here : geContacts doesnt return a contacts data but a promise object
                 //and the object has to handled by using promise pattern  
             },
-            function(response){
+            function(response){//error function
                 self.errorMessage = "There was an error. Please try again.";
                 $log.error("Server Error has occurred : " + response);
             });
