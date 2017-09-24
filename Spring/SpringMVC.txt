@@ -20,7 +20,7 @@ Is it mandatory to add .htm ass pattern for spring?
 No but 99% people use it
 
 HandlerMappingClasses 
-	Its job is to identify the correcdt handlers for the incoming request.
+	Its job is to identify the correct handlers for the incoming request.
 	There are plenty of handlers available in spring.
 	BeanNameUrlHandlerMapping :
 			This class maps url based to bean which can handle this request

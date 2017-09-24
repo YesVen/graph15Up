@@ -10,6 +10,8 @@ package sweat.like.a.pro.beforejava7.riddles.ootb;
 
 public class Test {
 
+	public static int num = 0;
+	
 	public static String foo(){
 		System.out.println("Test foo called");
 		return "";
@@ -17,6 +19,7 @@ public class Test {
 	
 	public static void main(String args[]){
 		Test obj = null;
+		System.out.println(obj.num);
 		System.out.println(obj.foo());
 	}
 }

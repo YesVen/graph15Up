@@ -2,7 +2,13 @@ package sweat.like.a.pro.beforejava7.riddles.collection;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * RemoveAlll - Removes all elements passed if they are present in target collection.
+ * clear : just remove all elements
+ * retainAll : Remove all elements in target collection except passed elements
+ * @author Nightfury
+ *
+ */
 public class RemoveAllVsClear {
 	public static void main(String[] args) {
 		List<Village> villages = new ArrayList<>(10);
@@ -11,7 +17,9 @@ public class RemoveAllVsClear {
 		Village v3 = new Village("A");
 		
 		
-		//villages.add(3,v1); This throws runtime error as list.size() is 0 still we are adding element at 3rd position
+		//This throws runtime error as list.size() is 0 still we are adding element at 3rd position
+		//Remember List is growable array. Its array for gods sake
+		//villages.add(3,v1); 
 		villages.add(v2);
 		villages.add(v3);
 		villages.add(new Village("D"));

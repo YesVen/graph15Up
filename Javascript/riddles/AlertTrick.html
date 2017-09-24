@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>This is crazy</title>
+    <script>
+        function testKnowledge(){
+            alert(this.innerHTML);
+            
+            
+            setTimeout(function(){
+                alert(this.innerHTML);
+            },1000);
+        }
+    
+    </script>
+</head>
+<body>
+</body>
+    <a onclick="testKnowledge()">Click Me!</a>
+</html>
+
+<!--this keyword in testKnowledge will point to window object which doesnt have innherHTML property-->
+
+<!--Also settimeout cannot access the DOM. So thtis in settimeout will also point to window object -->

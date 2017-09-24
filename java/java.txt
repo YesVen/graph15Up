@@ -106,7 +106,7 @@ Remaining :
 	Write executor framework?
 	spring mvc flow?
 	why closures are used?
-	use java 8 to calculate sume of 100 numbers
+	use java 8 to calculate sum of 100 numbers
 	Callable
 	How hashmap works? Hashmap resizing? Race condition?
 	

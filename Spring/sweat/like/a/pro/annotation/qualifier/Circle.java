@@ -25,7 +25,7 @@ public class Circle implements Shape
 	 * 
 	 * If it dont it throws initisation error
 	 *  
-	 * It also force the required annotation on same setter. We can make it false by below
+	 * It also force the required=true annotation on same setter. We can make it false by below
 	 * @Autowired(required=false)
 	 */
 	@Autowired

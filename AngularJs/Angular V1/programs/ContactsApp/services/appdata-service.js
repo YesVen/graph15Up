@@ -29,13 +29,29 @@
             return $http.get("https://randomuser.me/api/?results=10")
                 .then(function(response){
                     return response.data.results;
-                //Note here : geContacts doesnt return a contacts data but a promise object
-                //and the object has to handled by using promise pattern  
-            },
-            function(response){
-                self.errorMessage = "There was an error. Please try again.";
-                $log.error("Server Error has occurred : " + response);
-            });
+                    //Note here : geContacts doesnt return a contacts data but a promise object
+                    //and the object has to handled by using promise pattern  
+                },
+                function(response){
+                    self.errorMessage = "There was an error. Please try again.";
+                    $log.error("Server Error has occurred : " + response);
+                })
+                .catch(function(errorObject){
+                    console.error("There is an error getting contacts.");
+                })
+                .finally(function(){
+                    //This is a place where we need to write a code which has to be executed whether this async call succeed
+                    //fails
+                    console.log("Finally function executed");
+                });
+            
+            
+            //note here, second function to then is error handler function
+            //We can catch error using .catch() chained after .then() also.
+            //This is good way of error handling when you are having to many then functions chained and dont want to explicitly
+            //handle the error function in each .then call.
+            //we can use both ways of error handling together.
+            //.catch is generic error handler where other is limited only to that then() call.
         };
         
         this.updateContact = function(){

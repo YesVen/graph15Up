@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="clockApp">
+	<head>
+		<title>Directive Lifecycle</title>
+        <style>
+            input{
+                border-radius: 5px;
+            }
+        </style>
+		<script type="text/javascript"
+				src="../angular.js">
+		</script>
+
+		<script type="text/javascript">
+            
+            var clockApp = angular.module("clockApp",[]);
+            
+            clockApp.controller("clockController", function($scope){
+                this.persons = [1,3,2,5];
+                this.name="Dnyanesh";
+            });
+            
+            clockApp.directive("myDirective", function(){
+                return {
+                    template : "<p> This is a {{name}} </p>",
+                    controller : function($scope,$element,$attrs){
+                        debugger;
+                        console.log("Inside controller");
+                    },
+                    compile : function(tElement,tAttributes){
+                        console.log("Inside compile");
+                        return {
+                            pre : function(scope, iElement, iAttributes,controller){
+                                console.log("Prelink");
+                            },
+                            post : function(scope,iElement, iAttributes,controller){
+                                console.log("Postlink");
+                            }
+                        }
+                    }
+                }
+            });
+             
+        </script>
+	</head>
+
+	<body ng-controller="clockController as clock">
+
+        
+        <p my-directive ng-repeat="person in clock.persons">{{clock.name}}</p>
+        
+        @see : DirectiveLifecycle1.html..its important
+        <!--
+            When used custom directive stand alone (i.e. not inside  directive..see DirectiveLifecycle1.html)
+            the compile function for ALL directive is run and then individual controller, pre, post function is run.
+
+            But inside ng-repeat, compile is run only once.
+            Asked in L&T..managed to got away with it.
+        -->
+        
+	</body>
+</html>	
+
+
+
+
+
+
+

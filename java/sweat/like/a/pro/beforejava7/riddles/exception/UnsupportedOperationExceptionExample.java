@@ -14,5 +14,11 @@ public class UnsupportedOperationExceptionExample {
 		List<String> list2 =   Collections.unmodifiableList(list);
 		
 		list2.add("This will throw exception");
+		
+		/*
+		 * This will also be thrown if we try to remove elements from collection
+		 * while using iterator
+		 * Since iterators are fail fast in nature
+		 */
 	}
 }

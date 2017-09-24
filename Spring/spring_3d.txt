@@ -20,6 +20,9 @@ When to use xml configuration and when to use annotation configuration?
 	
 	
 
+Bean factory vs Application conext.
 
+
+ApplicationEventListner, ApplicationEventPublisher, ApplicationEvent, ApplicationEventPublisherAware
 
 		

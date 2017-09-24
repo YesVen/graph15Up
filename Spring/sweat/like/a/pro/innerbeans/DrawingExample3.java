@@ -16,7 +16,7 @@ public class DrawingExample3 {
 		
 		
 		/*
-		 * We can creare object ny using alias of the bean also. see innerbeans.xml
+		 * We can create object by using alias of the bean also. see innerbeans.xml
 		 */
 		Triangle triangleObjectByAlias = (Triangle) context.getBean("traingle-alias");
 		

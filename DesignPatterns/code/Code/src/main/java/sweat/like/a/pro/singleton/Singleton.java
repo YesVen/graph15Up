@@ -10,6 +10,7 @@ public class Singleton {
 		
 		
 		/*
+		 * Only one instance per JVM
 		 * This will not create new connection but reuse the same connection object which is singleton
 		 */
 		DBConnection connection2 = DBConnection.getConnection();

@@ -26,9 +26,11 @@ public class Circle implements Shape
 	 *  
 	 * It also force the required annotation on same setter. We can make it false by below
 	 * @Autowired(required=false)
+	 * 
+	 * Note : the setter doesnt have to be public.
 	 */
 	@Autowired
-	public void setCenter(Point center) {
+	private void setCenter(Point center) {
 		this.center = center;
 	}
 }

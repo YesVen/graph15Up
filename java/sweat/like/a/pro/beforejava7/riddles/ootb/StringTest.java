@@ -1,5 +1,15 @@
 package sweat.like.a.pro.beforejava7.riddles.ootb;
-
+/*
+ * String is stored in heap memory as an object
+ * 
+ * If we create string using the literal notation, object is created on heap and a reference to that location
+ * will be stored in string constant pool
+ * 
+ * If we use new operator to create string object, new object will be created on heap.
+ * 
+ * For literal notation, java checks if same object is being referenced from String poll if yes, 
+ * it returns the reference to already created object
+ */
 public class StringTest {
     public static void main(String[] args) {
         String s1 = "a";

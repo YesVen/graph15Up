@@ -7,11 +7,6 @@ Programs :
 		routing
 			$routeParams
 			$route : reload instead of whole app refresh
-		Custom Directive with expression Evaluation	
-		$parse
-		$eval
-		$interpolate
-		scopes in directives
 		
 		
 		
@@ -20,7 +15,7 @@ Eclipse Configuration For angular :
 	http://www.eclipse.org/webtools/jsdt/
 	https://marketplace.eclipse.org/content/angularjs-eclipse#.U4M7rBYqm0o
 	ngmodules.org
-	getbootstrat.com
+	getbootstrap.com
     getrandomuser.me
 	
 
@@ -56,7 +51,7 @@ Directive : At a high level, directives are markers on a DOM element that tell A
 
 			When u feel you are not writing compile or link function in directive, its good time to use component instead of directive.	
 			
-			A directive creates its own new scope.
+			A directive can create its own new scope or share scope with the controller or inherit scope---> city bank.
 			
 Module : Its a collection of directives, services, controllers etc.
 
@@ -64,6 +59,7 @@ ng-init : USed for init purpose but not recommended. It inits variables at $scop
 			Ideal use of this is to alias the special properties of ng-repeat
 			
 ng-app : Typically we have only one ng-app per html application but it is perfectly fine to have two ng-app in a html. In this case, angular would not auto bootstrap the application and you have to specify the bootstrapping steps.
+		angular.bootstrap();---> explore more
 
 ng-bind : used to bind an attribute from controller to dom
 		  A shorthand notation is preferred in place of this which is {{}}.
@@ -78,10 +74,8 @@ ng-if : evaluate the condition and add/remove element from DOM. As it removes el
 ng-show : evaluate the condition and show the element in DOM
 ng-hide : evaluate the condition and hide the element from DOM
 
-ng-repeat : loop over items 
-
 scope : every variable you use in html is $scoped. Meaning it is implicitly attached to $scope.
-		Every time property is updated in $scope, angular automatically updates view. This is called duel way binding.
+		Every time property is updated in $scope, angular automatically updates view(digest cycle). This is called duel way binding.
 		
 		Every Controller has its own scope. WE cannot use variable in scope of controller1 inside controller2.
 		
@@ -90,7 +84,7 @@ scope : every variable you use in html is $scoped. Meaning it is implicitly atta
 		When we use nested controllers, the scope of parent controller is accessible inside child controllers.
 		i.e. If parent scope has variable name=Dnyanesh and we use name variable inside child scope, it will become name=Dnyanesh
 		So generally speaking, angular scans scope in upward direction till it find the variable value.
-			(Analogous to one of the jquery method that scans in upward direction untill element is found)
+			(Analogous to one of the jquery method that scans in upward direction until element is found)
 		Angular scans till the $rootscope which is THE GOD scope
 		
 		So in an enterprise application, where hundreds of controllers are there each having its own scope, its relly messy to find out from which scope does this variable value came from.
@@ -126,7 +120,7 @@ scope : every variable you use in html is $scoped. Meaning it is implicitly atta
 		
 		
 Module : Module is a collections of controllers, services, factories etc.
-		For each different functionality we can as many modules as we want. They make our code very loosely coupled. So we can import any module developed by any developer in our application and start using right away. We just need to add dependency of that module in our module.
+		For each different functionality we can have as many modules as we want. They make our code very loosely coupled. So we can import any module developed by any developer in our application and start using right away. We just need to add dependency of that module in our module.
 		
 		Opposite to it, angular services are local to your application. You can build reusable services and let your controllers depend on the services.
 			But you cannot use a service DIRECTLY from another developer from www. In a way what you can do is inject a dependancy of some other module and use services of it,BUT not a service directly
@@ -161,8 +155,9 @@ controller	: 	This guy is C in MVC.
 				@see ControllerScope1.html, @see ControllerScope2.html
 
 
-module.factory() : Its a service. The problem with constants and value service is it requires second argument as data/function itself.
-					module.value("AppValuesService", {
+module.factory() : Its a service returning an object. 
+					
+					module.value("AppValuesService", { //Value service definition
 						"name" : "Dnyanesh",
 						"cell" : 97422,
 						"address" : "sdasdds"
@@ -171,6 +166,7 @@ module.factory() : Its a service. The problem with constants and value service i
 					or 
 					
 					module.value("AppValuesService", function(){
+						//processing logic can be there
 						return "Hello There";
 					});
 					
@@ -181,7 +177,7 @@ module.factory() : Its a service. The problem with constants and value service i
 						module.factory("AppValuesService", function($someservice1, $someservice2){
 							return $someservice1.getdata() + $someservice2.getdata();
 						});
-					Here factory being factory can depend on other services which constant/value cannot. In case of value/constant it has to be a concrete object or plain old javascript function
+					Here factory being factory can depend on other services which constant/value cannot. In case of value/constant it has to be a concrete object or plain old javascript function returning object.
 						
 					
 
@@ -193,7 +189,7 @@ module.service() : Similar to factory but it with one minor difference.
 					
 					second argument to service service has to be a "constructor function" while for factory it can be a normal function returning value.
 					In case of factory function, we must return a value/object.
-					In case of service function, JavaScript implicitly return a constructed object
+					In case of service function, JavaScript implicitly return a constructed object. Object.create() call to create object out of service.
 
 					Recommended way is to use service because its more inclined towards angular2
 					
@@ -214,6 +210,14 @@ module.service() : Similar to factory but it with one minor difference.
 Diffrence between factory and service
 					See explanation above
 					
+					Factory must return an object(After all that is what real world factories do)
+					Service used constructor function.
+						If you see angular code, service internally use factory. It used Object.create() notation internally.
+						Services gives you hand to migrate them easily to ES6 world. You can easily convert a service to a ES6 class.
+						Because is nothing but a constructor function.
+						@see - https://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
+						
+					
 					
 Diffrence between below ? 
 					function getDate(){	
@@ -228,6 +232,10 @@ Diffrence between below ?
 					
 What is IFFE : Immediately Invoked Function Expression.
 						Used to restrict the variables leaking in global scope
+						
+				How to access a property out of IIFE?
+
+				
 					
 What is callback hell?			
 
@@ -235,12 +243,13 @@ What is callback hell?
 Promise : An operation that hasnt completed yet but expected to complete in future
 
 
-Angular Js default Services?
-
-
 Filters : They are used more of for data representation. There are several default filters available like
             limitTo,uppercase, lowercase, number,currency,date, json, filter
             
+		formatting Filters
+		Sorting filters
+		Search Filters
+		Custom Filters
 
             We can define our own filters also at module level.
             
@@ -269,9 +278,11 @@ Filters : They are used more of for data representation. There are several defau
 
             uppercase	:Converts string to uppercase.
 
-            limitTo	:Creates a new array or string containing only a specified number of elements. The elements are taken from either           the beginning or the end of the source array, string or number, as specified by the value and sign (positive or           negative) of limit. Other array-like objects are also supported (e.g. array subclasses, NodeLists,                       jqLite/jQuery collections etc). If a number is used as input, it is converted to a string.
+            limitTo	:Creates a new array or string containing only a specified number of elements. The elements are taken from either the beginning or the end of the source array, 
+			string or number, as specified by the value and sign (positive or negative) of limit. Other array-like objects are also supported (e.g. array subclasses,NodeLists,
+			jqLite/jQuery collections etc). If a number is used as input, it is converted to a string.
 
-            orderBy	: Returns an array containing the items from the specified collection, ordered by a comparator function based on            the values computed using the expression predicate.
+            orderBy	: Returns an array containing the items from the specified collection, ordered by a comparator function based on the values computed using the expression predicate.
             
 			
 			
@@ -436,13 +447,13 @@ Digest : 	Its a core concept in angularJS
 			
 			So it is very clear that for all external events digest process will not start.
 			e.g. If you are using jquery to handle events (onclick and not ng-click), digest process will not start. 
-				If it becomes a must thing for you to use jquery etc for event handling then you must kick diest process manually by using $digest service.
+				If it becomes a must thing for you to use jquery etc for event handling then you must kick digest process manually by using $digest service.
 				
 			How to kick in digest process?
 				When you are doing something outside angular context and you want UI to be updated by angular automatically, digest process need to be kicked in.
 				Two ways 
 					$scope.$apply() :  	This kicks digest process at "RootScope" always.
-										From root scope, it goes on dirty checking child scopes, nested scopesone after the another.
+										From root scope, it goes on dirty checking child scopes, nested scopes one after the another.
 										This apply() method for kicking digest loop is used internally by angular creators behind the scenes for lot of things 
 											like ng-click, $http callback etc.
 										No matter where you can $apply(), it starts digest loop from $rootscope	always.
@@ -494,7 +505,7 @@ Directive : 	By default, Directive shares scope with the controller in which dir
 										When parent data need to passed in to isoolated scope,
 											@ --- String passed from parent to isolated scope
 											& --- Function is passed from parent to isolated scope
-											= --- Object is passed from parent to isolated scope
+											= --- Object is passed from parent to isolated scope. = is dual way binded.
 								new child scope + Parent scope 
 								Shared scope with parent (default behavior)
 				
@@ -505,13 +516,13 @@ Angular Events : 	First thing is they are not DOM events like click, mouseout, d
 					$broadcast : Moves from top to bottom.
 								 e.g. $rootscope.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000});
 									This event will go from rootscope to all child scopes.
-									Note , it doesnt matter from how deply nested scope event is broadcasted, it will start from the scope from hwich it is broadcasted
+									Note , it doesnt matter from how deeply nested scope event is broadcasted, it will start from the scope from hwich it is broadcasted
 										i.e. $scope4.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000}); 
 											this will start from $scope4 till its scope end.
 											
 					
 					$emit :		Moves from current scope uptill rootscope.
-								Once it reaches rootscope it starts top to bottom searching for listeners.
+								Once it reaches rootscope it starts top to bottom searching for listeners.(really?????)
 			
 			
 			

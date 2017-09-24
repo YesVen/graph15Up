@@ -1,7 +1,5 @@
 package like.a.pro.annotation.required;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class Triangle implements Shape{
 	
 	private Point pointA;

@@ -2,8 +2,6 @@ package sweat.like.a.pro.beforejava7.riddles.collection;
 
 import java.util.TreeMap;
 
-import sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.predicate.Person;
-
 
 /**
  *	 Underlying Data structure is RED-BLACK Tree	

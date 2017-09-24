@@ -1,0 +1,168 @@
+AngularJs
+	Angular Lifecycle
+		Bootstrap phase :
+			Angular components are initialized, dependencies are made available.
+			angular is activated after static DOM onload is triggered by browser
+		Compilation phase : 
+			compile :run through the static DOM and execute the compile phase of all the angular components
+			controller : run controller
+			prelink :  run prelink function
+			postlink : run postlink function
+		Runtime phase : Update the UI	
+		See G:\MyWork\Git\graph15Up\AngularJs\Angular V1\Hello World\Directives\DirectiveLifeCycle1.html
+		
+		
+	Component Lifecycle : 
+	
+	How ng-repeat works internally
+	
+	
+	How ng-repeat over directives work internally?
+		@see : G:\MyWork\Git\graph15Up\AngularJs\Angular V1\Hello World\Directives\DirectiveLifeCycle2.html
+	
+	How to implement pagination in angular
+	
+	How many times compile is called while using directive in ng-repeat?
+		Only once
+		@see : G:\MyWork\Git\graph15Up\AngularJs\Angular V1\Hello World\Directives\DirectiveLifeCycle2.html
+		
+	What is difference between including script in head and body?
+		good to have script at the end of body for good user experience but
+		there is gotcha.
+		You have to use ng-cloak, ng-bind in index.html only. If you use them in something like ng-include, it creates the problems.
+		
+		
+	$q service : 
+		Used to create a custom promise.
+		function addNumbers(a,b){
+		
+			var q = $q.defer();
+			//some async network call in between
+			var result = someAsyncCall();
+			if(result >=0){
+				q.reject("Cannot fulfill the promise");
+			}
+			else{
+				q.resolve(result);
+			}
+			//see what other properties are there on q object
+			return q.promise;
+		}
+		
+		addNumbers(10,2).then(function(result){
+			//result code
+		})
+		.catch(function(error){
+			//catch code
+		})
+		.finally(function(){
+			//code to be executes irrespective of error or success
+		});
+			
+		It has somme other methods as well.
+		$q.all() -> Used when we are dealing with many async calls and we want to resolve all of them in one go. This is mainly used in scenarios where we are able to
+			constructing a view only and only after all async calls are resolved.
+			https://www.youtube.com/watch?v=104J7_HyaG4 -- beautiful explained
+			The promise will be resolved only after the all the async calls in array are resolved.
+			$q.all([async1,async2,async3]).then(values => {	
+				//Things to do after all async calls resolved
+			})
+			.catch(error => {
+				//error to handle
+			});
+			
+		$q.race() -> Manage Race condition in independent async calls
+
+
+	
+	Why Promises : 
+			traditional callback hells
+			Similar to Future object in java
+			Gives ability to chain the calls with Promise Design Pattern. Clean and crisp code.
+			https://www.youtube.com/watch?v=104J7_HyaG4 -- beautiful explained
+			
+	
+	
+	factory vs service
+		Service : 	Service is a constructor function. We refer service properties using this keyword.
+					Somewhere deep inside of this Angular world, there’s this code that calls Object.create() with the service constructor function, when it gets instantiated. However, a factory function is really just a function that gets called, which is why we have to return an object explicitly.
+		Factory : 	It is just another function which returns an object/string/closure/anything (not necessarily object). 
+					Most importantly it can do some processing before returning object.
+		
+		Both are Singletons.
+		@See : G:\MyWork\Git\graph15Up\AngularJs\Angular V1\factory vs service.PNG
+	
+	
+	
+	
+	What is third parameter to setTimeout? 
+	G:\MyWork\Git\graph15Up\Javascript\riddles\AlertTrick.html
+	
+	
+	$setTimeout -> angular friendly settimeout implementation.
+			Good thing is that it returns a promise
+	
+	Disadvantages of angular JS ? advantages?
+		Not disadvantages but limitations
+			2000 watchers - poorly designed system can overlook this
+			digest cycle infinite loop
+		
+	Component? Component lifecycle hook?
+		
+	AngularJS best practices?	
+	
+	Sharing data between controllers
+		event - emit and broadcast
+		service that holds data to be injected in many controllers which want to share data
+		
+	Types of Angular Services?
+		Service, Value, Constant, provider, factory
+	
+	
+	Directive compile?
+		This is phase of directive loading.
+		Angular compiles all the directive in DOM using compile function. Once compilation phase "for all directives" is done, it runs the pre and post function for each directive.
+		https://www.youtube.com/watch?v=FemQfKf03gY
+		Post link is best place to modify the DOM.
+	
+Java
+	Hashmap Rehashing-- why and how?
+	Hashmap race condition
+	What if I extend singleton class
+	Which multithreading problem have you encountered?
+	Heap dump, profiling? analyser...what approach have u used to solve?
+	
+	
+Advanced java
+			Servlet context vs Servlet Config
+			
+			
+HTML5
+	localstorage vs sessionStorage
+	doctype vs modernizr
+	
+	
+Spring MVC
+	Request processing lifecycle
+	annotation-config vs component-scan
+	
+	
+Javascript
+	Why to use closures?
+	Why to use Promises?
+	Array.unshift?
+	toString method on var o = {
+									a : ["Dnyanesh","Ashu"],
+									b : 3
+							   }
+							o.toString();
+							o.a.toString();
+	learn typeof tricks in js
+	How many data types in js
+	How to access variable outside IIFE?
+	use strict?
+	let keyword?
+		
+	
+	
+	

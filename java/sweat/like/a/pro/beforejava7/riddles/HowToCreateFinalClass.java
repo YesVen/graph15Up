@@ -17,25 +17,6 @@ import java.util.Map;
  */
 
 
-public class HowToCreateFinalClass {
-	public static void main(String[] args) {
-		
-		int demoage = 10;
-		String demoName = "dnyanesh";
-		HashMap<String, String> demoInfo = new HashMap<>();
-		demoInfo.put("nativePlace", "Padali");
-		demoInfo.put("company", "3ds");
-		
-		FinalPerson dnyanesh = new FinalPerson(demoage, demoName, demoInfo);
-		
-		System.out.println(dnyanesh);
-		
-		demoInfo.put("dummyKey", "Hacked");
-		
-		//If we have not created deep copy constructor then we would be able to change dnyanesh object by putting a new key inside dnyanesh object 
-		System.out.println(dnyanesh);
-	}
-}
 
 
 final class FinalPerson
@@ -44,11 +25,15 @@ final class FinalPerson
 	private final String name;
 	private final HashMap<String, String> info;
 	
+	//TODO : Handle this object
+	private Address address;
+	
 	public FinalPerson(int age, String name, Map<String, String> info)
 	{
 		this.age = age;
 		this.name = name;
 		final HashMap<String, String> tempMap = new HashMap<>();
+		
 		
 		//for initialising info object dont use assignment, instead create deep copy
 		Iterator<String> iter = info.keySet().iterator();
@@ -80,4 +65,29 @@ final class FinalPerson
 		return this.age + " " + this.name + " "+ this.info;
 	}
 	
+}
+
+
+class Address {
+	
+}
+
+public class HowToCreateFinalClass {
+	public static void main(String[] args) {
+		
+		int demoage = 10;
+		String demoName = "dnyanesh";
+		HashMap<String, String> demoInfo = new HashMap<>();
+		demoInfo.put("nativePlace", "Padali");
+		demoInfo.put("company", "3ds");
+		
+		FinalPerson dnyanesh = new FinalPerson(demoage, demoName, demoInfo);
+		
+		System.out.println(dnyanesh);
+		
+		demoInfo.put("dummyKey", "Hacked");
+		
+		//If we have not created deep copy constructor then we would be able to change dnyanesh object by putting a new key inside dnyanesh object 
+		System.out.println(dnyanesh);
+	}
 }

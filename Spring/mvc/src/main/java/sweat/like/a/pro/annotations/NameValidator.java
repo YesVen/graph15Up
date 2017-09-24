@@ -15,7 +15,7 @@ public class NameValidator implements ConstraintValidator<IsValidName, String>{
 
 	/*
 	 * This method takes forbidden words set by user for this validation.
-	 * Later it is used by isValid Mathod to perofrm the actual validation
+	 * Later it is used by isValid Method to perform the actual validation
 	 */
 	public void initialize(IsValidName isValidName) {
 		this.forbiddenWords = isValidName.forbiddenWords();

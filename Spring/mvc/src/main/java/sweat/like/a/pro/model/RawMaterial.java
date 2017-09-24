@@ -34,6 +34,7 @@ public class RawMaterial {
 
 	/*
 	 * Validation string has been externalised to properties file
+	 * @IsValidName is a custom my validator
 	 */
 	@IsValidName(forbiddenWords="MQL|delete|Test Everything|trigger on|push context",
 					message="Title Cannot have forbidden words")//custom validation

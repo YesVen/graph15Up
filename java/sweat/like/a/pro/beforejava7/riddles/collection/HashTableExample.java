@@ -12,7 +12,7 @@ import java.util.Hashtable;
  *  Its threadsafe and best suited for search operation
  *  
  *  ******** NUll kays and values are not allowed **********
- *
+ *  
  */
 
 public class HashTableExample {
