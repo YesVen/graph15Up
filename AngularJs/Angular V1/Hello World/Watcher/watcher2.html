@@ -17,6 +17,9 @@
                 
                 $scope.skills = [];
                 
+                /*
+                    I guess watchgroup supports only promitive types. Check online
+                */
                $scope.$watchGroup(['fname','lname','city'],function(newValue){
                    $scope.allInfo  =  newValue;
                    console.log($scope.allInfo);

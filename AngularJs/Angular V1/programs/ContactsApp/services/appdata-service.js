@@ -27,8 +27,10 @@
         
         this.getContacts = function(){
             return $http.get("https://randomuser.me/api/?results=10")
-                .then(function(response){
+                .then(
+            function(response){
                     return response.data.results;
+<<<<<<< HEAD
                     //Note here : geContacts doesnt return a contacts data but a promise object
                     //and the object has to handled by using promise pattern  
                 },
@@ -52,6 +54,14 @@
             //handle the error function in each .then call.
             //we can use both ways of error handling together.
             //.catch is generic error handler where other is limited only to that then() call.
+
+                //Note here : geContacts doesnt return a contacts data but a promise object
+                //and the object has to handled by using promise pattern  
+            },
+            function(response){//error function
+                self.errorMessage = "There was an error. Please try again.";
+                $log.error("Server Error has occurred : " + response);
+            });
         };
         
         this.updateContact = function(){

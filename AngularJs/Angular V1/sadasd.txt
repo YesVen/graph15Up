@@ -36,7 +36,7 @@ Directive : At a high level, directives are markers on a DOM element that tell A
 			There are three types of directives
 				Decorator Directives
 				DOM manipulating directives
-				..???
+				..???Custom Directive??
 			
 			Custom directive can be expressed in following ways
 				<my-custom-directive></my-custom-directive>
@@ -53,30 +53,35 @@ Directive : At a high level, directives are markers on a DOM element that tell A
 			
 			A directive can create its own new scope or share scope with the controller or inherit scope---> city bank.
 			
+			When to use compile?
+			
 Module : Its a collection of directives, services, controllers etc.
 
 ng-init : USed for init purpose but not recommended. It inits variables at $scope.
 			Ideal use of this is to alias the special properties of ng-repeat
 			
+
 ng-app : Typically we have only one ng-app per html application but it is perfectly fine to have two ng-app in a html. In this case, angular would not auto bootstrap the application and you have to specify the bootstrapping steps.
 		angular.bootstrap();---> explore more
 
-ng-bind : used to bind an attribute from controller to dom
+ng-bind : used to bind an attribute from controller to view.
 		  A shorthand notation is preferred in place of this which is {{}}.
 		  
-ng-model : this directive acts as a model in mvw. 
+ng-model : this directive acts as a model in mvw.
 		   If you add ng-model, to any html element, angular is going to create a property on $scope object.
 		   You can actually access that property in your js code.
 		  
 ng-change : used to trigger a function when something changes.		  
 
-ng-if : evaluate the condition and add/remove element from DOM. As it removes element from DOM its expensive operation as compared to ng-show, ng-hide.
+ng-if : evaluate the condition and "add/remove" element from DOM. As it removes element from DOM its expensive operation as compared to ng-show, ng-hide.
 ng-show : evaluate the condition and show the element in DOM
 ng-hide : evaluate the condition and hide the element from DOM
 
-scope : every variable you use in html is $scoped. Meaning it is implicitly attached to $scope.
-		Every time property is updated in $scope, angular automatically updates view(digest cycle). This is called duel way binding.
-		
+ng-repeat : loop over items
+
+scope : Every variable you use in html is $scoped. Meaning it is implicitly attached to $scope.
+		Every time property is updated in $scope, angular automatically updates view. This is called duel way binding.
+
 		Every Controller has its own scope. WE cannot use variable in scope of controller1 inside controller2.
 		
 		There is a global scope which every controller has access to. Its called $rootscope.
@@ -120,14 +125,16 @@ scope : every variable you use in html is $scoped. Meaning it is implicitly atta
 		
 		
 Module : Module is a collections of controllers, services, factories etc.
-		For each different functionality we can have as many modules as we want. They make our code very loosely coupled. So we can import any module developed by any developer in our application and start using right away. We just need to add dependency of that module in our module.
-		
+		For each different functionality we can create as many modules as we want. They make our code very loosely coupled. So we can import any module developed by any developer 
+		in our application and start using right away. We just need to add dependency of that module in our module(u see advantages of declarative programming).
+
 		Opposite to it, angular services are local to your application. You can build reusable services and let your controllers depend on the services.
-			But you cannot use a service DIRECTLY from another developer from www. In a way what you can do is inject a dependancy of some other module and use services of it,BUT not a service directly
+			But you cannot use a service DIRECTLY from another developer from www. In a way what you can do is inject a dependancy of some other module and use services of it,
+			BUT not a service directly
 			
-			var mymodule = angular.module("app", ["$someRandomServiceFromInternet"]);
+			var mymodule = angular.module("app", ["$someRandomModuleFromInternet"]);
 			
-			mymodule.controller("appController", function("$http","$location","xyz service from $someRandomServiceFromInternet"){
+			mymodule.controller("appController", function("$http","$location","xyz service from $someRandomModuleFromInternet module"){
 			
 				//code goes here
 			});
@@ -155,6 +162,7 @@ controller	: 	This guy is C in MVC.
 				@see ControllerScope1.html, @see ControllerScope2.html
 
 
+
 module.factory() : Its a service returning an object. 
 					
 					module.value("AppValuesService", { //Value service definition
@@ -174,10 +182,11 @@ module.factory() : Its a service returning an object.
 					Just like automoboile factories pull up the raw material and dish out concrete vehicles, our factory service gonna take in raw data and take out concrete usable objects.
 					
 					So we can write
-						module.factory("AppValuesService", function($someservice1, $someservice2){
+						module.factory("AppFactory", function($someservice1, $someservice2){
 							return $someservice1.getdata() + $someservice2.getdata();
 						});
 					Here factory being factory can depend on other services which constant/value cannot. In case of value/constant it has to be a concrete object or plain old javascript function returning object.
+
 						
 					
 
@@ -207,7 +216,7 @@ module.service() : Similar to factory but it with one minor difference.
 						}]);
 						
 					
-Diffrence between factory and service
+Difference between factory and service
 					See explanation above
 					
 					Factory must return an object(After all that is what real world factories do)
@@ -219,7 +228,7 @@ Diffrence between factory and service
 						
 					
 					
-Diffrence between below ? 
+Difference between below ? 
 					function getDate(){	
 						return "Hello";
 					}
@@ -232,15 +241,23 @@ Diffrence between below ?
 					
 What is IFFE : Immediately Invoked Function Expression.
 						Used to restrict the variables leaking in global scope
+
 						
 				How to access a property out of IIFE?
 
 				
+
+						Even IIFE is not part of global scope/ window.
+
 					
 What is callback hell?			
-
+			ugly code.
 
 Promise : An operation that hasnt completed yet but expected to complete in future
+
+
+Angular Js default Services?
+			$http,$rootScope,$rootElement,$scope,$anchorscroll,$location,$document etc
 
 
 Filters : They are used more of for data representation. There are several default filters available like
@@ -251,7 +268,7 @@ Filters : They are used more of for data representation. There are several defau
 		Search Filters
 		Custom Filters
 
-            We can define our own filters also at module level.
+            We can define our own filters also at "module level".
             
             mymodule.filter("isPassword", function(){
                 return function(field){
@@ -266,7 +283,7 @@ Filters : They are used more of for data representation. There are several defau
             
             
             filter	: Selects a subset of items from array and returns it as a new array.
-            currency : Formats a number as a currency (ie $1,234.56). When no currency symbol is provided, default symbol for current            locale is used.
+            currency : Formats a number as a currency (ie $1,234.56). When no currency symbol is provided, default symbol for current locale is used.
 
             number	: Formats a number as text.
 
@@ -278,9 +295,12 @@ Filters : They are used more of for data representation. There are several defau
 
             uppercase	:Converts string to uppercase.
 
-            limitTo	:Creates a new array or string containing only a specified number of elements. The elements are taken from either the beginning or the end of the source array, 
-			string or number, as specified by the value and sign (positive or negative) of limit. Other array-like objects are also supported (e.g. array subclasses,NodeLists,
-			jqLite/jQuery collections etc). If a number is used as input, it is converted to a string.
+            limitTo	:Creates a new array or string containing only a specified number of elements. 
+					The elements are taken from either the beginning or the end of the source array, string or number, as specified by the value and sign (positive or negative) of limit. 
+					Other array-like objects are also supported (e.g. array subclasses, NodeLists,jqLite/jQuery collections etc). 
+					If a number is used as input, it is converted to a string.
+					
+					Used in conjunction with ng-repeat to limit the results to specified value.
 
             orderBy	: Returns an array containing the items from the specified collection, ordered by a comparator function based on the values computed using the expression predicate.
             
@@ -328,7 +348,7 @@ Routing : 	This is a application configuration mechanism  with which we can cont
 				$locationChangeSuccess
 			$routeParams
 			Resolving Route change
-				This is required when our http calls take time and we dont want to change the route untill http call fetches data 
+				This is required when our http calls take time and we dont want to change the route until http call fetches data.
 
 				
 
@@ -398,6 +418,7 @@ At certain places angular js returns a jquery element such as in postlink functi
 
 Watchers : 	This is core service used by angular internally to keep track of changes in the scope variables.
 			Not for each scope variable $watch is create automatically, but how many data binding exist in view.
+			Every variable in scope doesnt have a watch associated with it. It has to be bound with the view. Only then watch will be created for that scope variable.
 			
 			At a time any number of watchers may exist but angular suggests watchers count < 2000
 			
@@ -438,11 +459,11 @@ Digest : 	Its a core concept in angularJS
 			
 			Digest process runs at global angular context level and not scope level. It starts at root scope.
 			
-			min 2 iterations are must be done
+			Min 2 iterations are must be done
 			Max 10 iterations of digest cycle are allowed else error is thrown
 			
 			Who asks digest process to kick in ?
-					Whenever there is a browser interaction happens such as DOM even(ng-click, ng-change), Ajax callbacks($http), timers($interval, $timeout),
+					Whenever there is a browser interaction happens such as DOM event(ng-click, ng-change), Ajax callbacks($http), timers($interval, $timeout),
 					browser location change, manual invocation of ($apply, programmatic trigger etc.)
 			
 			So it is very clear that for all external events digest process will not start.
@@ -490,7 +511,7 @@ $parse : 	It just parses the expression and returns a function.
 			
 			
 $interpolate: 	Its another flavour to evaluate expression but slightly advanced.
-				We can pass any arbitrary string having angular expression to it and it will evaluate ot for you.
+				We can pass any arbitrary string having angular expression to it and it will evaluate it for you.
 				
 				$interpolate("Result of the a*b is {{a*b}}", and double of that is {{a*b*2}}")($scope);
 				It internally uses $parse.
@@ -516,7 +537,7 @@ Angular Events : 	First thing is they are not DOM events like click, mouseout, d
 					$broadcast : Moves from top to bottom.
 								 e.g. $rootscope.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000});
 									This event will go from rootscope to all child scopes.
-									Note , it doesnt matter from how deeply nested scope event is broadcasted, it will start from the scope from hwich it is broadcasted
+									Note , it doesnt matter from how deeply nested scope event is broadcasted, it will start from the scope from which it is broadcasted
 										i.e. $scope4.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000}); 
 											this will start from $scope4 till its scope end.
 											
@@ -526,11 +547,17 @@ Angular Events : 	First thing is they are not DOM events like click, mouseout, d
 			
 			
 			
+$RootElement : In AngularJS, bootstrap process is started with "ng-app" directive which is root element. 
+				This root element can be declared in any DOM element such as <html>, <body> or in <div> tags to start bootstrap process. 
+				This element can be accessed using $rootElement service provided by AngularJS.
+				
 			
 			
+How to perform manual bootstraping of angular app?
+
 			
+WatchGroup vs WatchCollection			
 			
-			
-			
+$sceDelegateProvider			
 			
 			
