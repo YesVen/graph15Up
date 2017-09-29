@@ -42,9 +42,9 @@ class Singleton7
 	public static Singleton7 getSoleInstance(){
 			
 		/**
-		 * This is called double checked locking
+		 * This is called double checked locking idiom
 		 * Double check is required even after synchronized because whatever inside synchronized will run slower.
-		 * Consider case when, even after singleton is initialised, thread has to wait for its turn to just check one condition(soleInstance == null)
+		 * Consider case when, even after singleton is initialized, thread has to wait for its turn to just check one condition(soleInstance == null)
 		 * Thats creepy.
 		 * Imagine 1000 threads waiting for evaluating  if soleInstance == null.
 		 * Thats a performance issue

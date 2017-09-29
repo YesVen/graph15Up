@@ -1,0 +1,81 @@
+Array.sum
+
+Object and array tostring
+	var o = {
+		"a" : ["aas","asds"]
+	}
+	
+	o.toString()
+	o.a.toString()
+	
+localestorage create and methods
+
+sessionstorage
+
+timeout example
+
+typeof null
+typeof undefined
+
+data types in js
+
+implememt ooops in js
+
+closure in detail
+
+abstraction vs data hiding vs encapsulation
+
+o(log n) notation 
+
+string reverse programs
+
+disadvantages of angular js
+
+servletcontext vs servletconfig
+
+third param to setTimeout
+
+access variable outside iife
+
+
+
+
+if(console.log("sdasd")){
+	//yes
+}
+else{
+	//no
+}	
+
+
+<a onclick='newwin()'>Anchor</a>
+function newwin() {               
+  alert(this);
+  setTimeout(function(){
+          alert(this.innerHTML);
+        },2000);
+  
+  var o = {
+    a : "['asd','asdasd']"
+  }
+  
+  var s = new Object();
+  
+  console.log(o.toString());
+  
+  console.log(o.a.toString());
+  
+  Object.prototype.toString = function(){
+    return "object is not string";
+  }
+  
+  console.log(s.toString());
+  
+  
+  if(console.log("Is it?")){
+    console.log("log returns true");
+  }
+  else{
+    console.log("log returns false");
+  }
+}

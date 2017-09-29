@@ -1,8 +1,8 @@
 package sweat.like.a.pro.builder.modern.moremodern;
 
 /*
- * Here we have moved Teabuilder from seperate class to inner class.
- * This is required since sometime we might a new property to tea say sugar but developers miss to add it in 
+ * Here we have moved Teabuilder from separate class to static inner class.
+ * This is required since sometime we might add a new property to tea say sugar but developers miss to add it in 
  * builder.
  * This just create a better understanding for developers as tea and teabuilder resides in same file.
  */

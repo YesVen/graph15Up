@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web Workers</title>
+    <!--
+        Web Workers fall into the catagory of Workers.
+    
+        Service Workers for push notifications
+        Web workers for background processing
+
+    -->
+    
+    <script>
+        function startWorker(event){
+            var worker;
+            
+            //check if browser supports Workers
+            if(typeof Worker != undefined && worker == undefined){
+                
+                //Create a worker
+                //We can use relative path => new Worker('./js/workers/componentLoaderWorker.js');
+                worker = new Worker('worker1.js');
+                
+                //Define what should happen after error condition
+                worker.onerror = function(event){
+                    console.log("worker Encoutered an error")
+                }
+                
+                //Define a handler for MessageEvent received from worker
+                worker.onmessage = function(event){
+                    console.log("Message recieved from worker as" + event);
+                    
+                    worker.terminate();
+                    
+                    //We can close worker by 2 ways. self.close() from worker and above one
+                    
+                    //this is good thing to do as we can use the same variable to assign a new worker to it.
+                    worker = undefined;
+                };
+                
+                //Communicate with worker using MessageEvent of browser
+                //Here we are passing just a string argument but in rela world applications we can pass complex objects also
+                //tabContentLoader.postMessage({'url':'http://dbe1win7plp:8080/enovia/resources/AI/components', 'lang':'en'});
+                worker.postMessage("Hi worker1, how are you?");
+            }
+            else{
+                alert("Alas...your browser dont support Wrokers.");
+            }
+        }
+        
+    </script>
+</head>
+    <input type="button" value="start Worker" onclick="startWorker(event)">
+    
+</html>

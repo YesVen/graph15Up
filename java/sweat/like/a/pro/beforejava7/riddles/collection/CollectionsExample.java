@@ -64,7 +64,7 @@ public class CollectionsExample {
 		 * This will throw UnsupportedOperationException since AsList API uses private inner class ArrayList and not java.util.ArrayList
 		 * Private inner class ArrayList dont have add method.
 		 */
-		villages.add(new Village("Lonand") );
+		//villages.add(new Village("Lonand") );
 		System.out.println(villages.size());
 		
 		//create a copy
@@ -72,7 +72,7 @@ public class CollectionsExample {
 		System.out.println(villagesCopy.size());
 		
 		//Copy method of collections will works only on list type
-		//Collections.copy(villagesCopy, villages); //This will throw an error but why???????
+		//Collections.copy(villagesCopy, villages); //This will throw an error because copy method expects a two argumets of type List (not java.util.Arrays.ArrayList<E>) 
 		System.out.println(villagesCopy);
 		
 		//This will similar like copy constructor
@@ -81,11 +81,11 @@ public class CollectionsExample {
 		
 		//What if destination list already has elements......copy method will replace the elements in destination collection
 		List<Village> oldVillages = Arrays.asList(new Village("A"),new Village("B"),new Village("C"),new Village("D"));
-		System.out.println(oldVillages);
+		System.out.println("oldVillages : " +oldVillages);
 		Collections.copy(oldVillages, villages);
-		System.out.println(oldVillages);
+		System.out.println("Oldvillages after copy : "+ oldVillages);
 		
-		//copy method will replace the elements in destination collection and remaining elements in detination colletion will remain as it is
+		//copy method will replace the elements in destination collection and remaining elements in destination collection will remain as it is
 		List<Village> w1 = Arrays.asList(new Village("A"),new Village("B"),new Village("C"),new Village("D"), new Village("E"));
 		System.out.println(w1);
 		Collections.copy(w1, villages);

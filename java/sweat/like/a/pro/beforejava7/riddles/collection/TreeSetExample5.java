@@ -43,6 +43,7 @@ public class TreeSetExample5 {
 		numbers.add(2);
 		numbers.add(56);
 		numbers.add(20);
+		numbers.add(20);
 		
 		System.out.println(numbers);
 		

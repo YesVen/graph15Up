@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web Workers</title>
+     <script>
+        function startWorker(event){
+            var worker;
+            
+            if(typeof Worker != undefined && worker == undefined){
+                worker = new Worker('ErrorHandlingWorker.js');
+                
+                worker.postMessage("Hey");
+                
+                worker.onerror = function(event){
+                    alert("Worker failed somewhere\n" + event.type + " : "+ event.message);
+                    worker.terminate();
+                    
+                    worker = undefined;
+                }
+                
+                worker.onmessage = function(){
+                    alert("Worjer working fine");
+                }
+                
+            }
+            else{
+                alert("Alas...your browser dont support Workers.");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="button" value="start Worker" onclick="startWorker(event)">
+</body>    
+    
+</html>

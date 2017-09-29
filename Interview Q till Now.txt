@@ -128,11 +128,19 @@ AngularJs
 Java
 	Hashmap Rehashing-- why and how?
 	Hashmap race condition
+	
 	What if I extend singleton class
+		Since constructor is private, it will not be visible in extended class.
+		So we will get compile error "Implicit super constructor DBConnection() is not visible for default constructor. Must define an explicit constructor"
+	
 	Which multithreading problem have you encountered?
 	Heap dump, profiling? analyser...what approach have u used to solve?
-	
-	
+		
+	jdk 1.5 vs jdk 1.7 vs jdk 1.8 vs jdk 1.9? Which things introduced in which version?
+	1.5 : Concurrent Collections, Generics, enhanced for loop, Reflection, Autoboxing etc.
+	1.7 : Exception Handling improvements,
+	1.8 : lambda expressions,stream support, default methods in interface, function expressions, nashorn js engine
+
 Advanced java
 			Servlet context vs Servlet Config
 			
@@ -140,7 +148,16 @@ Advanced java
 HTML5
 	localstorage vs sessionStorage
 	doctype vs modernizr
-	
+	Web Workers-- why and how?
+	If I have huge data to be sent over network?--- json or serialization?
+	How have you rendered the 3dxml file in browser?
+	GWT?
+	Math : Can we multiply matrix with vector?
+	Push mechanism in browsers (not traditional pull)
+	Gulp/Grunt/Bower tools?
+	How to configure a project to be dependant on some other project in maven?
+	In Tomcat How to ask it to look for some files in some specified directory?
+	If I have hude data, will you use http protocol? ---> I answered as file protocol, blob 
 	
 Spring MVC
 	Request processing lifecycle
@@ -162,7 +179,22 @@ Javascript
 	How to access variable outside IIFE?
 	use strict?
 	let keyword?
-		
+	
+Congnizant Interview
+	Why Generics introduces?
+	Your application arch?
+	Which synchronization issues have you came across?
+	Race Condition in hashmap?
+	Employee class to insert in treeset/treemap
+	write closure?
+	write singleton?
+	Write executor framework?
+	spring mvc flow?
+	why closures are used?
+	use java 8 to calculate sum of 100 numbers
+	Callable
+	How hashmap works? Hashmap resizing? Race condition?
+	
 	
 	
 	

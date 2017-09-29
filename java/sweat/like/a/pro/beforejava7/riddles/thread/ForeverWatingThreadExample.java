@@ -13,8 +13,8 @@ public class ForeverWatingThreadExample {
 		/*
 		 * This is causing the main thread to wait forever.
 		 * Here, due to sleep, main thread is not yet called wait on t1 but by the time thread t1 has completed
-		 * its execution and notified all threads wating for t1.
-		 * This notify call goes in vain as main thread has not called wait before t1 called notfy. 
+		 * its execution and notified all threads waiting for t1.
+		 * This notify call goes in vain as main thread has not called wait before t1 called notify. 
 		 */
 		Thread.sleep(1000);
 		

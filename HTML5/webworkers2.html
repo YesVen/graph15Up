@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web Workers</title>
+    <!--
+        We can create inline workers as well.
+    -->
+    <script id="worker1" type="javascript/worker">
+        self.onmessage = function(event){
+          
+          //window object is not accessible in worker so it will throw error.
+          //alert(event.data);
+          
+          console.log(event.data);
+        }
+    </script>
+    
+    <script>
+        function startWorker(event){
+            var worker;
+            
+            if(typeof Worker != undefined && worker == undefined){
+                
+                
+                var workersbody = document.querySelector("#worker1").textContent;
+                var blob = new Blob([workersbody]);
+                
+                var blobURL = window.URL.createObjectURL(blob);
+                var worker = new Worker(blobURL);
+                
+                worker.postMessage("Hey worker");
+                
+            }
+            else{
+                alert("Alas...your browser dont support Wrokers.");
+            }
+        }
+        
+    </script>
+</head>
+    <input type="button" value="start Worker" onclick="startWorker(event)">
+    
+</html>

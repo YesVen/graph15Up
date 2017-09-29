@@ -1,9 +1,6 @@
 package sweat.like.a.pro.beforejava7.riddles.collection;
 
-import java.util.Comparator;
 import java.util.TreeSet;
-
-import sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.predicate.Person;
 
 /**
  * Duplicates are not allowed

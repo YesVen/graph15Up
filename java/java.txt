@@ -95,20 +95,7 @@ Remaining :
  		http://howtodoinjava.com/category/core-java/multi-threading/
  
  
- Congnizant Interview
-	Why Generics introduces?
-	Your application arch?
-	Which synchronization issues have you came across?
-	Race Condition in hashmap?
-	Employee class to insert in treeset/treemap
-	write closure?
-	write singleton?
-	Write executor framework?
-	spring mvc flow?
-	why closures are used?
-	use java 8 to calculate sum of 100 numbers
-	Callable
-	How hashmap works? Hashmap resizing? Race condition?
+ 
 	
 	
 	

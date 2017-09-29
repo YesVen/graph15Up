@@ -3,7 +3,7 @@ package sweat.like.a.pro.beforejava7.riddles;
 
 /**
  * Limitaion of Array : fixed is size. We cannot increae size or decrease size.
- * 			   Array hold elements of type t1 ot its subtype where t1 id Atrray's Type
+ * 			   Array hold elements of type t1 or its subtype where t1 is Atrray's Type
  * @author Nightfury
  *
  */

@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>Autocomplete</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="stylesheet" href="lib/topcoat-desktop-dark.css">-->
+    <style>
+        body {
+            background-color: #352F2F; 
+        }
+        
+        .chosen-container-multi .chosen-choices li {
+            float: left;
+            list-style: none;
+        }
+        
+        .search-choice {
+            position: relative;
+            margin: 3px 5px 3px 0;
+            padding: 3px 20px 3px 5px;
+            border: 1px solid #80867D;
+            max-width: 100%;
+            border-radius: 3px;
+            background-color: #eeeeee;
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), to(#eee));
+            background-image: linear-gradient(#3A3636 20%, #352F2F 50%, #2B2222 52%, #1D1414 100%);
+            background-size: 100% 19px;
+            background-repeat: repeat-x;
+            background-clip: padding-box;
+            -webkit-box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+            color: #F9F5F5;
+            line-height: 13px;
+            cursor: default;
+        }
+    
+        .ui-widget.ui-widget-content {
+            background-color: #4E4B4B;
+            color : #F9F5F5
+        }    
+        
+        .ui-menu-item.ui-state-focus {
+            background-color: #6fb5f1;
+            color : black;
+        }
+        
+        .disabled {
+            pointer-events:none; 
+            opacity:0.6;         
+        }
+        
+        .ui-autocomplete {
+            max-height: 200px;
+            overflow-y: auto;   /* prevent horizontal scrollbar */
+            overflow-x: hidden; /* add padding to account for vertical scrollbar */
+            z-index:1000 !important;
+        }
+        
+    .chosen-container-multi .chosen-choices li.search-choice span {
+        word-wrap: break-word;
+    }
+        
+    .chosen-container * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+        
+    .chosen-container-multi .chosen-choices {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0 2px;
+        width: 100%;
+        height: auto;
+        background-color: #352F2F;
+        /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #eee), color-stop(15%, #fff));
+        background-image: linear-gradient(#12321 1%, #fff 15%);*/
+        cursor: text;
+    }    
+        
+    .search-choice-close {
+        position: absolute;
+        top: 4px;
+        right: 3px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: url("chosen-sprite.png") -42px 1px no-repeat;
+        font-size: 1px;
+        cursor: pointer;
+    }    
+        
+    .chosen-container {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 13px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }    
+        
+    </style>
+    <script src="lib/jquery-2.0.2.min.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <script>
+        
+        var searchText = "";
+        
+      $( function() {
+        var availableTags = [
+          "ActionScript","AppleScript","Asp","BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"];
+          
+        function split( val ) {
+          return val.split( /,\s*/ );
+        }
+        function extractLast( term ) {
+          return split( term ).pop();
+        }
+
+        $( "#tags" )
+          // don't navigate away from the field on tab when selecting an item
+          .on( "keydown", function( event ) {
+            if ( event.keyCode === $.ui.keyCode.TAB &&
+                $( this ).autocomplete( "instance" ).menu.active ) {
+              event.preventDefault();
+            }
+          })
+          .autocomplete({
+            minLength: 0,
+            classes : {
+                "ui-state-focus" : "custom-red"
+            },
+            source: function( request, response ) {
+                if(request && (request.term === "*" || request.term === "**"))
+                {
+                    request.term = "";
+                }
+
+                // delegate back to autocomplete, but extract the last term
+                  response( $.ui.autocomplete.filter(
+                    availableTags, extractLast( request.term ) ) );
+                
+                //write code if availableTags.length ==0, show no results found
+            },
+            focus: function() {
+              // prevent value inserted on focus
+              return false;
+            },
+            select: function(event, ui){
+                     //Write things to do after selection made
+                     //create a div and append it ti input box
+                    var isChecked = $(".ui-menu-item:contains('"+ui.item.value+"')").find(':checkbox').prop('checked');
+                    if(isChecked){
+                        $(".ui-menu-item:contains('"+ui.item.value+"')").find(':checkbox').prop('checked', false);    
+                        var cc = $(".search-choice:contains('"+ui.item.value+"')");
+                        cc.remove();
+                    }
+                    else{
+                        var someMetaData = "\nThis is tooltip metadata information.\n This short but useful information."
+                        
+                        $(".ui-menu-item:contains('"+ui.item.value+"')").find(':checkbox').prop('checked', true);
+                        
+                        $(".ui-menu-item:contains('"+ui.item.value+"')").css({'background-color' : 'grey'});
+                        
+                        var li = $('<li class="search-choice"><span title="'+ ui.item.value + someMetaData 
+                                   + '">'+ ui.item.value 
+                                   +'</span><a class="search-choice-close" data-option-array-index="2"></a></li>');
+                        
+                        $(".chosen-choices").append(li);
+                         li.find('.search-choice-close').on('click', function(event){
+                            $(this).parent().remove(); 
+                         });
+                    }
+                    
+                    this.value = "";
+                    return false;
+            },
+            close : function(event, ui){
+                //keep autocomplete open by searching the same input again
+                if(event.originalEvent && event.originalEvent.type != 'blur'){
+                  $( "#tags" ).autocomplete( "search", searchText ); 
+                     $("#tags").focus();
+                    return false;
+                }
+                return false;
+            },
+            open : function(event, ui){
+                var val = $("#tags").val(); 
+                if(val != '')
+                {
+                    searchText = $("#tags").val();    
+                }
+            }
+          })
+          .data("ui-autocomplete")._renderItem = function( ul, item ) {
+                var checkbox = $("<input type='checkbox'>");
+                var someMetaData = "\nThis is tooltip metadata information.\n This short but useful information."
+                var ss = $( "<li>" )
+                    .attr( "data-value", item.value )
+                    .prop('title', someMetaData)
+                    .append(checkbox)
+                    .append( item.label )
+                    .appendTo( ul );
+            
+                var ff = $(".chosen-choices").find("span:contains('"+ item.value +"')");
+                if(ff.length> 0)
+                {
+                   checkbox.prop('checked', true) ;
+                   checkbox.parent().addClass('disabled');
+                }
+                return ss;
+            }
+      });
+        
+  </script>
+</head>
+<body>
+    <div style="vertical-align: middle; padding-left: 40%; padding-top: 20%;">
+        <div class="chosen-container chosen-container-multi" title="" style="width: 200px;">
+            <ul class="chosen-choices">
+            </ul>
+        </div>
+
+        <div class="ui-widget">
+          <label for="tags"></label>
+          <input id="tags" size="50" style="width:200px;" class="topcoat-text-input">
+        </div>
+    </div>
+    <footer style="position: fixed; bottom: 10px;">
+        <ul>
+            <li>Tooltip inside selection list is not working properly</li>
+            <li>Issue with topcoat integration</li>
+            <li>Select Javascript, java also gets selected. Need to use filter in place if contains</li>
+            <li>Give server call always v/s after refresh click</li>
+            <li>Adding * should bring down all the results</li>
+        </ul>
+    </footer>    
+    
+</body>
+
+
+</html>

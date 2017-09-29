@@ -115,7 +115,7 @@ Mediator : Usually a program is made up of a large number of classes. Logic and 
 			
 Template method :	Behavioural
 					When you want a system to run in certain sequence and you dont want anyone to alter the sequence then Template design pattern is used.
-					e.g. When a house is built, it consist of certain steps like laying foundation, building walls, adding roof, painting house and decorating. These steps 
+					e.g. When a house is built, it consist of certain template steps like laying foundation, building walls, adding roof, painting house and decorating. These steps 
 					are fixed for all houses.
 					So template method define this sequence and forces developer to follow it. Developer can alter individual step like  walls can be concrete wall or glass wall.
 					

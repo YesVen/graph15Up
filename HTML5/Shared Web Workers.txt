@@ -1,0 +1,30 @@
+An ordinary web worker is only accessible by the page that created it.If you want to share a web worker between multiple pages, you can use a SharedWorker. A SharedWorker is accessible by all pages that are loaded from the same origin (domain).
+
+
+var worker = new SharedWorker("shared-worker.js");
+
+The string passed as parameter to the SharedWorker constructor is the URL of the JavaScript the SharedWorker is going to execute.
+
+All pages that create an instance of a SharedWorker with the same URL passed as parameter, will essentially get a connection to the same SharedWorker behind the scenes.
+
+Connecting to a SharedWorker
+    A SharedWorker has a concept called ports through which the various pages that reference the SharedWorker can communicate with it. The API is again similar to the HTML5 Messaging API.
+
+    Here is an example of how to add a message listener to the port of a SharedWorker:
+
+    var worker = new SharedWorker("/html5/web-worker-shared.jsp");
+    worker.port.addEventListener("message",
+        function(event) {
+            alert(event.data);
+        }
+        , false
+    );
+    worker.port.start();
+    
+    
+First at SharedWorker is created. Second, a message event listener function is added to the SharedWorker's port. Third, the port is started. If you do not start the port, you cannot send messages to the SharedWorker.
+
+
+Once the port is started and your page is listening for messages on the port, you can send messages to the SharedWorker using the port.postMessage() function. Here is an example:
+
+worker.port.postMessage("First Message");

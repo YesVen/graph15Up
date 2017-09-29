@@ -7,6 +7,9 @@ public class MainDemo {
 		System.out.println("Main Called");
 	}
 	
+	public static void main(){
+		System.out.println("We can overload main method");
+	}
 }
 
 class TestSZ{

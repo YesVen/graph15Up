@@ -1,9 +1,6 @@
 package sweat.like.a.pro.beforejava7.riddles.collection;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -25,7 +22,8 @@ public class CopyOnWriteArrayListExample {
 		words2.addIfAbsent("Dnyanesh");//wont be added as words2 has Dnyanesh
 		System.out.println(words2);
 		
-		//itr poiting to words2
+		//itr poiting to words2.
+		//This is point when a new copy will be created. Old for iteration and new for updation. 
 		Iterator<String> itr = words2.iterator();
 		
 		//new copy will be created and Ashu wil be added in that copy

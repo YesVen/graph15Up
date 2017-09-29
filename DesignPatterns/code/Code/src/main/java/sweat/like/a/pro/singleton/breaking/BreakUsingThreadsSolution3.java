@@ -47,7 +47,7 @@ class Singleton8
 		 * There might be a chance that a thread 1 creates half constructed object. Java allows memory to expose such half object to world.
 		 * Thread 2 sees this half object and starts using it. Thread 2 will now fail.
 		 * 
-		 * volatile make sure this doesnt happen
+		 * volatile make sure this doesn't happen
 		 *  
 		 */
 		if(soleInstance == null){

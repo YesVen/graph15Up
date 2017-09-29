@@ -49,7 +49,7 @@ public class WeakHashMapExample {
 		
 		System.gc();//GC is stronger than weakhashmap, it will delete at any cost
 		Thread.sleep(5000);
-		System.out.println(map1);
+		System.out.println("Weakhashmap : " +map1);
 	
 	}
 }
