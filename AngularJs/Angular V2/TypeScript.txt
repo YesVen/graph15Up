@@ -1,0 +1,5 @@
+Superset of JS
+
+Js with some good additions like classes, types and more.
+
+It gets compiled internally to js.So we essentially writing typescript code to be compiled to js and then run on browser.

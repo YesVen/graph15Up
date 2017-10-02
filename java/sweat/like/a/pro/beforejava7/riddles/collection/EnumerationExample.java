@@ -14,7 +14,8 @@ import java.util.Vector;
  * Iterator is a fail-fast in nature. i.e it throws ConcurrentModificationException if a collection is modified while iterating other than it’s own remove() method. 
  * Where as Enumeration is fail-safe in nature. It doesn’t throw any exceptions if a collection is modified while iterating. 
  * 
- * As Iterator is fail-fast in nature and doesn’t allow modification of a collection by other threads while iterating, it is considered as safe and secure than Enumeration.
+ * As Iterator is fail-fast in nature and doesn’t allow modification of a collection by other threads while iterating, 
+ * iterator is considered as safe and secure than Enumeration.
  * 
  * Enumeration is 2x faster. 
  * 

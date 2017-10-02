@@ -7,17 +7,7 @@ http://www.javaworld.com/article/2077995/java-concurrency/java-concurrency-async
 Free Node JS tuts
 https://www.udemy.com/node-js-training-and-fundamentals/
 
-What are Providers?
- 
-Js Array operations?
-
-toString in js
-
-LCM HCF code?
-
-linkedList merging...find merging point
-
-Disadvantages of angular JS
-
 http://www.techstrikers.com/AngularJS/index.php
+
+Fake onine Rest API : https://jsonplaceholder.typicode.com/
 

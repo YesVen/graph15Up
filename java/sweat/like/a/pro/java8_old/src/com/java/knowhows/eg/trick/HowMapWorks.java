@@ -1,4 +1,4 @@
-package java.sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.trick;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.trick;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -36,6 +36,19 @@ public class HowMapWorks {
 	        hashMap.put(employee1, "employee2");
 	        hashMap.put(employee, "employee3");
 	 
+	        /*
+	         * The size of hashmap is 2 because, 
+	         * We are returning false from equals of Employee and we are putting same employee object twice.
+	         * So ideally it should allow us to add same objects twice.
+	         * 
+	         * But thing is hashmap first does reference check to see if objects are same and then it calls equals method.
+	         * Here in our case, 
+	         * line 35, employee willbe put in map
+	         * line 36, hashmap will check if employee and employee1 are reference to same object or not. They are not so insert it.
+	         * line 37, check if reference is same or not. Same, so overwrite the found match.
+	         * 
+	         * Hence size 2
+	         */
 	        System.out.println(hashMap.size() + "   size of hashmap");
 	 
 	        Set<Employee> keySet = hashMap.keySet();

@@ -16,7 +16,7 @@ public class UnsupportedOperationExceptionExample {
 		list2.add("This will throw exception");
 		
 		/*
-		 * This will also be thrown if we try to remove elements from collection
+		 * This will also be thrown if we try to remove elements from collection(other than iterator's own remove method)
 		 * while using iterator
 		 * Since iterators are fail fast in nature
 		 */

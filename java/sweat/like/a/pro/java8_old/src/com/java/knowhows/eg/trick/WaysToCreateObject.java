@@ -1,4 +1,4 @@
-package java.sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.trick;
+package sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.trick;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

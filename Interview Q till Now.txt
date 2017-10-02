@@ -141,6 +141,9 @@ Java
 	1.7 : Exception Handling improvements,
 	1.8 : lambda expressions,stream support, default methods in interface, function expressions, nashorn js engine
 
+	abstraction vs data hiding vs encapsulation
+	Big O notation?
+	
 Advanced java
 			Servlet context vs Servlet Config
 			
@@ -166,6 +169,7 @@ Spring MVC
 	
 Javascript
 	Why to use closures?
+	Array.sum implementation
 	Why to use Promises?
 	Array.unshift?
 	toString method on var o = {
@@ -179,6 +183,7 @@ Javascript
 	How to access variable outside IIFE?
 	use strict?
 	let keyword?
+	implement oops concept in js
 	
 Congnizant Interview
 	Why Generics introduces?
@@ -194,6 +199,10 @@ Congnizant Interview
 	use java 8 to calculate sum of 100 numbers
 	Callable
 	How hashmap works? Hashmap resizing? Race condition?
+	
+	linkedList merging...find merging point
+	LCM HCF code?
+	Js Array operations?
 	
 	
 	

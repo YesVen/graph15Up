@@ -2,7 +2,6 @@ package sweat.like.a.pro.beforejava7.riddles.collection;
 
 import java.util.HashMap;
 import java.util.IdentityHashMap;
-import java.util.LinkedHashMap;
 
 /**
  * 

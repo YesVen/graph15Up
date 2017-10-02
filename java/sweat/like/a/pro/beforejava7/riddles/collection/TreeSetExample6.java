@@ -1,6 +1,5 @@
 package sweat.like.a.pro.beforejava7.riddles.collection;
 
-import java.util.Comparator;
 import java.util.TreeSet;
 
 import sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.predicate.Person;
@@ -90,7 +89,8 @@ public class TreeSetExample6 {
 		workers.add(new Employee(200, "Shashi"));
 		workers.add(new Employee(100, "Ashu"));
 		
-		workers.add(new Person("Strange Person Object in Employee Set", 23));//ClassCastException
+		workers.add(new Person("Strange Person Object in Employee Set", 23));
+		//ClassCastException should be thrown but we handled it in comparator.
 		
 		
 		

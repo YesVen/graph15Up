@@ -31,7 +31,7 @@ public class TreeMapExample2 {
 		
 		//map.put("SS", "Twelve"); classClastException will be generated
 		
-		//map.put(new Person("sdads", 12), "waew"); classClastException : PErson cannot be casr to Comparable
+		//map.put(new Person("sdads", 12), "waew"); classClastException : PErson cannot be cast to Comparable
 		
 		map.put(new Integer(10), "Ten");
 		

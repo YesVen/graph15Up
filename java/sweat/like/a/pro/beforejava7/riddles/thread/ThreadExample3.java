@@ -17,7 +17,7 @@ class MyThread extends Thread
 	
 	@Override
 	public void run() {
-		System.out.println("Still Executing mail thread. U need to call start() method on t1 not run()");
+		System.out.println("Still Executing main thread. U need to call start() method on t1 not run()");
 	}
 }
 

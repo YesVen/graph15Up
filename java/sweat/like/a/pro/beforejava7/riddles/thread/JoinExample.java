@@ -36,7 +36,7 @@ public class JoinExample
          });
       t.start(); // Line 15
       
-      //main thread will wait for thread t1 to die and then main thread will start further execution
+      //main thread will wait for thread t to die and then main thread will start further execution
       t.join(); // Line 16
       t1.start();
    }

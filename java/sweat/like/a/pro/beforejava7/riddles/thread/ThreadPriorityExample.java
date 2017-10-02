@@ -45,7 +45,7 @@ public class ThreadPriorityExample {
 		 * 
 		 * 
 		 * subGroup2.setMaxPriority(151);
-		 * Above statement will not have any impact. Changing priority out of bounds will not have any effect  
+		 * Above statement will not have any impact. Changing max priority out of bounds will not have any effect  
 		 * See setMaxPriority implementation 
 		 */
 		t1.setPriority(100);// This will throw IllegalArgumentException

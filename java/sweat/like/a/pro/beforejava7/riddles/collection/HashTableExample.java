@@ -3,6 +3,7 @@ package sweat.like.a.pro.beforejava7.riddles.collection;
 import java.util.Hashtable;
 
 /**
+ * 	Added in jdk 1.0
  *	From jdk v1.2 onwards it is changed to implement Map interface to make it part of Collection framework
  *	
  *	Legacy Class with hashtable as its backing Ds

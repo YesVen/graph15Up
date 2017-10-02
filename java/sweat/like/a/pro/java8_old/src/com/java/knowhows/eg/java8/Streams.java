@@ -20,7 +20,7 @@ public class Streams
 		
 		System.out.println(words.stream().count());
 		
-		words.stream().distinct().forEach(input -> System.out.print(input));
+		words.stream().distinct().forEach(input -> System.out.print(input+ " "));
 		
 		Optional<String> optional = words.stream().findFirst();
 		

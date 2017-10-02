@@ -1,0 +1,30 @@
+https://www.youtube.com/watch?v=DwTNR3EBSJQ&list=PL4cUxeGkcC9jqhk5RvBiEwHMKSUXPyng0
+
+
+Based on Typescript (Superset of javascript) 
+	There are some functionalities which typescript offers and js dont, thats why designer decided to go with typescript.
+	Developed and maintained by Microsoft
+
+Makes use of ECMA6/ECMA2015 to write code - classes,importing modules
+
+Controllers are no more. Only components. It doesn't enforces MVC or MVW.
+
+You write  code in typescript and it gets automatically compiles to javascript. (.ts -> .js + .map.js)
+
+nodejs, npm and angular CLI are  prerequisites.	
+	Install Node
+	Install NPM
+	Install angular CLI : Command Line Interface for angular 2 applications
+						  It has commands that allows you to create project skeleton, add components, define build configuration, test and deploy.	 
+							
+						  Install angular CLi by running npm install -g @angular/cli	
+						  Create your  project by running ng new my-first-app
+						  Got to your project directory and run
+						  ng  serve --open
+						  
+	Atom :
+		packages :-
+				platform ide terminal
+				language typescript grammer only
+						  
+						  

@@ -222,7 +222,7 @@ Difference between factory and service
 					Factory must return an object(After all that is what real world factories do)
 					Service used constructor function.
 						If you see angular code, service internally use factory. It used Object.create() notation internally.
-						Services gives you hand to migrate them easily to ES6 world. You can easily convert a service to a ES6 class.
+						Services gives you hand to migrate them easily to ES6 world. You can easily convert a service to a ES6/typescript class.
 						Because is nothing but a constructor function.
 						@see - https://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
 						

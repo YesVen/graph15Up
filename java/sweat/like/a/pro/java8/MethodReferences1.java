@@ -7,7 +7,7 @@ public class MethodReferences1 {
 		Thread t1 = new Thread(()-> printMsg());
 		t1.start();
 		
-		//This is method refrences way
+		//This is method references way
 		Thread t2 = new Thread(MethodReferences1 :: printMsg);
 		t2.start();
 		

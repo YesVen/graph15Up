@@ -27,7 +27,7 @@ public class ThreadExample1 {
 		MyThread t1 = new MyThread();
 		System.out.println("Executing main thread");
 		
-		//caling run will not start thread. It will be just like normal method call
+		//calling run will not start thread. It will be just like normal method call
 		t1.run();
 		
 		//Correct way of execution
