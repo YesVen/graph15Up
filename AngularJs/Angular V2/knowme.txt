@@ -17,10 +17,9 @@ nodejs, npm and angular CLI are  prerequisites.
 	Install angular CLI : Command Line Interface for angular 2 applications
 						  It has commands that allows you to create project skeleton, add components, define build configuration, test and deploy.	 
 							
-						  Install angular CLi by running npm install -g @angular/cli	
-						  Create your  project by running ng new my-first-app
-						  Got to your project directory and run
-						  ng  serve --open
+						  Install angular CLi by running:  npm install -g @angular/cli	
+						  Create your  project by running :  ng new my-first-app
+						  Got to your project directory and run:  ng  serve --open
 						  
 	Atom :
 		packages :-
