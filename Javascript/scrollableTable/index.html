@@ -2,193 +2,206 @@
 <head>
     <title>Scrollable table Demo</title>
     <style>
-        .fixed_headers {
-            width: 400px;
-            table-layout: fixed;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        .fixed_headers th {
-          text-decoration: underline;
-        }
-        .fixed_headers th,
-        .fixed_headers td {
-          padding: 5px;
-          text-align: left;
-            width : 100px;
-        }
-        
-        
-        
-        /*This is to make first colum look small as compared to other columns*/
-        .fixed_headers th:nth-child(1) {
-            min-width: 50px;
-            border: 1px solid black;
-        }
-        
-        tr > th {
-            background-color:#333; 
-            color: #FDFDFD;
-        }
-        
-        .fixed_headers thead {
-          background-color: #333;
-          color: #FDFDFD;
-        }
-        .fixed_headers thead tr {
-          display: block;
-          position: relative;
-        }
-        .fixed_headers tbody {
-          display: block;
-          overflow: auto;
-          width: 100%;
-          height: 200px;
-        }
-        .fixed_headers tbody tr:nth-child(even) {
-          background-color: #DDD;
+        table {
+          /*position: relative; I commented it*/
+          width: 700px;
+          background-color: #aaa;
+          overflow: hidden;
+          border-collapse: collapse;
         }
 
-        .wrapper {
-            overflow-x: scroll;
-            width: 300px;
-            padding: 0;
-            /*margin-left: 5em;
-            margin-top: 5em;*/
+
+        /*thead*/
+        thead {
+          position: relative;
+          display: block; /*seperates the header from the body allowing it to be positioned*/
+          width: 700px;
+          overflow: visible;
+        }
+
+        thead th {
+          background-color: #99a;
+          min-width: 120px;
+          height: 32px;
+          border: 1px solid #222;
+        }
+
+        thead th:nth-child(1) {/*first cell in the header*/
+          position: relative;
+          display: block; /*seperates the first cell in the header from the header*/
+          background-color: #88b;
+        }
+
+
+        /*tbody*/
+        tbody {
+          position: relative;
+          display: block; /*seperates the tbody from the header*/
+          width: 700px;
+          height: 239px;
+          overflow: scroll; /* this is bringing in the vertical scrollbar*/
+        }
+
+        tbody td {
+          background-color: #bbc;
+          min-width: 120px;
+          border: 1px solid #222;
+        }
+
+        tbody tr td:nth-child(1) {  /*the first cell in each tr*/
+          position: relative;
+          display: block; /*seperates the first column from the tbody*/
+          height: 40px;
+          background-color: #99a;
         }
         
-        .headcol:before {
-            content: 'Row ';
-        }
-        
-        .headcol {
-            width :50px;
-            /*position: absolute;*/
-        }
-        
-</style>
+    </style>
 <script type="text/javascript" src="jquery-3.2.1.js"></script>
 <script>
+    $(document).ready(function() {
+        //detect a scroll event on the tbody
+        $('tbody').scroll(function(e) { 
+              //make adjustment only for horizontal scroll event as vertical scrolling is handled by tbody overflow css.
+              
+                console.log("scrolling tbody horizontally");
 
+                /*
+                Setting the thead left value to the negative value of tbody.scrollLeft will make it track the movement
+                of the tbody element. 
+                */  
+                $('thead').css("left", -$("tbody").scrollLeft()); //fix the thead relative to the body scrolling
+                  
+                /*
+                Setting an elements left value to that of the tbody.scrollLeft left makes it maintain it's relative position at the left of the table.
+                */
+   
+                $('thead th:nth-child(1)').css("left", $("tbody").scrollLeft()); //fix the first cell of the header
+                $('tbody td:nth-child(1)').css("left", $("tbody").scrollLeft()); //fix the first column of tdbody
+              
+         });
+    });
 </script>
 </head>
 <body>
-<div class="wrapper">
-<table class="fixed_headers">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Color</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th class="headcol">1</th>
-      <td>Apple</td>
-      <td>Red</td>
-      <td>These are red.</td>
-    </tr>
-    <tr>
-      <th class="headcol">1</th>    
-      <td>Pear</td>
-      <td>Green</td>
-      <td>These are green.</td>
-    </tr>
-    <tr>
-      <th class="headcol">1</th>    
-      <td>Grape</td>
-      <td>Purple / Green</td>
-      <td>These are purple and green.</td>
-    </tr>
-    <tr>
-       <th class="headcol">1</th>    
-      <td>Orange</td>
-      <td>Orange</td>
-      <td>These are orange.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Banana</td>
-      <td>Yellow</td>
-      <td>These are yellow.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Kiwi</td>
-      <td>Green</td>
-      <td>These are green.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Plum</td>
-      <td>Purple</td>
-      <td>These are Purple</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Watermelon</td>
-      <td>Red</td>
-      <td>These are red.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Tomato</td>
-      <td>Red</td>
-      <td>These are red.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Cherry</td>
-      <td>Red</td>
-      <td>These are red.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Cantelope</td>
-      <td>Orange</td>
-      <td>These are orange inside.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Honeydew</td>
-      <td>Green</td>
-      <td>These are green inside.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Papaya</td>
-      <td>Green</td>
-      <td>These are green.</td>
-    </tr>
-    <!--<tr>
-        <th class="headcol">1</th>
-      <td>Raspberry</td>
-      <td>Red</td>
-      <td>These are red.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Blueberry</td>
-      <td>Blue</td>
-      <td>These are blue.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Mango</td>
-      <td>Orange</td>
-      <td>These are orange.</td>
-    </tr>
-    <tr>
-        <th class="headcol">1</th>
-      <td>Passion Fruit</td>
-      <td>Green</td>
-      <td>These are green.</td>
-    </tr>-->
-  </tbody>
-</table>
-</div>    
+    
+    https://jsfiddle.net/RMarsh/bzuasLcz/3/
+    
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Town</th>
+        <th>County</th>
+        <th>Age</th>
+        <th>Profession</th>
+        <th>Anual Income</th>
+        <th>Matital Status</th>
+        <th>Children</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Smith</td>
+        <td>Macelsfield</td>
+        <td>Cheshire</td>
+        <td>52</td>
+        <td>Brewer</td>
+        <td>£47,000</td>
+        <td>Married</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Jenny Jones</td>
+        <td>Threlkeld</td>
+        <td>Cumbria</td>
+        <td>34</td>
+        <td>Shepherdess</td>
+        <td>£28,000</td>
+        <td>Single</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Peter Frampton</td>
+        <td>Avebury</td>
+        <td>Wiltshire</td>
+        <td>57</td>
+        <td>Musician</td>
+        <td>£124,000</td>
+        <td>Married</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>Simon King</td>
+        <td>Malvern</td>
+        <td>Worchestershire</td>
+        <td>48</td>
+        <td>Naturalist</td>
+        <td>£65,000</td>
+        <td>Married</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Lucy Diamond</td>
+        <td>St Albans</td>
+        <td>Hertfordshire</td>
+        <td>67</td>
+        <td>Pharmasist</td>
+        <td>Retired</td>
+        <td>Married</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Austin Stevenson</td>
+        <td>Edinburgh</td>
+        <td>Lothian </td>
+        <td>36</td>
+        <td>Vigilante</td>
+        <td>£86,000</td>
+        <td>Single</td>
+        <td>Unknown</td>
+      </tr>
+      <tr>
+        <td>Wilma Rubble</td>
+        <td>Bedford</td>
+        <td>Bedfordshire</td>
+        <td>43</td>
+        <td>Housewife</td>
+        <td>N/A</td>
+        <td>Married</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Kat Dibble</td>
+        <td>Manhattan</td>
+        <td>New York</td>
+        <td>55</td>
+        <td>Policewoman</td>
+        <td>$36,000</td>
+        <td>Single</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Henry Bolingbroke</td>
+        <td>Bolingbroke</td>
+        <td>Lincolnshire</td>
+        <td>45</td>
+        <td>Landowner</td>
+        <td>Lots</td>
+        <td>Married</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>Alan Brisingamen</td>
+        <td>Alderley</td>
+        <td>Cheshire</td>
+        <td>352</td>
+        <td>Arcanist</td>
+        <td>A pile of gems</td>
+        <td>Single</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 
     
