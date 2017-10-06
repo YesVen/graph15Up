@@ -144,6 +144,10 @@ Java
 	abstraction vs data hiding vs encapsulation
 	Big O notation?
 	
+	Diff between String and StringBuilder? When to use what?
+	ClassNotfound vs NoclassDefinitionFound Exception?
+	
+	
 Advanced java
 			Servlet context vs Servlet Config
 			
