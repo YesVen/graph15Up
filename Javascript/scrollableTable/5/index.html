@@ -1,17 +1,16 @@
-<!doctype html>
 <html>
 <head>
     <title>Scrollable table Demo</title>
     <style>
         
-        body {
+        body{
           background: -webkit-linear-gradient(left, #25c481, #25b7c4);
           background: linear-gradient(to right, #25c481, #25b7c4);
           font-family: 'Roboto', sans-serif;
         }
         
         table {
-          /*position: relative; Not needed */
+          /*position: relative; I commented it*/
           width: 700px;
           background-color: rgba(255,255,255,0.3);
           overflow: hidden;
@@ -39,7 +38,6 @@
         thead th:nth-child(1) {/*first cell in the header*/
           position: relative;
           display: block; /*seperates the first cell in the header from the header*/
-          padding-top: 15px;
         }
 
 
@@ -74,10 +72,7 @@
           height: 40px;
         }
         
-        /* 
-            Adding custom scrollbars since we have limited target space
-            Default scrollbars are making UI ugly
-        */
+        /* Adding custom scrollbars since we have limited target space*/
         ::-webkit-scrollbar {
             width: 10px;
             height: 10px;
@@ -99,8 +94,8 @@
     $(document).ready(function() {
         //detect a scroll event on the tbody
         $('tbody').scroll(function(e) { 
-            
-                //make adjustment only for horizontal scroll event as vertical scrolling is handled by tbody overflow css.
+              //make adjustment only for horizontal scroll event as vertical scrolling is handled by tbody overflow css.
+              
                 console.log("scrolling tbody horizontally");
 
                 /*
@@ -122,6 +117,8 @@
 </head>
 <body>
     
+    https://jsfiddle.net/RMarsh/bzuasLcz/3/
+    
   <table>
     <thead>
       <tr>
@@ -137,29 +134,29 @@
     </thead>
     <tbody>
       <tr>
-        <td>Sachin Tendulkar</td>
-        <td>Mumbai</td>
-        <td>India</td>
-        <td>40</td>
-        <td>Cricket</td>
-        <td>$20,10,20,202</td>
+        <td>John Smith</td>
+        <td>Macelsfield</td>
+        <td>Cheshire</td>
+        <td>52</td>
+        <td>Brewer</td>
+        <td>£47,000</td>
         <td>Married</td>
         <td>2</td>
       </tr>
       <tr>
-        <td>Dnyanesh Barkade</td>
-        <td>Pune</td>
-        <td>India</td>
-        <td>28</td>
-        <td>Software Engineer</td>
-        <td>$20,22,300</td>
-        <td>Married</td>
+        <td>Jenny Jones</td>
+        <td>Threlkeld</td>
+        <td>Cumbria</td>
+        <td>34</td>
+        <td>Shepherdess</td>
+        <td>£28,000</td>
+        <td>Single</td>
         <td>0</td>
       </tr>
       <tr>
         <td>Peter Frampton</td>
-        <td>Toronto</td>
-        <td>Canada</td>
+        <td>Avebury</td>
+        <td>Wiltshire</td>
         <td>57</td>
         <td>Musician</td>
         <td>£124,000</td>
@@ -167,19 +164,19 @@
         <td>4</td>
       </tr>
       <tr>
-        <td>Simon Tuffel</td>
+        <td>Simon King</td>
         <td>Malvern</td>
         <td>Worchestershire</td>
         <td>48</td>
-        <td>Umpire</td>
+        <td>Naturalist</td>
         <td>£65,000</td>
         <td>Married</td>
         <td>2</td>
       </tr>
       <tr>
-        <td>Test Person</td>
-        <td>Kolkata</td>
-        <td>India</td>
+        <td>Lucy Diamond</td>
+        <td>St Albans</td>
+        <td>Hertfordshire</td>
         <td>67</td>
         <td>Pharmasist</td>
         <td>Retired</td>
@@ -188,7 +185,7 @@
       </tr>
       <tr>
         <td>Austin Stevenson</td>
-        <td>Hyderabad</td>
+        <td>Edinburgh</td>
         <td>Lothian </td>
         <td>36</td>
         <td>Vigilante</td>
@@ -198,7 +195,7 @@
       </tr>
       <tr>
         <td>Wilma Rubble</td>
-        <td>Pune</td>
+        <td>Bedford</td>
         <td>Bedfordshire</td>
         <td>43</td>
         <td>Housewife</td>
@@ -208,7 +205,7 @@
       </tr>
       <tr>
         <td>Kat Dibble</td>
-        <td>oyorada</td>
+        <td>Manhattan</td>
         <td>New York</td>
         <td>55</td>
         <td>Policewoman</td>
@@ -218,7 +215,7 @@
       </tr>
       <tr>
         <td>Henry Bolingbroke</td>
-        <td>Huesten</td>
+        <td>Bolingbroke</td>
         <td>Lincolnshire</td>
         <td>45</td>
         <td>Landowner</td>
@@ -227,11 +224,11 @@
         <td>6</td>
       </tr>
       <tr>
-        <td>Rahul Dravid</td>
-        <td>Banglore</td>
-        <td>india</td>
-        <td>42</td>
-        <td>cricketer</td>
+        <td>Alan Brisingamen</td>
+        <td>Alderley</td>
+        <td>Cheshire</td>
+        <td>352</td>
+        <td>Arcanist</td>
         <td>A pile of gems</td>
         <td>Single</td>
         <td>0</td>
