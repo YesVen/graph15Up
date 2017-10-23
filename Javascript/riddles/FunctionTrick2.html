@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>This is crazy</title>
+    <script>
+        window.onload = function testKnowledge(){
+            
+            function add(a,b){
+                return a+b;
+            }
+            
+            function add(a,b,c){
+                return a+b+c;
+            }
+            
+            alert(add(1,1,1));
+            
+            alert(add())
+            /*
+                This is because javascript is procedural language.
+                It parses document from top to bottom.
+                
+                
+                Here in this example, it parses first add function.
+                It sees second add function and then it replaces defintion of first add function with second.
+                
+                Now only one add function with three parameters exist.
+                
+                we called add(1,1)
+                so add(a,b,c) will be used.
+                a=1, b=1 and c will be undefined as we are not passing
+                1+1+undefined returns NaN
+                hence proved.
+                 
+                 
+                for add()..... all a,b,c will be undefined 
+            */
+        }
+    
+    </script>
+</head>
+<body>
+</body>
+    
+</html>
+
+
+<!--
+    
+
+    
+
+-->
