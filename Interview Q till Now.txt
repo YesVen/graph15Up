@@ -147,6 +147,8 @@ Java
 	Diff between String and StringBuilder? When to use what?
 	ClassNotfound vs NoclassDefinitionFound Exception?
 	
+	what is  big O notation?
+		https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly
 	
 Advanced java
 			Servlet context vs Servlet Config
@@ -224,7 +226,10 @@ One Network
 
 VuClip
 	Iterate over unlimited sequence of elements  10101010111101010001010101110.... in best possible way
+			startr from middle and traverse in both ways at a time -- log(n/2)
+			
 	Advantages of spring - Write tight coupled code ?
+	
 	Web.xml interceptors vs filters
 	js validator classes
 	what is output of 
