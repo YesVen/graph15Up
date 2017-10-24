@@ -1,10 +1,12 @@
-Closures
-
 eval method
 
 Promises
+	"An operation that hasnt completed yet but expected to complete in future"
+	traditional callback hells
+	Similar to Future object in java
+	Gives ability to chain the calls with Promise Design Pattern. Clean and crisp code.
+	https://www.youtube.com/watch?v=104J7_HyaG4 -- beautiful explained
 
-Array Methods
 
 Design Patterns
 	https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know
@@ -54,17 +56,17 @@ Write Operation : When we write a value from a variable its called write operati
 							  // So thumb rule is to always declare a variable before using it.
 			
 		You cannot use undeclared variable in read operation
-				console.log(address);// syntax error will be thrown
+				console.log(address);// ReferenceError: address is not defined
 
 				
 Why not to pollute global namespace?
-		When you run your app, there are lot of js code running in background be it code developed by fellow js developer, a useful js library or anything.
+		When you run your app, there are lot of js code running in background. Be it code developed by fellow js developer, a useful js library or anything.
 		There might be chances that the global variable you used might be inadvertently used by some other library which in turn overrides 
 		and beaks your app which is hard to debug.
 		
 		
 IIFE : 	Immediately Invoked Function Expression.
-		This is a way to avoid variables sand functions to get attached to window object. Whatever declared within a IIFE stays within a IIFE.
+		This is a way to avoid variables and functions to get attached to window object. "whatever declared within a iife stays within a iife."
 		Even IIFE does not get attached to window object.
 		
 		IIFE create a anonymous function and executes it immediately.
@@ -77,6 +79,7 @@ IIFE : 	Immediately Invoked Function Expression.
 Hoisting : 
 			Javascript allows you to write code like this,
 				function(){
+					//this will not throw reference error as variable declaration is hoisted
 					console.log(salary);  // Using variable before declaring----prints undefined because of "only variable declaration" hoisting
 					var salary = "10k";
 				}
@@ -100,26 +103,33 @@ Hoisting :
 		
 					The reason second one works is function declaration result in creating function object in compilation phase. It is then attached
 					to scope and referred from scope during execution.
-					But for first case, hoisting does happen but function object is not created in scope.
-					Thats the difference.
-					
 					
 		
-Strict Mode : 	"use strict";
+Strict Mode : 	
+				Special operating mode of JS engine.
+				
+				"use strict";
 				it will not allow you to use variable without declaration. It will throw syntax error.
 				
 					var Name = "Dnyanesh";
 					name = "Niky"; // name is here not "Name" (notice typo in variable name)
 					console.log(name);
 				
-					strict mode will see that Name variable is not declared before using nad it will throw error.
-					In normal case, it would have created a new name variable which is kind of dirty.
+					strict mode will see that Name variable is not declared before using and it will throw error.
+					In normal case, it would have created a new name variable which pushes your app to run evil.
 					
 				If you add "use strict" as a first line of your js, it will be applicable to whole script.
 				You can use it in only function level also. Add it as first line of function.
+								
+				Allows us to catch problematic code or potentials error during dev phase.
+				Strict mode also solves some mistakes that hamper the JavaScript engines to work efficiently.
+			
+				ECMA6 wants it enabled to use its features.	
 					
 				
-Closures :	Closure Remembers (Like North Remembers)
+Closures :	
+			"A stateful function" --- twitter
+			Closure Remembers (Like North Remembers)
 			Closure Remembers the scope in which it has created. It remembers the variable values in which it has been created.
 			
 			There is no way in JavaScript to have public, private, protected accesses to methods, variables.
@@ -138,23 +148,36 @@ Closures :	Closure Remembers (Like North Remembers)
 			Closures comes here to rescue you in this situation. By using closures you can restrict access to only required things.
 			
 			From Stackoverflow: 
-				When you use new Function(…) (the Function constructor) inside a function, it does not create a closure. 
 				A closure in JavaScript is like keeping a copy of all the local variables, just as they were when a function exited.
 			
 			Cognizant inteview : defn : A function inside another function is closure.
 								function do(){
-									var a - 10;
-									var display  - function(){
+									var a = 10;
+									var display  = function(){
 										conmsole.log(a);
 									}
 								}
 								This is a closure. It is not mandatory for closure to return a function.	
 			
+			Gotchas :
+						When you use new Function(…) (the Function constructor) inside a function, it does not create a closure.
+						
+						https://www.quora.com/How-do-I-explain-JavaScript-closures-to-a-child : secret book to refer from carpenter school
+						
+						awsome explaination : http://javascriptissexy.com/understand-javascript-closures-with-ease/
+						
+						The inner function has access not only to the outer function’s variables, but also to the outer function’s parameters. 
+						Note that the inner function cannot call the outer function’s arguments object, however, even though it can call the outer function’s parameters directly.
+					
+						Famous quote : "A CLOSURE IS FORMED WHEN YOU RETURN AN INNER FUNCTION FROM AN OUTER FUNCTION".
+			
 Array : 
-		Splice : Used to add/remove elements in single call in array
+		Splice : Used to add/remove elements in single call in array.
+					It returns removed elements.
 				
-		slice : USed to slice an array and return a new array.
-				Pass indexes and it will give you new array fromindex to endindex.
+		slice : Used to slice an array and return a new array.
+				Pass indexes and it will give you new array fromindex to endindex. --> arr.slice(0,4)
+				Original array remains unchanged.
 		
 		Shift : Removes first element from array and returns it.
 		
@@ -167,11 +190,73 @@ Array :
 		join : joins all elements into a string
 				numbers.join(",") ---> 1,2,3,4,4,5
 				
-		concat : Joins two arrays and return joint array 
+		concat : Joins two arrays and return joint array. 
+				array1.concat(array2);
+				This will return a new concatinated array but oroginal array1 and array2 remains unchanged
 		
 		
+		
+Data Types :
+		String
+		Number
+		Object
+		Boolean
+		Undefined
+		Function
+		
+		Note : NUll is not a type. and typeof null => Object
+			   Undefined is separate type is JS
+		
+function vs new Function
+			?
+		
+		
+Null vs Undefined
+			 In JavaScript, undefined means a variable has been declared but has not yet been assigned a value, such as:
+
+			 var TestVar;
+			 alert(TestVar); //shows undefined
+			 alert(typeof TestVar); //shows undefined
+			null is an assignment value. It can be assigned to a variable as a representation of no value:
+
+			 var TestVar = null;
+			 alert(TestVar); //shows null
+			 alert(typeof TestVar); //shows object
+			 From the preceding examples, it is clear that undefined and null are two distinct types: undefined is a type itself (undefined) while null is an object.
+
+			 null === undefined // false
+			 null == undefined // true .................because its not doing strict type checking here.
+			 null === null // true
+				and
+
+			 null = 'value' // ReferenceError
+			 undefined = 'value' // 'value'
+			
+			
+window.onload vs document.onload
+			window.onload : it is fired when the entire page loads, including its content (images, css, scripts, etc.)	
+			It is called when the DOM is ready which can be prior to images and other external content is loaded.
+			
+bind vs call vs apply
+			The function .call() and .apply() are very similar in their usage except a little difference. .call() is used when the number of the function’s arguments are known to the programmer, as they have to be mentioned as arguments in the call statement. On the other hand, .apply() is used when the number is not known. The function .apply() expects the argument to be an array.
+			
+
+Arguments : arguments is a local variable, available inside all functions that provides a collection of all the arguments passed to the function. 
+			arguments is not an array rather an array like object. It has length but doesn't have the methods like forEach, indexOf, etc.
 		
 
+var customObject = Object.create(myObject);
+		This will create customObject by referring to myObject. All properties of myObject will be prototyped to customObject.
+			
+		
+Pass BY Value or Pass By Reference
+		Primitive type (string, number, etc.) are passed by value and objects are passed by reference. If you change a property of the passed object, the change will be affected. However, you assign a new object to the passed object, the changes will not be reflected.
+		
+Explain the role of deferred scripts in JavaScript?
+		By default, the parsing of the HTML code, during page loading, is paused until the script has not stopped executing. It means, if the server is slow or the script is particularly heavy, then the webpage is displayed with a delay. While using Deferred, scripts delays execution of the script till the time HTML parser is running. This reduces the loading time of web pages and they get displayed faster.		
+
+
+		
 		
 				
 				

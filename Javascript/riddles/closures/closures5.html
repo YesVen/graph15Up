@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>empty demo</title>
+	</head>
+	<body>
+		<script>
+
+            var foo = 'outside'; 
+            
+            //Variable hoisting will come into picture
+            function logIt(){
+                console.log(foo); 
+                var foo = 'inside';
+            } 
+            
+            logIt();
+            
+            </script>
+        
+        Guess What will be printe on console?
+        
+	</body>
+</html>

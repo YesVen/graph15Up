@@ -9,7 +9,26 @@
             
             console.log(typeof "null");
             
-            //google and add more tricks...
+            console.log();
+            
+            console.log(typeof 3);
+            console.log(3 instanceof Number);
+            console.log(typeof Number);//Function
+            
+            console.log(typeof []);
+            console.log(-'34'+10); //automatic type conversion will happen here beccause while parsing data we got first - oprator, which will cause '34' to be converted to int and then -34+10  = 24
+            
+            
+            //Similar like above while parsing, + operator will cause parseint to be calleed but 'dude' is not number so it will return NaN
+            console.log(+'dude');
+            
+            // false. Because "in" returns whether a particular property/index available in the Object. 
+            //In this case object has index 0 and 1 but don't have 2. Hence you get false.
+            console.log(2 in [1,2]);
+            console.log();
+            console.log();
+            
+            
         }
     
     </script>

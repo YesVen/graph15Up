@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>This is crazy</title>
+    <script>
+        window.onload = function testKnowledge(){
+            var a = [1,4,3,3,5,6,7,7];
+            
+            console.log(a);
+            
+            console.log(a[0]);
+            
+            //This will delete first element in array but add undefined in that place
+            delete a[0];
+            
+            console.log(a[0]);
+            
+            //Length will still be 8
+            console.log(a.length);
+            
+            //This will print elements from a[1] to a[7]. Not this will not print a[0]
+            console.log(a);
+            
+            
+            s= 12;
+            console.log(s);
+            delete s;
+            console.log(s);
+            
+            
+            // delete keyword cannot delete variables defined with var keyword
+            var j = "Dnyanesh";
+            delete j;
+            console.log(j);
+        }
+    
+    </script>
+</head>
+<body>
+</body>
+    
+</html>

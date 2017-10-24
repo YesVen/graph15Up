@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script>
+      
+          
+           var person = {
+                fname : "Dnyanesh",
+                lname : "barkade",
+                showNameWrongWay : function(){
+                        return fname + " "+ lname;
+                },
+				//Notice here we are accessing fname, lname using person object
+                showNameCorrectWay : function(){
+                        return person.fname + " "+ person.lname;
+                }
+             }
+          
+            function test()
+            {
+                alert(person.showNameCorrectWay());
+                var dd = person.showNameCorrectWay;
+                alert(dd()); 
+                
+                alert(person.showNameWrongWay());
+                var ss = person.showNameWrongWay;
+                alert(ss());  
+               
+           }
+          
+      
+        
+    </script>
+</head>    
+<body>
+    <input type="button" value="test" onclick="test()">
+    
+</body>
+    
+</html>

@@ -209,5 +209,34 @@ Congnizant Interview
 	Js Array operations?
 	
 	
+Barclays Interview : 
+		Future object in java?
+		Why annotations are introduced?
+		Every class has clone method inherited from object. Why do we need to override it while cloning?
+		volatile vs final class
+		ipage?
+		@RestControllr?
+		Callable?
+		
+One Network
 	
+	
+
+VuClip
+	Iterate over unlimited sequence of elements  10101010111101010001010101110.... in best possible way
+	Advantages of spring - Write tight coupled code ?
+	Web.xml interceptors vs filters
+	js validator classes
+	what is output of 
+			function add(a,b){
+					console.log(a+b);
+			}
+			function add(a,b,c){
+					console.log(a+b+c);
+			}
+			add(1,2);
+		
+		
+		
+		
 	
