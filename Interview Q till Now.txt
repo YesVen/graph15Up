@@ -149,6 +149,7 @@ Java
 	
 	what is  big O notation?
 		https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly
+		https://stackoverflow.com/questions/1592649/examples-of-algorithms-which-has-o1-on-log-n-and-olog-n-complexities
 	
 Advanced java
 			Servlet context vs Servlet Config
