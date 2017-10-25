@@ -3,3 +3,28 @@ Superset of JS
 Js with some good additions like classes, types and more.
 
 It gets compiled internally to js.So we essentially writing typescript code to be compiled to js and then run on browser.
+
+Polyfill??
+
+In js, 
+	a =10;
+	a = "Dnyanesh";//This is allowed
+In Typescript,
+	a =10;
+	a = "Ashu" ====> NOT ALLOWED
+	but a = 20 is allowed
+You cannot change type of a variable in typescript	
+
+Variable declaration : 
+	We can declare type of variable
+		name:String = "Dnyanesh";
+		score:number : 80;
+		
+		dd:any     ------ dd can be of any type. Once we assign value of some type to dd, it cannot be changed further
+		myVar:number[] ----- myVar is a number array
+		aa:string[] --------- aa is a string array
+		
+		car:Car = new Car();
+	Note: This syntax is similar to Actionscript	
+
+	

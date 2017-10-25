@@ -1,9 +1,11 @@
 https://www.youtube.com/watch?v=DwTNR3EBSJQ&list=PL4cUxeGkcC9jqhk5RvBiEwHMKSUXPyng0
 
+https://www.youtube.com/watch?v=zgvaUrE11tQ&list=PLvZkOAgBYrsRgmzld8lznB80xksckmAM_ -- TEchCBT
+
 
 Based on Typescript (Superset of javascript) 
 	There are some functionalities which typescript offers and js dont, thats why designer decided to go with typescript.
-	Developed and maintained by Microsoft
+	Typescript is developed and maintained by Microsoft
 
 Makes use of ECMA6/ECMA2015 to write code - classes,importing modules
 
@@ -26,4 +28,7 @@ nodejs, npm and angular CLI are  prerequisites.
 				platform ide terminal
 				language typescript grammer only
 						  
+
+Typescript is compiled to javascript internally.
+component.ts file is compiles to component.js and component.spec.ts(internal representation file)						  
 						  
