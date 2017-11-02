@@ -1,1 +1,55 @@
 https://lostechies.com/derickbailey/2009/02/11/solid-development-principles-in-motivational-pictures/
+
+SOLID and DRY
+
+Single Responsibility Principle
+		A class should be assigned a single responsibility.
+		When you feeling like class is handling too a different responsibility than what it has designed for, you are violating a SRP principle.
+
+		
+		
+		
+		
+Open close Principal
+		A class should be open for extension and closed for modification.
+
+		
+		
+		
+Liskov Substitution Principal
+		Super Types should be completely replaceable by subtypes without any effect on program.
+		
+		e.g. If Duck class is super class of Bird class(fly method in bord class), I should be able to use Duck class everywhere i used Bird class.
+			 If you wanna add a class like ostrich(which cant fly), you have to think twice if it can be inherited from a Bird class(obviously not).
+			 If I add Ostrich class under Bord class hierarchy then it would break LSP.
+			 
+		By the way, if you follow LSP closely, you automatically follow OCP.
+		
+		
+		
+		
+Interface Segregation Principal
+		"Code should not be forced to implement methods it does not use" or "Code should not have a few large monolithic interfaces but it should have many small interfaces"
+		In simple words, dont add too many unnecessary methods in interface. Down side is that, all implementing classes of such an interface may not want to implement all methods.
+		IF you found yourself  in such scenario, you are violating ISP principle. You should segregate interfaces such that all methods in an interface are have to be implemented by a class.
+		
+		e.g. Lets consider a Bird interface having a fly method,eat method and sleep method. Here all birds must fly, eat and sleep. But gotcha is not all birds can fly like ostrich. Here our Bird interface violates ISP.
+		Solution would be to keep eat and sleep methods in Bird interface and add one more interface called FlyingBird having a fly method. Here ostrich will implement only Bird interface while rest other birds like sparrow,crow can implement both Bird and FlyingBird interface.
+
+
+Dependency Injection Principal
+		Instead of a code searching for dependency let a code provided with dependency that it need to work.
+		High Level objects should not depend on low level implementation. Instead they should delegate low level implementation to other objects and must depend on them to perform task of low level implementation.
+		
+		e.g. Cococola CEO should worry about its branding,market popularity and revenues rather than delivering coke step by step.
+			 He should depend on respective dept heads to do low level duties.
+			 
+		e.g. Tech conference example by Javabrains
+			 
+		e.g IN angular a controller is asking for dependency for a service like http.
+		
+		If a class needs a other class (dependency) to function. It can either create a that dependency own its own, it can fetch it from some place or dependency can be passed to the asker (like angular does).
+		If dependency is not passed to the asker, it can be a tedious job to get dependency. Hence DI container is brought to life. Its only job is to deal with dependencies. DI container remembers, creates, fetches and resolves dependencies (Spring DI Container). 
+			
+		
+Coding to Interfaces
