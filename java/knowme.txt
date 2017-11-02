@@ -1,0 +1,19 @@
+Generics : 
+		https://howtodoinjava.com/core-java/generics/complete-java-generics-tutorial/
+		Its all about type safety and type erasure
+		Compile time type safety
+		Earlier we need to add instnace of checks to avoid ClassCastException and make collection adhere to certain types.
+		Lot of un-necessary boilerplate code which actually does not add any value.
+		
+		Type Erasure : It essentially means that all the extra information added using generics into sourcecode will be removed from bytecode generated from it. Inside bytecode, it will be old java syntax which you will get if you don’t use generics at all. This necessarily helps in generating and executing code written prior java 5 when generics were not added in language.
+		
+		Generic Classes : 
+					We can make class to 
+				
+		Generic Method :
+		
+Exception : 
+			try catch is designed for Expceptions. So We cannot catch Error in Catch block but we can throw it
+			throw new java.lang.Error("this is very bad practice");
+			but code in finally block will execute
+			
