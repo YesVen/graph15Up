@@ -26,7 +26,7 @@ public class LoggingAspect4 {
 		
 		if(target instanceof Triangle)
 		{
-			System.out.println("Condition true so proceding woth the execution");
+			System.out.println("Condition true so proceding with the execution");
 			obj = proceedingJoinPoint.proceed();
 		}
 		else

@@ -55,7 +55,9 @@ public class LoggingAspect2 {
 		System.out.println("No Exception");
 	}
 	
-	
+	/*
+	 * Advice to run when any method which accepts one argument throws an error
+	 */
 	@AfterThrowing("args(sometext)")
 	public void exceptionAdvice(String sometext)
 	{
