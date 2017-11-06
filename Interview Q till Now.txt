@@ -243,6 +243,18 @@ VuClip
 			add(1,2);
 		
 		
+CreditSuisse : 
+	How can we listen when application goes up or goes down	?
+			ApplicatiobEventPublisher
+			ApplicationContextAware
+			ContextClosedEvent, ContextRefreshedEvent, and RequestHandledEvent
+			
+			
+
+
+
+			
+		
 		
 		
 	
