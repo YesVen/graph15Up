@@ -1,0 +1,69 @@
+A cross-cutting concern is a aspect that can affect the whole application and should be centralized in one location in code as possible. 
+	e.g. Transaction management, Authentication, Logging, Security etc.
+	
+AspectJ style : Annotation
+XML Style	
+
+
+Concern vs Cross Cutting Convern : 
+		concern is application specific module (rawmaterial creation, highchart, costing etc) whereas cross cutting concern is aspect that affects entire application like logging.
+
+		
+Join Point
+
+
+Pointcut
+
+
+Preceeding JoinPoint
+			Used with @around annotation. Its most powerful AspectJ annotation. Because it can control the method execution.
+			@see : LoggingAspect4.java
+			
+		
+		
+Annotations : 		
+		@Before : 	Advice to run before join point
+					This cannot prevent join point from being executed
+					
+		@After : 	Advice to run aftter executing join point.
+					This will executed no matter exception is thrown or not.
+
+		@AfterReturning : Advice to run when join point executes normally
+
+		@AfterThrowing : Advice to run after throwing an exception
+
+		@Around : 	Advice to run around a join point execution
+		
+		
+Other Annotations : 
+		@Aspect : Create Aspect class. It will be automatically scanned.
+					To make this auto available, you must add <aop:aspectj-autoproxy></aop:aspectj-autoproxy> tag in cofig.xml
+					<!-- Enable @AspectJ annotation support  -->
+		
+AspectJ  : 
+		Execution : @Pointcut("execution(* *reDraw(..))")
+		
+		Within : 	
+					@Pointcut("within(sweat.like.a.pro.model.Circle)") 				--- all methods witihn Circle class
+					@Pointcut("within(sweat.like.a.pro.model.*)")			 		--- all classes in sweat.like.a.pro.model package
+					@Pointcut("within(sweat.like.a.pro.model..*)")					---	all classes in sweat.like.a.pro.model package nad its subpackages
+					
+					
+		args : 		@Before("args(String)")
+		
+		annotation :@Around("@annotation(sweat.like.a.pro.aspect.annotation.MyLoggableAspect)")  		--- all methods having MyLoggableAspect annotation.
+		
+How Spring AOP works?
+		On proxy design pattern.
+		JDK dynamic proxies or CGLib Proxy
+		
+		JDK dynamic proxies  requires your target class to implement an interface which a proxy can implement and fake a method call.
+		
+		CGLIb proxy can work with classes too. It creates proxy class as subclass of target class.
+		@See sweat.like.a.pro.myownproxy.DrawApp.java. Its self evedent.
+		
+		
+		
+		
+
+

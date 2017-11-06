@@ -36,5 +36,26 @@
 			<aop:pointcut expression="execution(public String getHeight())" id="getHeightLoggerPointcut"/>
 		</aop:aspect>
 	</aop:config>
+	
+	
+	<!--
+		Below is also valid configuration. 
+		Note : We have pulled our pointcuts out of aop:aspect tag so that they can be referred in 
+		any number of joinpoints
+	<aop:config>
+		<aop:pointcut expression="execution(public void findArea())" id="mypointcut"/>
+		<aop:pointcut expression="execution(public String getHeight())" id="getHeightLoggerPointcut"/>
+		<aop:aspect  id="xmlLoggingAspect" ref="xmlLoggingAspect">
+			<aop:before method="findAreaLogger" pointcut-ref="mypointcut" />
+			<aop:after method="getHeightLogger" pointcut-ref="getHeightLoggerPointcut"/>
+		</aop:aspect>
+	</aop:config> -->
+	
+	
+	
+	
+	
+	
+	
 		
 </beans>

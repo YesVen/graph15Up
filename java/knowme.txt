@@ -1,0 +1,77 @@
+Generics : 
+		https://howtodoinjava.com/core-java/generics/complete-java-generics-tutorial/
+		Its all about type safety and type erasure
+		Compile time type safety
+		Earlier we need to add instance of checks to avoid ClassCastException and make collection adhere to certain types.
+		Lot of un-necessary boilerplate code which actually does not add any value.
+		
+		Type Erasure : It essentially means that all the extra information added using generics into sourcecode will be removed from bytecode generated from it. Inside bytecode, it will be old java syntax which you will get if you don’t use generics at all. This necessarily helps in generating and executing code written prior java 5 when generics were not added in language.
+		
+		Generic Classes : 
+					We can make class to be of certain type by using generics.
+					e.g.	ArrayList<E>
+							Here if I create ArrayList<String> and I try to add int into it. It will give me compiler error.
+				
+		Generic Method :	
+					e.g.	public static <T> int countAllOccurrences(T[] list, T item) 
+					
+		Generic Constructor : 
+					e.g.	public Dimension(T length, T width, T height){
+								  super();
+								  this.length = length;
+								  this.width = width;
+								  this.height = height;
+							}
+							
+		Examples : 
+				Unbounded Parameterized types : 
+					Collection<?> coll = new ArrayList<String>();
+					Pair<String,?> pair = new Pair<String,Integer>();	
+					ArrayList<?>  list = new ArrayList<Long>(); 			
+		
+				Bounded Parameterized types :
+					List<? extends Number> list = new ArrayList<Long>(); //All subclasses that extends number
+					List<? super GrandChildren> = new ArrayList<Father>(); //It can Accept Father, GrandFather Types
+					
+					
+		Limitations : 
+				private static T member; //This is not allowed. Generics cant work with static.
+				
+				final List<int> ids = new ArrayList<>(); //Not allowed, cant ork with primitives
+				
+				public class GenericException<T> extends Exception {} //not allowed.
+				
+		Symbols used :
+				Value - V
+				Key - K
+				Type : T
+				Element : E
+				
+		Questions : 
+				Can you pass List<String> to a method which accepts List<Object> --- No. in because List<Object> you can put anything. But a method a accpeting List<Object>
+				and not List<String>. So compiler Error.
+				Difference between List<Object> and raw type List in Java?
+				Difference between List<?> and List<Object> in Java?
+						List<?> listOfAnyType;
+						List<Object> listOfObject = new ArrayList<Object>();
+						List<String> listOfString = new ArrayList<String>();
+						List<Integer> listOfInteger = new ArrayList<Integer>();
+							  
+						listOfAnyType = listOfString; //legal
+						listOfAnyType = listOfInteger; //legal
+						listOfObjectType = (List<Object>) listOfString; //compiler error - in-convertible types
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------					
+Exception : 
+			We can theoretically throw an Error. 
+			throw new java.lang.Error("this is very bad practice");
+			
+			try catch is designed for Exceptions and not for errors. So We cannot catch Error in Catch block.
+			
+			but code in finally block will execute if we throw error.
+			
