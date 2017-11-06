@@ -16,14 +16,17 @@ public abstract class CarPrototype implements Cloneable{
 
 class Indica extends CarPrototype{
 	/*
-	 * If want i can override a clone method.
+	 * If want i can override a clone method and provide my own implementation
 	 */
+	
 	
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		System.out.println("Creating a India Car");
 		return super.clone();
 	}
+	
+	
 }
 
 class Polo extends CarPrototype{

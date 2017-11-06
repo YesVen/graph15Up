@@ -23,6 +23,8 @@ public class BreakUsingSerialization  {
 		//Read object from file
 		FileInputStream fis = new FileInputStream("/temp/obj.ser");
 		ObjectInputStream ois = new ObjectInputStream(fis);
+		fis.close();
+		
 		
 		SingleTon1 soleinstance3 = (SingleTon1) ois.readObject();
 		System.out.println("hashcode : "+soleinstance3.hashCode());

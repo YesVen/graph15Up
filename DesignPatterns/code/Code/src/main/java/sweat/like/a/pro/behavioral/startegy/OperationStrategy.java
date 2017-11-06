@@ -1,5 +1,10 @@
 package sweat.like.a.pro.behavioral.startegy;
 
+/*
+ * Collection.sort() user this design pattern.
+ * It wants user to pass a strategy to perform operation.
+ */
+
 interface OperationStrategy {
 	public void performOperation(int a, int b);
 }

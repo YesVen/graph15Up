@@ -19,7 +19,23 @@ When to use xml configuration and when to use annotation configuration?
 	On other hand, xml based configuration is pretty hard to handle and creates a confusion. So need to make a concious decision.
 	
 	
-
+Spring Container : 
+	Bean Factory Container:
+			Lightweight container
+			e.g 	BeanFactory beanFactory = new XmlBeanFactory(new FileSystemResource("sweat/like/a/pro/setterinjection/spring.xml"));
+					Triangle triangle = (Triangle) beanFactory.getBean("triangle");
+			methods : 	Its fairly simple factory having just 6 methods
+						containsBean, getBean, isSingleTon, getType etc.
+				
+	ApplicationContext Container : 
+			Advanced sprint container having capabilities like publish Application Events,resolve textual messages.
+			Includes all functionality of BeanFactory and used in Enterprise Applications.
+			
+			e.g.	ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+					Triangle triangle = (Triangle) context.getBean("triangle");
+		
+			
+			
 Bean factory vs Application conext.
 
 

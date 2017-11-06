@@ -1,0 +1,46 @@
+Bridge :	Structural
+			"decouple an abstraction from its implementation so that the two can vary independently"
+			
+			Consider u have a Drawing interface which has draw method. Point here is dont create a Circle class which implements Drawing interface.
+			Just decouple the abstraction(Drawing Interface) from implementation(Circle), so that both can grow independently
+			
+			interface Idrawing(){
+				public void draw();
+			}
+			
+			class DrawingWay1 implements Idrawing(){
+				public void draw(){
+					syso("Drawing with way1");
+				}
+			}
+			
+			class DrawingWay2 implements Idrawing(){
+				public void draw(){
+					syso("Drawing with way2");
+				}
+			}
+			
+			class Circle{
+				Idrawing drawer;
+				
+				public void draw(){
+					drawer.draw();
+				}
+			}
+			
+			class Square{
+				Idrawing drawer;
+				
+				public void draw(){
+					drawer.draw();
+				}
+			}
+			
+			
+			psv main(String [] args){
+				new Circle().draw();
+				new Square().draw();
+			}
+			
+			Look here, circle's responsibility of drawing is decoupled from him. Now circle dont know how to draw. Instead it depends on Idrawing interface to provide the 
+			behaviour.
