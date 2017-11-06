@@ -54,6 +54,10 @@ Directive : At a high level, directives are markers on a DOM element that tell A
 			A directive can create its own new scope or share scope with the controller or inherit scope---> city bank.
 			
 			When to use compile?
+					when you want to perform some operation  on instance of directive individually
+					e.g. In todo app i have used it to add style to todo item based on even odd position.
+			
+			Order of calling is : Compile, Controller, Prelink, Postlink
 			
 Module : Its a collection of directives, services, controllers etc.
 
@@ -66,10 +70,13 @@ ng-app : Typically we have only one ng-app per html application but it is perfec
 
 ng-bind : used to bind an attribute from controller to view.
 		  A shorthand notation is preferred in place of this which is {{}}.
+		  It is one way data binding.
 		  
 ng-model : this directive acts as a model in mvw.
 		   If you add ng-model, to any html element, angular is going to create a property on $scope object.
 		   You can actually access that property in your js code.
+		   It is TWO way data binding.
+		  
 		  
 ng-change : used to trigger a function when something changes.		  
 
@@ -80,7 +87,7 @@ ng-hide : evaluate the condition and hide the element from DOM
 ng-repeat : loop over items
 
 scope : Every variable you use in html is $scoped. Meaning it is implicitly attached to $scope.
-		Every time property is updated in $scope, angular automatically updates view. This is called duel way binding.
+		Every time property is updated in $scope, angular automatically updates view by kicking digest cycle. This is called duel way binding.
 
 		Every Controller has its own scope. WE cannot use variable in scope of controller1 inside controller2.
 		
@@ -223,7 +230,7 @@ Difference between factory and service
 					Service used constructor function.
 						If you see angular code, service internally use factory. It used Object.create() notation internally.
 						Services gives you hand to migrate them easily to ES6 world. You can easily convert a service to a ES6/typescript class.
-						Because is nothing but a constructor function.
+						Because it is nothing but a constructor function.
 						@see - https://blog.thoughtram.io/angular/2015/07/07/service-vs-factory-once-and-for-all.html
 						
 					
@@ -244,20 +251,23 @@ What is IFFE : Immediately Invoked Function Expression.
 
 						
 				How to access a property out of IIFE?
-
-				
-
-						Even IIFE is not part of global scope/ window.
+						The property neeed to be passed to an iife(Ultimately its a function. We can pass data toa function.)
+						(function(window){
+							//code goes here
+						})(window);
+						
+				Even IIFE is not part of global scope/ window.
 
 					
 What is callback hell?			
 			ugly code.
 
-Promise : An operation that hasnt completed yet but expected to complete in future
+Promise : An operation that hasn't completed yet but expected to complete in future.
 
 
 Angular Js default Services?
 			$http,$rootScope,$rootElement,$scope,$anchorscroll,$location,$document etc
+			$timeout
 
 
 Filters : They are used more of for data representation. There are several default filters available like
@@ -375,7 +385,7 @@ $compile :	This is first step in processing angular application which is precede
 					Step 3 : Pre linking 
 					Step 4 : Post Linking
 					Step 5 : template gets rendered in DOM
-				Note step 2,3,4 steps will be performed against the template clone created in first step
+				Note step 2,3,4 steps will be performed against the template clone/instance created in first step
 
 			If you write a compile phase of directive. It has below signature.
 				app.directive("myDirective" function(){
@@ -537,7 +547,7 @@ Angular Events : 	First thing is they are not DOM events like click, mouseout, d
 					$broadcast : Moves from top to bottom.
 								 e.g. $rootscope.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000});
 									This event will go from rootscope to all child scopes.
-									Note , it doesnt matter from how deeply nested scope event is broadcasted, it will start from the scope from which it is broadcasted
+									Note , it doesnt matter from how deeply nested scope, event is broadcasted, it will start from the scope from which it is broadcasted
 										i.e. $scope4.$broadcast('salaryChanged',{newsal : 100000, oldsal:70000}); 
 											this will start from $scope4 till its scope end.
 											

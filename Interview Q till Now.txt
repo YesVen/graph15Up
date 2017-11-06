@@ -138,14 +138,20 @@ Java
 		
 	jdk 1.5 vs jdk 1.7 vs jdk 1.8 vs jdk 1.9? Which things introduced in which version?
 	1.5 : Concurrent Collections, Generics, enhanced for loop, Reflection, Autoboxing etc.
-	1.7 : Exception Handling improvements,
+	1.7 : Exception Handling improvements, try with resources
 	1.8 : lambda expressions,stream support, default methods in interface, function expressions, nashorn js engine
 
 	abstraction vs data hiding vs encapsulation
 	Big O notation?
 	
 	Diff between String and StringBuilder? When to use what?
-	ClassNotfound vs NoclassDefinitionFound Exception?
+	
+	ClassNotfoundException vs NoclassDefinitionFoundError?
+			ClassNotfoundException : When we load class using Class.forName  and class is not found....
+			
+			NoclassDefinitionFoundError : The searched-for class definition existed when the currently  executing class was compiled, but the definition can no longer be found.			
+			Class X has reference to class Y. When X is compiled Y definition was there. Now I am trying to load Y class fromX but Y definition is no more present.
+			
 	
 	what is  big O notation?
 		https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly
@@ -167,7 +173,7 @@ HTML5
 	Gulp/Grunt/Bower tools?
 	How to configure a project to be dependant on some other project in maven?
 	In Tomcat How to ask it to look for some files in some specified directory?
-	If I have hude data, will you use http protocol? ---> I answered as file protocol, blob 
+	If I have huge data, will you use http protocol? ---> I answered as file protocol, blob 
 	
 Spring MVC
 	Request processing lifecycle
