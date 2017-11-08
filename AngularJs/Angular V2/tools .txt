@@ -11,3 +11,11 @@ Angular Debugging  : https://augury.angular.io/ --- a chrome extension
 Static Code Analyser for Angular  : https://github.com/mgechev/codelyzer
 
 docs : https://angular.io/api
+
+
+Atom Settings and extensions : 
+		packages : 
+				platform ide terminal
+				language typescript grammer only
+				atom-ide-ui
+				ide-typescript

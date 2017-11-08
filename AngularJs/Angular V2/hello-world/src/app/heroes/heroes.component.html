@@ -1,0 +1,20 @@
+<p>
+  {{hero.name | uppercase}} is a brave man !! He lives in {{hero.address}}
+</p>
+
+<label>Change your Hero? </label>
+<input type="text" [(ngModel)]="hero.name">
+
+<p>List of Heroes</p>
+<ul>
+  <li *ngFor="let hero of heroes" (click)="onHeroSelect(hero)">
+      <span> {{hero.id}}  </span> {{hero.name}}
+  </li>
+</ul>
+
+<!--
+    Binding a selectedHero prpperty of parent component to hero property oh child component
+    One way binding : [hero]="selectedHero"
+    Two way binding : ([hero])="selectedHero"
+-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
