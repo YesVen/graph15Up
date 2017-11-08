@@ -31,4 +31,7 @@ nodejs, npm and angular CLI are  prerequisites.
 
 Typescript is compiled to javascript internally.
 component.ts file is compiles to component.js and component.spec.ts(internal representation file)						  
+
+
+Angular - Augury debugging for Angular2 applications. Its chrome extension. https://augury.angular.io/
 						  

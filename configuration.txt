@@ -14,3 +14,6 @@ Must have popular command line tool : http://cmder.net/
 
 http://yeoman.io/
 
+Angular Augury debugging for Angular2 applications. Its chrome extension. https://augury.angular.io/
+
+Batrang for Angular 1 Applications : https://www.youtube.com/watch?v=q-7mhcHXSfM&feature=youtu.be

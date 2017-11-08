@@ -257,7 +257,23 @@ CreditSuisse :
 			
 			
 
-
+FIS :
+	what is dandrum? __proto__ in js?
+				When we use prototype, __proto__ is actually  used to look up the properties in prototype chain.
+				Essentially, js designers have added __proto__ to be used internally but browser vendors have made it public.
+				Ideally speaking, this property should never be touched in your app code.
+				
+	Diff between null and undefined?
+				Both are data types. When a variable is created in js and no assigned its undefined.
+				When we explicitly assign a variable to null then its null
+				
+	Multiple inheritance allowed in JavaScript?
+	
+	What are new features added in ECMA6?
+	How Array is stored in js?
+	How Spring context is loaded by application?
+	Js Array Oprations?
+	
 
 			
 		

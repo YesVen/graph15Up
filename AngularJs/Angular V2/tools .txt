@@ -1,0 +1,13 @@
+
+******************** VVVIMP : https://angular.io/resources  ************************
+
+
+Angular IDE and Eclipse Plugin: https://www.genuitec.com/products/angular-ide
+
+Angular CLI : https://cli.angular.io/
+
+Angular Debugging  : https://augury.angular.io/ --- a chrome extension
+
+Static Code Analyser for Angular  : https://github.com/mgechev/codelyzer
+
+docs : https://angular.io/api
