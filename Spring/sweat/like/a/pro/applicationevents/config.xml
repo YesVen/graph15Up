@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="circle" class="dnyanesh.Circle">
+		
+	</bean>
+
+	<bean name="centerbean" class="dnyanesh.Point">
+		<constructor-arg type="int" value="0" ></constructor-arg>
+		<constructor-arg type="int" value="0" ></constructor-arg>
+	</bean>
+	
+	<!-- If we use component-scan tag then this inititlization is not required. Hence commented -->
+	<!-- <bean class="dnyanesh.DrawEventListener"></bean> -->
+	
+	<context:annotation-config></context:annotation-config>
+	
+	<!-- This is required when you are using annotations like @Component, @Service, 
+	@Controller etc from stereotypes package -->
+	<context:component-scan base-package="dnyanesh"></context:component-scan>
+</beans>

@@ -22,13 +22,16 @@ nodejs, npm and angular CLI are  prerequisites.
 						  Install angular CLi by running:  npm install -g @angular/cli	
 						  Create your  project by running :  ng new my-first-app
 						  Got to your project directory and run:  ng  serve --open
-						  
-	Atom :
-		packages :-
-				platform ide terminal
-				language typescript grammer only
-						  
+						To create  a Component : ng generate component heroes
+							This will create a new component in your app. It will add heroes folder in your app.
+							This folder contains all elements required  for a component like .css, .html  and .ts file.
+							It will also link your new component with AppModule(see appmodule.ts file)
+							
+						To create a Service : ng generate service hero						
 
 Typescript is compiled to javascript internally.
 component.ts file is compiles to component.js and component.spec.ts(internal representation file)						  
+
+
+Angular - Augury debugging for Angular2 applications. Its chrome extension. https://augury.angular.io/
 						  
