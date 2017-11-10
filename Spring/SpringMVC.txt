@@ -11,7 +11,7 @@ Why MVC
 	
 
 DispatcherServlet = Front Controller
-		It is servlet container class that written by Spring designers to handle web request. The primary entry point for a Spring application is the DispatcherServlet. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards requst to individual controllers written by developer.
+		It is servlet container class that written by Spring designers to handle web request. The primary entry point for a Spring application is the DispatcherServlet. It acts as front controller class which comes into picture when a request mapped to application url comes. It then finds HandlerMapping class and decides which controller can serve this request. Request is then forwarded to that controller which return response back  to front controller. It then consults ViewResolver class to find which view has to be displayed.
 		Its written based on JSP modal 2.
 		Its Front Controller Servlets
 		
@@ -45,12 +45,14 @@ In annotation based configuration, we dont require handler mapping as we can dir
 		To make it applicable across the controllers use @ControllerAdvice
 
 @ControllerAdvice
-		It is common place to write the advices for all the controllers i the system.
+		It is common place to write the advices for all the controllers in the system.
 		e.g. If we want a exception handling method to applied to all the controllers in the system then use this annotation
 		
 @responseBOdy
 		USed as replacement of MOdelAndView
 		Jackson jar takes care of conversion of data to ModelAndView Object
+		
+@RestController : Convinient annotation for @Controller and @ResponseBody		
 
 
 

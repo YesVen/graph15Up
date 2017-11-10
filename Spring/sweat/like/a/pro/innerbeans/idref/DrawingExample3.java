@@ -8,11 +8,12 @@ public class DrawingExample3 {
 		ApplicationContext context = new ClassPathXmlApplicationContext("idref.xml");
 		
 		/*
-		 * WE can create object by using id or name property of bean. see innerbeans.xml
+		 * WE can reference a bean by using id or name property of bean. see innerbeans.xml
 		 * 
 		 * Best practice is to use id.
 		 * 
-		 * If we want to add restriction to have only id then we use idref in spring configuration xml
+		 * If we want to add restriction to have reference through only id then 
+		 * we use idref in spring configuration xml
 		 * 
 		 *  see idref.xml
 		 */
