@@ -1,9 +1,11 @@
 What is Jackson?
-
+	Used for JSON marshalling
+	
 How to support multiple return types?
 	By using produces annotation.
 
-Waht is @MatrixParam? What is use of it?
+What is @MatrixParam? What is use of it?
+	
 
 	ExceptionMapper : http://howtodoinjava.com/jersey/jax-rs-jersey-custom-exceptions-handling-with-exceptionmapper/#exceptionmapper
 		FileNotFoundException

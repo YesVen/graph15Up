@@ -8,7 +8,7 @@ Uses HTTP protocol
 Advantages : 
 	Lightweight
 	Stateless
-		Doesnt maintain what client has asked before current request?
+		Doesn't maintain what client has asked before current request?
 		i.e client cannot say, give me account balance of user in last response. server simply dont remember last response.
 	No specification and tight coupling (like WSDL though it has WADL somewhere)
 	Caching mechanism
@@ -43,7 +43,15 @@ JAX-RS Specification defines some annotations like below
 
 @DefaultValue : Provide a default value to params if found null
 
-
+What is @MatrixParam? What is use of it?
+		The important difference is that matrix parameters apply to a particular path element while query parameters apply to the request as a whole. 
+		This comes into play when making a complex REST-style query to multiple levels of resources and sub-resources:
+		
+		e.g. "http://example.com/res/categories;name=foo/objects;name=green/?page=1"
+		It really comes down to namespacing. If only query parameters were used, you would end up with parameters like "category_name" and "object_name" 
+		and you would lose the clarity added by the locality of the parameters within the request
+		If your query has only one "level", then the difference is not really important and the two types of parameters are effectively interchangeable.
+		
 JAX-B : Comes with J2EE platform in build (Java Architecture for XML Binding)
 		Used for XML marshalling
 		
@@ -97,7 +105,7 @@ Rest Authentication Using ContainerResponseFilter
 Rest Interceptor
 
 Interceptor vs Filter
-	Filter : Designed to manipualate metadata i.e. headers, URI etc
+	Filter : Designed to manipulate meta-data i.e. headers, URI etc
 	Interceptor : Designed to manipulate the input and output streams i.e. body
 
 Difference between MessagebodyWriter and Interceptors??????????????	
@@ -110,7 +118,7 @@ Programs :
 	
 	
 HATEOAS : Hypermedia As The Engine OD Application State
-			IN addition to sending the requested data, send sonething the client might be interested into.
+			IN addition to sending the requested data, send something the client might be interested into.
 			e.g. While sending the product information, send the raw materials associated with it.
 			
 			
@@ -138,11 +146,27 @@ OPTIONS : This http method used to find out which http methods are supported by 
 HEAD : To get just headers and not the body.		  
 				
 	
-CORS : Cross Origin 
-
+CORS : Cross Origin Resource Sharing
+		Need to add below flags on response from server
+		Access-Control-Allow-Origin : "name of allowed website"
+		Access-Control-Allow-Methods : "GET, PUT"
+		Access-Control-Allow-Headers : "headers that can be transferred"
+		Access-Control-Allow-Credentials : "Cred info"
+		
+		Preflight Request : 
+			A CORS preflight request is a CORS request that checks to see if the CORS protocol is understood.
+			It is an OPTIONS request using two HTTP request headers: Access-Control-Request-Method and Access-Control-Request-Headers, and the Origin header.
+			A preflight request is automatically issued by a browser when needed; in normal cases, front-end developers don't need to craft such requests themselves.
+			For example, a client might be asking a server if it would allow a DELETE request, before actually sending a DELETE request by using a preflight request
+			https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request
+			
+		
 There are tow ways to read headers : @Context Httpheaders
 									 @HeaderParam param
-									 
+						
+WADL : Web Application Description Language.
+	   Its a xml description of deployed Restful web application.
+						
 									 
 @XMLRootElement : If we specify this annotation on a class, the class becomes eligible for automatic data marshelling between xml and POJO.
 				  This JAX-B annotation.

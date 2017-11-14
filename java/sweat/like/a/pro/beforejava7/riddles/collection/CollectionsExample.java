@@ -32,7 +32,7 @@ public class CollectionsExample {
 		
 		Collections.checkedCollection(villages, Village.class);
 		
-		//Now this colletion is checked colletion meaning that 
+		//Now this colletion is checked collection meaning that 
 		//If I try to add object of type other than Village then it will give me ClassCastException
 	}
 

@@ -24,7 +24,7 @@ import sweat.like.a.pro.java8_old.src.com.java.knowhows.eg.java8.lynda.predicate
  * null insertion is allowed but only ONCE
  *		Till java 6 it is ok to add first element a null to treeset
  *		But it considered as bug
- *		From java 7 onwards null cannot ne inserted if natural sorting order is used.
+ *		From java 7 onwards null cannot be inserted if natural sorting order is used.
  *		If you want to insert a null element then u have to write custom comparator for that type.	 
  * 
  * @author Nightfury

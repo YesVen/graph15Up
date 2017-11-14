@@ -1,4 +1,4 @@
-package sweat.like.a.pro;
+package sweat.like.a.pro.beforejava7.riddles.ootb;
 
 import java.util.ArrayList;
 import java.util.List;

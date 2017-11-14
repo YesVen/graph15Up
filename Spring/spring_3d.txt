@@ -18,6 +18,8 @@ When to use xml configuration and when to use annotation configuration?
 	one of the major disadvantage of annotation based aop is that it required your classes to be rebuild and it it turn involves rebuild, redeploy and restart server. So its advisible to use annotation based aop only when you are not making too much changes in your configuration.
 	On other hand, xml based configuration is pretty hard to handle and creates a confusion. So need to make a concious decision.
 	
+	However, people still feel to go with more xml based approach. Because it gives you a full view of your application beans and dependencies in one shot.
+	
 	
 Spring Container : 
 	Bean Factory Container:
@@ -34,6 +36,7 @@ Spring Container :
 			e.g.	ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 					Triangle triangle = (Triangle) context.getBean("triangle");
 		
+					FileSystemXMLApplicationContext
 			
 Dependency Injection Mechanisms : 
 	Setter Injection
@@ -55,10 +58,21 @@ Bean Scopes :
 
 	e.g. 	<bean id="demoBean" class="com.howtodoinjava.application.web.DemoBean" scope="session" />
 			@Scope("session") -- on a bean class
-			
+
+XML Based Configuration	:
+		abstract
+		autowire-candidate : We can exclude a bean from auto wiring by making this false.
+		scope
+		primary
+		init-methods
+		destroy method
+		factory-bean
+		factory-method
+		autowire
+		parent
 			
 Bean LifeCycle Hooks  : 
-		bean lifecycle is maintained by Spring container but spring provides so hooks to play around bean life.
+		bean life cycle is maintained by Spring container but spring provides so hooks to play around bean life.
 		xml conf : init-methods and destroy methods
 		annotation : @PostConstruct and	@PreDestroy
 		Aware interfaces : ApplicaionContextAware, ApplicationEventPublisherAware, BeanNameAware, BeanFactoryAware etc.
@@ -71,14 +85,14 @@ Bean Post Processing :
 Autowiring Modes : 
 			No 			:	No wiring at all
 			byName		:	wiring by name of property
-			byType		:	Exactly one bvean of type should be present else Fatal Error will be thrown
-			constructor	:	By type but constructor is required
+			byType		:	Exactly one bean of type should be present else Fatal Error will be thrown
+			constructor	:	By type but matching constructor is required
 			autodetect	:	?
 			
 			We can also use it bean classes with annotation @autowired. This annotation can be used on member variable, constructor or setter method.
 			
-			By default autoriring is byType. We can use @Qualifier to resolve the beans if more than one beans of same type are present. 
-			@Qualifier("circleRelatedBean") --- your spring.xml file should have a bean woth name="circleRelatedBean"
+			By default autowiring is byType. We can use @Qualifier to resolve the beans if more than one beans of same type are present. 
+			@Qualifier("circleRelatedBean") --- your spring.xml file should have a bean with name="circleRelatedBean"
 			
 			We can exclude a bean from auto wiring by using autowire-candidate=false in bean definition.
 			
@@ -109,7 +123,7 @@ Best Practices :	https://howtodoinjava.com/best-practices/13-best-practices-for-
 	4.	Always use ids as bean identifiers. Just an industry standard.
 	5.	Try to avoid autowiring. Autowiring is a great feature if you can manage it in long term. Usually it is beneficial if you project is having 
 		very few beans and you can almost remember them all in your memory as well.As soon as project gets bigger, autowiring starts creating trouble in identifying correct dependency to use. The main drawback, I find is not to have a overview of whole system binded together. This is where spring configuration files win.
-	6.	Use dependency-check at the development phase. Its a validation mechanis, done by spring container to check if all dependencies are met.
+	6.	Use dependency-check at the development phase. Its a validation mechanism, done by spring container to check if all dependencies are met.
 	7.	Add a header comment to each configuration file
 			<beans>
 				<description>

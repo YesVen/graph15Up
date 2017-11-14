@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /**
  * 	Overriding : 
- *				For unchecked Exception, overriding and overriden method can throw any exception.No rules.  
+ *				For unchecked Exception, overriding and overridden method can throw any exception.No rules.  
  *					because we dont know what exception will be thrown as it is runtime exception/unchecked exception
  *				For Checked Exception, overriding method cannot throw exception greater than overriden method.
  *					

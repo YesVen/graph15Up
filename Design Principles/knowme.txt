@@ -19,9 +19,9 @@ Open close Principal
 Liskov Substitution Principal
 		Super Types should be completely replaceable by subtypes without any effect on program.
 		
-		e.g. If Duck class is super class of Bird class(fly method in bord class), I should be able to use Duck class everywhere i used Bird class.
+		e.g. If Duck class is sub class of Bird class(fly method in bird class), I should be able to use Duck class everywhere I used Bird class.
 			 If you wanna add a class like ostrich(which cant fly), you have to think twice if it can be inherited from a Bird class(obviously not).
-			 If I add Ostrich class under Bord class hierarchy then it would break LSP.
+			 If I add Ostrich class under Bird class hierarchy then it would break LSP.
 			 
 		By the way, if you follow LSP closely, you automatically follow OCP.
 		
@@ -30,7 +30,7 @@ Liskov Substitution Principal
 		
 Interface Segregation Principal
 		"Code should not be forced to implement methods it does not use" or "Code should not have a few large monolithic interfaces but it should have many small interfaces"
-		In simple words, dont add too many unnecessary methods in interface. Down side is that, all implementing classes of such an interface may not want to implement all methods.
+		In simple words, don't add too many unnecessary methods in interface. Down side is that, all implementing classes of such an interface may not want to implement all methods.
 		IF you found yourself  in such scenario, you are violating ISP principle. You should segregate interfaces such that all methods in an interface are have to be implemented by a class.
 		
 		e.g. Lets consider a Bird interface having a fly method,eat method and sleep method. Here all birds must fly, eat and sleep. But gotcha is not all birds can fly like ostrich. Here our Bird interface violates ISP.
@@ -52,4 +52,13 @@ Dependency Injection Principal
 		If dependency is not passed to the asker, it can be a tedious job to get dependency. Hence DI container is brought to life. Its only job is to deal with dependencies. DI container remembers, creates, fetches and resolves dependencies (Spring DI Container). 
 			
 		
-Coding to Interfaces
+Coding to Interfaces : 
+		We must write a code fulfill interfaces because ultimately they are contract which we have to adhere to.
+		
+		e.g. If we have a IBird interface and we have written an implementation of it in class say MyBirdWorld. 
+		Here in this class, If I write method "public mybirdworkd createbird()".
+		If ages after, we have invented a mechanical birds that can fly but dont sleep and eat, We are in soup.
+		So reframe your method as,
+				public Bird createbird()
+				
+				

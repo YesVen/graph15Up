@@ -11,7 +11,7 @@ Why MVC
 	
 
 DispatcherServlet = Front Controller
-		It is servlet container class that written by Spring designers to handle web request. The primary entry point for a Spring application is the DispatcherServlet. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards requst to individual controllers written by developer.
+		It is servlet container class that written by Spring designers to handle web request. The primary entry point for a Spring application is the DispatcherServlet. It acts as front controller class which does common things like copying data to bean, basic validation etc. It then forwards request to individual controllers written by developer.
 		Its written based on JSP modal 2.
 		Its Front Controller Servlets
 		
@@ -24,9 +24,10 @@ HandlerMappingClasses
 	There are plenty of handlers available in spring.
 	BeanNameUrlHandlerMapping :
 			This class maps url based to bean which can handle this request
-	
+	SimpleUrlHandlerMapping : 
+			
 
-In annotation based configuration, we dont require handler mapping as we can directly annotate a method wrt request its serving.
+In annotation based configuration, we don't require handler mapping as we can directly annotate a method wrt request its serving.
 
 
 @PathVariable
@@ -53,6 +54,26 @@ In annotation based configuration, we dont require handler mapping as we can dir
 		Jackson jar takes care of conversion of data to ModelAndView Object
 
 
+Annotations : 
+		@NotNUll and @NotEmpty
+		@Future and @Past
+		@Min and @Max
+		@IsPassword : Custom Annotations
+		@JsonPropertyOrder(alphabetic=true) // This will make alphabetical sequence of attributes in this bean while sending response
+		@JsonIgnoreProperties(value={"id"})//This will skip id prop from response
+		@JsonInclude(value=Include.NON_NULL)//This will make those attributes to be part of response which are not null
+		
+		
+Interceptors : 
+		In Spring we can deifne interceptors by implementing HandlerInterceptorAdapter interface
+		It has three methods
+			preHandle : Called before Handling request by spring controllers
+			postHandle : Called After Handling request by spring controllers. SO it has request, response and ModalAndView objects naturally.
+			afterCompletion : 
+		
+Custom Editors : 
+		We can edit the request parameters before they are handled by spring.
+		implement PropertyEditorSupport class
 
 
 		

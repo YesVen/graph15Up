@@ -275,8 +275,28 @@ FIS :
 	Js Array Oprations?
 	
 
+Genpact : 
+	How js array is able to store int and string and array in same object.
+	Memory model of JS?
+	
 			
+			
+Synechron : 
+	padding vs margin?
+	How to achieve Responsive web design without bootstrap?
+	If I want to store objects with insertion order preseve..? ---- LinkedHashmap
+	Error Logging in Angular JS?
+	Can a single route can have multiple controller?
+	what is @Aspect? @Advice?
+	
 		
-		
-		
+Persistent : 
+	@UUID in webservices?		
+	Top down vs bottom up web services?
+	exception handling,method overriding broden scope?
+	Class Level lock vs method Level Lock vs Object Level Lock?
+	Deadlock vs LiveLock?
+	
+	
+	
 	

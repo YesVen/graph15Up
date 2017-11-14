@@ -194,7 +194,13 @@ Array :
 				array1.concat(array2);
 				This will return a new concatinated array but oroginal array1 and array2 remains unchanged
 		
+		indexOf
 		
+		filter
+		
+		copyRange
+		
+		reverse
 		
 Data Types :
 		String
@@ -256,8 +262,39 @@ Explain the role of deferred scripts in JavaScript?
 		By default, the parsing of the HTML code, during page loading, is paused until the script has not stopped executing. It means, if the server is slow or the script is particularly heavy, then the webpage is displayed with a delay. While using Deferred, scripts delays execution of the script till the time HTML parser is running. This reduces the loading time of web pages and they get displayed faster.		
 
 
+Every Browser is coupled with a javascript engine. This Engine is responsible for interpreting JS code and executing it in browser. 
+Keep in mind browser just provides an environment to render the js. It doent actually executes js code. Th JS Engine actually executes it.
+There are diffrent JS Engines written,
+Chrome : V8 Engine
+Node.js : V8 Engine
+Mozilla : Rhino Engine
+Oracle : Nashorn Engine
+
+
+Functions are first-class objects in JavaScript.
+	What is first class function?
+	What is Higher Order Function?
+
+
+Prototype : 
+	When accessing the properties of an object, JavaScript will traverse the prototype chain "upwards" until it finds a property with the requested name.		
+	If we use hasOwnProperty() method on an object to check if that object has a property, then only that object is inspected and not the entire prototype chain.
+	
+	
+false == 0 					 //true
+false == "0" 				 //true
+false == "false" 			 //false	
+{} === {};                   // false
+new String('foo') === 'foo'; // false
+new Number(10) === 10;       // false
+var foo = {};
+foo === foo;                 // true
 		
 		
-				
-				
+typeof "Test"				//string
+typeof new String("Meow")	//object	
+typeof 1.2					//number
+typeof new Number(1.2)		//object
+typeof [1,2,3]				//object				
+typeof new Array(1, 2, 3)	//object				
 			

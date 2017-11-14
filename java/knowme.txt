@@ -26,6 +26,7 @@ Generics :
 		Examples : 
 				Unbounded Parameterized types : 
 					Collection<?> coll = new ArrayList<String>();
+							In future, Same coll can be assigned to HashSet<Person> as well
 					Pair<String,?> pair = new Pair<String,Integer>();	
 					ArrayList<?>  list = new ArrayList<Long>(); 			
 		
@@ -37,7 +38,7 @@ Generics :
 		Limitations : 
 				private static T member; //This is not allowed. Generics cant work with static.
 				
-				final List<int> ids = new ArrayList<>(); //Not allowed, cant ork with primitives
+				final List<int> ids = new ArrayList<>(); //Not allowed, cant work with primitives
 				
 				public class GenericException<T> extends Exception {} //not allowed.
 				
@@ -48,9 +49,12 @@ Generics :
 				Element : E
 				
 		Questions : 
-				Can you pass List<String> to a method which accepts List<Object> --- No. in because List<Object> you can put anything. But a method a accpeting List<Object>
-				and not List<String>. So compiler Error.
+				Can you pass List<String> to a method which accepts List<Object> 
+						--- No. in because List<Object> you can put anything. But a method a accepting List<Object>	and not List<String>. So compiler Error.
 				Difference between List<Object> and raw type List in Java?
+						Anything can be put into both.
+						But List<Object> can be assigned to only and only List<Object>(Compile time error if we assign List<Object> to List<String> ). 
+						While raw List can assigned to List<String> or List<Person> etc.
 				Difference between List<?> and List<Object> in Java?
 						List<?> listOfAnyType;
 						List<Object> listOfObject = new ArrayList<Object>();
@@ -62,16 +66,48 @@ Generics :
 						listOfObjectType = (List<Object>) listOfString; //compiler error - in-convertible types
 
 
-
-
-
-
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------					
 Exception : 
 			We can theoretically throw an Error. 
 			throw new java.lang.Error("this is very bad practice");
 			
 			try catch is designed for Exceptions and not for errors. So We cannot catch Error in Catch block.
-			
 			but code in finally block will execute if we throw error.
+			
+			
+			>>>>>>>>>>> We cannot broaden exception in overriding method
+			
+			Checked Exceptions : FileNotFoundException, CloneNotSupportedException
+			Unchecked Exception : NullPointerException, ArrayIndexOutOfBoundException
+			
+			
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------			
+			
+			
+Collection vs Stream
+	A pipelined representation of collection elements which may or may not be processed sequentially.
+	No storage. No Memory allocation.
+			A stream is not a data structure that stores elements; instead, it conveys elements from a source such as a data structure,
+			an array, a generator function, or an I/O channel, through a pipeline of computational operations.
+	Functional in nature. 
+			An operation on a stream produces a result, but does not modify its source. 
+			For example, filtering a Stream obtained from a collection produces a new Stream without the filtered elements, 
+			rather than removing elements from the source collection.
+	Laziness-seeking. 
+			Many stream operations, such as filtering, mapping, or reducing, collecting, can be implemented lazily, exposing opportunities for optimization.
+			For example, "find the first String with three consecutive vowels" need not examine all the input strings. 
+			Stream operations are divided into intermediate (Stream-producing) operations and terminal (value- or side-effect-producing) operations.
+			Intermediate operations are always lazy.
+	Possibly unbounded. 
+			While collections have a finite size, streams need not. 
+			Short-circuiting operations such as limit(n) or findFirst() can allow computations on infinite streams to complete in finite time.
+	Consumable 
+			The elements of a stream are only visited once during the life of a stream. 
+			Like an Iterator, a new stream must be generated to revisit the same elements of the source			
+			
+			
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+Inner Classes
+			
 			

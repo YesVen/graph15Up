@@ -34,7 +34,7 @@ public class Trick1 {
 	public static void main(String[] args) {
 		
 		Vehicle v = new TwoWheeler();
-		v.run();//It will call ru  method from TwoWheeler
+		v.run();//It will call run  method from TwoWheeler
 		
 		List<String> list = new ArrayList<>();
 		list.add("AA");// It will call add method from ArrayList

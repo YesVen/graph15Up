@@ -26,15 +26,27 @@ final class FinalPerson
 	private final HashMap<String, String> info;
 	
 	//TODO : Handle this object
-	private Address address;
+	private final Address address;
 	
-	public FinalPerson(int age, String name, Map<String, String> info)
+	public FinalPerson(int age, String name, Map<String, String> info, Address address)
 	{
+		//No need to take precaution for primitive or immutable things
 		this.age = age;
 		this.name = name;
+
+		
+		
+		//set address
+		Address addr = new Address();
+		addr.street = address.street;
+		addr.code = address.code;
+		this.address = addr;
+		//this.address = address >>>>>>>>>> dont do this.
+		
+		
+		
+		//set info map
 		final HashMap<String, String> tempMap = new HashMap<>();
-		
-		
 		//for initialising info object dont use assignment, instead create deep copy
 		Iterator<String> iter = info.keySet().iterator();
 		String key;
@@ -69,7 +81,8 @@ final class FinalPerson
 
 
 class Address {
-	
+	String street;
+	int code;
 }
 
 public class HowToCreateFinalClass {
@@ -81,7 +94,11 @@ public class HowToCreateFinalClass {
 		demoInfo.put("nativePlace", "Padali");
 		demoInfo.put("company", "3ds");
 		
-		FinalPerson dnyanesh = new FinalPerson(demoage, demoName, demoInfo);
+		Address address = new Address();
+		address.street = "Khandoba Mandir";
+		address.code = 415521;
+		
+		FinalPerson dnyanesh = new FinalPerson(demoage, demoName, demoInfo, address);
 		
 		System.out.println(dnyanesh);
 		
