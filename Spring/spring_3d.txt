@@ -109,7 +109,7 @@ Best Practices :	https://howtodoinjava.com/best-practices/13-best-practices-for-
 	4.	Always use ids as bean identifiers. Just an industry standard.
 	5.	Try to avoid autowiring. Autowiring is a great feature if you can manage it in long term. Usually it is beneficial if you project is having 
 		very few beans and you can almost remember them all in your memory as well.As soon as project gets bigger, autowiring starts creating trouble in identifying correct dependency to use. The main drawback, I find is not to have a overview of whole system binded together. This is where spring configuration files win.
-	6.	Use dependency-check at the development phase. Its a validation mechanis, done by spring container to check if all dependencies are met.
+	6.	Use dependency-check at the development phase. Its a validation mechanism, done by spring container to check if all dependencies are met.
 	7.	Add a header comment to each configuration file
 			<beans>
 				<description>
