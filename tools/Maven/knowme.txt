@@ -1,0 +1,20 @@
+Maven : 
+	Project Management tool + Build Tool
+	
+Need of Maven : 
+	Multiple jars in project
+	Hard to maintain the dependencies and their versions
+	Project structure 
+	Build, publish and Deploy
+	
+
+
+Terms :
+	groupId : Package Structure
+	artifactId  : Name of the Application.
+
+
+Commands : 
+	mvn archetype:generate  -> Download all required plugins maven needs to function efficiently.
+	mvn compile -> 
+	mvn package ->
