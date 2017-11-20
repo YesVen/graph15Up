@@ -9,7 +9,13 @@ public class DrawingExample3 {
 		
 		/*
 		 * Spring can auto wire the beans based on member variables.
-		 * If names of member variables match exactly with bean ids then spring auto wire them 
+		 * If names of member variables match exactly with bean ids then spring auto wire them
+		 * 
+		 * Wiring Types : no
+		 * 				  byName
+		 * 				  byType
+		 * 				  constructor
+		 * 				  autodetect 
 		 */
 		Triangle triangle = (Triangle) context.getBean("triangle-name");
 		
