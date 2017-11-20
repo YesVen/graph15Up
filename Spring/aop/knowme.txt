@@ -12,10 +12,10 @@ Concern vs Cross Cutting Convern :
 Join Point
 
 
-Pointcut
+Pointcut : Predicate expression
 
 
-Preceeding JoinPoint
+Preceding JoinPoint
 			Used with @around annotation. Its most powerful AspectJ annotation. Because it can control the method execution.
 			@see : LoggingAspect4.java
 			
