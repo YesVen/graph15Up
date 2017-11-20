@@ -21,4 +21,3 @@ public class UnsupportedOperationExceptionExample {
 		 * Since iterators are fail fast in nature
 		 */
 	}
-}

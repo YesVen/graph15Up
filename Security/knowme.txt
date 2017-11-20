@@ -1,0 +1,118 @@
+Setting the "secure" flag in a cookie will instruct a browser to only send a cookie when using HTTPS
+
+How to Configure Tomcat Server for Better Security?
+	TLS 2.0
+	SSL
+	HTTPS
+
+Types of Attacks : 
+	XSS
+	Code Injection
+	DOS
+	CSRF
+	
+XSS :
+	Persistent :
+		
+	Non-Persistent : 
+		If site does not have any input filtering and input validation, then I can add malicious script as input.
+		e.g. in Stackoverflow , I can write answer with some tricky malicious html code with some script.
+		Anobody loading that link in the browser will be forced to load script that i have written in my answer.
+		That script can bring havoc to the user.
+		
+		
+CSRF : Bank and Facebook logged in same browser.
+		I can send a malicious link that execute a script which can steal the back cookie information.
+		Use CSRF token that gets generated on each request. Force that token to be present in each request and validate that on server.
+	
+	
+Code Injection : 
+	SQL Injection : Classic SQL Injection and Blind SQL Injection		
+	HTML Script Injection
+	Remote File Injection
+
+Classic SQL Injection : 
+		statement = "SELECT * FROM users WHERE name = '" + userName + "';"
+		query expects useName as string but I can input something like ' or '1' = '1
+		query becomes,
+		SELECT * FROM users WHERE name = '' OR '1'='1';
+		Boom, all data in table at your feet
+		In Classic SQL injection hackers rely on error messages returned from the database in order to give them some clues on how to proceed with their SQL injection attack
+	
+Blind SQL Injection:
+		In Classic SQL Injection we get data directly in our plate.
+		System can be protected against such attack, But in Blind SQL injection relies on sending array of queries to database to get result in form of true/false. 
+		based on that the conclusion is drawn and next query is fired to exploit system.
+		
+		http://newspaper.com/items.php?id=2 //returns newspaper of id 2
+		http://newspaper.com/items.php?id=2 and 1=1 // returns newspaper of id 2
+		http://newspaper.com/items.php?id=2 and 1=2 // If it returns newspaper of id 2. We can say that unconditional inputs are not handled properly
+		If the content of the page that returns 'true' is different than that of the page that returns 'false', then the attacker is able to distinguish when the executed query returns true or false.
+		Once this has been verified, the only limitations are privileges set up by the database administrator, different SQL syntax, and the attacker's imagination.
+	
+		With blind SQL injection the hacker does not need to see any error messages in order to run his/her attack on the database – and that is exactly why it is called blind SQL injection. So, even if the database error messages are turned off a hacker can still run a blind SQL injection attack.
+DOS :
+
+
+DDOS :
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to Configure Tomcat for SSL?
+https://dzone.com/articles/setting-ssl-tomcat-5-minutes
+	Create .keystore file using keytool utility of java
+	Open conf/server.xml in tomcat and uncomment below tag
+			<!--
+			<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+				maxThreads="150" scheme="https" secure="true"
+				clientAuth="false" sslProtocol="TLS" />
+			-->
+	Change it and add keystore password and path to keystore
+
+	Start tomcat. It will run on default 8443 port as well as 8080 port.
+	If you want to force just 8443 port, add below entry in web.xml of application.
+			<security-constraint>
+				<web-resource-collection>
+					<web-resource-name>securedapp</web-resource-name>
+					<url-pattern>/*</url-pattern>
+				</web-resource-collection>
+				<user-data-constraint>
+					<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+				</user-data-constraint>
+			</security-constraint>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Brute Force Attack : 
+		Dictionary Attack :
+		
+
+Authorization :
+		O-Auth1.0
+		O-Auth2.0 : This is what we do to create account on quora using my gmail or facebook account. This reduced extra round trips required in oAuth 1.
+		hawk Authorization
+		digest Auth
+		AWS Auth
+	
+Web Service Documentation :
+		WADL?
+
