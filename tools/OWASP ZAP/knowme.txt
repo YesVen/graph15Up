@@ -1,0 +1,53 @@
+Open Web Application Security Project
+
+Zed Attack Proxy
+
+Penetration Testing - Both Active and Passive
+
+What it does?
+	Active and Passive Brute Force Scanning
+	Report Generation
+	Spider Crawling : Active and Hidden Links
+	easily Extensible and integrable
+	Port Scanning
+	Additional Features : 
+			Session Comparison
+			Parameter Analysis
+			Fuzzer : Perform analysis with random input and common known random attack techniques
+					 Cyber shaolin gave an example of doctor testing your illness against known allergies like pollen, insects, dairy products, dust etc.
+					 Here they are performing fuzzy analysis of your illness.
+	
+
+XSS : When input sanitizing/validation is not done properly this attack can be planted.
+	Reflected/Non Persistent XSS : find a vulnerability on a site and send a link to target with crafted link like below.
+								   http://targetsite.com?productid=<script>This+is+a+deadly+code</script>
+								   Your target unknowingly will click on it and your script will run on his browser bringing havoc to him.
+								   
+	Persistent XSS : Some websites store the information that user has submitted even without sanitizing it.
+					 We can add some malicious script crafted to hack whoever load the site in the input fields. The data will be stored by the site in its database.
+					 Now all users who generally think its a trusted site and often visits it, will be in soup cause as soon as they load site, your 
+					 malicious code will rain a havoc.
+					 
+CSFR : It uses already logged in users preveliges to craft an attack.
+	   Cyber Shaolin gave example of a bad kid wanna enter into party by taking a good kids ticket.
+	   
+	   
+	   
+	   
+Encryption Mechanisms : 
+	Basic : 
+			Caesar Cipher : USe shifting technique. Very naive. Even kids don't use this
+			Vernam Cipher : USe Caesar in combination with one time padding.
+							Its a reversible operation and provided key its very easy to break.
+	Advanced :
+			oAuth1
+			oAuth2
+			AWS Authentication
+			Digest Authentication
+			DES/Triple DES
+			
+			
+			
+Stegnography :
+									
+	

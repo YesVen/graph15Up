@@ -48,4 +48,8 @@ Temporary Items
 .metadata
 .recommenders
 
+# target directory of eclipse project
+target
 
+# jar created by build process
+*.jar
