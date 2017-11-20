@@ -59,3 +59,25 @@ Prototype : Creational
 			https://howtodoinjava.com/design-patterns/creational/prototype-design-pattern-in-java/
 				
 			Prototype is something which is created before creating actual implementation
+			
+			
+			
+----------------------------------------------------------------------------------------------------------------------------------------------------------------			
+Singleton : System, Runtime
+Factory : Spring Bean Factory
+Builder : StringBuilder
+Strategy : Collection.sort()
+Adapter : FileInputStream, Arrays class
+Prototype : Object Class clone method
+Decorator : Collections.getUnModifiableList, Collections.getSynchronizedMap
+Chain Of Responsibility : Servlet doFilter
+Command : Runnable
+Mediator : ExecuterService, AdobeUtil
+Observer : Observer, Observable
+Strategy : Comparator
+
+			
+			
+			
+			
+			

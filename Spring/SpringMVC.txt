@@ -3,10 +3,6 @@ Why MVC
 		JSP is terrible since it embeds your core business code into views
 		Servlets are great in terms of seperation of business and view but messes terribly fails in presentation.
 		Thus was born the Model 2 architecture MVC.
-	Modal 1
-	Modal 2
-	Modal 3
-	Modal 4
 	
 	
 

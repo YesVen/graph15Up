@@ -9,29 +9,14 @@ Questions
 	instanceof vs isInstance
 
 	ways  to execute java program -- 4... java , java -jar demojar	.jat, double clicking, bat file
-
-	web server vs App server
-	
-	final vs finally vs finalize
-	
-	Why String Immutable
-	
-	How to create immutable class?
-	
+		
 	Collection
-			How hashMap works
-			Collection vs Collections : methods in both classes
-			When to use which Collection?
-			Comparable vs Comparator
-			Cursors : Interator, ListInterator, Enumeration
-			diffrence between Arrays.Aslist and new List --- why Arrays class jas	
+			difference between Arrays.Aslist and new List --- why Arrays class jas	
 			Which classes implement RandomAccess interface and what is its advantage?
 			http://javahungry.blogspot.com/
-			diffrence between Arrays.Aslist and new List 
-			When to use enumeration vs iterator vs ListIterator
-			How Treeset internally works?
+			How Treeset internally works? - using treemap
 			Why it does not give compile time error when you dont implement equals method in Comparator interface?
-			Can we run Abstract class? --yes
+			Can we create objectof Abstract class? -- no
 			How to invoke GC? System.gc() and Runtime.getRunTime().gc()
 			run jar through cmd?
 			volatile vs transient
@@ -40,7 +25,6 @@ Questions
 			Serial and Parallel Garbage Collector
 			How do you print Array in Java
 			Serializable and Externalizable
-			DOM and SAX parser in Java
 			synchrinisedmap vs hashtable vs concurrenthashmap
 			
 Concurrent Collections :
@@ -72,7 +56,8 @@ To update in notepad :
  	if a thread takes too much time for execution, it can use yield method to check if there are any
  	runnable thread of same priority is present. If yes give its resources for execution.
 						
-			
+Can we store BigDecimal class in TreeSet? : No
+						
 Remaining : 
 			Inner classes
 			Java 5 Thread new Classes

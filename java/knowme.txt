@@ -24,13 +24,13 @@ Generics :
 							}
 							
 		Examples : 
-				Unbounded Parameterized types : 
+				Unbounded Parametrized types : 
 					Collection<?> coll = new ArrayList<String>();
 							In future, Same coll can be assigned to HashSet<Person> as well
 					Pair<String,?> pair = new Pair<String,Integer>();	
 					ArrayList<?>  list = new ArrayList<Long>(); 			
 		
-				Bounded Parameterized types :
+				Bounded Parametrized types :
 					List<? extends Number> list = new ArrayList<Long>(); //All subclasses that extends number
 					List<? super GrandChildren> = new ArrayList<Father>(); //It can Accept Father, GrandFather Types
 					
@@ -71,13 +71,18 @@ Exception :
 			We can theoretically throw an Error. 
 			throw new java.lang.Error("this is very bad practice");
 			
-			try catch is designed for Exceptions and not for errors. So We cannot catch Error in Catch block.
-			but code in finally block will execute if we throw error.
+			try catch is designed for Exceptions and not for errors. So code in Catch block will not be executed as it will not monitor for errors.
+			but code in finally block will execute not matter exception/error is thrown. 
+			
+			Rules : 
+				>>>>>>>>>>>If the superclass method does not declare an exception :
+											If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception but it can declare unchecked exception.
+				>>>>>>>>>>>If the superclass method declares an exception
+											subclass cannot broaden exception in overriding method.
+											subclass can choose to not declare exception at all 
 			
 			
-			>>>>>>>>>>> We cannot broaden exception in overriding method
-			
-			Checked Exceptions : FileNotFoundException, CloneNotSupportedException
+			Checked Exceptions : FileNotFoundException, CloneNotSupportedException, IOException
 			Unchecked Exception : NullPointerException, ArrayIndexOutOfBoundException
 			
 			
@@ -111,3 +116,9 @@ Collection vs Stream
 Inner Classes
 			
 			
+			
+			
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+String 
+	it's considered the bad practice to use StringBuffer anymore, because, in almost 99% scenario, you perform string concatenation on the same thread
+
