@@ -295,8 +295,37 @@ Persistent :
 	Top down vs bottom up web services?
 	exception handling,method overriding broden scope?
 	Class Level lock vs method Level Lock vs Object Level Lock?
-	Deadlock vs LiveLock?
+	Deadlock vs LiveLock? How to avoid?
+	How to detect memory leak? how to analyse it ? How to fix it?
+	Write code to sort  a class based in multiple keys. Use comparator but I dont want to create too many comparators.
+		Use comparisonStrategy field in Comparator and force user to set this field while calling Collections.sort() api.
+		In compare method, check comparisonStrategy set by user and write login based on that.
 	
 	
+Northern Trust :
+	static vs volatile? are they same?
+		static : Declaring a static variable in Java, means that there will be only one copy, no matter how many objects of the class are created. 
+				If class Student has name, rollno and "static collegeName=GCEK" field. 
+				 You create 100 objects of Student, all students have same copy of static field collegeName=GCEK.
+				 Static is used in context of objects.
+				 If two threads t1 and t2 are accessing static variable collegeName and t1 modifies it to "PCCOE", t2 might have cached value of collegeName nad it still will refer to "GCEK"
+				 creating inconsistency. Volatile declaration makes sure that threads won't cache the data and uses the shared copy only.
+		volatile : If class Student has name, rollno and "volatile collegeName=GCEK" field.
+				   You create 100 objects of Student, Only a single copy will be created for collegeName field in all student objects.
+				   Static is used in context of threads.
+				   volatile declaration makes sure that threads won't cache the data and uses the shared copy only.
+				   
+	volatile vs immutable class?
 	
+	What is monitor?
+	
+	can a variable be final and volatile ?
+		volatile only has relevance to modifications of the variable itself, not the object it refers to. It makes no sense to have a final volatile field because final fields cannot be modified. Just declare the field final and it should be fine.
+	
+Accenture :
+	general example of asynchronous calls - HE told me about setTimeout and setInterval
+	
+	
+Incedo	:
+		
 	

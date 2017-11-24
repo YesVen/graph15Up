@@ -281,6 +281,17 @@ Prototype :
 	If we use hasOwnProperty() method on an object to check if that object has a property, then only that object is inspected and not the entire prototype chain.
 	
 	
+Modernizr : 	Modernizr is a small piece of JavaScript code that automatically detects the availability of next-generation web technologies in your user's browsers. 
+				Addding custom tests in modernizr,
+				Modernizr.addTest('itsTuesday', function() {
+									var d = new Date();
+									return d.getDay() === 2;
+								});
+	
+	
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
 false == 0 					 //true
 false == "0" 				 //true
 false == "false" 			 //false	

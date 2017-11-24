@@ -122,3 +122,14 @@ Inner Classes
 String 
 	it's considered the bad practice to use StringBuffer anymore, because, in almost 99% scenario, you perform string concatenation on the same thread
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Static vs volatile :https://stackoverflow.com/questions/2423622/volatile-vs-static-in-java
+	Static : If a class has variable declared as static, all objects of that class will have the same value of that static variable.
+			 We can access that variable even without creating object of that class.
+			If two threads t1 and t2 are accessing static variable collegeName and t1 modifies it to "PCCOE", t2 might have cached value of collegeName nad it still will refer to "GCEK"
+				 creating inconsistency. Volatile declaration makes sure that threads won't cache the data and uses the shared copy only.
+			
+	Volatile : A single copy of variable is maintained across the jvm. 1000 threads can be accessing the volatile variable but through a single copy and synchronization.
+				volatile declaration makes sure that threads won't cache the data and uses the shared copy only.
+	

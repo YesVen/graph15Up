@@ -6,8 +6,9 @@ As an alternative when everyone is struggling with heavy weight EJBs
 
 Advantages:
 		code in POJOS
-		Dependancy injection (IoC)
+		Dependency injection (IoC)
 		Lightweight
+		Plug and play due to modularity(AOP,MVC,Security etc)
 		
 IoC is a general concept and it can be implemented in multiple ways. DI is just a flavour of IoC.
 IoC says , "The application controls the framework, not the framework controls the application".
@@ -44,14 +45,18 @@ Dependency Injection Mechanisms :
 	
 Bean Scopes : 
 	Singleton :		Only one instance of bean per Spring Container. Its Default.
-	
+					e.g. connection to a database
+					
 	Prototype :		New instance everytime a bean is requested		
-	
+					e.g. 
+		
 	Request	  :		Single instance of bean per http request
 					As soon as request completes, bean will be out of scope and garbage collected.
 					
+					
 	Session	  :		Single bean instance per http session
 					As soon as user ends its session, bean is out of scope.
+					e.g.User authenticated session.
 					
 	Global Session : 	Single bean instance per Global http session.
 						Global-session is a little different in sense that it is used when application is portlet based. In portlets, there will be many applications inside a big application and a bean with scope of ‘global-session’ will have only one instance for a global user session.
@@ -64,7 +69,7 @@ XML Based Configuration	:
 		autowire-candidate : We can exclude a bean from auto wiring by making this false.
 		scope
 		primary
-		init-methods
+		init-method
 		destroy method
 		factory-bean
 		factory-method
@@ -81,11 +86,21 @@ Bean Post Processing :
 			Implement BeanPostProcessor interface
 			it has postProcessBeforeIntialization() and postProcessAfterInitiliazation()
 
-
+Inner Beans : In Spring framework, whenever a bean is used for only one particular property, it’s advise to declare it as an inner bean.
+			   Like Inner classes are the classes which are defined inside the scope of another class. Similarly inner beans are the beans which are defined in the scope of another bean.
+			   
+			   e.g.
+			   <bean id=”outer_bean” class=”OuterBean”>
+				  <property name=”innerbean” id="innerbean">
+					   <bean  class=”InnerBean”/>
+				  </property>
+				</bean>
+			  Here, innerbean will be available only to the bean in which it is defined. Spring container will just ignore id/name properties of bean.
+			
 Autowiring Modes : 
 			No 			:	No wiring at all
 			byName		:	wiring by name of property
-			byType		:	Exactly one bean of type should be present else Fatal Error will be thrown
+			byType		:	Exactly one bean of type should be present else Fatal Error will be thrown.
 			constructor	:	By type but matching constructor is required
 			autodetect	:	?
 			

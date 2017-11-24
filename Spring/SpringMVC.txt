@@ -42,7 +42,8 @@ In annotation based configuration, we don't require handler mapping as we can di
 @ExceptionHandler
 		This is used for exception handling in a controller and its default scope is limited to one controller. Means we have to add exception handlers for each and every controller separately.
 		To make it applicable across the controllers use @ControllerAdvice
-
+		e.g.
+		
 @ControllerAdvice
 		It is common place to write the advices for all the controllers in the system.
 		e.g. If we want a exception handling method to applied to all the controllers in the system then use this annotation
