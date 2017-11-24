@@ -322,8 +322,18 @@ Northern Trust :
 	can a variable be final and volatile ?
 		volatile only has relevance to modifications of the variable itself, not the object it refers to. It makes no sense to have a final volatile field because final fields cannot be modified. Just declare the field final and it should be fine.
 	
+	how to add dependency of other modules in npm ?
+	
+	what is package.json?
+	
+	Jmeter? ---- do some hands on
+	
+	XSS and CSRF?
+	
+	
 Accenture :
-	general example of asynchronous calls - HE told me about setTimeout and setInterval
+	General example of asynchronous calls - He told me about setTimeout and setInterval
+	
 	
 	
 Incedo	:
