@@ -17,4 +17,81 @@ Terms :
 Commands : 
 	mvn archetype:generate  -> Download all required plugins maven needs to function efficiently.
 	mvn compile -> 
-	mvn package ->
+	mvn package -> 
+	
+
+Maven Lifecycle Default phases :
+Validate : Check pom.xml is present or not. Check for dependencies required for running maven.
+Compile : Project compilation. target folder generation.
+Test : run test cases under test folder
+Package : package code in jar/war/ear.	
+Installing : Its not deploying on server. Its about storing package under local .m2 repo so that other projects has this dependency on his package, 
+			 it can be used easily
+Deploying : its not deploying to server in this phase. Once a package is created you mat want to publish it to remote site where other users want to use the 
+            latest package that you created.
+
+
+You can target any of the above phases like mvn compile, mvn package etc.
+It will automatiacally run all its previous phases
+mvn package will automatically run validate, test, compile and package.			
+			
+			
+mvn clean : It clean maven directory by deleting all generated content like target folder, jars etc.
+
+Dependency : 
+	It has 4 co-ordinates. GroupId, ArtifactId, vrsion and scope.
+	Out of these G A V and mandatory where as scope is optional (default is compile scope...meaning this dependency is available at compile time only)
+	
+	
+	
+Scopes of dependency:
+		test
+		compile
+		provided
+		
+		
+Maven architecture is based on plugins. A lot of plugins come together to deliver solid end user experience. Maven allows us to play with those plugins and modify their default behaviour.
+e.g. By default maven uses maven-comoiler-plugin when we run mvn compile command.
+	 We can alter the version of the plugin maven should use.
+	 Using build tag
+		<build>
+			<plugins>
+				<plugin>
+					<groupid>org.maven.plugins</groupid>
+					<artifactid>maven-compiler-plugin</artifactid>
+					<configuration>
+						<source>1.4</source>
+						<target>1.4</target>
+					</configuration>	
+				</plugin>
+				<plugin>
+					write all customizations you want to have for this plugin
+				</plugin>
+				<plugin>
+					write all customizations you want to have for this plugin
+				</plugin>
+			</plugins>
+		</build>
+	 
+	 
+mvn clean  compile : You can issue a command like this as well.
+					 it will combine clean and compile both one after the other.
+					 
+					 
+
+			
+Jetty Plugin : Its a lightweight container that can be configured using maven. It comes as a plugin which we can configure in maven. 
+				Then we can use "mvn jetty:run"  command to deploy our application on jetty container.
+				no need to install/configure tomcat.
+				
+You can convert any arbitrary folder into a eclipse project by using eclipse plugin of maven.
+(Eclipse has a mven plugin and maven has a eclipse plugin)
+just to to your maven project and run mvn eclipse:eclipse.
+Maven will automatically add .project, .classpath etc files to folder.
+Update : Seems maven no longer has maven-eclipse-plugin plugin.
+			
+			
+			
+			
+			
+			
