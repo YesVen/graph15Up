@@ -36,7 +36,8 @@ It will automatiacally run all its previous phases
 mvn package will automatically run validate, test, compile and package.			
 			
 			
-mvn clean : It clean maven directory by deleting all generated content like target folder, jars etc.
+mvn clean : Cleans up artifacts that are created by prior builds.
+			It clean maven directory by deleting all generated content like target folder, jars etc.
 
 Dependency : 
 	It has 4 co-ordinates. GroupId, ArtifactId, vrsion and scope.
@@ -45,10 +46,12 @@ Dependency :
 	
 	
 Scopes of dependency:
-		test
-		compile
-		provided
-		
+		test : Dependency is needed at test compile and execution time.
+		compile : Default scope.  Dependency is needed at compile time.
+		provided : Indicates dependency is provided by underlying env like jdk, container or web server.
+		Runtime : Dependency is needed at run time.
+		System : Indicates this dependency has to be provided system path
+		Import
 		
 Maven architecture is based on plugins. A lot of plugins come together to deliver solid end user experience. Maven allows us to play with those plugins and modify their default behaviour.
 e.g. By default maven uses maven-comoiler-plugin when we run mvn compile command.
@@ -90,8 +93,29 @@ just to to your maven project and run mvn eclipse:eclipse.
 Maven will automatically add .project, .classpath etc files to folder.
 Update : Seems maven no longer has maven-eclipse-plugin plugin.
 			
-			
-			
+
+Dynamic Properties :
+	You can define properties in <properties> tag.
+	They can be defined later in any tag.
+	
+	<properties>									
+		<java.version>1.8</java.version>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+	It can be used later as,
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${junit.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	
+	
+Maven Profiles : ?
+
+How to exclude dependency?
 			
 			
 			
