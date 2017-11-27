@@ -25,9 +25,9 @@ Validate : Check pom.xml is present or not. Check for dependencies required for 
 Compile : Project compilation. target folder generation.
 Test : run test cases under test folder
 Package : package code in jar/war/ear.	
-Installing : Its not deploying on server. Its about storing package under local .m2 repo so that other projects has this dependency on his package, 
+Install : Its not deploying on server. Its about storing package under local .m2 repo so that other projects has this dependency on his package, 
 			 it can be used easily
-Deploying : its not deploying to server in this phase. Once a package is created you mat want to publish it to remote site where other users want to use the 
+Deploy : its not deploying to server in this phase. Once a package is created you mat want to publish it to remote site where other users want to use the 
             latest package that you created.
 
 
@@ -81,7 +81,7 @@ mvn clean  compile : You can issue a command like this as well.
 					 it will combine clean and compile both one after the other.
 					 
 					 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 			
 Jetty Plugin : Its a lightweight container that can be configured using maven. It comes as a plugin which we can configure in maven. 
 				Then we can use "mvn jetty:run"  command to deploy our application on jetty container.
@@ -93,7 +93,8 @@ just to to your maven project and run mvn eclipse:eclipse.
 Maven will automatically add .project, .classpath etc files to folder.
 Update : Seems maven no longer has maven-eclipse-plugin plugin.
 			
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			
 Dynamic Properties :
 	You can define properties in <properties> tag.
 	They can be defined later in any tag.
@@ -111,11 +112,34 @@ Dynamic Properties :
 		<scope>test</scope>
 	</dependency>
 	
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Settings.xml : 
+		maven has certain settings files by using which it does its processing. We can update those files to alter default behavior of maven.
+		
+		
+		Global Settings : These settings are applicable to all users of maven on a machine. 
+						  It resides at maven path D:\mvn\apache-maven-3.5.2-bin\apache-maven-3.5.2\conf\settings.xml
+						  
+		User Settings : This setting file is located at user directory at C:\Users\dbe1\.m2\settings.xml.
+						This setting is applicable to only dbe1 user.
+				
+		both files are optional.
+		They hold critical information that maven needs like,
+			profiles : sit-test, uat-test, prod etc.
+			mirrors : This is a list of mirrors to be used in downloading artifacts from remote repositories.
+			proxies: 
+			interactive-mode : true/false
+			offline : true/false
+			localrepository : path to local m2repo
 	
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 Maven Profiles : ?
 
 How to exclude dependency?
 			
-			
-			
+what is snapshot Dependencies ?
+	Snapshot dependencies are dependencies (JAR files) which are under development. Instead of constantly updating the version numbers to get the latest version, you can depend on a snapshot version of the project. Snapshot versions are always downloaded into your local repository for every build, even if a matching snapshot version is already located in your local repository. Always downloading the snapshot dependencies assures that you always have the latest version in your local repository, for every build.
+	
+	You can tell Maven that your project is a snapshot version simply by appending -SNAPSHOT to the version number.
+	<version>1.0-SNAPSHOT</version>
