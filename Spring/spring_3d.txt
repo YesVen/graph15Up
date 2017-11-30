@@ -102,11 +102,12 @@ Autowiring Modes :
 			byName		:	wiring by name of property
 			byType		:	Exactly one bean of type should be present else Fatal Error will be thrown.
 			constructor	:	By type but matching constructor is required
-			autodetect	:	?
+			autodetect	:	By default constructor is used. If not present then byType is used.
 			
 			We can also use it bean classes with annotation @autowired. This annotation can be used on member variable, constructor or setter method.
 			
-			By default autowiring is byType. We can use @Qualifier to resolve the beans if more than one beans of same type are present. 
+			By default autowiring is by Constructor followed by byType. 
+			We can use @Qualifier to resolve the beans if more than one beans of same type are present. 
 			@Qualifier("circleRelatedBean") --- your spring.xml file should have a bean with name="circleRelatedBean"
 			
 			We can exclude a bean from auto wiring by using autowire-candidate=false in bean definition.

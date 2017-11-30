@@ -52,7 +52,7 @@ In annotation based configuration, we don't require handler mapping as we can di
 		USed as replacement of MOdelAndView
 		Jackson jar takes care of conversion of data to ModelAndView Object
 		
-@RestController : Convinient annotation for @Controller and @ResponseBody		
+@RestController : Convenient annotation for @Controller and @ResponseBody		
 
 
 Annotations : 
@@ -66,7 +66,7 @@ Annotations :
 		
 		
 Interceptors : 
-		In Spring we can deifne interceptors by implementing HandlerInterceptorAdapter interface
+		In Spring we can define interceptors by implementing HandlerInterceptorAdapter interface
 		It has three methods
 			preHandle : Called before Handling request by spring controllers
 			postHandle : Called After Handling request by spring controllers. SO it has request, response and ModalAndView objects naturally.
