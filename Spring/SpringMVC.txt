@@ -75,6 +75,10 @@ Interceptors :
 Custom Editors : 
 		We can edit the request parameters before they are handled by spring.
 		implement PropertyEditorSupport class
+		
+		
+What is factory-bean and factory-method setting: ?		
+
 
 
 		

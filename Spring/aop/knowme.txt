@@ -9,7 +9,7 @@ Concern vs Cross Cutting Convern :
 		concern is application specific module (rawmaterial creation, highchart, costing etc) whereas cross cutting concern is aspect that affects entire application like logging.
 
 		
-Join Point
+Join Point : in aop its a method of execution.
 
 
 Pointcut : Predicate expression
@@ -25,7 +25,7 @@ Annotations :
 		@Before : 	Advice to run before join point
 					This cannot prevent join point from being executed
 					
-		@After : 	Advice to run aftter executing join point.
+		@After : 	Advice to run after executing join point.
 					This will executed no matter exception is thrown or not.
 
 		@AfterReturning : Advice to run when join point executes normally
@@ -46,7 +46,7 @@ AspectJ  :
 		Within : 	
 					@Pointcut("within(sweat.like.a.pro.model.Circle)") 				--- all methods witihn Circle class
 					@Pointcut("within(sweat.like.a.pro.model.*)")			 		--- all classes in sweat.like.a.pro.model package
-					@Pointcut("within(sweat.like.a.pro.model..*)")					---	all classes in sweat.like.a.pro.model package nad its subpackages
+					@Pointcut("within(sweat.like.a.pro.model..*)")					---	all classes in sweat.like.a.pro.model package and its subpackages
 					
 					
 		args : 		@Before("args(String)")
@@ -60,7 +60,7 @@ How Spring AOP works?
 		JDK dynamic proxies  requires your target class to implement an interface which a proxy can implement and fake a method call.
 		
 		CGLIb proxy can work with classes too. It creates proxy class as subclass of target class.
-		@See sweat.like.a.pro.myownproxy.DrawApp.java. Its self evedent.
+		@See sweat.like.a.pro.myownproxy.DrawApp.java. Its self evident.
 		
 		
 		

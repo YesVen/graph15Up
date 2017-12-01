@@ -75,12 +75,29 @@ XML Based Configuration	:
 		factory-method
 		autowire
 		parent
+		lazy-init : Makes this bean to be lazily initialised. Default is eager initialization.
+			
+Bean Lifecycle :
+		Init Phase :
+				Spring Container will scan through xml metadata to find bean definition
+				It will create a bean object by reflection API/default constructor
+				Aware Interfaces will Run if defined
+				Bean Post Processor's postProcessBeforeIntialization will be called
+				AfterpropertiesSet method of InitialisingBean interface will run
+				init-method
+		Destruction	Phase :
+				Bean Post Processor's  postProcessAfterInitialization will be called
+				destroy method of DisposableBean will be called
+				destroy-method
+		
+		
 			
 Bean LifeCycle Hooks  : 
 		bean life cycle is maintained by Spring container but spring provides so hooks to play around bean life.
 		xml conf : init-methods and destroy methods
 		annotation : @PostConstruct and	@PreDestroy
 		Aware interfaces : ApplicaionContextAware, ApplicationEventPublisherAware, BeanNameAware, BeanFactoryAware etc.
+		
 		
 Bean Post Processing : 
 			Implement BeanPostProcessor interface

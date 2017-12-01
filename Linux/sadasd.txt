@@ -1,0 +1,73 @@
+
+
+
+
+https://www.tutorialspoint.com/unix/unix-vi-editor.htm
+
+
+
+Killing a process : 
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commands : 
+
+
+Linux bash navigates to the home directory of the user it has logged in with.
+
+man commandname ------- Opens a manual of the command
+	man ls
+	
+clear ---------- clears the terminal
+
+pwd ------------- Display the pathname for the current directory.
+
+touch filename	--------------- Create an empty file with the specified name.	
+
+who ----------	Display who is logged on.
+whoami --------- who are u
+
+whatis commandname ------------this displays single line description of corresponding commandname
+
+grep ------------ search the text in given file
+	e.g. $ grep -i "the" demo_file - Searches "the" word in file demo_file case insensitively
+
+	
+ls -a 	------- list all files under this directory.
+
+vi filename 	---------- open a file with VI editor for sake of modification
+
+find -name 'apparel.jar' -------- Find a file in given directory
+
+
+cp -i /etc/init/* .   ------------copy all files from "/etc/init/*" directory to current directory.
+	. is a special meaning is linux. It means current directory.
+	
+rm -rf * -------- delete all files in current directory.
+		-r : recursive
+		-f : forcefully...not intimation
+		-i : ask before deleting
+		
+cd tab tab -------------list files under this directory
+
+grep -i  -r --color --include *.sh -n "\"OP_INDUSTRY\"" * ------------- This will search for "OP_INDUSTRY" text in all files under current directory and prints result to the output.
+			i : case insensitively
+			r : recursive
+			color : mark the occurences
+			n: print line number
+			include : Search only in specified file formats
+			
+			
+cd -            ------------------			Toggle between the last two directories
+
+
+tail -n N filename.txt ------------- print N number of lines from file filename.txt
+
+
+cat filename ------------- print file on terminal for viewing purpose
+
+
+mkmk -aug &> t.txt
