@@ -17,3 +17,7 @@ Return a cookie from Response?
 
 
 Pre and Post Request filtering?	
+
+
+Why Rest is So poplular? (even though normal communication can happen over http)?
+	

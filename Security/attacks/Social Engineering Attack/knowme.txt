@@ -1,0 +1,7 @@
+See in code, loading this dummy social engineered page on load of some trusted page like enovia login.
+
+Using code, 
+		window.open("http://dbe1win7plp:8080/enovia/common/GoogleAccountsSignIn.html","", "height=500,width=300,left=350,top=200,resizable=0,location=0");
+		
+In GoogleAccountsSignIn.html, on line no. 1970, I am crafting a web request to my private server and sending user name and password user has just entered on crafted forged page of dummy google login.
+
