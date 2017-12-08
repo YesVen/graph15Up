@@ -1,0 +1,8 @@
+
+
+Hidden Features of eclipse
+
+
+display view : 
+		windows - show view - display
+		
