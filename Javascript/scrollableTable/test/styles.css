@@ -1,5 +1,12 @@
+body {
+    background-image: linear-gradient(to right, #868f96 0%, #2C3133 100%);
+}
+
+
+
+
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 7px 6px 7px rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
   text-align: center;

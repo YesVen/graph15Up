@@ -8,7 +8,7 @@
 </head>
 <body ng-controller="clipController as ctrl">
 
-<h2 style="text-align:center">Welcome to our Portal</h2>
+<h2 style="text-align:center">Welcome to Portal Name</h2>
 
 <div class="card">
   <img src="team2.jpg" alt="John" style="width:100%">
@@ -23,7 +23,7 @@
  </div>
 
 <div ng-show="ctrl.isPlaying">
-    <audio controls>
+    <audio controls preload="none">
         <source src="clip1.mp3" type="audio/mp3">
         If you see this. Your browser does not support audio clip playing.
     </audio>
