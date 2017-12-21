@@ -3,6 +3,10 @@
 http://exploringjs.com/es6/ch_overviews.html#overview-entry-about-es6.md
 http://qnimate.com/post-series/ecmascript-6-complete-tutorial/
 
+https://www.youtube.com/watch?v=gVJyJlJOij8&index=2&list=PL4cUxeGkcC9gKfw25slm4CUDUcM_sXdml
+
+
+
 JavaScript is a superset of ECMAScript scripting language. ECMAScript forms the language base for JavaScript, JScript and ActionScript
 
 var vs let vs const
