@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="doctorApp">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body ng-controller="clipController as ctrl">
+
+<h2 style="text-align:center">Welcome to our Portal</h2>
+
+<div class="card">
+  <img src="team2.jpg" alt="John" style="width:100%">
+  <h1>{{ctrl.clip.name}}</h1>
+  <p class="title">{{ctrl.clip.desc}}</p>
+  <p>{{ctrl.clip.cinicName}}</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+
+<div ng-show="ctrl.isPlaying">
+    <audio controls>
+        <source src="clip1.mp3" type="audio/mp3">
+        If you see this. Your browser does not support audio clip playing.
+    </audio>
+</div>    
+     
+    
+ <p>
+     <button ng-click="ctrl.playClip(event)" ng-hide="ctrl.isPlaying">Play Today's Clip</button>
+     <button ng-click="ctrl.stopClip(event)" ng-show="ctrl.isPlaying">Stop Clip</button>
+ </p>
+</div>
+
+</body>
+</html>

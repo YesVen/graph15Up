@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<script src="jquery-2.0.2.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			
+			var adobeColorPoller = (function(){
+				var eventSource = undefined;
+				
+				return {
+					startPolling : function ()
+					{
+						eventSource = new EventSource("http://localhost:8080/enovia/AdobeHTML5Login");
+						console.log("Event attached");
+						return eventSource;
+					},
+
+					onMessage : function (event)
+					{
+						console.log("Yahooooooooooooooooooooo");
+						
+						//eventSource.close();
+						var serverMsg = event.data;
+						if(serverMsg)
+						{
+							if(serverMsg == "Success")
+							{
+								var userChoice = confirm("Do you want to sync colors?");
+
+								if(userChoice == true)
+								{
+									//give call to load colors
+									console.log("Cliking button programatically");
+									$('body').append("<h1>Got Response</h1>");
+								}
+							}
+							else{
+								//alert("Wrong data received from Server for Color Addition");
+								$('body').append("<h4>No Colors Added In Enovia</h4>");
+							}
+						}
+					},
+
+					onConnectionOpen : function ()
+					{
+						console.log("Connection opened");
+					},
+					
+					onErrorInConnection : function(error)
+					{
+						console.log(error)
+						//alert("System Error: Cannot open connection to given url");
+					}
+				}
+			})();
+			
+			var eventSource = adobeColorPoller.startPolling();
+			eventSource.onmessage = adobeColorPoller.onMessage;
+			eventSource.onopen = adobeColorPoller.onConnectionOpen;
+			eventSource.onerror = adobeColorPoller.onErrorInConnection;
+		});
+		
+	</script>
+<title></title>
+</head>
+
+<body >
+	  
+    <input id="loadImage" type="button" value="Load Eolor"/>    
+	
+</body>
+</html>

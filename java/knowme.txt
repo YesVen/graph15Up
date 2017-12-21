@@ -111,18 +111,18 @@ Collection vs Stream
 			Like an Iterator, a new stream must be generated to revisit the same elements of the source			
 			
 			
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Inner Classes
 			
 			
 			
 			
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
 String 
 	it's considered the bad practice to use StringBuffer anymore, because, in almost 99% scenario, you perform string concatenation on the same thread
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Static vs volatile :https://stackoverflow.com/questions/2423622/volatile-vs-static-in-java
 	Static : If a class has variable declared as static, all objects of that class will have the same value of that static variable.
@@ -133,3 +133,9 @@ Static vs volatile :https://stackoverflow.com/questions/2423622/volatile-vs-stat
 	Volatile : A single copy of variable is maintained across the jvm. 1000 threads can be accessing the volatile variable but through a single copy and synchronization.
 				volatile declaration makes sure that threads won't cache the data and uses the shared copy only.
 	
+------------------------------------------------------------------------------------------------------------------------------------------------------	
+How to make tomcat application https?
+https://dzone.com/articles/setting-ssl-tomcat-5-minutes	
+
+https://stackoverflow.com/questions/21157450/how-to-make-a-machine-trust-a-self-signed-java-application
+------------------------------------------------------------------------------------------------------------------------------------------------------
