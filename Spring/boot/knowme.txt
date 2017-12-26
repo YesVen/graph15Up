@@ -1,0 +1,14 @@
+
+Spring Boot : Create stand alone and production ready app that "just run".
+
+It takes lot of burden away from you like,
+	complex bean configuration
+	servlet container configuration
+	etc.
+	
+It follows design style "convention over configuration" as that of maven.
+
+Just create your main method similar to standard java program and run it. It internally spawns a servlet container and run app on it. That too within few seconds.
+
+
+	
