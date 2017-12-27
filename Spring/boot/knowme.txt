@@ -67,7 +67,21 @@ Spring Intializr :
 		its self explanatory.
 		
 		
-Spring Boot CLI  :
+Spring Boot CLI  : This is a less commonly used way to create and develope project.
+		This allows you to write minimalistic code and run your boot app within very short time.
+		Used mostly for demonstration purpose.
+		It require you to write groovy scripts(a java like language) that will act as your controller,service classes.
+		
+
+Spring Tools Suite : This is commona nd easiest way to create spring boot apps.
+		It does what intializr does. It create a boot project, downloads it, unzips it, and adds it as a maven project into your WS.
+		
+		File -> new Spring Starter Project
+		It lets you choose, type of spring project you wanna create and blah blah blah.
+		
+		
+		
+		
 		
 		
 	
