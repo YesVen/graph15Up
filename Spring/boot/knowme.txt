@@ -11,4 +11,79 @@ It follows design style "convention over configuration" as that of maven.
 Just create your main method similar to standard java program and run it. It internally spawns a servlet container and run app on it. That too within few seconds.
 
 
+SpringApplication.run(HelloSpringBoot.class, args);
+This line does all the magic.
+	-Set default configuration (Convention over Configuration)
+	-Starts Spring application context
+	-performs classpath scan
+	-spawn tomcat server
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------	
+To start with you need to add below dependency in pom.xml.
+   		  <parent>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-parent</artifactId>
+			<version>1.4.2.RELEASE</version>
+		  </parent>
+		  
+		 Its a parent maven project created with all required things for a spring boot application keping in mind that most of the developers
+		 would need it.
+		 It again follows convention over configuration.
+		 Thats it, you can start writing spring boot application.
+		 
+		 From this point onwards you can write, web, native, mobile spring application.
+		 If you want to develope a web app,	you can add below dependency.
+		 <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		BILL OF MATERIALS : 
+		Notice here , you cannot add version tag in dependency.
+		Because, parent project already has a configuration to find which version of dependencies are required.
+		e.g. we are using 1.4.2.RELEASE version number for project. It has all things pre-configured. It knows which tomcat version, spring jar versions, etc to use.
+		THis concept is called BILL OF MATERIALS
+---------------------------------------------------------------------------------------------------------------------------------------------------	
+
+Bill of materials?
+
+---------------------------------------------------------------------------------------------------------------------------------------------------	
+
+Why need to spawn a tomcat container?
+	Convenience
+	No need to configure servlet config to run my complex apps. It is automatically done when I run my main class. Or even I can pass that through code.
+	StandAlone app.
+	>>>>>>>> Very useful for microservices architecture.
+	
+	If you want to use any other container then just specify dependency of that container.
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------	
+
+Booting Spring Boot:
+		There are multiple ways in which you can write a spring boot application. Above project created using maven. It is just one flavour of it.
+		
+Spring Intializr :	
+		Its an online tool generate spring boot project. https://start.spring.io
+		its self explanatory.
+		
+		
+Spring Boot CLI  :
+		
+		
+	
+	
+	
+	
+
+
+
+	
+					
+
+		 
+	
+	
+	
+	
+	
 	
