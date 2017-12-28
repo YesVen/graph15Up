@@ -1,0 +1,163 @@
+
+Karma is client side testrunner tool. Developed by node.js team.
+
+Runs on node js.
+
+1.	Install node js from https://nodejs.org/en/
+	it will installed on C:\Program Files\nodejs
+	
+2.	Open command prompt -> 
+	npm install karma -g   .........to install karma on gloabal level
+	npm install karma -cli .........to install karma on local level
+	This will install karma on C:\Users\dbe1\AppData\Roaming\npm\node_modules\karma
+
+2.1	You can install additional plugins needed for karma to run like jasmine,chrome-launcher, karma-brackets -reporter, etc.	
+	
+	
+3.	cmd-> karma init
+	Select options system asks. At end, Config will be file generated at "C:\Users\dbe1\karma.conf.js"
+	cmd will show where it has generated karma.conf.js file. 
+
+4.  cmd-> karma start.
+	this will start karma and open browser if any(specified in init phase as above).
+	
+5.	When you want Karma to auto run test cases when you modify spec file, change "autowatch" to true in karma.conf.js file
+	
+	
+	
+For Brackets - 
+
+1.	Install node js from https://nodejs.org/en/
+	it will installed on C:\Program Files\nodejs
+
+2.	Open command prompt -> 
+	npm install karma -g OR
+	npm install karma@~0.12 -cli ... USe this as karma-brackets plugin wants karma version 0.12.
+
+	This will install karma on C:\Users\dbe1\AppData\Roaming\npm\node_modules\karma
+
+3. 	You can install additional plugins needed for karma to run like jasmine,chrome-launcher, karma-brackets -reporter, etc.
+	cmd-> npm install karma-brackets -reporter ***********
+
+4.	Install Karma extension.
+
+5. 	File->karma settings
+	Provide path to karma executable. This will be a path from which you ran "npm install karma -g" command
+
+6.	File-> start karma Server
+
+7.	Optionally you can connect to external karma server which is not started within brackets.
+
+
+
+
+
+Note : 
+		1.	Make sure karma started on port which doesn't collide with other ports.
+		2.	To get content assist, download Jasmine libraries from https://github.com/jasmine/jasmine/releases and add in lib folder.
+			Include those libraries in script tag.
+		3.	For API guidlines, refer sample test cases written in "D:\Apparel Data\Adobe\HTML5\Mywork\Karma - Jasmine\jasmine-standalone-2.4.0" 
+		
+	
+	
+	
+More information : 
+
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML>npm install karma@~0.12 -cli
+WARN engine karma@0.12.37: wanted: {"node":">=0.8 <=0.12 || >=1 <=2"} (current: {"node":"4.3.1","npm":"2.14.12"})
+npm WARN deprecated graceful-fs@3.0.8: graceful-fs version 3 and before will fail on newer node releases. Please update to graceful-fs@^4.0.0 as soon as possible.
+npm WARN optional dep failed, continuing fsevents@1.0.7
+|
+> ws@0.4.32 install C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\node_modules\karma\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\node_modules\karma\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws>if not defined npm_config_node_gyp (node "C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin\\..\..\node_modules\node-gyp\bin\node-gyp.js" rebuild )  else (node  rebuild )
+karma@0.12.37 node_modules\karma
+├── di@0.0.1
+├── q@1.4.1
+├── graceful-fs@3.0.8
+├── mime@1.3.4
+├── colors@1.1.2
+├── source-map@0.4.4 (amdefine@1.0.0)
+├── useragent@2.1.8 (lru-cache@2.2.4)
+├── minimatch@2.0.10 (brace-expansion@1.1.3)
+├── glob@5.0.15 (path-is-absolute@1.0.0, inherits@2.0.1, once@1.3.3, inflight@1.0.4)
+├── rimraf@2.5.2 (glob@7.0.0)
+├── optimist@0.6.1 (wordwrap@0.0.3, minimist@0.0.10)
+├── log4js@0.6.31 (semver@4.3.6, readable-stream@1.0.33)
+├── chokidar@1.4.2 (path-is-absolute@1.0.0, inherits@2.0.1, async-each@0.1.6, glob-parent@2.0.0, is-binary-path@1.0.1, is-glob@2.0.1, readdirp@2.0.0, anymatch@1.3.0)
+├── http-proxy@0.10.4 (colors@0.6.2, pkginfo@0.3.1, utile@0.2.1)
+├── connect@2.30.2 (cookie@0.1.3, bytes@2.1.0, utils-merge@1.0.0, content-type@1.0.1, pause@0.1.0, on-headers@1.0.1, cookie-signature@1.0.6, fresh@0.3.0, vhost@3.0.2, response-time@2.3.1, parseurl@1.3.1, basic-auth-connect@1.0.0, cookie-parser@1.3.5, depd@1.0.1, qs@4.0.0, method-override@2.3.5, http-errors@1.3.1, debug@2.2.0, serve-favicon@2.3.0, connect-timeout@1.6.2, express-session@1.11.3, finalhandler@0.4.0, morgan@1.6.1, type-is@1.6.11, multiparty@3.3.2, serve-static@1.10.2, errorhandler@1.4.3, compression@1.5.2, csurf@1.8.3, body-parser@1.13.3, serve-index@1.7.3)
+├── lodash@3.10.1
+└── socket.io@0.9.16 (base64id@0.1.0, policyfile@0.0.4, redis@0.7.3, socket.io-client@0.9.16)
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML>npm install karma-brackets -reporter
+
+> ws@0.4.31 install C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\node_modules\karma-brackets\node_modules\socket.io\node_modules\engine.io\node_modules\ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\node_modules\karma-brackets\node_modules\socket.io\node_modules\engine.io\node_modules\ws>if not defined npm_config_node_gyp (node "C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin\\..\..\node_modules\node-gyp\bin\node-gyp.js" rebuild )  else (node  rebuild )
+
+> ws@0.4.31 install C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\node_modules\karma-brackets\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\node_modules\karma-brackets\node_modules\socket.io\node_modules\socket.io-client\node_modules\engine.io-client\node_modules\ws>if not defined npm_config_node_gyp (node "C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin\\..\..\node_modules\node-gyp\bin\node-gyp.js" rebuild )  else (node  rebuild )
+karma-brackets@0.2.1 node_modules\karma-brackets
+└── socket.io@1.0.6 (debug@0.7.4, has-binary-data@0.1.1, engine.io@1.3.1, socket.io-parser@2.2.0, socket.io-adapter@0.2.0, socket.io-client@1.0.6)
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML>karma init
+
+Which testing framework do you want to use ?
+Press tab to list possible options. Enter to move to the next question.
+> jasmine
+
+Do you want to use Require.js ?
+This will add Require.js plugin.
+Press tab to list possible options. Enter to move to the next question.
+> no
+
+Do you want to capture any browsers automatically ?
+Press tab to list possible options. Enter empty string to move to the next question.
+> Chrome
+>
+
+What is the location of your source and test files ?
+You can use glob patterns, eg. "js/*.js" or "test/**/*Spec.js".
+Enter empty string to move to the next question.
+>
+
+Should any of the files included by the previous patterns be excluded ?
+You can use glob patterns, eg. "**/*.swp".
+Enter empty string to move to the next question.
+>
+
+Do you want Karma to watch all the files and run the tests on change ?
+Press tab to list possible options.
+> yes
+
+
+Config file generated at "C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML\karma.conf.js".
+
+
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML>
+C:\Program Files\Adobe\Adobe Illustrator CC 2015\CEP\extensions\Drag From ILST to HTML>karma start
+17 02 2016 18:51:03.916:WARN [reporter]: Can not load "brackets", it is not registered!
+  Perhaps you are missing some plugin?
+17 02 2016 18:51:03.946:WARN [karma]: No captured browser, open http://localhost:9876/
+17 02 2016 18:51:03.976:INFO [karma]: Karma v0.13.21 server started at http://localhost:9876/
+17 02 2016 18:51:03.976:INFO [launcher]: Starting browser Chrome
+17 02 2016 18:51:07.928:INFO [Chrome 48.0.2564 (Windows 7 0.0.0)]: Connected on socket /#g19WAfLjKBtXLf2sAAAA with id 86782779
+Chrome 48.0.2564 (Windows 7 0.0.0): Executed 1 of 1 SUCCESS (0.006 secs / 0.001 secs)
+	
+	
+Below Test is used for - 
+describe("test1", function(){
+		it("should work", function(){
+			expect(true).toBe(true);
+		});
+	}
+);	
