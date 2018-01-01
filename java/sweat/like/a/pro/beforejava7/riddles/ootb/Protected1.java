@@ -5,7 +5,7 @@ import sweat.like.a.pro.beforejava7.riddles.ootb.protect.Landline;
 public class Protected1 {
 	public static void main(String[] args) {
 		Phone p = new Phone();
-		//test method is protected is protected
+		//test method is protected
 		//It is accessible here since its been accessed from same package
 		p.test();
 		

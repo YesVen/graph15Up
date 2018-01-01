@@ -1,6 +1,6 @@
 package sweat.like.a.pro.beforejava7.riddles.collection;
 /**
- * Its interface. Implementing types are navigabelSet Interface and TreeSet Class.
+ * Its interface. Implementing types are navigableSet Interface and TreeSet Class.
  * 
  * Duplicates are not allowed
  * 

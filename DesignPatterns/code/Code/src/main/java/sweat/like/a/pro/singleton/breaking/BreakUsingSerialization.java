@@ -13,6 +13,7 @@ public class BreakUsingSerialization  {
 		SingleTon1 soleInstance1 = SingleTon1.getSoleInstance();
 		System.out.println("hashcode : "+soleInstance1.hashCode());
 		
+		//classic example of adapter pattern
 		FileOutputStream fos = new FileOutputStream("/temp/obj.ser");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		

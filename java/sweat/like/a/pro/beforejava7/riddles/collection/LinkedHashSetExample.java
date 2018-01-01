@@ -4,6 +4,11 @@ package sweat.like.a.pro.beforejava7.riddles.collection;
  * Duplicates are not allowed
  * USed mostly in cache based applications
  * 
+ * Use it when you want to have
+ * 		no duplicates
+ * 		easy insertion and deletion
+ * 		fast retrieval
+ * 
  * @author Nightfury
  *
  */

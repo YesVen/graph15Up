@@ -1,5 +1,5 @@
 A cross-cutting concern is a aspect that can affect the whole application and should be centralized in one location in code as possible. 
-	e.g. Transaction management, Authentication, Logging, Security etc.
+	e.g. Transaction management, Authentication, Logging, Security, Exception Handling etc.
 	
 AspectJ style : Annotation
 XML Style	
@@ -26,7 +26,7 @@ Annotations :
 					This cannot prevent join point from being executed
 					
 		@After : 	Advice to run after executing join point.
-					This will executed no matter exception is thrown or not.
+					This will executed even though exception is thrown.
 
 		@AfterReturning : Advice to run when join point executes normally
 
@@ -63,7 +63,11 @@ How Spring AOP works?
 		@See sweat.like.a.pro.myownproxy.DrawApp.java. Its self evident.
 		
 		
-		
-		
+
+
+
+
+
+
 
 

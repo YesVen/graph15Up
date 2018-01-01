@@ -47,9 +47,11 @@ In annotation based configuration, we don't require handler mapping as we can di
 @ControllerAdvice
 		It is common place to write the advices for all the controllers in the system.
 		e.g. If we want a exception handling method to applied to all the controllers in the system then use this annotation
-		
+
+@RequestBody : It maps incoming input stream to a pojo (provided support).	
+	
 @responseBOdy
-		USed as replacement of MOdelAndView
+		USed as replacement of MOdelAndView. 
 		Jackson jar takes care of conversion of data to ModelAndView Object
 		
 @RestController : Convenient annotation for @Controller and @ResponseBody		
@@ -75,9 +77,11 @@ Interceptors :
 Custom Editors : 
 		We can edit the request parameters before they are handled by spring.
 		implement PropertyEditorSupport class
+		e.g. If you want to prepend "RM-" to raw material name coming from UI. You can implement PropertyEditorSupport interface.
 		
 		
-What is factory-bean and factory-method setting: ?		
+What is factory-bean and factory-method setting: ?	
+		
 
 
 

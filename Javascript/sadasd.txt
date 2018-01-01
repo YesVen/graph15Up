@@ -246,6 +246,8 @@ window.onload vs document.onload
 bind vs call vs apply
 			The function .call() and .apply() are very similar in their usage except a little difference. .call() is used when the number of the function’s arguments are known to the programmer, as they have to be mentioned as arguments in the call statement. On the other hand, .apply() is used when the number is not known. The function .apply() expects the argument to be an array.
 			
+			String.fromCharCode.apply(uintArray); -- code from adobe
+			
 
 Arguments : arguments is a local variable, available inside all functions that provides a collection of all the arguments passed to the function. 
 			arguments is not an array rather an array like object. It has length but doesn't have the methods like forEach, indexOf, etc.

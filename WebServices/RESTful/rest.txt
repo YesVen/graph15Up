@@ -1,7 +1,7 @@
 ROY Fielding
 Representational State Transfer 
 	We are transferring the representation of a resource in form of json,xml,html etc.
-Merely an Architechtural Style
+Merely an Architectural Style
 Services built on the principles of REST are called RESTful web services
 Uses HTTP protocol
 
@@ -9,13 +9,13 @@ Advantages :
 	Lightweight
 	Stateless
 		Doesn't maintain what client has asked before current request?
-		i.e client cannot say, give me account balance of user in last response. server simply dont remember last response.
+		i.e client cannot say, give me account balance of user in last response. server simply don't remember last response.
 	No specification and tight coupling (like WSDL though it has WADL somewhere)
 	Caching mechanism
 	No language/framework barrier cause it can work with any lang and fw.
 	Can work with any data type(due to HTTP)
 	Layered Architecture
-		We can Put an extra middleware layer between client and server which can have different purpose(redirecting, partial response etc). This is called layered architecture
+		We can Put an extra middle-ware layer between client and server which can have different purpose(redirecting, partial response etc). This is called layered architecture
 	
 REST style has a specification JAX-RS
 SOAP style has a specification JAX-WS
@@ -94,6 +94,14 @@ IF method produces more than one type of data, then what type to return is decid
 
 Rest Client
 
+
+We can create variables in class like below. Advantage is that you don't need to map them in each and every method. They will be available directly. 
+	@Context UriInfo info;
+	@Context HttpHeaders headers
+@see : graph15Up\WebServices\RESTful\advancedjaxrs\sweat\like\pro\three\MyResource.java	
+
+
+
 Rest Filters
 	ContainerRequestFilter
 	ContainerResponseFilter
@@ -105,7 +113,7 @@ Rest Authentication Using ContainerResponseFilter
 Rest Interceptor
 
 Interceptor vs Filter
-	Filter : Designed to manipulate meta-data i.e. headers, URI etc
+	Filter : Designed to manipulate meta-data i.e. headers, URI etc. 
 	Interceptor : Designed to manipulate the input and output streams i.e. body
 
 Difference between MessagebodyWriter and Interceptors??????????????	
@@ -196,5 +204,5 @@ API Documentation :
 		JAXRS-ANALYZER uses byte code analysis to create API documentation for java based RESTful projects in Plaintext, Swagger and AsciiDoc formats.
 		By using bytecode analysis, there is no need to use any annotation or do any additional coding in the project to use this tool. Analyzer could be used as maven plug-in 
 		or as a standalone tool.
-			
+While there tools are used for human redable PI docs, we still can use tools that create WADL. WADL can then fed to other tools that can generate API docs for your rest project.
 													

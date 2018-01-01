@@ -8,7 +8,8 @@ public class DrawingExample3 {
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("lifecycle.xml");
 		
 		/*
-		 * This is required for calling destroy method of triangle bean
+		 * This is required for calling destroy method of triangle bean.
+		 * When springs shuts down app context, beans will be destroyed and destroy method will be called
 		 */
 		context.registerShutdownHook();
 		

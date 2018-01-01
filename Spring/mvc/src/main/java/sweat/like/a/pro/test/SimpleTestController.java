@@ -21,10 +21,12 @@ public class SimpleTestController {
 			return new ModelAndView("ssSdsdsdd");
 		}
 		ModelAndView m = new ModelAndView();
-		m.setViewName("/dasdasddsad");//Has to be resolved by view esolver
+		m.setViewName("/dasdasddsad");//Has to be resolved by view resolver
 		
 		m.addObject("asaS", "SASSD");
 		
 		return m;
 	}
+	
+	
 }

@@ -8,4 +8,7 @@
 		<property name="type" value="equilateral">
 		</property>
 	</bean>
+	
 </beans>
+
+

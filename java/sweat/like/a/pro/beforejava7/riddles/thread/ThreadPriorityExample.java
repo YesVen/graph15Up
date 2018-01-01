@@ -40,7 +40,7 @@ public class ThreadPriorityExample {
 		t2.start();
 		
 		/*
-		 * Not we can set Max priority to thread group but not to thread
+		 * Note we can set Max priority to thread group but not to thread
 		 * Threads inherits the priority from thread its group.
 		 * 
 		 * 

@@ -16,7 +16,7 @@ Even if you remove spring itself from the equation, your application still is de
 
 
 When to use xml configuration and when to use annotation configuration?
-	one of the major disadvantage of annotation based aop is that it required your classes to be rebuild and it it turn involves rebuild, redeploy and restart server. So its advisible to use annotation based aop only when you are not making too much changes in your configuration.
+	one of the major disadvantage of annotation based aop is that it required your classes to be rebuild and in it turn involves rebuild, redeploy and restart server. So its advisable to use annotation based aop only when you are not making too much changes in your configuration.
 	On other hand, xml based configuration is pretty hard to handle and creates a confusion. So need to make a concious decision.
 	
 	However, people still feel to go with more xml based approach. Because it gives you a full view of your application beans and dependencies in one shot.
@@ -47,7 +47,7 @@ Bean Scopes :
 	Singleton :		Only one instance of bean per Spring Container. Its Default.
 					e.g. connection to a database
 					
-	Prototype :		New instance everytime a bean is requested		
+	Prototype :		New instance every time a bean is requested		
 					e.g. 
 		
 	Request	  :		Single instance of bean per http request
@@ -64,7 +64,7 @@ Bean Scopes :
 	e.g. 	<bean id="demoBean" class="com.howtodoinjava.application.web.DemoBean" scope="session" />
 			@Scope("session") -- on a bean class
 
-XML Based Configuration	:
+XML Based Configuration	Properties:
 		abstract
 		autowire-candidate : We can exclude a bean from auto wiring by making this false.
 		scope
@@ -76,6 +76,7 @@ XML Based Configuration	:
 		autowire
 		parent
 		lazy-init : Makes this bean to be lazily initialised. Default is eager initialization.
+			
 			
 Bean Lifecycle :
 		Init Phase :
@@ -121,7 +122,7 @@ Autowiring Modes :
 			constructor	:	By type but matching constructor is required
 			autodetect	:	By default constructor is used. If not present then byType is used.
 			
-			We can also use it bean classes with annotation @autowired. This annotation can be used on member variable, constructor or setter method.
+			We can also use it on bean classes with annotation @autowired. This annotation can be used on member variable, constructor or setter method.
 			
 			By default autowiring is by Constructor followed by byType. 
 			We can use @Qualifier to resolve the beans if more than one beans of same type are present. 
@@ -187,7 +188,10 @@ Stereotype Annotations :
 					 
 					 
 		
-
+Spring does eager initialization of beans. If you want to convey that defer initilization intil requested, then use
+		default-lazy-init on beans tag OR
+		lazy-init on bean tag
+		
 
 
 

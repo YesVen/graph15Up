@@ -21,6 +21,8 @@ public class UriInfoExample1
 	/*
 	 * USe URL : http://localhost:8080/RESTful/uriinfo;name=dnyanesh;empid=102638;name=ashu/test/go?abd=tesy
 	 * 
+	 * Note use of matrix params here.
+	 * 
 	 */
 	@GET
 	@Path("/test1")

@@ -1,7 +1,7 @@
 package sweat.like.a.pro.beforejava7.riddles.thread;
 
 /**
- *	Threads have priority between 1 -10
+ *	Threads have priority between 1 - 10
  *	Attempt to set it above 10 will give IllegalArgumentException 
  * 
  *	Main thread priority is 5.

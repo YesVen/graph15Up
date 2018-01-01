@@ -19,7 +19,7 @@ import sweat.like.a.pro.model.RawMaterial;
 
 /*
  * This is a convenience annotation that is itself annotated with @Controller and @ResponseBody.
- * i.e. We dont need to explicitely add @Controller and @ResponseBody.
+ * i.e. We don't need to explicitly add @Controller and @ResponseBody.
  */
 @RestController
 public class SimpleRestController 

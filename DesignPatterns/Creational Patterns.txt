@@ -11,7 +11,7 @@ SingleTon
 	Why Synchronised keyword cannot be used on getInstance()
 	Why we cant move synchronized inside method?
 	Why double checked lock is required ? Problem with double checking?
-	Final Solution : make instance private static volatile
+	Final Solution : make instance private static volatile and use DCM.
 	Inner class to initialise object
 	
 	Josh Bloch : Use enum to create singleton as it OOTB provides Reflection safety, thread safety, cloning safety, serialization safety for object.
@@ -37,7 +37,7 @@ Factory Method :
 			This us used when we want some kind of generic implementation in factory and let subclasses override any behaviour if they want.
 			e.g. Computer factory is creating computers with default CRT monitors. If you want to create computer with LCD monitor, please override method for getting monitor.
 				Thats factory method design pattern.
-				Note : we can keep factory method abstract(system dont know default monitor type) of concrete(system makes CRT monitor be default) both. Its your choice. 
+				Note : we can keep factory method abstract(system dont know default monitor type) or concrete(system makes CRT monitor be default) both. Its your choice. 
 
 			Book definition : Defines an interface for creating an object, but let's the classes that implement the interface decide which class to instantiate. The Factory method lets a class defer instantiation to subclasses.
 			
@@ -64,9 +64,8 @@ Prototype : Creational
 			
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------			
 Singleton : System, Runtime
-Factory : Spring Bean Factory
+Factory : ThreadFactory, Spring Bean Factory
 Builder : StringBuilder
-Strategy : Collection.sort()
 Adapter : FileInputStream, Arrays class
 Prototype : Object Class clone method
 Decorator : Collections.getUnModifiableList, Collections.getSynchronizedMap. Decorators in angular 4
@@ -74,10 +73,17 @@ Chain Of Responsibility : Servlet doFilter
 Command : Runnable
 Mediator : ExecuterService, AdobeUtil
 Observer : Observer, Observable
-Strategy : Comparator
+Strategy : Comparator strategy in Collection.sort()
 
 			
-			
+Which Design Patterns have you used?
+	SingleTon : 
+	Factory :
+	Builder :
+	Adapter : WE are multilayered app stack. Eng central sends data to Apparel central which needs to be adapted to CG env.
+	
+	
+	
 			
 			
 			

@@ -2,6 +2,7 @@ package sweat.like.a.pro.myownproxy;
 
 public class ComputerProxy extends Computer
 {
+	@Override
 	public void start(){
 		
 		//I can inject a code here which will act like a @before annotation in AOP

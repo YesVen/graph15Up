@@ -26,7 +26,7 @@ To start with you need to add below dependency in pom.xml.
 			<version>1.4.2.RELEASE</version>
 		  </parent>
 		  
-		 Its a parent maven project created with all required things for a spring boot application keping in mind that most of the developers
+		 Its a parent maven project created with all required things for a spring boot application keeping in mind that most of the developers
 		 would need it.
 		 It again follows convention over configuration.
 		 Thats it, you can start writing spring boot application.

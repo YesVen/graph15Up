@@ -6,14 +6,14 @@ Single Responsibility Principle
 		A class should be assigned a single responsibility.
 		When you feeling like class is handling too a different responsibility than what it has designed for, you are violating a SRP principle.
 
-		
+		e.g.
 		
 		
 		
 Open close Principal
 		A class should be open for extension and closed for modification.
 
-		
+		e.g. 
 		
 		
 Liskov Substitution Principal
@@ -53,7 +53,7 @@ Dependency Injection Principal
 			
 		
 Coding to Interfaces : 
-		We must write a code fulfill interfaces because ultimately they are contract which we have to adhere to.
+		We must write a code fulfil interfaces because ultimately they are contract which we have to adhere to.
 		
 		e.g. If we have a IBird interface and we have written an implementation of it in class say MyBirdWorld. 
 		Here in this class, If I write method "public mybirdworkd createbird()".
@@ -61,4 +61,8 @@ Coding to Interfaces :
 		So reframe your method as,
 				public Bird createbird()
 				
-				
+		You may say here that, I can modify the signature of createBird method and live with it. But my dear friend, this method might be used internally 
+		at so many places and to make it even worse, this API might be exposed on the internet and 1000s of apps are using it. You certainly don't want all apps come screaming at you.
+		
+		
+		

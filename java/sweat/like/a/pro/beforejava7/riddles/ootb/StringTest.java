@@ -7,6 +7,7 @@ package sweat.like.a.pro.beforejava7.riddles.ootb;
  * 
  * If we use new operator to create string object, new object will be created on heap.
  * 
+ * IMP : 
  * For literal notation, java checks if same object is being referenced from String pool if yes, 
  * it returns the reference to already created object
  */
