@@ -1,0 +1,5 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts]
+"Segoe Print (TrueType)"="consola.ttf"
+"Segoe Print Bold (TrueType)"="consolab.ttf"
