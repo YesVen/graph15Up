@@ -83,6 +83,12 @@ Spring Tools Suite : This is commona nd easiest way to create spring boot apps.
 		
 @SpringBootApplication : This is convinience annotation for @Configuration @EnableAutoConfiguration @ComponentScan		
 		
+Securing your application
+https://spring.io/guides/gs/securing-web/
+
+Spring boot in one shot - explained very good
+https://www.dineshonjava.com/introduction-to-spring-boot-a-spring-boot-complete-guide/		
+		
 		
 		
 		
