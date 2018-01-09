@@ -1,0 +1,12 @@
+
+frustration with monolithic applications
+
+Create your application as a suite of services instead of one tightly coupled monolith of code, and it's easier to change and maintain
+
+e.g. If BPS has some jars and all other apps are using those jars to do their stuff. Now tomorow BPS found one bug which is very critical.
+How would other apps incorporate the fix?
+      take corrected jar, replace it in package, restart server.
+      This would create a havoc as all the apps depending on the BPS jar need to redeployed. Consumers of those apps would not like it.
+      Born is the Microservices architecture.
+      
+      
