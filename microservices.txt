@@ -9,4 +9,7 @@ How would other apps incorporate the fix?
       This would create a havoc as all the apps depending on the BPS jar need to redeployed. Consumers of those apps would not like it.
       Born is the Microservices architecture.
       
-      
+microservices architecture : A technique that breaks large applications into lightweight apps that can be scaled horizontally.      
+
+Applications are built as a collection of different smaller services rather than one whole app. Instead of a monolithic app, you have several independent applications that can run on their own and may be created using different coding or programming languages. Big and complicated applications can be made up of simpler and independent programs that are executable by themselves. These smaller programs are grouped together to deliver all the functionalities of the big, monolithic app.
+All applications that form one big app can grow independently hence micriservices are scalable.
