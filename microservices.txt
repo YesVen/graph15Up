@@ -21,5 +21,12 @@ https://docs.microsoft.com/en-us/java/azure/spring-framework/deploy-spring-boot-
 This is by far most impostant link for hands on.
 Step by step info..how to create and delopy web app on azure
 https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-java
+https://docs.microsoft.com/en-in/azure/
+https://docs.microsoft.com/en-in/azure/#pivot=architecture
 
+Learning Playlist with hands on
+https://azure.microsoft.com/en-in/training/
+
+Trainings Webinars videos code samples and much more............>>>>>>>>>>>>>>>>>>>>
+https://azure.microsoft.com/en-in/resources/
 
