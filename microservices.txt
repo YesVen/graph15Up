@@ -18,4 +18,8 @@ All applications that form one big app can grow independently hence micriservice
 How to create a service on azure and deploy a spring boot app.
 https://docs.microsoft.com/en-us/java/azure/spring-framework/deploy-spring-boot-java-web-app-on-azure
 
+This is by far most impostant link for hands on.
+Step by step info..how to create and delopy web app on azure
+https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-java
+
 
