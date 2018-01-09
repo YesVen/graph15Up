@@ -337,5 +337,8 @@ Accenture :
 	
 	
 Incedo	:
-		
+	
+	
+Performace tuning of java apps : https://stackify.com/java-performance/	
+	
 	
