@@ -1,4 +1,11 @@
 What is Docker?
 
 https://jonnylangefeld.github.io/learning/Docker/How%2Bto%2BDocker.html
+https://docs.docker.com/docker-for-azure/why/
+
+https://docs.microsoft.com/en-us/java/azure/eclipse/azure-toolkit-for-eclipse-publish-as-docker-container
+
+https://docs.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-rest-api
+
+https://www.youtube.com/watch?v=YCrRy7pBzdc&list=PLhW3qG5bs-L99pQsZ74f-LC-tOEsBp2rK&index=3
 
