@@ -19,3 +19,6 @@ Atom Settings and extensions :
 				language typescript grammer only
 				atom-ide-ui
 				ide-typescript
+				
+				
+See Atom Screen Recorder package >>>>>>>>>> Its intersting				
