@@ -69,7 +69,7 @@ Builder : StringBuilder
 Strategy : Collection.sort()
 Adapter : FileInputStream, Arrays class
 Prototype : Object Class clone method
-Decorator : Collections.getUnModifiableList, Collections.getSynchronizedMap
+Decorator : Collections.getUnModifiableList, Collections.getSynchronizedMap. Decorators in angular 4
 Chain Of Responsibility : Servlet doFilter
 Command : Runnable
 Mediator : ExecuterService, AdobeUtil
