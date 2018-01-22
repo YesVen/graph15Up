@@ -1,1 +1,5 @@
-hi
+
+
+inline if else in *ngIf directive (ng-template)
+
+
