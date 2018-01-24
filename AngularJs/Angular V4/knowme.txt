@@ -3,3 +3,6 @@
 inline if else in *ngIf directive (ng-template)
 
 
+Guard : If you want to restrict user from randomly hitting sections of your website to which he might not have access to then yo can go ahead with guard.
+
+
