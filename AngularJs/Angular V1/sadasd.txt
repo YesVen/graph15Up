@@ -251,7 +251,7 @@ What is IFFE : Immediately Invoked Function Expression.
 
 						
 				How to access a property out of IIFE?
-						The property neeed to be passed to an iife(Ultimately its a function. We can pass data toa function.)
+						The property need to be passed to an iife(Ultimately its a function. We can pass data to a function.)
 						(function(window){
 							//code goes here
 						})(window);
@@ -350,6 +350,7 @@ ng-view :   Applications can only have one ng-view directive, and this will be t
 
 				
 Routing : 	This is a application configuration mechanism  with which we can control how pages are loaded within application.
+			This feature is extremely useful to build SPA.
 			We can map the urls to the actual view templates using routing.
 		  	Events
 				$routeChangStart
@@ -427,7 +428,7 @@ At certain places angular js returns a jquery element such as in postlink functi
 
 
 Watchers : 	This is core service used by angular internally to keep track of changes in the scope variables.
-			Not for each scope variable $watch is create automatically, but how many data binding exist in view.
+			>>>> Not for each scope variable $watch is create automatically, but how many data binding exist in view.
 			Every variable in scope doesnt have a watch associated with it. It has to be bound with the view. Only then watch will be created for that scope variable.
 			
 			At a time any number of watchers may exist but angular suggests watchers count < 2000

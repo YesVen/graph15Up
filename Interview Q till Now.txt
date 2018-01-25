@@ -59,7 +59,7 @@ AngularJs
 			//code to be executes irrespective of error or success
 		});
 			
-		It has somme other methods as well.
+		It has some other methods as well.
 		$q.all() -> Used when we are dealing with many async calls and we want to resolve all of them in one go. This is mainly used in scenarios where we are able to
 			constructing a view only and only after all async calls are resolved.
 			https://www.youtube.com/watch?v=104J7_HyaG4 -- beautiful explained
