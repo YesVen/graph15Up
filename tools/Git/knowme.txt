@@ -8,3 +8,57 @@ Easy to learn git basics on the go : https://try.github.io/levels/1/challenges/2
 	
 	
 Full lessons for git : http://gitreal.codeschool.com/?utm_source=github&utm_medium=codeschool_option&utm_campaign=trygit	
+
+
+
+
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+git init
+		create hidden .git folder
+
+
+git clone repoURL
+
+git status
+
+git add
+
+git checkout -b branch_name
+		Create new Branch : git checkout is a command you’ll use a lot, to switch between branches.
+
+git commit	-m "Some Message"	
+		
+git pull
+		Once you switch to some branch, you need to pull code from that branch into your current directory.
+		
+git branch	
+		List all branches in current repo.
+		
+git branch branch_name
+		Create new branch branch_name	
+		
+git branch -d branch_name
+		Delete a branch
+		
+git rebase
+
+git merge origin/az-porting -m "some message"
+		Merges changes of az-porting with current branch you are on.
+	
+git log	
+
+git reset filename
+	Unstage files	
+	
+git rm "*.text"	
+	Remove all txt files
+	
+	
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+
+
+
+	

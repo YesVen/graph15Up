@@ -1,0 +1,36 @@
+Function : 
+		Serveless Architechture
+		
+Service Fabric :
+
+
+Container Service : 
+
+
+Event Hub :
+		This guy is used in scenarios where there are millions of senders and billions of listeners to it. IT is fast, scalable and robust just like kafka.
+		Get started sending events and Get started receiving events using the Event Processor Host   https://github.com/Azure/azure-event-hubs/tree/master/samples
+	
+
+Kafka : 
+		Its a highly scalable robust and impressively fast queing service where we can send data and interested listeners can listen to it.
+		We can send data using toping and only those listeners which are listening on that topic will get that published data.
+			
+			
+Service Bus : 
+		Its a publisher-subscriber mechanism of the cloud.
+		Data can be sent-received in two formats.
+				Queue : Ony one sender and one receiver.
+				Topic : One sender and many receivers of the same sent data.
+				Relay : ?	
+		Event hub vs Sevice Bus : http://microsoftintegration.guru/2015/03/03/azure-event-hubs-vs-azure-messaging/
+		
+App Service Env : 
+		A fully isolated and dedicated environment for securely running App services.
+		
+		
+CosmosDB : 
+		
+	
+	
+	
