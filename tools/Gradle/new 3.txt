@@ -1,0 +1,8 @@
+
+Its a channel for communication between seervices
+It can create 
+	Queue
+	Relay
+	Topic
+	
+	

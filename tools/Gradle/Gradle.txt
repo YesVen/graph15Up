@@ -1,0 +1,20 @@
+OPen your project root folder and run "gradle wrapper"
+This will install wrapper to you.(Adds few jar and a gradlew.bat file in your project root)
+
+later you can run normal gradle commands using gradlew
+e.g. gradlew clean build
+
+
+gradle tasks
+
+gradle build
+
+gradle clean build
+
+gradle properties
+
+-q flag is used to supress gradle lifecycle messages from being printed on console.
+
+Run build without running tests : gradle build -x test
+
+gradlew clean build -x test -x check
