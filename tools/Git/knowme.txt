@@ -3,3 +3,8 @@ Readme file formatting
 	
 Readme File Emoji cheatsheet
 	https://www.webpagefx.com/tools/emoji-cheat-sheet/	
+	
+Easy to learn git basics on the go : https://try.github.io/levels/1/challenges/25 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IMP
+	
+	
+Full lessons for git : http://gitreal.codeschool.com/?utm_source=github&utm_medium=codeschool_option&utm_campaign=trygit	
