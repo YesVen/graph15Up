@@ -55,10 +55,30 @@ git reset filename
 git rm "*.text"	
 	Remove all txt files
 	
-	
+git stash
+	When you have a local modifications and you want to pull latest code. Same Latest files have been modified as that of your files.
+	So pull will not work. You need to stash changes now. Stashing will create a local copy of yur changes. Now git pull work as if you dont have any local changes.
+	Once pull succeeds, you can pop your stashed chages back using "git stash pop".
+	git stash pop : brings back stashed changes.
+
+
+
 ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
 
+Git Eclipse :
+	Git Reset : In History view, you can select a commit and reset your branch to that view.
 
+Local Git Repository :
+	When it becomes cumbersome to maintain your files even when you are not using github. You can use local git repo to track your files and changes.
+	This problem I had in 3d
+	Open Git Repo view --> look for icon to create new local git repo.
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+Git Bash Shortcuts :
+ctrl + L : clear console
+
+ctrl + d : exit console
 
 
 	

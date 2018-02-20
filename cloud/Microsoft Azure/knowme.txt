@@ -25,12 +25,17 @@ Service Bus :
 				Relay : ?	
 		Event hub vs Sevice Bus : http://microsoftintegration.guru/2015/03/03/azure-event-hubs-vs-azure-messaging/
 		
+		Git Code Samples : https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus   ------ How to send and receive messsage 
+						   https://github.com/Azure-Samples/service-bus-java-manage-publish-subscribe-with-basic-features	----- Service bus management APIs
+		
+		
 App Service Env : 
 		A fully isolated and dedicated environment for securely running App services.
 		
 		
 CosmosDB : 
 		
-	
+
+		
 	
 	
