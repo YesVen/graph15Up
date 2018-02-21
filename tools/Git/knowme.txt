@@ -49,7 +49,7 @@ git merge origin/az-porting -m "some message"
 	
 git log	
 
-git reset filename
+git reset filename	
 	Unstage files	
 	
 git rm "*.text"	
@@ -59,7 +59,21 @@ git stash
 	When you have a local modifications and you want to pull latest code. Same Latest files have been modified as that of your files.
 	So pull will not work. You need to stash changes now. Stashing will create a local copy of yur changes. Now git pull work as if you dont have any local changes.
 	Once pull succeeds, you can pop your stashed chages back using "git stash pop".
-	git stash pop : brings back stashed changes.
+	
+	"git stash pop" : brings back stashed changes.
+	"git stash show"
+	"git stash drop" : drop your local stash changes and work with latest copy from scm
+	"git stash clear" : clears all the stashes
+	
+Set Diff tool :
+	git config --global diff.tool bc3
+	git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
+		After this configuration, run "git difftool" command to check if git can open diff tool we just set.
+
+Set merge tool : 
+	Run merge conflict resolution tools to resolve merge conflicts
+	git config --global merge.tool bc3
+	git config --global mergetool.bc3.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
 
 
 
