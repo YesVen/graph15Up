@@ -1,0 +1,14 @@
+Mock : 	They are just objects without any proerties beinf set on them.
+	
+		@Mock Student student
+		This will create a student mock object with no properties in student.
+
+Stub : 	This refers to stubbing actual method calls of Student class.
+		Now we have createda mock, we can call Student class methods,
+			student.goToSchool();
+
+
+Spy : 	Sometimes rather than using mock objects we require actual objects that have all the properties set on them.
+		e.g. Mickito.spy()
+		Their usage is discouraged though and should be used at rarest siatuaion.
+
