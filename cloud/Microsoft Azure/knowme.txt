@@ -34,8 +34,16 @@ App Service Env :
 		
 		
 CosmosDB : 
-		
+		https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data
 
+
+Azure Stack :	
+		Its a cloud environment for on premises enviroment.
+		Microsoft is trying to cover on premises clients who cannot go on public cloud environment due to security and proprietery signoff isssues.
+				
+		
+Azure Machine Learning : 
+		https://azure.microsoft.com/en-us/services/machine-learning-studio/
 		
 	
 	

@@ -15,15 +15,21 @@ Full lessons for git : http://gitreal.codeschool.com/?utm_source=github&utm_medi
 
 ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
 
+start .
+		Open file explorer at current directory of git
+
+git add
+		Add file to stage
+		
+git add .
+		Add all file to stage.	
+
 git init
 		create hidden .git folder
-
 
 git clone repoURL
 
 git status
-
-git add
 
 git checkout -b branch_name
 		Create new Branch : git checkout is a command you’ll use a lot, to switch between branches.
@@ -43,11 +49,36 @@ git branch -d branch_name
 		Delete a branch
 		
 git rebase
+	Consider you have created a feature branch F1 from master and working on that branch.
+	After few days some developer D1 adds few commits to master branch.
+	Now your F1 branch points to master branch but lags few commits (that done by some developer D1)
+	HEre you want your F1 branch to refer to latest commit(HEAD) of master, so that you can get lastest code pushed by D1.
+	You rebase.
+	You rebase F1 branch with master.
+	Now you have latest changes from master.
+	You can do : "git checkout feature" and "git rebase master"
+	
+	
+	Same thing you can do with merging. Rebasing and Merging basically do same thing in completely diffrent way.
+	You could do : "git checkout F1" and "git merge master"
+					OR
+					git merge master feature
+	
 
-git merge origin/az-porting -m "some message"
-		Merges changes of az-porting with current branch you are on.
+git merge master feature
+		Merges changes of master with current branch you are on.
+		-- merge from master to feature branch
 	
 git log	
+
+
+git revert vs git checkout
+	git revert can revert your file to a specified commit in your repo.
+		It has commit level scope.
+	
+	git checkout can revert file to a tip of your branch(HEAD)
+		It has file level scope
+
 
 git reset filename	
 	Unstage files	
