@@ -13,7 +13,7 @@ Full lessons for git : http://gitreal.codeschool.com/?utm_source=github&utm_medi
 
 
 
------------------- ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
 
 start .
 		Open file explorer at current directory of git
@@ -108,7 +108,7 @@ Set merge tool :
 
 
 
------------------- ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
 
 Git Eclipse :
 	Git Reset : In History view, you can select a commit and reset your branch to that view.
@@ -118,12 +118,77 @@ Local Git Repository :
 	This problem I had in 3d
 	Open Git Repo view --> look for icon to create new local git repo.
 
------------------- ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
 
 Git Bash Shortcuts :
 ctrl + L : clear console
 
 ctrl + d : exit console
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+Open git bash in any directory
+	type-> . ~/bash.sh
+		enter passphrase
+			You are good to go. Dont enter passphrase ever again in same window.
+
+Note : bash.sh is my custom script. It can be located at 	 --->   "$\graph15Up\tools\Git\bash.sh"
+			
+https://www.carbon8.com/blog/october-2016/remember-ssh-passphrase-for-git-on-ubuntu
+
+Update on above : 
+	If you wish to permenantly remember your passphrase irresprctive of number if instances of git bash, follow steps below.
+	
+		1.	Go to C:\Users\YOUR_USERNAME\.bashrc
+			If it does not exist create same file.(run "copy > ~/.bashrc" on git bash. It will create this file for you)
+			
+		2.	Copy below code to that file.
+			#use fix path for SSH_AUTH_SOCK so it works more then one instance of gitbash
+			export SSH_AUTH_SOCK="$TEMP/ssh_agent_socket"
+
+			ps | grep ssh-agent > /dev/null
+			RUNNING=$?;
+
+			if [ "$RUNNING" -eq "1" ] 
+			then
+			# ssh-agent is not yet running
+				eval `ssh-agent -a $SSH_AUTH_SOCK`
+				ssh-add
+			else
+			# ssh-agent is already running
+				ssh-add 
+			fi
+		
+		3.	close all instances of process ssh-agent.exe.
+
+		4. Open gitbash and have a fun
+			
+	.bashrc file can be located at "$\graph15Up\tools\Git\.bashrc"
+	
+	https://github.com/sauter-hq/git-guidelines/wiki/Windows-gitbash-save-ssh-passphrase
+	
+	Note : It will ask you passphrase only once during start of git bash.
+	Also make sure, no ssh-agent.exe is running for the first time you do mentioned changes in above link.
+	
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	
