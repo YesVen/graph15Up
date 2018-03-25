@@ -1,0 +1,48 @@
+[debug] [2018-03-25T17:25:36.911Z] ----------------------------------------------------------------------
+[debug] [2018-03-25T17:25:36.927Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Nightfury\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-03-25T17:25:36.927Z] CLI Version:   3.17.3
+[debug] [2018-03-25T17:25:36.927Z] Platform:      win32
+[debug] [2018-03-25T17:25:36.927Z] Node Version:  v6.11.3
+[debug] [2018-03-25T17:25:36.927Z] Time:          Sun Mar 25 2018 22:55:36 GMT+0530 (India Standard Time)
+[debug] [2018-03-25T17:25:36.927Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-25T17:25:36.942Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-25T17:25:36.942Z] > authorizing via signed-in user
+[debug] [2018-03-25T17:25:36.942Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hello-world-dfa52  
+  
+ Sun Mar 25 2018 22:55:36 GMT+0530 (India Standard Time)
+[debug] [2018-03-25T17:25:38.632Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-25T17:25:38.632Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hello-world-dfa52/tokens  
+  
+ Sun Mar 25 2018 22:55:38 GMT+0530 (India Standard Time)
+[debug] [2018-03-25T17:25:42.038Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'hello-world-dfa52'...
+[info] 
+[info] i  deploying database, storage, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-03-25T17:25:43.775Z] >>> HTTP REQUEST PUT https://hello-world-dfa52.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+ 
+ Sun Mar 25 2018 22:55:43 GMT+0530 (India Standard Time)
+[debug] [2018-03-25T17:25:45.411Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database hello-world-dfa52 is valid
+[debug] [2018-03-25T17:25:45.411Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/hello-world-dfa52  
+  
+ Sun Mar 25 2018 22:55:45 GMT+0530 (India Standard Time)
+[debug] [2018-03-25T17:25:47.393Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-03-25T17:25:47.409Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/hello-world-dfa52:test  
+ { source: { files: [ [Object] ] } } 
+ Sun Mar 25 2018 22:55:47 GMT+0530 (India Standard Time)
+[debug] [2018-03-25T17:25:50.117Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-03-25T17:25:50.132Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/hello-world-dfa52/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Sun Mar 25 2018 22:55:50 GMT+0530 (India Standard Time)
