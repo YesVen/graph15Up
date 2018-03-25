@@ -1,0 +1,7 @@
+task hello
+
+hello {
+	doLast {
+		println "Hey how are you?"
+	}
+}

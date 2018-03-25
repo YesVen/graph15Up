@@ -3,3 +3,192 @@ Readme file formatting
 	
 Readme File Emoji cheatsheet
 	https://www.webpagefx.com/tools/emoji-cheat-sheet/	
+	
+Easy to learn git basics on the go : https://try.github.io/levels/1/challenges/25 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IMP
+	
+	
+Full lessons for git : http://gitreal.codeschool.com/?utm_source=github&utm_medium=codeschool_option&utm_campaign=trygit	
+
+
+
+
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+start .
+		Open file explorer at current directory of git
+
+git add
+		Add file to stage
+		
+git add .
+		Add all file to stage.	
+
+git init
+		create hidden .git folder
+
+git clone repoURL
+
+git status
+
+git checkout -b branch_name
+		Create new Branch : git checkout is a command you’ll use a lot, to switch between branches.
+
+git commit	-m "Some Message"	
+		
+git pull
+		Once you switch to some branch, you need to pull code from that branch into your current directory.
+		
+git branch	
+		List all branches in current repo.
+		
+git branch branch_name
+		Create new branch branch_name	
+		
+git branch -d branch_name
+		Delete a branch
+		
+git rebase
+	Consider you have created a feature branch F1 from master and working on that branch.
+	After few days some developer D1 adds few commits to master branch.
+	Now your F1 branch points to master branch but lags few commits (that done by some developer D1)
+	HEre you want your F1 branch to refer to latest commit(HEAD) of master, so that you can get lastest code pushed by D1.
+	You rebase.
+	You rebase F1 branch with master.
+	Now you have latest changes from master.
+	You can do : "git checkout feature" and "git rebase master"
+	
+	
+	Same thing you can do with merging. Rebasing and Merging basically do same thing in completely diffrent way.
+	You could do : "git checkout F1" and "git merge master"
+					OR
+					git merge master feature
+	
+
+git merge master feature
+		Merges changes of master with current branch you are on.
+		-- merge from master to feature branch
+	
+git log	
+
+
+git revert vs git checkout
+	git revert can revert your file to a specified commit in your repo.
+		It has commit level scope.
+	
+	git checkout can revert file to a tip of your branch(HEAD)
+		It has file level scope
+
+
+git reset filename	
+	Unstage files	
+	
+git rm "*.text"	
+	Remove all txt files
+	
+git stash
+	When you have a local modifications and you want to pull latest code. Same Latest files have been modified as that of your files.
+	So pull will not work. You need to stash changes now. Stashing will create a local copy of yur changes. Now git pull work as if you dont have any local changes.
+	Once pull succeeds, you can pop your stashed chages back using "git stash pop".
+	
+	"git stash pop" : brings back stashed changes.
+	"git stash show"
+	"git stash drop" : drop your local stash changes and work with latest copy from scm
+	"git stash clear" : clears all the stashes
+	
+Set Diff tool :
+	git config --global diff.tool bc3
+	git config --global difftool.bc3.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
+		After this configuration, run "git difftool" command to check if git can open diff tool we just set.
+
+Set merge tool : 
+	Run merge conflict resolution tools to resolve merge conflicts
+	git config --global merge.tool bc3
+	git config --global mergetool.bc3.path "c:/Program Files (x86)/Beyond Compare 4/bcomp.exe"
+
+
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+Git Eclipse :
+	Git Reset : In History view, you can select a commit and reset your branch to that view.
+
+Local Git Repository :
+	When it becomes cumbersome to maintain your files even when you are not using github. You can use local git repo to track your files and changes.
+	This problem I had in 3d
+	Open Git Repo view --> look for icon to create new local git repo.
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+Git Bash Shortcuts :
+ctrl + L : clear console
+
+ctrl + d : exit console
+
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+Open git bash in any directory
+	type-> . ~/bash.sh
+		enter passphrase
+			You are good to go. Dont enter passphrase ever again in same window.
+
+Note : bash.sh is my custom script. It can be located at 	 --->   "$\graph15Up\tools\Git\bash.sh"
+			
+https://www.carbon8.com/blog/october-2016/remember-ssh-passphrase-for-git-on-ubuntu
+
+Update on above : 
+	If you wish to permenantly remember your passphrase irresprctive of number if instances of git bash, follow steps below.
+	
+		1.	Go to C:\Users\YOUR_USERNAME\.bashrc
+			If it does not exist create same file.(run "copy > ~/.bashrc" on git bash. It will create this file for you)
+			
+		2.	Copy below code to that file.
+			#use fix path for SSH_AUTH_SOCK so it works more then one instance of gitbash
+			export SSH_AUTH_SOCK="$TEMP/ssh_agent_socket"
+
+			ps | grep ssh-agent > /dev/null
+			RUNNING=$?;
+
+			if [ "$RUNNING" -eq "1" ] 
+			then
+			# ssh-agent is not yet running
+				eval `ssh-agent -a $SSH_AUTH_SOCK`
+				ssh-add
+			else
+			# ssh-agent is already running
+				ssh-add 
+			fi
+		
+		3.	close all instances of process ssh-agent.exe.
+
+		4. Open gitbash and have a fun
+			
+	.bashrc file can be located at "$\graph15Up\tools\Git\.bashrc"
+	
+	https://github.com/sauter-hq/git-guidelines/wiki/Windows-gitbash-save-ssh-passphrase
+	
+	Note : It will ask you passphrase only once during start of git bash.
+	Also make sure, no ssh-agent.exe is running for the first time you do mentioned changes in above link.
+	
+------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ ------------------ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

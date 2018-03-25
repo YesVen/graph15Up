@@ -8,6 +8,10 @@ eclipse :
 	
 	angularJs 		- http://www.eclipse.org/webtools/jsdt/
 					  https://marketplace.eclipse.org/content/angularjs-eclipse#.U4M7rBYqm0o
+	pathtools
+	gradle
+	json editor		- json support in eclipse
+	jAutoDoc 		- for generating javadocs automatically
 					  
 					  
 Must have popular command line tool : http://cmder.net/	

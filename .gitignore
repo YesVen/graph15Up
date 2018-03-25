@@ -54,3 +54,7 @@ target
 # jar created by build process
 *.jar
 functions/
+
+#gradle reference directory
+.gradle
+
