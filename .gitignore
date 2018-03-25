@@ -53,3 +53,4 @@ target
 
 # jar created by build process
 *.jar
+functions/
