@@ -52,3 +52,37 @@ body, html {
     padding: 16px; 
     border-radius: 4px;
 }
+
+.firesite-illo-holder {
+    height: 196.571428571px;
+    left: 45%;
+    top: 20px;
+    width: 200px;
+    transform: translate(10%,0);
+    z-index: 2;
+    position: absolute;
+    display: block;
+}
+
+img.illo-phone {
+    animation-fill-mode: both;
+    animation: sinusoid 3s ease infinite;
+    animation-delay: : -.6s;
+    width: 200%;
+}
+
+
+img.illo-code {
+    animation-fill-mode: both;
+    animation: sinusoid 3s ease infinite;
+    animation-delay: : -.2s;
+    width: 200%;
+}
+
+
+img.illo-apps {
+    animation-fill-mode: both;
+    animation: sinusoid 3s ease infinite;
+    animation-delay: : -.4s;
+    width: 200%;
+}
