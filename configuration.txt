@@ -12,6 +12,7 @@ eclipse :
 	gradle
 	json editor		- json support in eclipse
 	jAutoDoc 		- for generating javadocs automatically
+	LogViewer		- for better viewing console output, stack traces etc. Especially useful for apps that generate tons of logs.
 					  
 					  
 Must have popular command line tool : http://cmder.net/	

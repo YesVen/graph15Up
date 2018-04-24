@@ -46,6 +46,16 @@
   letter-spacing: 10px;
 }
 
+
+.caption a.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+
 h3 {
   letter-spacing: 5px;
   text-transform: uppercase;

@@ -22,3 +22,21 @@ gradlew clean build -x test -x check
 
 gradle tasks 
 		Lists all tasks this project has
+
+
+settings.gradle :
+	its an optional in a build which has only one project. If our Gradle build has more than one projects, it is mandatory because it describes which projects participate to our build. Every multi-project build must have a settings file in the root project of the project hierarchy.
+
+
+------------------------------------ --------------------------------------- -------------------------------------- ------------------------------------------- ------------------------------
+Plugin Task :
+java plugin :
+	assemble :		compiles the source code of our application and packages it to a jar file. This task doesn’t run the unit tests.
+	build 	 :		performs a full build of the project.	
+	clean 	 :		deletes the build directory.
+	compileJava:	compiles the source code of our application
+	javadoc :	This task generates a standard java doc in html format.
+
+
+
+

@@ -67,22 +67,27 @@ body, html {
 img.illo-phone {
     animation-fill-mode: both;
     animation: sinusoid 3s ease infinite;
-    animation-delay: : -.6s;
+    animation-delay: -.6s;
     width: 200%;
+    position : absolute;
 }
 
 
 img.illo-code {
     animation-fill-mode: both;
     animation: sinusoid 3s ease infinite;
-    animation-delay: : -.2s;
+    animation-delay: -.4s;
     width: 200%;
+    position : absolute;
+    z-index: 4;
 }
 
 
 img.illo-apps {
     animation-fill-mode: both;
     animation: sinusoid 3s ease infinite;
-    animation-delay: : -.4s;
+    animation-delay: -.2s;
     width: 200%;
+    position : absolute;
+    z-index: 12;
 }

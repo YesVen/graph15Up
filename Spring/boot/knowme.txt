@@ -92,8 +92,36 @@ https://www.dineshonjava.com/introduction-to-spring-boot-a-spring-boot-complete-
 		
 		
 		
-	
-	
+---------------------------------------------------------------------------------------------------------------------------------------------------		
+	\\\\\\\\\\\\\\\\\\\\\\\\\\\\\       Spring Boot Advanced        \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ --------------------------------------------------	
+---------------------------------------------------------------------------------------------------------------------------------------------------	
+
+Banner :
+	You can chage banner by adding test in banner.txt file and placing it under classpath.
+	Use http://patorjk.com/software/taag/#p=display&f=Ivrit&t=IoT%20and%20Storage%20Team to convert ant text to ascii art.
+	There are links available online that can be used to convert image into ascii art.
+
+
+Profiles :
+	You can create profiles like dev, rc, prod and run application using that profile.
+	Just create yaml/prop file with following format and place it in classpath.
+		spring-local.properties, spring-dev.properties etc.
+	While running app use, 
+		$ java -jar -Dspring.profiles.active=production demo-0.0.1-SNAPSHOT.jar 
+							OR
+		spring.profiles.active=production in app.properties file.
+
+RestTemplate :
+
+
+YAML :
+
+
+Swagger : http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+
+
+
+
 	
 	
 
