@@ -5,4 +5,5 @@ Code Samples :
 Awesome Code Walkthrough :
 		https://codelabs.developers.google.com/codelabs/firebase-web/?authuser=0#0	
 
+https://firebase.google.com/images/backslant-home-repeat.svg -- firebase background svg
 

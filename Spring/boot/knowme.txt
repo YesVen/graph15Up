@@ -1,4 +1,6 @@
 
+Complete Guide is @ https://docs.spring.io/spring-boot/docs/current/reference/html/index.html
+
 Spring Boot : Create stand alone and production ready app that "just run".
 
 It takes lot of burden away from you like,
@@ -119,6 +121,15 @@ YAML :
 
 Swagger : http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
 
+
+Properties Externalization :
+	You can choose to place app.properties outside your jar. YEs you heard that right.
+	In fact spring provides multiple ways to manage your env specific properties.
+	Have a look at the https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
+	
+	
+	
+	
 
 
 
